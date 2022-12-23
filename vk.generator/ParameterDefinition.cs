@@ -42,6 +42,9 @@ namespace Vk.Generator
 
         public string GetMappedAndNormalizedString(TypeNameMappings tnm)
         {
+            if ($"{GetModifierString()}{Type.MapTypeSpec(tnm)} {Util.NormalizeFieldName(Name)}" == "out void pAddress") {
+                Console.WriteLine(Type + " -> " + Type.MapTypeSpec(tnm));
+            }
             return $"{GetModifierString()}{Type.MapTypeSpec(tnm)} {Util.NormalizeFieldName(Name)}";
         }
 

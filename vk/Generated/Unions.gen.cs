@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 namespace Vulkan
 {
     [StructLayout(LayoutKind.Explicit)]
-    public partial struct VkClearColorValue
+    public unsafe partial struct VkClearColorValue
     {
         [FieldOffset(0)]
         public float float32_0;
@@ -34,7 +34,7 @@ namespace Vulkan
     }
 
     [StructLayout(LayoutKind.Explicit)]
-    public partial struct VkClearValue
+    public unsafe partial struct VkClearValue
     {
         [FieldOffset(0)]
         public VkClearColorValue color;

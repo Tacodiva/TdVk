@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Xml.Linq;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Vk.Generator
 {
@@ -37,7 +39,10 @@ namespace Vk.Generator
             }
 
             string name = xe.Attribute("name").Value;
-            EnumValue[] values = xe.Elements("enum").Select(valuesx => EnumValue.CreateFromXml(valuesx, type == EnumType.Bitmask)).ToArray();
+            EnumValue[] values = xe.Elements("enum")
+                .Where(typex => typex.Attribute("alias") == null)
+                .Select(valuesx => EnumValue.CreateFromXml(valuesx, type == EnumType.Bitmask))
+                .ToArray();
             return new EnumDefinition(name, type, values);
         }
 

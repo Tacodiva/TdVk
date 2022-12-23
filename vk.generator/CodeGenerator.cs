@@ -55,7 +55,7 @@ namespace Vk.Generator
                 }
             }
 
-            CommandDefinition[] allVariants = spec.Commands.SelectMany(cd => VariantGenerator.GenerateVariants(cd)).ToArray();
+            CommandDefinition[] allVariants = spec.Commands.SelectMany(cd => VariantGenerator.GenerateVariants(cd, tnm)).ToArray();
             CommandDefinition[] allCommandsWithVariants = spec.Commands.Concat(allVariants).OrderBy(cd => cd.Name).ToArray();
 
             using (StreamWriter commandWriter = File.CreateText(Path.Combine(path, "Commands.gen.cs")))
