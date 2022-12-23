@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Xml.Linq;
+using System;
 
 namespace Vk.Generator
 {
@@ -37,6 +38,7 @@ namespace Vk.Generator
             List<ExtensionConstant> extensionConstants = new List<ExtensionConstant>();
             List<EnumExtensionValue> enumExtensions = new List<EnumExtensionValue>();
             List<string> commandNames = new List<string>();
+
 
             foreach (var require in xe.Elements("require"))
             {
@@ -88,7 +90,7 @@ namespace Vk.Generator
                         if (valueAttribute == null)
                             continue;
 
-                        extensionConstants.Add(new ExtensionConstant(name, valueAttribute.Value));
+                        extensionConstants.Add(new ExtensionConstant(enumName, valueAttribute.Value));
                     }
                 }
                 foreach (var commandXE in require.Elements("command"))

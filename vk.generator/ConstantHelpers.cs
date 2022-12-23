@@ -49,6 +49,8 @@ namespace Vk.Generator
                     return "ulong";
                 case ConstantDefinition.ConstantType.Float32:
                     return "float";
+                case ConstantDefinition.ConstantType.String:
+                    return "string";
                 default:
                     throw new InvalidOperationException("Illegal ConstantType: " + type);
             }

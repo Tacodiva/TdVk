@@ -8,6 +8,8 @@ namespace Vk.Generator
         private readonly Dictionary<string, string> _nameMappings = new Dictionary<string, string>()
         {
             { "uint8_t", "byte" },
+            { "int8_t", "sbyte" },
+            { "uint16_t", "ushort" },
             { "uint32_t", "uint" },
             { "uint64_t", "ulong" },
             { "int32_t", "int" },
@@ -36,10 +38,30 @@ namespace Vk.Generator
             { "HANDLE", "Win32.HANDLE" },
             { "SECURITY_ATTRIBUTES", "Win32.SECURITY_ATTRIBUTES" },
             { "LPCWSTR", "IntPtr" },
+            { "HMONITOR", "Win32.HMONITOR" },
 
             { "xcb_connection_t", "Xcb.xcb_connection_t" },
             { "xcb_window_t", "Xcb.xcb_window_t" },
             { "xcb_visualid_t", "Xcb.xcb_visualid_t" },
+
+            { "IDirectFB", "DirectFB.IDirectFB" },
+            { "IDirectFBSurface", "DirectFB.IDirectFBSurface" },
+
+            { "zx_handle_t", "Zircon.ZXHandle" },
+
+            { "GgpStreamDescriptor", "GGP.GgpStreamDescriptor" },
+            { "GgpFrameToken", "GGP.GgpFrameToken" },
+
+            { "_screen_context", "Screen.ScreenContext" },
+            { "_screen_window", "Screen.ScreenWindow" },
+
+            { "CAMetalLayer", "void" },
+            { "MTLDevice_id", "void*" },
+            { "MTLCommandQueue_id", "void*" },
+            { "MTLBuffer_id", "void*" },
+            { "MTLTexture_id", "void*" },
+            { "MTLSharedEvent_id", "void*" },
+            { "IOSurfaceRef", "void*" }
         };
 
         internal IEnumerable<KeyValuePair<string, string>> GetAllMappings()

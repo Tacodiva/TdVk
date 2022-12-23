@@ -33,6 +33,20 @@ namespace Vulkan
             public IntPtr lpSecurityDescriptor;
             public uint bInheritHandle;
         }
+
+        public struct HMONITOR
+        {
+            public IntPtr Handle;
+            public static implicit operator IntPtr(HMONITOR handle) => handle.Handle;
+            public static implicit operator HMONITOR(IntPtr handle) => new HMONITOR() { Handle = handle };
+        }
+
+        public struct DWORD
+        {
+            public IntPtr Handle;
+            public static implicit operator IntPtr(DWORD handle) => handle.Handle;
+            public static implicit operator DWORD(IntPtr handle) => new DWORD() { Handle = handle };
+        }
     }
 
     // Android
@@ -80,5 +94,44 @@ namespace Vulkan
             public static implicit operator xcb_visualid_t(uint value) => new xcb_visualid_t() { ID = value };
             public static implicit operator uint(xcb_visualid_t id) => id.ID;
         }
+    }
+
+    namespace DirectFB
+    {
+        public struct IDirectFB { }
+        public struct IDirectFBSurface { }
+    }
+
+    namespace Zircon
+    {
+        public struct ZXHandle
+        {
+            public IntPtr Handle;
+            public static implicit operator IntPtr(ZXHandle handle) => handle.Handle;
+            public static implicit operator ZXHandle(IntPtr handle) => new ZXHandle() { Handle = handle };
+        }
+    }
+
+
+    namespace GGP
+    {
+        public struct GgpStreamDescriptor
+        {
+            public IntPtr Handle;
+            public static implicit operator IntPtr(GgpStreamDescriptor handle) => handle.Handle;
+            public static implicit operator GgpStreamDescriptor(IntPtr handle) => new GgpStreamDescriptor() { Handle = handle };
+        }
+
+        public struct GgpFrameToken
+        {
+            public IntPtr Handle;
+            public static implicit operator IntPtr(GgpFrameToken handle) => handle.Handle;
+            public static implicit operator GgpFrameToken(IntPtr handle) => new GgpFrameToken() { Handle = handle };
+        }
+    }
+
+    namespace Screen {
+        public struct ScreenContext { }
+        public struct ScreenWindow { }
     }
 }

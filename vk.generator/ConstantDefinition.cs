@@ -20,13 +20,17 @@ namespace Vk.Generator
 
         private ConstantType ParseType(string value)
         {
-            if (value.EndsWith("f"))
+            if (value.ToLower().EndsWith("f"))
             {
                 return ConstantType.Float32;
             }
             else if (value.EndsWith("ULL)"))
             {
                 return ConstantType.UInt64;
+            }
+            else if (value.StartsWith('"') && value.EndsWith('"'))
+            {
+                return ConstantType.String;
             }
             else
             {
@@ -50,6 +54,7 @@ namespace Vk.Generator
             UInt32,
             UInt64,
             Float32,
+            String
         }
     }
 }

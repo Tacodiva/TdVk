@@ -23,7 +23,7 @@ namespace Vk.Generator
                 }
                 outputPath = args[0];
             }
-            
+
             Configuration.CodeOutputPath = outputPath;
 
             if (File.Exists(outputPath))
@@ -36,40 +36,47 @@ namespace Vk.Generator
                 Directory.CreateDirectory(outputPath);
             }
 
+            VulkanSpecification vs;
+
             using (var fs = File.OpenRead(Path.Combine(AppContext.BaseDirectory, "vk.xml")))
             {
-                VulkanSpecification vs = VulkanSpecification.LoadFromXmlStream(fs);
-                TypeNameMappings tnm = new TypeNameMappings();
-                foreach (var typedef in vs.Typedefs)
-                {
-                    if (typedef.Requires != null)
-                    {
-                        tnm.AddMapping(typedef.Requires, typedef.Name);
-                    }
-                    else
-                    {
-                        tnm.AddMapping(typedef.Name, "uint");
-                    }
-                }
+                vs = VulkanSpecification.LoadFromXmlStream(fs);
+            }
+            using (var fs = File.OpenRead(Path.Combine(AppContext.BaseDirectory, "video.xml")))
+            {
+                vs.Merge(VulkanSpecification.LoadFromXmlStream(fs));
+            }
 
-                HashSet<string> definedBaseTypes = new HashSet<string>
+            TypeNameMappings tnm = new TypeNameMappings();
+            foreach (var typedef in vs.Typedefs)
+            {
+                if (typedef.Requires != null)
+                {
+                    tnm.AddMapping(typedef.Requires, typedef.Name);
+                }
+                else
+                {
+                    tnm.AddMapping(typedef.Name, "uint");
+                }
+            }
+
+            HashSet<string> definedBaseTypes = new HashSet<string>
                 {
                     "VkBool32"
                 };
 
-                if (Configuration.MapBaseTypes)
+            if (Configuration.MapBaseTypes)
+            {
+                foreach (var baseType in vs.BaseTypes)
                 {
-                    foreach (var baseType in vs.BaseTypes)
+                    if (!definedBaseTypes.Contains(baseType.Key))
                     {
-                        if (!definedBaseTypes.Contains(baseType.Key))
-                        {
-                            tnm.AddMapping(baseType.Key, baseType.Value);
-                        }
+                        tnm.AddMapping(baseType.Key, baseType.Value);
                     }
                 }
-
-                CodeGenerator.GenerateCodeFiles(vs, tnm, Configuration.CodeOutputPath);
             }
+
+            CodeGenerator.GenerateCodeFiles(vs, tnm, Configuration.CodeOutputPath);
 
             return 0;
         }

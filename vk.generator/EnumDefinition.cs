@@ -10,7 +10,7 @@ namespace Vk.Generator
     {
         public string Name { get; }
         public EnumType Type { get; }
-        public EnumValue[] Values { get; set;  }
+        public EnumValue[] Values { get; set; }
 
         public EnumDefinition(string name, EnumType type, EnumValue[] values)
         {
