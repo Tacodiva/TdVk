@@ -4,6 +4,7 @@ build
 
 #NuGet things
 project.lock.json
+package/lib
 
 ### VisualStudio ###
 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>TdVk</id>
+    <version>1.3.0</version>
+    <authors>Tacodiva, Eric Mellino</authors>
+    <description>Cross-platform low-level bindings for the Vulkan 1.3 graphics and compute API and its extensions.</description>
+
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    
+    <copyright>Copyright 2022 (c). All rights reserved.</copyright>
+    <tags>Vulkan Graphics 3D GPU Games Khronos</tags>
+    
+    <dependencies>
+      <group targetFramework=".NETStandard1.4">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1" />
+      <group targetFramework=".NETCoreApp3.1" />
+      <group targetFramework=".NETFramework4.7.1" />
+      <group targetFramework="net5.0" />
+      <group targetFramework="net6.0" />
+      <group targetFramework="net7.0" />
+    </dependencies>
+  </metadata>
+</package>
