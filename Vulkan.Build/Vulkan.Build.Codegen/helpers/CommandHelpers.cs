@@ -15,7 +15,7 @@ namespace Vulkan.Build.Codegen
             cw.WriteLine("[Generator.CalliRewrite]");
             using (cw.PushBlock($"public{(@static ? " static " : " ")}unsafe {command.ReturnType.MapTypeSpec(tnm)} {command.Name}({command.GetParametersSignature(tnm)})"))
             {
-                cw.WriteLine("throw CreateUnpatchedException();");
+                cw.WriteLine("throw VulkanNative.CreateUnpatchedException();");
             }
         }
     }

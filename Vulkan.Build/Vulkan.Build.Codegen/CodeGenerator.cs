@@ -121,7 +121,6 @@ namespace Vulkan.Build.Codegen
                 cw.WriteLine();
 
                 using (cw.PushBlock("namespace Vulkan"))
-                using (cw.PushBlock("public static unsafe partial class VulkanNative"))
                 {
                     foreach (ExtensionDefinition ext in spec.Extensions)
                     {
@@ -146,7 +145,7 @@ namespace Vulkan.Build.Codegen
                                 {
                                     foreach (CommandDefinition command in uniqueCommands)
                                     {
-                                        cw.WriteLine($"{command.Name}_ptr = LoadDeviceProcAddr(device, \"{command.Name}\");");
+                                        cw.WriteLine($"{command.Name}_ptr = VulkanNative.LoadDeviceProcAddr(device, \"{command.Name}\");");
                                     }
                                 }
                             }
@@ -156,7 +155,7 @@ namespace Vulkan.Build.Codegen
                                 {
                                     foreach (CommandDefinition command in uniqueCommands)
                                     {
-                                        cw.WriteLine($"{command.Name}_ptr = LoadInstanceProcAddr(instance, \"{command.Name}\");");
+                                        cw.WriteLine($"{command.Name}_ptr = VulkanNative.LoadInstanceProcAddr(instance, \"{command.Name}\");");
                                     }
                                 }
                             }

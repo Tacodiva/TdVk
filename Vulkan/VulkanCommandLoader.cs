@@ -56,7 +56,7 @@ namespace Vulkan
             }
         }
 
-        private static Exception CreateUnpatchedException()
+        internal static Exception CreateUnpatchedException()
         {
             return new InvalidOperationException("This command was has not been patched.");
         }
@@ -77,7 +77,7 @@ namespace Vulkan
             return ptr;
         }
 
-        private unsafe static IntPtr LoadDeviceProcAddr(VkDevice device, string name)
+        internal unsafe static IntPtr LoadDeviceProcAddr(VkDevice device, string name)
         {
             IntPtr ptr = vkGetDeviceProcAddr(device, name);
             if (ptr == IntPtr.Zero) throw new InvalidOperationException($"Could not find vulkan device command '{name}'. Make sure the extension it's from is enabled on the device.");
@@ -86,9 +86,7 @@ namespace Vulkan
 
         public unsafe static IntPtr vkGetInstanceProcAddr(string name)
         {
-            IntPtr ptr = vkGetInstanceProcAddr(new VkInstance(IntPtr.Zero), name);
-            if (ptr != IntPtr.Zero) Console.WriteLine("Vulkan loaded " + name);
-            return ptr;
+            return vkGetInstanceProcAddr(new VkInstance(IntPtr.Zero), name);
         }
 
         public unsafe static IntPtr vkGetInstanceProcAddr(VkInstance instance, string name)
