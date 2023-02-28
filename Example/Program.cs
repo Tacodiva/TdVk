@@ -244,7 +244,7 @@ unsafe static class VulkanTutorial
     {
         List<string> extensions = new List<string>();
 
-        extensions.AddRange(Glfw.Vulkan.GetRequiredInstanceExtensions());
+        extensions.AddRange(GLFW.Vulkan.GetRequiredInstanceExtensions());
 
         if (EnableValidationLayers)
         {
@@ -285,11 +285,11 @@ unsafe static class VulkanTutorial
 
     private static void CreateSurface()
     {
-        if ((VkResult)Glfw.Vulkan.CreateWindowSurface(Instance.Handle, Window, IntPtr.Zero, out ulong surfaceHandle) != VK_SUCCESS)
+        if ((VkResult)GLFW.Vulkan.CreateWindowSurface(Instance.Handle, Window, IntPtr.Zero, out nint surfaceHandle) != VK_SUCCESS)
         {
             throw new SystemException("failed to create window surface!");
         }
-        Surface = surfaceHandle;
+        Surface = new VkSurfaceKHR((ulong) surfaceHandle);
     }
 
     private static void PickPhysicalDevice()
