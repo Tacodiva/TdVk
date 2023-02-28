@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>TdVk</id>
-    <version>1.3.1</version>
+    <version>1.3.2</version>
     <authors>Tacodiva, Eric Mellino</authors>
     <description>Cross-platform low-level bindings for the Vulkan 1.3 graphics and compute API and its extensions.</description>
 

@@ -44,9 +44,29 @@ namespace Vulkan
             return new StringPtr(ptr, length);
         }
 
-        public void Free(StringPtr ptr)
+        public static void Free(IntPtr ptr)
         {
-            Marshal.FreeHGlobal(ptr.Handle);
+            Marshal.FreeHGlobal(ptr);
+        }
+
+        public static void Free(StringPtr ptr)
+        {
+            Free(ptr.Handle);
+        }
+
+        public static void Free(byte* ptr)
+        {
+            Free(new IntPtr(ptr));
+        }
+
+        public static void Free(void* ptr)
+        {
+            Free(new IntPtr(ptr));
+        }
+
+        public static void Free(char* ptr)
+        {
+            Free(new IntPtr(ptr));
         }
 
         public static unsafe implicit operator string(StringPtr ptr) => ptr.ToString();

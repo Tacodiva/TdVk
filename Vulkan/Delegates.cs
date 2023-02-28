@@ -48,15 +48,4 @@ namespace Vulkan
         VkDebugUtilsMessageTypeFlagsEXT messageType,
         VkDebugUtilsMessengerCallbackDataEXT* pCallbackData,
         void* pUserData);
-
-    public unsafe delegate VkResult PFN_vkCreateDebugUtilsMessengerEXT(
-        VkInstance instance,
-        VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,
-        VkAllocationCallbacks* pAllocator,
-        VkDebugUtilsMessengerEXT* pMessenger);
-
-    public unsafe delegate VkResult PFN_vkDestroyDebugUtilsMessengerEXT(
-        VkInstance instance,
-        VkDebugUtilsMessengerEXT messenger,
-        VkAllocationCallbacks* pAllocator);
 }
