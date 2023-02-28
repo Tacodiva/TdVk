@@ -4,6 +4,10 @@ This repository contains cross-platform low-level bindings for the [Vulkan](http
 
 These bindings differ from many other .NET bindings in that they are low-level and unsafe. There is no attempt made to provide a higher-level abstraction on top of Vulkan. This means you must be very careful with usages of the API. On the other hand, it means that you can simply and easily translate from the many C++ examples available on the web.
 
+# Example
+
+See [here](https://github.com/Tacodiva/TdVk/blob/tdvk/Example/Program.cs) for an example of using the library. This example is following this [vulkan tutorial](https://vulkan-tutorial.com) up to the 'Drawing a triangle' chapter. As you will see, it's mostly just a directly translation from the C++ code. 
+
 # Repository Structure
 ### Vulkan
 
