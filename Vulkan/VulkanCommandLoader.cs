@@ -61,26 +61,46 @@ namespace Vulkan
             return new InvalidOperationException("This command was has not been patched.");
         }
 
+        // We need to keep this around so it doesn't get collected.
+        private static Action s_ErrFnDelegate;
+        private static IntPtr s_ErrFnPtr;
+
+        private unsafe static IntPtr GetErrorFnPtr()
+        {
+            if (s_ErrFnDelegate != null) return s_ErrFnPtr;
+            s_ErrFnDelegate = () => throw new PlatformNotSupportedException($"Could not find vulkan command.");
+            s_ErrFnPtr = Marshal.GetFunctionPointerForDelegate(s_ErrFnDelegate);
+            return s_ErrFnPtr;
+        }
+
         private unsafe static IntPtr LoadStaticProcAddr(string name)
         {
             IntPtr ptr = s_nativeLib.LoadFunctionPointer(name);
-            if (ptr == IntPtr.Zero) return Marshal.GetFunctionPointerForDelegate<Action>(
-                () => throw new PlatformNotSupportedException($"Could not find vulkan command '{name}' on the current platform.")
-            );
+            if (ptr == IntPtr.Zero) return GetErrorFnPtr();
             return ptr;
         }
 
-        internal unsafe static IntPtr LoadInstanceProcAddr(VkInstance instance, string name)
+        internal unsafe static IntPtr LoadInstanceProcAddr(VkInstance instance, string name, bool required)
         {
             IntPtr ptr = vkGetInstanceProcAddr(instance, name);
-            if (ptr == IntPtr.Zero) throw new InvalidOperationException($"Could not find vulkan instance command '{name}'. Make sure the extension it's from is enabled on the instance.");
+            if (ptr == IntPtr.Zero)
+            {
+                if (required)
+                    throw new InvalidOperationException($"Could not find vulkan instance command '{name}'. If it's from an extension, make sure it is enabled on the instance.");
+                return GetErrorFnPtr();
+            }
             return ptr;
         }
 
-        internal unsafe static IntPtr LoadDeviceProcAddr(VkDevice device, string name)
+        internal unsafe static IntPtr LoadDeviceProcAddr(VkDevice device, string name, bool required)
         {
             IntPtr ptr = vkGetDeviceProcAddr(device, name);
-            if (ptr == IntPtr.Zero) throw new InvalidOperationException($"Could not find vulkan device command '{name}'. Make sure the extension it's from is enabled on the device.");
+            if (ptr == IntPtr.Zero)
+            {
+                if (required)
+                    throw new InvalidOperationException($"Could not find vulkan device command '{name}'. If it's from an extension, make sure it is enabled on the device.");
+                return GetErrorFnPtr();
+            }
             return ptr;
         }
 

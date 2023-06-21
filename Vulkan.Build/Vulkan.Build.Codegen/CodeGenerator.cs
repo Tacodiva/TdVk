@@ -9,7 +9,7 @@ namespace Vulkan.Build.Codegen
     public class CodeGenerator
     {
 
-        public static readonly string[] WSIExtensions = {
+        public static readonly string[] LoaderLinkableExtensions = {
             "VK_VERSION_1_0",
             "VK_VERSION_1_1",
             "VK_VERSION_1_2",
@@ -69,8 +69,9 @@ namespace Vulkan.Build.Codegen
                 }
             }
 
-            CommandDefinition[] allVariants = spec.Commands.SelectMany(cd => VariantGenerator.GenerateVariants(cd, tnm)).ToArray();
-            CommandDefinition[] allCommandsWithVariants = spec.Commands.Concat(allVariants).OrderBy(cd => cd.Name).ToArray();
+            IEnumerable<CommandDefinition> allVariants = spec.Commands.SelectMany(cd => VariantGenerator.GenerateVariants(cd, tnm));
+            IEnumerable<CommandDefinition> allCommandsWithVariants = spec.Commands.Concat(allVariants).OrderBy(cd => cd.Name);
+            IEnumerable<CommandDefinition> loaderLinkableCommands = allCommandsWithVariants.Where(cmd => LoaderLinkableExtensions.Contains(cmd.Extension.Name));
 
             using (StreamWriter commandWriter = File.CreateText(Path.Combine(path, "Commands.gen.cs")))
             {
@@ -83,28 +84,15 @@ namespace Vulkan.Build.Codegen
                 using (cw.PushBlock("namespace Vulkan"))
                 using (cw.PushBlock("public static unsafe partial class VulkanNative"))
                 {
-                    IEnumerable<CommandDefinition> commands = allCommandsWithVariants.Where(cmd => WSIExtensions.Contains(cmd.Extension.Name));
-                    IEnumerable<CommandDefinition> uniqueCommands = commands.Where(cmd => !cmd.IsVariant);
-
-                    foreach (CommandDefinition command in uniqueCommands)
-                    {
-                        cw.WriteLine($"private static IntPtr {command.Name}_ptr;");
-                    };
-
-                    cw.WriteLine();
-
-                    CodegenUtil.SpaceSeparatedList(cw, commands.ToList(), command =>
-                    {
-                        CommandHelpers.WriteCommand(cw, tnm, command, true);
-                    });
+                    IEnumerable<CommandDefinition> commandPointers = GenerateCommands(cw, tnm, loaderLinkableCommands, true);
 
                     cw.WriteLine();
 
                     using (cw.PushBlock("private static void LoadFunctionPointers()"))
                     {
-                        foreach (CommandDefinition command in uniqueCommands)
+                        foreach (CommandDefinition command in commandPointers)
                         {
-                            cw.WriteLine($"{command.Name}_ptr = LoadStaticProcAddr(\"{command.Name}\");");
+                            cw.WriteLine($"{GetPointerName(command)} = LoadStaticProcAddr(\"{command.Name}\");");
                         }
                     }
                 }
@@ -126,19 +114,10 @@ namespace Vulkan.Build.Codegen
                     {
 
                         if (ext.CommandNames.Length == 0 || !(ext.IsDeviceExtension() || ext.IsInstanceExtension())) continue;
-                        IEnumerable<CommandDefinition> commands = allCommandsWithVariants.Where(cmd => cmd.Extension == ext);
-                        IEnumerable<CommandDefinition> uniqueCommands = commands.Where(cmd => !cmd.IsVariant);
 
                         string extClassName = "Vulkan" + CodegenUtil.GetPrettyName(ext.Name, "VK_");
                         using (cw.PushBlock($"public unsafe sealed class {extClassName} : " + (ext.IsDeviceExtension() ? "IVulkanDeviceExtGeneric" : "IVulkanInstanceExtGeneric") + $"<{extClassName}>"))
                         {
-                            foreach (CommandDefinition command in uniqueCommands)
-                            {
-                                cw.WriteLine($"private IntPtr {command.Name}_ptr;");
-                            };
-
-                            cw.WriteLine();
-
                             cw.WriteLine($"public static string Name => \"{ext.Name}\";");
                             cw.WriteLine($"string IVulkanExt.GetName() => Name;");
 
@@ -150,16 +129,6 @@ namespace Vulkan.Build.Codegen
                                 {
                                     cw.WriteLine($"return new {extClassName}(device);");
                                 }
-
-                                cw.WriteLine();
-
-                                using (cw.PushBlock($"public {extClassName}(VkDevice device)"))
-                                {
-                                    foreach (CommandDefinition command in uniqueCommands)
-                                    {
-                                        cw.WriteLine($"{command.Name}_ptr = VulkanNative.LoadDeviceProcAddr(device, \"{command.Name}\");");
-                                    }
-                                }
                             }
                             else
                             {
@@ -167,25 +136,96 @@ namespace Vulkan.Build.Codegen
                                 {
                                     cw.WriteLine($"return new {extClassName}(instance);");
                                 }
+                            }
 
-                                cw.WriteLine();
+                            cw.WriteLine();
 
-                                using (cw.PushBlock($"public {extClassName}(VkInstance instance)"))
+                            IEnumerable<CommandDefinition> commands = allCommandsWithVariants.Where(cmd => cmd.Extension == ext);
+                            IEnumerable<CommandDefinition> commandPointers = GenerateCommands(cw, tnm, commands, false);
+
+                            cw.WriteLine();
+
+                            if (ext.IsDeviceExtension())
+                            {
+                                using (cw.PushBlock($"public {extClassName}(VkDevice device)"))
                                 {
-                                    foreach (CommandDefinition command in uniqueCommands)
+                                    foreach (CommandDefinition command in commandPointers)
                                     {
-                                        cw.WriteLine($"{command.Name}_ptr = VulkanNative.LoadInstanceProcAddr(instance, \"{command.Name}\");");
+                                        cw.WriteLine($"{GetPointerName(command)} = VulkanNative.LoadDeviceProcAddr(device, \"{command.Name}\", true);");
                                     }
                                 }
                             }
-                            cw.WriteLine();
-
-                            CodegenUtil.SpaceSeparatedList(cw, commands.ToList(), command =>
+                            else
                             {
-                                CommandHelpers.WriteCommand(cw, tnm, command, false);
-                            });
+                                using (cw.PushBlock($"public {extClassName}(VkInstance instance)"))
+                                {
+                                    foreach (CommandDefinition command in commandPointers)
+                                    {
+                                        cw.WriteLine($"{GetPointerName(command)} = VulkanNative.LoadInstanceProcAddr(instance, \"{command.Name}\", true);");
+                                    }
+                                }
+                            }
                         }
                         cw.WriteLine();
+                    }
+                }
+            }
+
+            using (StreamWriter commandWriter = File.CreateText(Path.Combine(path, "InstanceCommands.gen.cs")))
+            {
+                CsCodeWriter cw = new CsCodeWriter(commandWriter);
+                cw.WriteHeader();
+                cw.WriteLine();
+
+                cw.Using("System");
+
+                cw.WriteLine();
+
+                using (cw.PushBlock("namespace Vulkan"))
+                {
+                    using (cw.PushBlock("public unsafe sealed partial class VulkanInstanceCommands"))
+                    {
+                        IEnumerable<CommandDefinition> commandPointers = GenerateCommands(cw, tnm, loaderLinkableCommands, false);
+
+                        cw.WriteLine();
+
+                        using (cw.PushBlock("private void LoadFunctionPointers()"))
+                        {
+                            foreach (CommandDefinition command in commandPointers)
+                            {
+                                cw.WriteLine($"{GetPointerName(command)} = VulkanNative.LoadInstanceProcAddr(Instance, \"{command.Name}\", false);");
+                            }
+                        }
+                    }
+                }
+            }
+
+            using (StreamWriter commandWriter = File.CreateText(Path.Combine(path, "DeviceCommands.gen.cs")))
+            {
+                CsCodeWriter cw = new CsCodeWriter(commandWriter);
+                cw.WriteHeader();
+                cw.WriteLine();
+
+                cw.Using("System");
+
+                cw.WriteLine();
+
+                using (cw.PushBlock("namespace Vulkan"))
+                {
+                    using (cw.PushBlock("public unsafe sealed partial class VulkanDeviceCommands"))
+                    {
+                        IEnumerable<CommandDefinition> commands = loaderLinkableCommands.Where(cmd => cmd.IsDeviceLevel());
+                        IEnumerable<CommandDefinition> commandPointers = GenerateCommands(cw, tnm, commands, false);
+
+                        cw.WriteLine();
+
+                        using (cw.PushBlock("private void LoadFunctionPointers()"))
+                        {
+                            foreach (CommandDefinition command in commandPointers)
+                            {
+                                cw.WriteLine($"{GetPointerName(command)} = VulkanNative.LoadDeviceProcAddr(Device, \"{command.Name}\", false);");
+                            }
+                        }
                     }
                 }
             }
@@ -240,6 +280,31 @@ namespace Vulkan.Build.Codegen
                     ConstantHelpers.WriteAllConstants(cw, tnm, spec.Constants);
                 }
             }
+        }
+
+        private static string GetPointerName(CommandDefinition cmd)
+        {
+            return cmd.Name + "_ptr";
+        }
+
+        /// <returns>A list of all the commands which have command pointers.</returns>
+        private static IEnumerable<CommandDefinition> GenerateCommands(CsCodeWriter cw, TypeNameMappings tnm, IEnumerable<CommandDefinition> commands, bool @static)
+        {
+            IEnumerable<CommandDefinition> uniqueCommands = commands.Where(cmd => !cmd.IsVariant);
+
+            foreach (CommandDefinition command in uniqueCommands)
+            {
+                cw.WriteLine($"private{(@static ? " static " : " ")}IntPtr {GetPointerName(command)};");
+            };
+
+            cw.WriteLine();
+
+            CodegenUtil.SpaceSeparatedList(cw, commands.ToList(), command =>
+            {
+                CommandHelpers.WriteCommand(cw, tnm, command, @static);
+            });
+
+            return uniqueCommands;
         }
     }
 

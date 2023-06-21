@@ -6,6 +6,12 @@ namespace Vulkan.Build.Codegen
 {
     public class CommandDefinition
     {
+        private static readonly string[] DeviceLevelCommandParameters = new string[] {
+            "VkDevice",
+            "VkQueue",
+            "VkCommandBuffer"
+        };
+
         public string Name { get; }
         public TypeSpec ReturnType { get; }
         public ParameterDefinition[] Parameters { get; }
@@ -62,6 +68,12 @@ namespace Vulkan.Build.Codegen
         public string GetParametersSignature()
         {
             return string.Join(", ", Parameters.Select(pd => pd.ToString()));
+        }
+
+        public bool IsDeviceLevel()
+        {
+            if (Parameters.Length == 0) return false;
+            return DeviceLevelCommandParameters.Contains(Parameters[0].Type.Name);
         }
 
         public override string ToString()
