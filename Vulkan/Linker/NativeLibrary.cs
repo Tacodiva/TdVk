@@ -16,7 +16,8 @@ namespace Vulkan
             {
                 return _defaultLinker = new NativeLinkerWindows();
             }
-            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX)
+            else if ((RuntimeInformation.IsOSPlatform(OSPlatform.Linux) && RuntimeInformation.OSDescription.Contains("Unix"))
+                || RuntimeInformation.IsOSPlatform(OSPlatform.OSX)
 #if NET5_0
                 || OperatingSystem.IsAndroid()
 #endif
@@ -26,7 +27,7 @@ namespace Vulkan
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
-                return new NativeLinkerLibDL(new NativeLibDLLinux());
+                return new NativeLinkerLibDL(new NativeLibC());
             }
             else
             {
