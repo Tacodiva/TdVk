@@ -2,8 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
-    <!-- <TargetFrameworks>netstandard1.4;netstandard2.1;netcoreapp3.1;net471;net5.0;net6.0;net7.0;</TargetFrameworks> -->
+    <TargetFrameworks>netstandard1.4;netstandard2.1;netcoreapp3.1;net471;net5.0;net6.0;net7.0;</TargetFrameworks>
     <AssemblyName>Vulkan</AssemblyName>
     <AssemblyVersion>2.0.0</AssemblyVersion>
     <RootNamespace>Vulkan</RootNamespace>
