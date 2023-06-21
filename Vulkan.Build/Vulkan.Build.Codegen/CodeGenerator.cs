@@ -130,7 +130,7 @@ namespace Vulkan.Build.Codegen
                         IEnumerable<CommandDefinition> uniqueCommands = commands.Where(cmd => !cmd.IsVariant);
 
                         string extClassName = "Vulkan" + CodegenUtil.GetPrettyName(ext.Name, "VK_");
-                        using (cw.PushBlock($"public unsafe sealed class {extClassName}"))
+                        using (cw.PushBlock($"public unsafe sealed class {extClassName} : " + (ext.IsDeviceExtension() ? "IVulkanDeviceExtGeneric" : "IVulkanInstanceExtGeneric") + $"<{extClassName}>"))
                         {
                             foreach (CommandDefinition command in uniqueCommands)
                             {
@@ -139,8 +139,20 @@ namespace Vulkan.Build.Codegen
 
                             cw.WriteLine();
 
+                            cw.WriteLine($"public static string Name => \"{ext.Name}\";");
+                            cw.WriteLine($"string IVulkanExt.GetName() => Name;");
+
+                            cw.WriteLine();
+
                             if (ext.IsDeviceExtension())
                             {
+                                using (cw.PushBlock($"public static {extClassName} Create(VkDevice device)"))
+                                {
+                                    cw.WriteLine($"return new {extClassName}(device);");
+                                }
+
+                                cw.WriteLine();
+
                                 using (cw.PushBlock($"public {extClassName}(VkDevice device)"))
                                 {
                                     foreach (CommandDefinition command in uniqueCommands)
@@ -151,6 +163,13 @@ namespace Vulkan.Build.Codegen
                             }
                             else
                             {
+                                using (cw.PushBlock($"public static {extClassName} Create(VkInstance instance)"))
+                                {
+                                    cw.WriteLine($"return new {extClassName}(instance);");
+                                }
+
+                                cw.WriteLine();
+
                                 using (cw.PushBlock($"public {extClassName}(VkInstance instance)"))
                                 {
                                     foreach (CommandDefinition command in uniqueCommands)

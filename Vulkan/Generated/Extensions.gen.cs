@@ -4,13 +4,21 @@ using System;
 
 namespace Vulkan
 {
-    public unsafe sealed class VulkanKHRSurface
+    public unsafe sealed class VulkanKHRSurface : IVulkanInstanceExtGeneric<VulkanKHRSurface>
     {
         private IntPtr vkDestroySurfaceKHR_ptr;
         private IntPtr vkGetPhysicalDeviceSurfaceCapabilitiesKHR_ptr;
         private IntPtr vkGetPhysicalDeviceSurfaceFormatsKHR_ptr;
         private IntPtr vkGetPhysicalDeviceSurfacePresentModesKHR_ptr;
         private IntPtr vkGetPhysicalDeviceSurfaceSupportKHR_ptr;
+
+        public static string Name => "VK_KHR_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRSurface Create(VkInstance instance)
+        {
+            return new VulkanKHRSurface(instance);
+        }
 
         public VulkanKHRSurface(VkInstance instance)
         {
@@ -152,13 +160,21 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRSwapchain
+    public unsafe sealed class VulkanKHRSwapchain : IVulkanDeviceExtGeneric<VulkanKHRSwapchain>
     {
         private IntPtr vkAcquireNextImageKHR_ptr;
         private IntPtr vkCreateSwapchainKHR_ptr;
         private IntPtr vkDestroySwapchainKHR_ptr;
         private IntPtr vkGetSwapchainImagesKHR_ptr;
         private IntPtr vkQueuePresentKHR_ptr;
+
+        public static string Name => "VK_KHR_swapchain";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRSwapchain Create(VkDevice device)
+        {
+            return new VulkanKHRSwapchain(device);
+        }
 
         public VulkanKHRSwapchain(VkDevice device)
         {
@@ -398,7 +414,7 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRDisplay
+    public unsafe sealed class VulkanKHRDisplay : IVulkanInstanceExtGeneric<VulkanKHRDisplay>
     {
         private IntPtr vkCreateDisplayModeKHR_ptr;
         private IntPtr vkCreateDisplayPlaneSurfaceKHR_ptr;
@@ -407,6 +423,14 @@ namespace Vulkan
         private IntPtr vkGetDisplayPlaneSupportedDisplaysKHR_ptr;
         private IntPtr vkGetPhysicalDeviceDisplayPlanePropertiesKHR_ptr;
         private IntPtr vkGetPhysicalDeviceDisplayPropertiesKHR_ptr;
+
+        public static string Name => "VK_KHR_display";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRDisplay Create(VkInstance instance)
+        {
+            return new VulkanKHRDisplay(instance);
+        }
 
         public VulkanKHRDisplay(VkInstance instance)
         {
@@ -854,9 +878,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRDisplaySwapchain
+    public unsafe sealed class VulkanKHRDisplaySwapchain : IVulkanDeviceExtGeneric<VulkanKHRDisplaySwapchain>
     {
         private IntPtr vkCreateSharedSwapchainsKHR_ptr;
+
+        public static string Name => "VK_KHR_display_swapchain";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRDisplaySwapchain Create(VkDevice device)
+        {
+            return new VulkanKHRDisplaySwapchain(device);
+        }
 
         public VulkanKHRDisplaySwapchain(VkDevice device)
         {
@@ -1032,10 +1064,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRXlibSurface
+    public unsafe sealed class VulkanKHRXlibSurface : IVulkanInstanceExtGeneric<VulkanKHRXlibSurface>
     {
         private IntPtr vkCreateXlibSurfaceKHR_ptr;
         private IntPtr vkGetPhysicalDeviceXlibPresentationSupportKHR_ptr;
+
+        public static string Name => "VK_KHR_xlib_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRXlibSurface Create(VkInstance instance)
+        {
+            return new VulkanKHRXlibSurface(instance);
+        }
 
         public VulkanKHRXlibSurface(VkInstance instance)
         {
@@ -1188,10 +1228,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRXcbSurface
+    public unsafe sealed class VulkanKHRXcbSurface : IVulkanInstanceExtGeneric<VulkanKHRXcbSurface>
     {
         private IntPtr vkCreateXcbSurfaceKHR_ptr;
         private IntPtr vkGetPhysicalDeviceXcbPresentationSupportKHR_ptr;
+
+        public static string Name => "VK_KHR_xcb_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRXcbSurface Create(VkInstance instance)
+        {
+            return new VulkanKHRXcbSurface(instance);
+        }
 
         public VulkanKHRXcbSurface(VkInstance instance)
         {
@@ -1344,10 +1392,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRWaylandSurface
+    public unsafe sealed class VulkanKHRWaylandSurface : IVulkanInstanceExtGeneric<VulkanKHRWaylandSurface>
     {
         private IntPtr vkCreateWaylandSurfaceKHR_ptr;
         private IntPtr vkGetPhysicalDeviceWaylandPresentationSupportKHR_ptr;
+
+        public static string Name => "VK_KHR_wayland_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRWaylandSurface Create(VkInstance instance)
+        {
+            return new VulkanKHRWaylandSurface(instance);
+        }
 
         public VulkanKHRWaylandSurface(VkInstance instance)
         {
@@ -1494,9 +1550,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRAndroidSurface
+    public unsafe sealed class VulkanKHRAndroidSurface : IVulkanInstanceExtGeneric<VulkanKHRAndroidSurface>
     {
         private IntPtr vkCreateAndroidSurfaceKHR_ptr;
+
+        public static string Name => "VK_KHR_android_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRAndroidSurface Create(VkInstance instance)
+        {
+            return new VulkanKHRAndroidSurface(instance);
+        }
 
         public VulkanKHRAndroidSurface(VkInstance instance)
         {
@@ -1630,10 +1694,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRWin32Surface
+    public unsafe sealed class VulkanKHRWin32Surface : IVulkanInstanceExtGeneric<VulkanKHRWin32Surface>
     {
         private IntPtr vkCreateWin32SurfaceKHR_ptr;
         private IntPtr vkGetPhysicalDeviceWin32PresentationSupportKHR_ptr;
+
+        public static string Name => "VK_KHR_win32_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRWin32Surface Create(VkInstance instance)
+        {
+            return new VulkanKHRWin32Surface(instance);
+        }
 
         public VulkanKHRWin32Surface(VkInstance instance)
         {
@@ -1774,12 +1846,20 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanAndroidNativeBuffer
+    public unsafe sealed class VulkanAndroidNativeBuffer : IVulkanDeviceExtGeneric<VulkanAndroidNativeBuffer>
     {
         private IntPtr vkAcquireImageANDROID_ptr;
         private IntPtr vkGetSwapchainGrallocUsage2ANDROID_ptr;
         private IntPtr vkGetSwapchainGrallocUsageANDROID_ptr;
         private IntPtr vkQueueSignalReleaseImageANDROID_ptr;
+
+        public static string Name => "VK_ANDROID_native_buffer";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanAndroidNativeBuffer Create(VkDevice device)
+        {
+            return new VulkanAndroidNativeBuffer(device);
+        }
 
         public VulkanAndroidNativeBuffer(VkDevice device)
         {
@@ -1898,11 +1978,19 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTDebugReport
+    public unsafe sealed class VulkanEXTDebugReport : IVulkanInstanceExtGeneric<VulkanEXTDebugReport>
     {
         private IntPtr vkCreateDebugReportCallbackEXT_ptr;
         private IntPtr vkDebugReportMessageEXT_ptr;
         private IntPtr vkDestroyDebugReportCallbackEXT_ptr;
+
+        public static string Name => "VK_EXT_debug_report";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTDebugReport Create(VkInstance instance)
+        {
+            return new VulkanEXTDebugReport(instance);
+        }
 
         public VulkanEXTDebugReport(VkInstance instance)
         {
@@ -2080,13 +2168,21 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTDebugMarker
+    public unsafe sealed class VulkanEXTDebugMarker : IVulkanDeviceExtGeneric<VulkanEXTDebugMarker>
     {
         private IntPtr vkCmdDebugMarkerBeginEXT_ptr;
         private IntPtr vkCmdDebugMarkerEndEXT_ptr;
         private IntPtr vkCmdDebugMarkerInsertEXT_ptr;
         private IntPtr vkDebugMarkerSetObjectNameEXT_ptr;
         private IntPtr vkDebugMarkerSetObjectTagEXT_ptr;
+
+        public static string Name => "VK_EXT_debug_marker";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTDebugMarker Create(VkDevice device)
+        {
+            return new VulkanEXTDebugMarker(device);
+        }
 
         public VulkanEXTDebugMarker(VkDevice device)
         {
@@ -2182,7 +2278,7 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRVideoQueue
+    public unsafe sealed class VulkanKHRVideoQueue : IVulkanDeviceExtGeneric<VulkanKHRVideoQueue>
     {
         private IntPtr vkBindVideoSessionMemoryKHR_ptr;
         private IntPtr vkCmdBeginVideoCodingKHR_ptr;
@@ -2196,6 +2292,14 @@ namespace Vulkan
         private IntPtr vkGetPhysicalDeviceVideoFormatPropertiesKHR_ptr;
         private IntPtr vkGetVideoSessionMemoryRequirementsKHR_ptr;
         private IntPtr vkUpdateVideoSessionParametersKHR_ptr;
+
+        public static string Name => "VK_KHR_video_queue";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRVideoQueue Create(VkDevice device)
+        {
+            return new VulkanKHRVideoQueue(device);
+        }
 
         public VulkanKHRVideoQueue(VkDevice device)
         {
@@ -2815,9 +2919,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRVideoDecodeQueue
+    public unsafe sealed class VulkanKHRVideoDecodeQueue : IVulkanDeviceExtGeneric<VulkanKHRVideoDecodeQueue>
     {
         private IntPtr vkCmdDecodeVideoKHR_ptr;
+
+        public static string Name => "VK_KHR_video_decode_queue";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRVideoDecodeQueue Create(VkDevice device)
+        {
+            return new VulkanKHRVideoDecodeQueue(device);
+        }
 
         public VulkanKHRVideoDecodeQueue(VkDevice device)
         {
@@ -2843,7 +2955,7 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTTransformFeedback
+    public unsafe sealed class VulkanEXTTransformFeedback : IVulkanDeviceExtGeneric<VulkanEXTTransformFeedback>
     {
         private IntPtr vkCmdBeginQueryIndexedEXT_ptr;
         private IntPtr vkCmdBeginTransformFeedbackEXT_ptr;
@@ -2851,6 +2963,14 @@ namespace Vulkan
         private IntPtr vkCmdDrawIndirectByteCountEXT_ptr;
         private IntPtr vkCmdEndQueryIndexedEXT_ptr;
         private IntPtr vkCmdEndTransformFeedbackEXT_ptr;
+
+        public static string Name => "VK_EXT_transform_feedback";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTTransformFeedback Create(VkDevice device)
+        {
+            return new VulkanEXTTransformFeedback(device);
+        }
 
         public VulkanEXTTransformFeedback(VkDevice device)
         {
@@ -3151,13 +3271,21 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVXBinaryImport
+    public unsafe sealed class VulkanNVXBinaryImport : IVulkanDeviceExtGeneric<VulkanNVXBinaryImport>
     {
         private IntPtr vkCmdCuLaunchKernelNVX_ptr;
         private IntPtr vkCreateCuFunctionNVX_ptr;
         private IntPtr vkCreateCuModuleNVX_ptr;
         private IntPtr vkDestroyCuFunctionNVX_ptr;
         private IntPtr vkDestroyCuModuleNVX_ptr;
+
+        public static string Name => "VK_NVX_binary_import";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVXBinaryImport Create(VkDevice device)
+        {
+            return new VulkanNVXBinaryImport(device);
+        }
 
         public VulkanNVXBinaryImport(VkDevice device)
         {
@@ -3475,10 +3603,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVXImageViewHandle
+    public unsafe sealed class VulkanNVXImageViewHandle : IVulkanDeviceExtGeneric<VulkanNVXImageViewHandle>
     {
         private IntPtr vkGetImageViewAddressNVX_ptr;
         private IntPtr vkGetImageViewHandleNVX_ptr;
+
+        public static string Name => "VK_NVX_image_view_handle";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVXImageViewHandle Create(VkDevice device)
+        {
+            return new VulkanNVXImageViewHandle(device);
+        }
 
         public VulkanNVXImageViewHandle(VkDevice device)
         {
@@ -3513,8 +3649,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanAMDDrawIndirectCount
+    public unsafe sealed class VulkanAMDDrawIndirectCount : IVulkanDeviceExtGeneric<VulkanAMDDrawIndirectCount>
     {
+
+        public static string Name => "VK_AMD_draw_indirect_count";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanAMDDrawIndirectCount Create(VkDevice device)
+        {
+            return new VulkanAMDDrawIndirectCount(device);
+        }
 
         public VulkanAMDDrawIndirectCount(VkDevice device)
         {
@@ -3522,9 +3666,17 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanAMDShaderInfo
+    public unsafe sealed class VulkanAMDShaderInfo : IVulkanDeviceExtGeneric<VulkanAMDShaderInfo>
     {
         private IntPtr vkGetShaderInfoAMD_ptr;
+
+        public static string Name => "VK_AMD_shader_info";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanAMDShaderInfo Create(VkDevice device)
+        {
+            return new VulkanAMDShaderInfo(device);
+        }
 
         public VulkanAMDShaderInfo(VkDevice device)
         {
@@ -3553,8 +3705,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRDynamicRendering
+    public unsafe sealed class VulkanKHRDynamicRendering : IVulkanDeviceExtGeneric<VulkanKHRDynamicRendering>
     {
+
+        public static string Name => "VK_KHR_dynamic_rendering";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRDynamicRendering Create(VkDevice device)
+        {
+            return new VulkanKHRDynamicRendering(device);
+        }
 
         public VulkanKHRDynamicRendering(VkDevice device)
         {
@@ -3562,9 +3722,17 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanGgpStreamDescriptorSurface
+    public unsafe sealed class VulkanGgpStreamDescriptorSurface : IVulkanInstanceExtGeneric<VulkanGgpStreamDescriptorSurface>
     {
         private IntPtr vkCreateStreamDescriptorSurfaceGGP_ptr;
+
+        public static string Name => "VK_GGP_stream_descriptor_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanGgpStreamDescriptorSurface Create(VkInstance instance)
+        {
+            return new VulkanGgpStreamDescriptorSurface(instance);
+        }
 
         public VulkanGgpStreamDescriptorSurface(VkInstance instance)
         {
@@ -3698,9 +3866,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVExternalMemoryCapabilities
+    public unsafe sealed class VulkanNVExternalMemoryCapabilities : IVulkanInstanceExtGeneric<VulkanNVExternalMemoryCapabilities>
     {
         private IntPtr vkGetPhysicalDeviceExternalImageFormatPropertiesNV_ptr;
+
+        public static string Name => "VK_NV_external_memory_capabilities";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVExternalMemoryCapabilities Create(VkInstance instance)
+        {
+            return new VulkanNVExternalMemoryCapabilities(instance);
+        }
 
         public VulkanNVExternalMemoryCapabilities(VkInstance instance)
         {
@@ -3722,9 +3898,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVExternalMemoryWin32
+    public unsafe sealed class VulkanNVExternalMemoryWin32 : IVulkanDeviceExtGeneric<VulkanNVExternalMemoryWin32>
     {
         private IntPtr vkGetMemoryWin32HandleNV_ptr;
+
+        public static string Name => "VK_NV_external_memory_win32";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVExternalMemoryWin32 Create(VkDevice device)
+        {
+            return new VulkanNVExternalMemoryWin32(device);
+        }
 
         public VulkanNVExternalMemoryWin32(VkDevice device)
         {
@@ -3746,8 +3930,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRGetPhysicalDeviceProperties2
+    public unsafe sealed class VulkanKHRGetPhysicalDeviceProperties2 : IVulkanInstanceExtGeneric<VulkanKHRGetPhysicalDeviceProperties2>
     {
+
+        public static string Name => "VK_KHR_get_physical_device_properties2";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRGetPhysicalDeviceProperties2 Create(VkInstance instance)
+        {
+            return new VulkanKHRGetPhysicalDeviceProperties2(instance);
+        }
 
         public VulkanKHRGetPhysicalDeviceProperties2(VkInstance instance)
         {
@@ -3755,12 +3947,20 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanKHRDeviceGroup
+    public unsafe sealed class VulkanKHRDeviceGroup : IVulkanDeviceExtGeneric<VulkanKHRDeviceGroup>
     {
         private IntPtr vkAcquireNextImage2KHR_ptr;
         private IntPtr vkGetDeviceGroupPresentCapabilitiesKHR_ptr;
         private IntPtr vkGetDeviceGroupSurfacePresentModesKHR_ptr;
         private IntPtr vkGetPhysicalDevicePresentRectanglesKHR_ptr;
+
+        public static string Name => "VK_KHR_device_group";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRDeviceGroup Create(VkDevice device)
+        {
+            return new VulkanKHRDeviceGroup(device);
+        }
 
         public VulkanKHRDeviceGroup(VkDevice device)
         {
@@ -3904,9 +4104,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNnViSurface
+    public unsafe sealed class VulkanNnViSurface : IVulkanInstanceExtGeneric<VulkanNnViSurface>
     {
         private IntPtr vkCreateViSurfaceNN_ptr;
+
+        public static string Name => "VK_NN_vi_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNnViSurface Create(VkInstance instance)
+        {
+            return new VulkanNnViSurface(instance);
+        }
 
         public VulkanNnViSurface(VkInstance instance)
         {
@@ -4040,8 +4248,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRMaintenance1
+    public unsafe sealed class VulkanKHRMaintenance1 : IVulkanDeviceExtGeneric<VulkanKHRMaintenance1>
     {
+
+        public static string Name => "VK_KHR_maintenance1";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRMaintenance1 Create(VkDevice device)
+        {
+            return new VulkanKHRMaintenance1(device);
+        }
 
         public VulkanKHRMaintenance1(VkDevice device)
         {
@@ -4049,8 +4265,16 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanKHRDeviceGroupCreation
+    public unsafe sealed class VulkanKHRDeviceGroupCreation : IVulkanInstanceExtGeneric<VulkanKHRDeviceGroupCreation>
     {
+
+        public static string Name => "VK_KHR_device_group_creation";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRDeviceGroupCreation Create(VkInstance instance)
+        {
+            return new VulkanKHRDeviceGroupCreation(instance);
+        }
 
         public VulkanKHRDeviceGroupCreation(VkInstance instance)
         {
@@ -4058,8 +4282,16 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanKHRExternalMemoryCapabilities
+    public unsafe sealed class VulkanKHRExternalMemoryCapabilities : IVulkanInstanceExtGeneric<VulkanKHRExternalMemoryCapabilities>
     {
+
+        public static string Name => "VK_KHR_external_memory_capabilities";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRExternalMemoryCapabilities Create(VkInstance instance)
+        {
+            return new VulkanKHRExternalMemoryCapabilities(instance);
+        }
 
         public VulkanKHRExternalMemoryCapabilities(VkInstance instance)
         {
@@ -4067,10 +4299,18 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanKHRExternalMemoryWin32
+    public unsafe sealed class VulkanKHRExternalMemoryWin32 : IVulkanDeviceExtGeneric<VulkanKHRExternalMemoryWin32>
     {
         private IntPtr vkGetMemoryWin32HandleKHR_ptr;
         private IntPtr vkGetMemoryWin32HandlePropertiesKHR_ptr;
+
+        public static string Name => "VK_KHR_external_memory_win32";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRExternalMemoryWin32 Create(VkDevice device)
+        {
+            return new VulkanKHRExternalMemoryWin32(device);
+        }
 
         public VulkanKHRExternalMemoryWin32(VkDevice device)
         {
@@ -4135,10 +4375,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRExternalMemoryFd
+    public unsafe sealed class VulkanKHRExternalMemoryFd : IVulkanDeviceExtGeneric<VulkanKHRExternalMemoryFd>
     {
         private IntPtr vkGetMemoryFdKHR_ptr;
         private IntPtr vkGetMemoryFdPropertiesKHR_ptr;
+
+        public static string Name => "VK_KHR_external_memory_fd";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRExternalMemoryFd Create(VkDevice device)
+        {
+            return new VulkanKHRExternalMemoryFd(device);
+        }
 
         public VulkanKHRExternalMemoryFd(VkDevice device)
         {
@@ -4203,8 +4451,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRExternalSemaphoreCapabilities
+    public unsafe sealed class VulkanKHRExternalSemaphoreCapabilities : IVulkanInstanceExtGeneric<VulkanKHRExternalSemaphoreCapabilities>
     {
+
+        public static string Name => "VK_KHR_external_semaphore_capabilities";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRExternalSemaphoreCapabilities Create(VkInstance instance)
+        {
+            return new VulkanKHRExternalSemaphoreCapabilities(instance);
+        }
 
         public VulkanKHRExternalSemaphoreCapabilities(VkInstance instance)
         {
@@ -4212,10 +4468,18 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanKHRExternalSemaphoreWin32
+    public unsafe sealed class VulkanKHRExternalSemaphoreWin32 : IVulkanDeviceExtGeneric<VulkanKHRExternalSemaphoreWin32>
     {
         private IntPtr vkGetSemaphoreWin32HandleKHR_ptr;
         private IntPtr vkImportSemaphoreWin32HandleKHR_ptr;
+
+        public static string Name => "VK_KHR_external_semaphore_win32";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRExternalSemaphoreWin32 Create(VkDevice device)
+        {
+            return new VulkanKHRExternalSemaphoreWin32(device);
+        }
 
         public VulkanKHRExternalSemaphoreWin32(VkDevice device)
         {
@@ -4287,10 +4551,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRExternalSemaphoreFd
+    public unsafe sealed class VulkanKHRExternalSemaphoreFd : IVulkanDeviceExtGeneric<VulkanKHRExternalSemaphoreFd>
     {
         private IntPtr vkGetSemaphoreFdKHR_ptr;
         private IntPtr vkImportSemaphoreFdKHR_ptr;
+
+        public static string Name => "VK_KHR_external_semaphore_fd";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRExternalSemaphoreFd Create(VkDevice device)
+        {
+            return new VulkanKHRExternalSemaphoreFd(device);
+        }
 
         public VulkanKHRExternalSemaphoreFd(VkDevice device)
         {
@@ -4362,9 +4634,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRPushDescriptor
+    public unsafe sealed class VulkanKHRPushDescriptor : IVulkanDeviceExtGeneric<VulkanKHRPushDescriptor>
     {
         private IntPtr vkCmdPushDescriptorSetKHR_ptr;
+
+        public static string Name => "VK_KHR_push_descriptor";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRPushDescriptor Create(VkDevice device)
+        {
+            return new VulkanKHRPushDescriptor(device);
+        }
 
         public VulkanKHRPushDescriptor(VkDevice device)
         {
@@ -4390,10 +4670,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTConditionalRendering
+    public unsafe sealed class VulkanEXTConditionalRendering : IVulkanDeviceExtGeneric<VulkanEXTConditionalRendering>
     {
         private IntPtr vkCmdBeginConditionalRenderingEXT_ptr;
         private IntPtr vkCmdEndConditionalRenderingEXT_ptr;
+
+        public static string Name => "VK_EXT_conditional_rendering";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTConditionalRendering Create(VkDevice device)
+        {
+            return new VulkanEXTConditionalRendering(device);
+        }
 
         public VulkanEXTConditionalRendering(VkDevice device)
         {
@@ -4426,9 +4714,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRDescriptorUpdateTemplate
+    public unsafe sealed class VulkanKHRDescriptorUpdateTemplate : IVulkanDeviceExtGeneric<VulkanKHRDescriptorUpdateTemplate>
     {
         private IntPtr vkCmdPushDescriptorSetWithTemplateKHR_ptr;
+
+        public static string Name => "VK_KHR_descriptor_update_template";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRDescriptorUpdateTemplate Create(VkDevice device)
+        {
+            return new VulkanKHRDescriptorUpdateTemplate(device);
+        }
 
         public VulkanKHRDescriptorUpdateTemplate(VkDevice device)
         {
@@ -4442,9 +4738,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVClipSpaceWScaling
+    public unsafe sealed class VulkanNVClipSpaceWScaling : IVulkanDeviceExtGeneric<VulkanNVClipSpaceWScaling>
     {
         private IntPtr vkCmdSetViewportWScalingNV_ptr;
+
+        public static string Name => "VK_NV_clip_space_w_scaling";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVClipSpaceWScaling Create(VkDevice device)
+        {
+            return new VulkanNVClipSpaceWScaling(device);
+        }
 
         public VulkanNVClipSpaceWScaling(VkDevice device)
         {
@@ -4470,9 +4774,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTDirectModeDisplay
+    public unsafe sealed class VulkanEXTDirectModeDisplay : IVulkanInstanceExtGeneric<VulkanEXTDirectModeDisplay>
     {
         private IntPtr vkReleaseDisplayEXT_ptr;
+
+        public static string Name => "VK_EXT_direct_mode_display";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTDirectModeDisplay Create(VkInstance instance)
+        {
+            return new VulkanEXTDirectModeDisplay(instance);
+        }
 
         public VulkanEXTDirectModeDisplay(VkInstance instance)
         {
@@ -4487,10 +4799,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTAcquireXlibDisplay
+    public unsafe sealed class VulkanEXTAcquireXlibDisplay : IVulkanInstanceExtGeneric<VulkanEXTAcquireXlibDisplay>
     {
         private IntPtr vkAcquireXlibDisplayEXT_ptr;
         private IntPtr vkGetRandROutputDisplayEXT_ptr;
+
+        public static string Name => "VK_EXT_acquire_xlib_display";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTAcquireXlibDisplay Create(VkInstance instance)
+        {
+            return new VulkanEXTAcquireXlibDisplay(instance);
+        }
 
         public VulkanEXTAcquireXlibDisplay(VkInstance instance)
         {
@@ -4562,9 +4882,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTDisplaySurfaceCounter
+    public unsafe sealed class VulkanEXTDisplaySurfaceCounter : IVulkanInstanceExtGeneric<VulkanEXTDisplaySurfaceCounter>
     {
         private IntPtr vkGetPhysicalDeviceSurfaceCapabilities2EXT_ptr;
+
+        public static string Name => "VK_EXT_display_surface_counter";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTDisplaySurfaceCounter Create(VkInstance instance)
+        {
+            return new VulkanEXTDisplaySurfaceCounter(instance);
+        }
 
         public VulkanEXTDisplaySurfaceCounter(VkInstance instance)
         {
@@ -4586,12 +4914,20 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTDisplayControl
+    public unsafe sealed class VulkanEXTDisplayControl : IVulkanDeviceExtGeneric<VulkanEXTDisplayControl>
     {
         private IntPtr vkDisplayPowerControlEXT_ptr;
         private IntPtr vkGetSwapchainCounterEXT_ptr;
         private IntPtr vkRegisterDeviceEventEXT_ptr;
         private IntPtr vkRegisterDisplayEventEXT_ptr;
+
+        public static string Name => "VK_EXT_display_control";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTDisplayControl Create(VkDevice device)
+        {
+            return new VulkanEXTDisplayControl(device);
+        }
 
         public VulkanEXTDisplayControl(VkDevice device)
         {
@@ -5015,10 +5351,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanGoogleDisplayTiming
+    public unsafe sealed class VulkanGoogleDisplayTiming : IVulkanDeviceExtGeneric<VulkanGoogleDisplayTiming>
     {
         private IntPtr vkGetPastPresentationTimingGOOGLE_ptr;
         private IntPtr vkGetRefreshCycleDurationGOOGLE_ptr;
+
+        public static string Name => "VK_GOOGLE_display_timing";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanGoogleDisplayTiming Create(VkDevice device)
+        {
+            return new VulkanGoogleDisplayTiming(device);
+        }
 
         public VulkanGoogleDisplayTiming(VkDevice device)
         {
@@ -5083,9 +5427,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTDiscardRectangles
+    public unsafe sealed class VulkanEXTDiscardRectangles : IVulkanDeviceExtGeneric<VulkanEXTDiscardRectangles>
     {
         private IntPtr vkCmdSetDiscardRectangleEXT_ptr;
+
+        public static string Name => "VK_EXT_discard_rectangles";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTDiscardRectangles Create(VkDevice device)
+        {
+            return new VulkanEXTDiscardRectangles(device);
+        }
 
         public VulkanEXTDiscardRectangles(VkDevice device)
         {
@@ -5111,9 +5463,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTHdrMetadata
+    public unsafe sealed class VulkanEXTHdrMetadata : IVulkanDeviceExtGeneric<VulkanEXTHdrMetadata>
     {
         private IntPtr vkSetHdrMetadataEXT_ptr;
+
+        public static string Name => "VK_EXT_hdr_metadata";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTHdrMetadata Create(VkDevice device)
+        {
+            return new VulkanEXTHdrMetadata(device);
+        }
 
         public VulkanEXTHdrMetadata(VkDevice device)
         {
@@ -5175,8 +5535,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRCreateRenderpass2
+    public unsafe sealed class VulkanKHRCreateRenderpass2 : IVulkanDeviceExtGeneric<VulkanKHRCreateRenderpass2>
     {
+
+        public static string Name => "VK_KHR_create_renderpass2";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRCreateRenderpass2 Create(VkDevice device)
+        {
+            return new VulkanKHRCreateRenderpass2(device);
+        }
 
         public VulkanKHRCreateRenderpass2(VkDevice device)
         {
@@ -5184,9 +5552,17 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanKHRSharedPresentableImage
+    public unsafe sealed class VulkanKHRSharedPresentableImage : IVulkanDeviceExtGeneric<VulkanKHRSharedPresentableImage>
     {
         private IntPtr vkGetSwapchainStatusKHR_ptr;
+
+        public static string Name => "VK_KHR_shared_presentable_image";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRSharedPresentableImage Create(VkDevice device)
+        {
+            return new VulkanKHRSharedPresentableImage(device);
+        }
 
         public VulkanKHRSharedPresentableImage(VkDevice device)
         {
@@ -5201,8 +5577,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRExternalFenceCapabilities
+    public unsafe sealed class VulkanKHRExternalFenceCapabilities : IVulkanInstanceExtGeneric<VulkanKHRExternalFenceCapabilities>
     {
+
+        public static string Name => "VK_KHR_external_fence_capabilities";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRExternalFenceCapabilities Create(VkInstance instance)
+        {
+            return new VulkanKHRExternalFenceCapabilities(instance);
+        }
 
         public VulkanKHRExternalFenceCapabilities(VkInstance instance)
         {
@@ -5210,10 +5594,18 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanKHRExternalFenceWin32
+    public unsafe sealed class VulkanKHRExternalFenceWin32 : IVulkanDeviceExtGeneric<VulkanKHRExternalFenceWin32>
     {
         private IntPtr vkGetFenceWin32HandleKHR_ptr;
         private IntPtr vkImportFenceWin32HandleKHR_ptr;
+
+        public static string Name => "VK_KHR_external_fence_win32";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRExternalFenceWin32 Create(VkDevice device)
+        {
+            return new VulkanKHRExternalFenceWin32(device);
+        }
 
         public VulkanKHRExternalFenceWin32(VkDevice device)
         {
@@ -5285,10 +5677,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRExternalFenceFd
+    public unsafe sealed class VulkanKHRExternalFenceFd : IVulkanDeviceExtGeneric<VulkanKHRExternalFenceFd>
     {
         private IntPtr vkGetFenceFdKHR_ptr;
         private IntPtr vkImportFenceFdKHR_ptr;
+
+        public static string Name => "VK_KHR_external_fence_fd";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRExternalFenceFd Create(VkDevice device)
+        {
+            return new VulkanKHRExternalFenceFd(device);
+        }
 
         public VulkanKHRExternalFenceFd(VkDevice device)
         {
@@ -5360,12 +5760,20 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRPerformanceQuery
+    public unsafe sealed class VulkanKHRPerformanceQuery : IVulkanDeviceExtGeneric<VulkanKHRPerformanceQuery>
     {
         private IntPtr vkAcquireProfilingLockKHR_ptr;
         private IntPtr vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR_ptr;
         private IntPtr vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR_ptr;
         private IntPtr vkReleaseProfilingLockKHR_ptr;
+
+        public static string Name => "VK_KHR_performance_query";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRPerformanceQuery Create(VkDevice device)
+        {
+            return new VulkanKHRPerformanceQuery(device);
+        }
 
         public VulkanKHRPerformanceQuery(VkDevice device)
         {
@@ -5628,10 +6036,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRGetSurfaceCapabilities2
+    public unsafe sealed class VulkanKHRGetSurfaceCapabilities2 : IVulkanInstanceExtGeneric<VulkanKHRGetSurfaceCapabilities2>
     {
         private IntPtr vkGetPhysicalDeviceSurfaceCapabilities2KHR_ptr;
         private IntPtr vkGetPhysicalDeviceSurfaceFormats2KHR_ptr;
+
+        public static string Name => "VK_KHR_get_surface_capabilities2";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRGetSurfaceCapabilities2 Create(VkInstance instance)
+        {
+            return new VulkanKHRGetSurfaceCapabilities2(instance);
+        }
 
         public VulkanKHRGetSurfaceCapabilities2(VkInstance instance)
         {
@@ -5808,12 +6224,20 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRGetDisplayProperties2
+    public unsafe sealed class VulkanKHRGetDisplayProperties2 : IVulkanInstanceExtGeneric<VulkanKHRGetDisplayProperties2>
     {
         private IntPtr vkGetDisplayModeProperties2KHR_ptr;
         private IntPtr vkGetDisplayPlaneCapabilities2KHR_ptr;
         private IntPtr vkGetPhysicalDeviceDisplayPlaneProperties2KHR_ptr;
         private IntPtr vkGetPhysicalDeviceDisplayProperties2KHR_ptr;
+
+        public static string Name => "VK_KHR_get_display_properties2";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRGetDisplayProperties2 Create(VkInstance instance)
+        {
+            return new VulkanKHRGetDisplayProperties2(instance);
+        }
 
         public VulkanKHRGetDisplayProperties2(VkInstance instance)
         {
@@ -5992,9 +6416,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanMvkIosSurface
+    public unsafe sealed class VulkanMvkIosSurface : IVulkanInstanceExtGeneric<VulkanMvkIosSurface>
     {
         private IntPtr vkCreateIOSSurfaceMVK_ptr;
+
+        public static string Name => "VK_MVK_ios_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanMvkIosSurface Create(VkInstance instance)
+        {
+            return new VulkanMvkIosSurface(instance);
+        }
 
         public VulkanMvkIosSurface(VkInstance instance)
         {
@@ -6128,9 +6560,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanMvkMacosSurface
+    public unsafe sealed class VulkanMvkMacosSurface : IVulkanInstanceExtGeneric<VulkanMvkMacosSurface>
     {
         private IntPtr vkCreateMacOSSurfaceMVK_ptr;
+
+        public static string Name => "VK_MVK_macos_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanMvkMacosSurface Create(VkInstance instance)
+        {
+            return new VulkanMvkMacosSurface(instance);
+        }
 
         public VulkanMvkMacosSurface(VkInstance instance)
         {
@@ -6264,7 +6704,7 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTDebugUtils
+    public unsafe sealed class VulkanEXTDebugUtils : IVulkanInstanceExtGeneric<VulkanEXTDebugUtils>
     {
         private IntPtr vkCmdBeginDebugUtilsLabelEXT_ptr;
         private IntPtr vkCmdEndDebugUtilsLabelEXT_ptr;
@@ -6277,6 +6717,14 @@ namespace Vulkan
         private IntPtr vkSetDebugUtilsObjectNameEXT_ptr;
         private IntPtr vkSetDebugUtilsObjectTagEXT_ptr;
         private IntPtr vkSubmitDebugUtilsMessageEXT_ptr;
+
+        public static string Name => "VK_EXT_debug_utils";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTDebugUtils Create(VkInstance instance)
+        {
+            return new VulkanEXTDebugUtils(instance);
+        }
 
         public VulkanEXTDebugUtils(VkInstance instance)
         {
@@ -6582,10 +7030,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanAndroidExternalMemoryAndroidHardwareBuffer
+    public unsafe sealed class VulkanAndroidExternalMemoryAndroidHardwareBuffer : IVulkanDeviceExtGeneric<VulkanAndroidExternalMemoryAndroidHardwareBuffer>
     {
         private IntPtr vkGetAndroidHardwareBufferPropertiesANDROID_ptr;
         private IntPtr vkGetMemoryAndroidHardwareBufferANDROID_ptr;
+
+        public static string Name => "VK_ANDROID_external_memory_android_hardware_buffer";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanAndroidExternalMemoryAndroidHardwareBuffer Create(VkDevice device)
+        {
+            return new VulkanAndroidExternalMemoryAndroidHardwareBuffer(device);
+        }
 
         public VulkanAndroidExternalMemoryAndroidHardwareBuffer(VkDevice device)
         {
@@ -6678,10 +7134,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTSampleLocations
+    public unsafe sealed class VulkanEXTSampleLocations : IVulkanDeviceExtGeneric<VulkanEXTSampleLocations>
     {
         private IntPtr vkCmdSetSampleLocationsEXT_ptr;
         private IntPtr vkGetPhysicalDeviceMultisamplePropertiesEXT_ptr;
+
+        public static string Name => "VK_EXT_sample_locations";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTSampleLocations Create(VkDevice device)
+        {
+            return new VulkanEXTSampleLocations(device);
+        }
 
         public VulkanEXTSampleLocations(VkDevice device)
         {
@@ -6720,8 +7184,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRGetMemoryRequirements2
+    public unsafe sealed class VulkanKHRGetMemoryRequirements2 : IVulkanDeviceExtGeneric<VulkanKHRGetMemoryRequirements2>
     {
+
+        public static string Name => "VK_KHR_get_memory_requirements2";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRGetMemoryRequirements2 Create(VkDevice device)
+        {
+            return new VulkanKHRGetMemoryRequirements2(device);
+        }
 
         public VulkanKHRGetMemoryRequirements2(VkDevice device)
         {
@@ -6729,7 +7201,7 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanKHRAccelerationStructure
+    public unsafe sealed class VulkanKHRAccelerationStructure : IVulkanDeviceExtGeneric<VulkanKHRAccelerationStructure>
     {
         private IntPtr vkBuildAccelerationStructuresKHR_ptr;
         private IntPtr vkCmdBuildAccelerationStructuresIndirectKHR_ptr;
@@ -6747,6 +7219,14 @@ namespace Vulkan
         private IntPtr vkGetAccelerationStructureDeviceAddressKHR_ptr;
         private IntPtr vkGetDeviceAccelerationStructureCompatibilityKHR_ptr;
         private IntPtr vkWriteAccelerationStructuresPropertiesKHR_ptr;
+
+        public static string Name => "VK_KHR_acceleration_structure";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRAccelerationStructure Create(VkDevice device)
+        {
+            return new VulkanKHRAccelerationStructure(device);
+        }
 
         public VulkanKHRAccelerationStructure(VkDevice device)
         {
@@ -8081,7 +8561,7 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRRayTracingPipeline
+    public unsafe sealed class VulkanKHRRayTracingPipeline : IVulkanDeviceExtGeneric<VulkanKHRRayTracingPipeline>
     {
         private IntPtr vkCmdSetRayTracingPipelineStackSizeKHR_ptr;
         private IntPtr vkCmdTraceRaysIndirectKHR_ptr;
@@ -8090,6 +8570,14 @@ namespace Vulkan
         private IntPtr vkGetRayTracingCaptureReplayShaderGroupHandlesKHR_ptr;
         private IntPtr vkGetRayTracingShaderGroupHandlesKHR_ptr;
         private IntPtr vkGetRayTracingShaderGroupStackSizeKHR_ptr;
+
+        public static string Name => "VK_KHR_ray_tracing_pipeline";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRRayTracingPipeline Create(VkDevice device)
+        {
+            return new VulkanKHRRayTracingPipeline(device);
+        }
 
         public VulkanKHRRayTracingPipeline(VkDevice device)
         {
@@ -9269,8 +9757,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRSamplerYcbcrConversion
+    public unsafe sealed class VulkanKHRSamplerYcbcrConversion : IVulkanDeviceExtGeneric<VulkanKHRSamplerYcbcrConversion>
     {
+
+        public static string Name => "VK_KHR_sampler_ycbcr_conversion";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRSamplerYcbcrConversion Create(VkDevice device)
+        {
+            return new VulkanKHRSamplerYcbcrConversion(device);
+        }
 
         public VulkanKHRSamplerYcbcrConversion(VkDevice device)
         {
@@ -9278,8 +9774,16 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanKHRBindMemory2
+    public unsafe sealed class VulkanKHRBindMemory2 : IVulkanDeviceExtGeneric<VulkanKHRBindMemory2>
     {
+
+        public static string Name => "VK_KHR_bind_memory2";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRBindMemory2 Create(VkDevice device)
+        {
+            return new VulkanKHRBindMemory2(device);
+        }
 
         public VulkanKHRBindMemory2(VkDevice device)
         {
@@ -9287,9 +9791,17 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanEXTImageDrmFormatModifier
+    public unsafe sealed class VulkanEXTImageDrmFormatModifier : IVulkanDeviceExtGeneric<VulkanEXTImageDrmFormatModifier>
     {
         private IntPtr vkGetImageDrmFormatModifierPropertiesEXT_ptr;
+
+        public static string Name => "VK_EXT_image_drm_format_modifier";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTImageDrmFormatModifier Create(VkDevice device)
+        {
+            return new VulkanEXTImageDrmFormatModifier(device);
+        }
 
         public VulkanEXTImageDrmFormatModifier(VkDevice device)
         {
@@ -9311,12 +9823,20 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTValidationCache
+    public unsafe sealed class VulkanEXTValidationCache : IVulkanDeviceExtGeneric<VulkanEXTValidationCache>
     {
         private IntPtr vkCreateValidationCacheEXT_ptr;
         private IntPtr vkDestroyValidationCacheEXT_ptr;
         private IntPtr vkGetValidationCacheDataEXT_ptr;
         private IntPtr vkMergeValidationCachesEXT_ptr;
+
+        public static string Name => "VK_EXT_validation_cache";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTValidationCache Create(VkDevice device)
+        {
+            return new VulkanEXTValidationCache(device);
+        }
 
         public VulkanEXTValidationCache(VkDevice device)
         {
@@ -9513,11 +10033,19 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVShadingRateImage
+    public unsafe sealed class VulkanNVShadingRateImage : IVulkanDeviceExtGeneric<VulkanNVShadingRateImage>
     {
         private IntPtr vkCmdBindShadingRateImageNV_ptr;
         private IntPtr vkCmdSetCoarseSampleOrderNV_ptr;
         private IntPtr vkCmdSetViewportShadingRatePaletteNV_ptr;
+
+        public static string Name => "VK_NV_shading_rate_image";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVShadingRateImage Create(VkDevice device)
+        {
+            return new VulkanNVShadingRateImage(device);
+        }
 
         public VulkanNVShadingRateImage(VkDevice device)
         {
@@ -9569,7 +10097,7 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVRayTracing
+    public unsafe sealed class VulkanNVRayTracing : IVulkanDeviceExtGeneric<VulkanNVRayTracing>
     {
         private IntPtr vkBindAccelerationStructureMemoryNV_ptr;
         private IntPtr vkCmdBuildAccelerationStructureNV_ptr;
@@ -9582,6 +10110,14 @@ namespace Vulkan
         private IntPtr vkDestroyAccelerationStructureNV_ptr;
         private IntPtr vkGetAccelerationStructureHandleNV_ptr;
         private IntPtr vkGetAccelerationStructureMemoryRequirementsNV_ptr;
+
+        public static string Name => "VK_NV_ray_tracing";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVRayTracing Create(VkDevice device)
+        {
+            return new VulkanNVRayTracing(device);
+        }
 
         public VulkanNVRayTracing(VkDevice device)
         {
@@ -10037,8 +10573,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRMaintenance3
+    public unsafe sealed class VulkanKHRMaintenance3 : IVulkanDeviceExtGeneric<VulkanKHRMaintenance3>
     {
+
+        public static string Name => "VK_KHR_maintenance3";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRMaintenance3 Create(VkDevice device)
+        {
+            return new VulkanKHRMaintenance3(device);
+        }
 
         public VulkanKHRMaintenance3(VkDevice device)
         {
@@ -10046,8 +10590,16 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanKHRDrawIndirectCount
+    public unsafe sealed class VulkanKHRDrawIndirectCount : IVulkanDeviceExtGeneric<VulkanKHRDrawIndirectCount>
     {
+
+        public static string Name => "VK_KHR_draw_indirect_count";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRDrawIndirectCount Create(VkDevice device)
+        {
+            return new VulkanKHRDrawIndirectCount(device);
+        }
 
         public VulkanKHRDrawIndirectCount(VkDevice device)
         {
@@ -10055,9 +10607,17 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanEXTExternalMemoryHost
+    public unsafe sealed class VulkanEXTExternalMemoryHost : IVulkanDeviceExtGeneric<VulkanEXTExternalMemoryHost>
     {
         private IntPtr vkGetMemoryHostPointerPropertiesEXT_ptr;
+
+        public static string Name => "VK_EXT_external_memory_host";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTExternalMemoryHost Create(VkDevice device)
+        {
+            return new VulkanEXTExternalMemoryHost(device);
+        }
 
         public VulkanEXTExternalMemoryHost(VkDevice device)
         {
@@ -10079,9 +10639,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanAMDBufferMarker
+    public unsafe sealed class VulkanAMDBufferMarker : IVulkanDeviceExtGeneric<VulkanAMDBufferMarker>
     {
         private IntPtr vkCmdWriteBufferMarkerAMD_ptr;
+
+        public static string Name => "VK_AMD_buffer_marker";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanAMDBufferMarker Create(VkDevice device)
+        {
+            return new VulkanAMDBufferMarker(device);
+        }
 
         public VulkanAMDBufferMarker(VkDevice device)
         {
@@ -10095,10 +10663,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTCalibratedTimestamps
+    public unsafe sealed class VulkanEXTCalibratedTimestamps : IVulkanDeviceExtGeneric<VulkanEXTCalibratedTimestamps>
     {
         private IntPtr vkGetCalibratedTimestampsEXT_ptr;
         private IntPtr vkGetPhysicalDeviceCalibrateableTimeDomainsEXT_ptr;
+
+        public static string Name => "VK_EXT_calibrated_timestamps";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTCalibratedTimestamps Create(VkDevice device)
+        {
+            return new VulkanEXTCalibratedTimestamps(device);
+        }
 
         public VulkanEXTCalibratedTimestamps(VkDevice device)
         {
@@ -10317,11 +10893,19 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVMeshShader
+    public unsafe sealed class VulkanNVMeshShader : IVulkanDeviceExtGeneric<VulkanNVMeshShader>
     {
         private IntPtr vkCmdDrawMeshTasksIndirectCountNV_ptr;
         private IntPtr vkCmdDrawMeshTasksIndirectNV_ptr;
         private IntPtr vkCmdDrawMeshTasksNV_ptr;
+
+        public static string Name => "VK_NV_mesh_shader";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVMeshShader Create(VkDevice device)
+        {
+            return new VulkanNVMeshShader(device);
+        }
 
         public VulkanNVMeshShader(VkDevice device)
         {
@@ -10349,9 +10933,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVScissorExclusive
+    public unsafe sealed class VulkanNVScissorExclusive : IVulkanDeviceExtGeneric<VulkanNVScissorExclusive>
     {
         private IntPtr vkCmdSetExclusiveScissorNV_ptr;
+
+        public static string Name => "VK_NV_scissor_exclusive";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVScissorExclusive Create(VkDevice device)
+        {
+            return new VulkanNVScissorExclusive(device);
+        }
 
         public VulkanNVScissorExclusive(VkDevice device)
         {
@@ -10377,10 +10969,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVDeviceDiagnosticCheckpoints
+    public unsafe sealed class VulkanNVDeviceDiagnosticCheckpoints : IVulkanDeviceExtGeneric<VulkanNVDeviceDiagnosticCheckpoints>
     {
         private IntPtr vkCmdSetCheckpointNV_ptr;
         private IntPtr vkGetQueueCheckpointDataNV_ptr;
+
+        public static string Name => "VK_NV_device_diagnostic_checkpoints";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVDeviceDiagnosticCheckpoints Create(VkDevice device)
+        {
+            return new VulkanNVDeviceDiagnosticCheckpoints(device);
+        }
 
         public VulkanNVDeviceDiagnosticCheckpoints(VkDevice device)
         {
@@ -10431,8 +11031,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRTimelineSemaphore
+    public unsafe sealed class VulkanKHRTimelineSemaphore : IVulkanDeviceExtGeneric<VulkanKHRTimelineSemaphore>
     {
+
+        public static string Name => "VK_KHR_timeline_semaphore";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRTimelineSemaphore Create(VkDevice device)
+        {
+            return new VulkanKHRTimelineSemaphore(device);
+        }
 
         public VulkanKHRTimelineSemaphore(VkDevice device)
         {
@@ -10440,7 +11048,7 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanIntelPerformanceQuery
+    public unsafe sealed class VulkanIntelPerformanceQuery : IVulkanDeviceExtGeneric<VulkanIntelPerformanceQuery>
     {
         private IntPtr vkAcquirePerformanceConfigurationINTEL_ptr;
         private IntPtr vkCmdSetPerformanceMarkerINTEL_ptr;
@@ -10451,6 +11059,14 @@ namespace Vulkan
         private IntPtr vkQueueSetPerformanceConfigurationINTEL_ptr;
         private IntPtr vkReleasePerformanceConfigurationINTEL_ptr;
         private IntPtr vkUninitializePerformanceApiINTEL_ptr;
+
+        public static string Name => "VK_INTEL_performance_query";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanIntelPerformanceQuery Create(VkDevice device)
+        {
+            return new VulkanIntelPerformanceQuery(device);
+        }
 
         public VulkanIntelPerformanceQuery(VkDevice device)
         {
@@ -10647,9 +11263,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanAMDDisplayNativeHdr
+    public unsafe sealed class VulkanAMDDisplayNativeHdr : IVulkanDeviceExtGeneric<VulkanAMDDisplayNativeHdr>
     {
         private IntPtr vkSetLocalDimmingAMD_ptr;
+
+        public static string Name => "VK_AMD_display_native_hdr";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanAMDDisplayNativeHdr Create(VkDevice device)
+        {
+            return new VulkanAMDDisplayNativeHdr(device);
+        }
 
         public VulkanAMDDisplayNativeHdr(VkDevice device)
         {
@@ -10663,9 +11287,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanFuchsiaImagepipeSurface
+    public unsafe sealed class VulkanFuchsiaImagepipeSurface : IVulkanInstanceExtGeneric<VulkanFuchsiaImagepipeSurface>
     {
         private IntPtr vkCreateImagePipeSurfaceFUCHSIA_ptr;
+
+        public static string Name => "VK_FUCHSIA_imagepipe_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanFuchsiaImagepipeSurface Create(VkInstance instance)
+        {
+            return new VulkanFuchsiaImagepipeSurface(instance);
+        }
 
         public VulkanFuchsiaImagepipeSurface(VkInstance instance)
         {
@@ -10799,9 +11431,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTMetalSurface
+    public unsafe sealed class VulkanEXTMetalSurface : IVulkanInstanceExtGeneric<VulkanEXTMetalSurface>
     {
         private IntPtr vkCreateMetalSurfaceEXT_ptr;
+
+        public static string Name => "VK_EXT_metal_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTMetalSurface Create(VkInstance instance)
+        {
+            return new VulkanEXTMetalSurface(instance);
+        }
 
         public VulkanEXTMetalSurface(VkInstance instance)
         {
@@ -10935,10 +11575,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRFragmentShadingRate
+    public unsafe sealed class VulkanKHRFragmentShadingRate : IVulkanDeviceExtGeneric<VulkanKHRFragmentShadingRate>
     {
         private IntPtr vkCmdSetFragmentShadingRateKHR_ptr;
         private IntPtr vkGetPhysicalDeviceFragmentShadingRatesKHR_ptr;
+
+        public static string Name => "VK_KHR_fragment_shading_rate";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRFragmentShadingRate Create(VkDevice device)
+        {
+            return new VulkanKHRFragmentShadingRate(device);
+        }
 
         public VulkanKHRFragmentShadingRate(VkDevice device)
         {
@@ -11007,8 +11655,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTBufferDeviceAddress
+    public unsafe sealed class VulkanEXTBufferDeviceAddress : IVulkanDeviceExtGeneric<VulkanEXTBufferDeviceAddress>
     {
+
+        public static string Name => "VK_EXT_buffer_device_address";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTBufferDeviceAddress Create(VkDevice device)
+        {
+            return new VulkanEXTBufferDeviceAddress(device);
+        }
 
         public VulkanEXTBufferDeviceAddress(VkDevice device)
         {
@@ -11016,8 +11672,16 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanEXTToolingInfo
+    public unsafe sealed class VulkanEXTToolingInfo : IVulkanDeviceExtGeneric<VulkanEXTToolingInfo>
     {
+
+        public static string Name => "VK_EXT_tooling_info";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTToolingInfo Create(VkDevice device)
+        {
+            return new VulkanEXTToolingInfo(device);
+        }
 
         public VulkanEXTToolingInfo(VkDevice device)
         {
@@ -11025,9 +11689,17 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanKHRPresentWait
+    public unsafe sealed class VulkanKHRPresentWait : IVulkanDeviceExtGeneric<VulkanKHRPresentWait>
     {
         private IntPtr vkWaitForPresentKHR_ptr;
+
+        public static string Name => "VK_KHR_present_wait";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRPresentWait Create(VkDevice device)
+        {
+            return new VulkanKHRPresentWait(device);
+        }
 
         public VulkanKHRPresentWait(VkDevice device)
         {
@@ -11042,9 +11714,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVCooperativeMatrix
+    public unsafe sealed class VulkanNVCooperativeMatrix : IVulkanDeviceExtGeneric<VulkanNVCooperativeMatrix>
     {
         private IntPtr vkGetPhysicalDeviceCooperativeMatrixPropertiesNV_ptr;
+
+        public static string Name => "VK_NV_cooperative_matrix";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVCooperativeMatrix Create(VkDevice device)
+        {
+            return new VulkanNVCooperativeMatrix(device);
+        }
 
         public VulkanNVCooperativeMatrix(VkDevice device)
         {
@@ -11094,9 +11774,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVCoverageReductionMode
+    public unsafe sealed class VulkanNVCoverageReductionMode : IVulkanDeviceExtGeneric<VulkanNVCoverageReductionMode>
     {
         private IntPtr vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV_ptr;
+
+        public static string Name => "VK_NV_coverage_reduction_mode";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVCoverageReductionMode Create(VkDevice device)
+        {
+            return new VulkanNVCoverageReductionMode(device);
+        }
 
         public VulkanNVCoverageReductionMode(VkDevice device)
         {
@@ -11146,12 +11834,20 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTFullScreenExclusive
+    public unsafe sealed class VulkanEXTFullScreenExclusive : IVulkanDeviceExtGeneric<VulkanEXTFullScreenExclusive>
     {
         private IntPtr vkAcquireFullScreenExclusiveModeEXT_ptr;
         private IntPtr vkGetDeviceGroupSurfacePresentModes2EXT_ptr;
         private IntPtr vkGetPhysicalDeviceSurfacePresentModes2EXT_ptr;
         private IntPtr vkReleaseFullScreenExclusiveModeEXT_ptr;
+
+        public static string Name => "VK_EXT_full_screen_exclusive";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTFullScreenExclusive Create(VkDevice device)
+        {
+            return new VulkanEXTFullScreenExclusive(device);
+        }
 
         public VulkanEXTFullScreenExclusive(VkDevice device)
         {
@@ -11344,9 +12040,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTHeadlessSurface
+    public unsafe sealed class VulkanEXTHeadlessSurface : IVulkanInstanceExtGeneric<VulkanEXTHeadlessSurface>
     {
         private IntPtr vkCreateHeadlessSurfaceEXT_ptr;
+
+        public static string Name => "VK_EXT_headless_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTHeadlessSurface Create(VkInstance instance)
+        {
+            return new VulkanEXTHeadlessSurface(instance);
+        }
 
         public VulkanEXTHeadlessSurface(VkInstance instance)
         {
@@ -11480,8 +12184,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRBufferDeviceAddress
+    public unsafe sealed class VulkanKHRBufferDeviceAddress : IVulkanDeviceExtGeneric<VulkanKHRBufferDeviceAddress>
     {
+
+        public static string Name => "VK_KHR_buffer_device_address";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRBufferDeviceAddress Create(VkDevice device)
+        {
+            return new VulkanKHRBufferDeviceAddress(device);
+        }
 
         public VulkanKHRBufferDeviceAddress(VkDevice device)
         {
@@ -11489,9 +12201,17 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanEXTLineRasterization
+    public unsafe sealed class VulkanEXTLineRasterization : IVulkanDeviceExtGeneric<VulkanEXTLineRasterization>
     {
         private IntPtr vkCmdSetLineStippleEXT_ptr;
+
+        public static string Name => "VK_EXT_line_rasterization";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTLineRasterization Create(VkDevice device)
+        {
+            return new VulkanEXTLineRasterization(device);
+        }
 
         public VulkanEXTLineRasterization(VkDevice device)
         {
@@ -11505,8 +12225,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTHostQueryReset
+    public unsafe sealed class VulkanEXTHostQueryReset : IVulkanDeviceExtGeneric<VulkanEXTHostQueryReset>
     {
+
+        public static string Name => "VK_EXT_host_query_reset";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTHostQueryReset Create(VkDevice device)
+        {
+            return new VulkanEXTHostQueryReset(device);
+        }
 
         public VulkanEXTHostQueryReset(VkDevice device)
         {
@@ -11514,8 +12242,16 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanEXTExtendedDynamicState
+    public unsafe sealed class VulkanEXTExtendedDynamicState : IVulkanDeviceExtGeneric<VulkanEXTExtendedDynamicState>
     {
+
+        public static string Name => "VK_EXT_extended_dynamic_state";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTExtendedDynamicState Create(VkDevice device)
+        {
+            return new VulkanEXTExtendedDynamicState(device);
+        }
 
         public VulkanEXTExtendedDynamicState(VkDevice device)
         {
@@ -11523,13 +12259,21 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanKHRDeferredHostOperations
+    public unsafe sealed class VulkanKHRDeferredHostOperations : IVulkanDeviceExtGeneric<VulkanKHRDeferredHostOperations>
     {
         private IntPtr vkCreateDeferredOperationKHR_ptr;
         private IntPtr vkDeferredOperationJoinKHR_ptr;
         private IntPtr vkDestroyDeferredOperationKHR_ptr;
         private IntPtr vkGetDeferredOperationMaxConcurrencyKHR_ptr;
         private IntPtr vkGetDeferredOperationResultKHR_ptr;
+
+        public static string Name => "VK_KHR_deferred_host_operations";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRDeferredHostOperations Create(VkDevice device)
+        {
+            return new VulkanKHRDeferredHostOperations(device);
+        }
 
         public VulkanKHRDeferredHostOperations(VkDevice device)
         {
@@ -11621,11 +12365,19 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRPipelineExecutableProperties
+    public unsafe sealed class VulkanKHRPipelineExecutableProperties : IVulkanDeviceExtGeneric<VulkanKHRPipelineExecutableProperties>
     {
         private IntPtr vkGetPipelineExecutableInternalRepresentationsKHR_ptr;
         private IntPtr vkGetPipelineExecutablePropertiesKHR_ptr;
         private IntPtr vkGetPipelineExecutableStatisticsKHR_ptr;
+
+        public static string Name => "VK_KHR_pipeline_executable_properties";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRPipelineExecutableProperties Create(VkDevice device)
+        {
+            return new VulkanKHRPipelineExecutableProperties(device);
+        }
 
         public VulkanKHRPipelineExecutableProperties(VkDevice device)
         {
@@ -12013,9 +12765,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTSwapchainMaintenance1
+    public unsafe sealed class VulkanEXTSwapchainMaintenance1 : IVulkanDeviceExtGeneric<VulkanEXTSwapchainMaintenance1>
     {
         private IntPtr vkReleaseSwapchainImagesEXT_ptr;
+
+        public static string Name => "VK_EXT_swapchain_maintenance1";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTSwapchainMaintenance1 Create(VkDevice device)
+        {
+            return new VulkanEXTSwapchainMaintenance1(device);
+        }
 
         public VulkanEXTSwapchainMaintenance1(VkDevice device)
         {
@@ -12044,7 +12804,7 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVDeviceGeneratedCommands
+    public unsafe sealed class VulkanNVDeviceGeneratedCommands : IVulkanDeviceExtGeneric<VulkanNVDeviceGeneratedCommands>
     {
         private IntPtr vkCmdBindPipelineShaderGroupNV_ptr;
         private IntPtr vkCmdExecuteGeneratedCommandsNV_ptr;
@@ -12052,6 +12812,14 @@ namespace Vulkan
         private IntPtr vkCreateIndirectCommandsLayoutNV_ptr;
         private IntPtr vkDestroyIndirectCommandsLayoutNV_ptr;
         private IntPtr vkGetGeneratedCommandsMemoryRequirementsNV_ptr;
+
+        public static string Name => "VK_NV_device_generated_commands";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVDeviceGeneratedCommands Create(VkDevice device)
+        {
+            return new VulkanNVDeviceGeneratedCommands(device);
+        }
 
         public VulkanNVDeviceGeneratedCommands(VkDevice device)
         {
@@ -12286,10 +13054,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTAcquireDrmDisplay
+    public unsafe sealed class VulkanEXTAcquireDrmDisplay : IVulkanInstanceExtGeneric<VulkanEXTAcquireDrmDisplay>
     {
         private IntPtr vkAcquireDrmDisplayEXT_ptr;
         private IntPtr vkGetDrmDisplayEXT_ptr;
+
+        public static string Name => "VK_EXT_acquire_drm_display";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTAcquireDrmDisplay Create(VkInstance instance)
+        {
+            return new VulkanEXTAcquireDrmDisplay(instance);
+        }
 
         public VulkanEXTAcquireDrmDisplay(VkInstance instance)
         {
@@ -12319,8 +13095,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTPrivateData
+    public unsafe sealed class VulkanEXTPrivateData : IVulkanDeviceExtGeneric<VulkanEXTPrivateData>
     {
+
+        public static string Name => "VK_EXT_private_data";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTPrivateData Create(VkDevice device)
+        {
+            return new VulkanEXTPrivateData(device);
+        }
 
         public VulkanEXTPrivateData(VkDevice device)
         {
@@ -12328,9 +13112,17 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanKHRVideoEncodeQueue
+    public unsafe sealed class VulkanKHRVideoEncodeQueue : IVulkanDeviceExtGeneric<VulkanKHRVideoEncodeQueue>
     {
         private IntPtr vkCmdEncodeVideoKHR_ptr;
+
+        public static string Name => "VK_KHR_video_encode_queue";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRVideoEncodeQueue Create(VkDevice device)
+        {
+            return new VulkanKHRVideoEncodeQueue(device);
+        }
 
         public VulkanKHRVideoEncodeQueue(VkDevice device)
         {
@@ -12356,9 +13148,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTMetalObjects
+    public unsafe sealed class VulkanEXTMetalObjects : IVulkanDeviceExtGeneric<VulkanEXTMetalObjects>
     {
         private IntPtr vkExportMetalObjectsEXT_ptr;
+
+        public static string Name => "VK_EXT_metal_objects";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTMetalObjects Create(VkDevice device)
+        {
+            return new VulkanEXTMetalObjects(device);
+        }
 
         public VulkanEXTMetalObjects(VkDevice device)
         {
@@ -12384,10 +13184,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRSynchronization2
+    public unsafe sealed class VulkanKHRSynchronization2 : IVulkanDeviceExtGeneric<VulkanKHRSynchronization2>
     {
         private IntPtr vkCmdWriteBufferMarker2AMD_ptr;
         private IntPtr vkGetQueueCheckpointData2NV_ptr;
+
+        public static string Name => "VK_KHR_synchronization2";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRSynchronization2 Create(VkDevice device)
+        {
+            return new VulkanKHRSynchronization2(device);
+        }
 
         public VulkanKHRSynchronization2(VkDevice device)
         {
@@ -12438,7 +13246,7 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTDescriptorBuffer
+    public unsafe sealed class VulkanEXTDescriptorBuffer : IVulkanDeviceExtGeneric<VulkanEXTDescriptorBuffer>
     {
         private IntPtr vkCmdBindDescriptorBufferEmbeddedSamplersEXT_ptr;
         private IntPtr vkCmdBindDescriptorBuffersEXT_ptr;
@@ -12451,6 +13259,14 @@ namespace Vulkan
         private IntPtr vkGetImageOpaqueCaptureDescriptorDataEXT_ptr;
         private IntPtr vkGetImageViewOpaqueCaptureDescriptorDataEXT_ptr;
         private IntPtr vkGetSamplerOpaqueCaptureDescriptorDataEXT_ptr;
+
+        public static string Name => "VK_EXT_descriptor_buffer";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTDescriptorBuffer Create(VkDevice device)
+        {
+            return new VulkanEXTDescriptorBuffer(device);
+        }
 
         public VulkanEXTDescriptorBuffer(VkDevice device)
         {
@@ -12699,9 +13515,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVFragmentShadingRateEnums
+    public unsafe sealed class VulkanNVFragmentShadingRateEnums : IVulkanDeviceExtGeneric<VulkanNVFragmentShadingRateEnums>
     {
         private IntPtr vkCmdSetFragmentShadingRateEnumNV_ptr;
+
+        public static string Name => "VK_NV_fragment_shading_rate_enums";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVFragmentShadingRateEnums Create(VkDevice device)
+        {
+            return new VulkanNVFragmentShadingRateEnums(device);
+        }
 
         public VulkanNVFragmentShadingRateEnums(VkDevice device)
         {
@@ -12715,11 +13539,19 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTMeshShader
+    public unsafe sealed class VulkanEXTMeshShader : IVulkanDeviceExtGeneric<VulkanEXTMeshShader>
     {
         private IntPtr vkCmdDrawMeshTasksEXT_ptr;
         private IntPtr vkCmdDrawMeshTasksIndirectCountEXT_ptr;
         private IntPtr vkCmdDrawMeshTasksIndirectEXT_ptr;
+
+        public static string Name => "VK_EXT_mesh_shader";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTMeshShader Create(VkDevice device)
+        {
+            return new VulkanEXTMeshShader(device);
+        }
 
         public VulkanEXTMeshShader(VkDevice device)
         {
@@ -12747,8 +13579,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRCopyCommands2
+    public unsafe sealed class VulkanKHRCopyCommands2 : IVulkanDeviceExtGeneric<VulkanKHRCopyCommands2>
     {
+
+        public static string Name => "VK_KHR_copy_commands2";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRCopyCommands2 Create(VkDevice device)
+        {
+            return new VulkanKHRCopyCommands2(device);
+        }
 
         public VulkanKHRCopyCommands2(VkDevice device)
         {
@@ -12756,9 +13596,17 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanEXTImageCompressionControl
+    public unsafe sealed class VulkanEXTImageCompressionControl : IVulkanDeviceExtGeneric<VulkanEXTImageCompressionControl>
     {
         private IntPtr vkGetImageSubresourceLayout2EXT_ptr;
+
+        public static string Name => "VK_EXT_image_compression_control";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTImageCompressionControl Create(VkDevice device)
+        {
+            return new VulkanEXTImageCompressionControl(device);
+        }
 
         public VulkanEXTImageCompressionControl(VkDevice device)
         {
@@ -12802,9 +13650,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTDeviceFault
+    public unsafe sealed class VulkanEXTDeviceFault : IVulkanDeviceExtGeneric<VulkanEXTDeviceFault>
     {
         private IntPtr vkGetDeviceFaultInfoEXT_ptr;
+
+        public static string Name => "VK_EXT_device_fault";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTDeviceFault Create(VkDevice device)
+        {
+            return new VulkanEXTDeviceFault(device);
+        }
 
         public VulkanEXTDeviceFault(VkDevice device)
         {
@@ -12854,10 +13710,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVAcquireWinrtDisplay
+    public unsafe sealed class VulkanNVAcquireWinrtDisplay : IVulkanDeviceExtGeneric<VulkanNVAcquireWinrtDisplay>
     {
         private IntPtr vkAcquireWinrtDisplayNV_ptr;
         private IntPtr vkGetWinrtDisplayNV_ptr;
+
+        public static string Name => "VK_NV_acquire_winrt_display";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVAcquireWinrtDisplay Create(VkDevice device)
+        {
+            return new VulkanNVAcquireWinrtDisplay(device);
+        }
 
         public VulkanNVAcquireWinrtDisplay(VkDevice device)
         {
@@ -12887,10 +13751,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTDirectfbSurface
+    public unsafe sealed class VulkanEXTDirectfbSurface : IVulkanInstanceExtGeneric<VulkanEXTDirectfbSurface>
     {
         private IntPtr vkCreateDirectFBSurfaceEXT_ptr;
         private IntPtr vkGetPhysicalDeviceDirectFBPresentationSupportEXT_ptr;
+
+        public static string Name => "VK_EXT_directfb_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTDirectfbSurface Create(VkInstance instance)
+        {
+            return new VulkanEXTDirectfbSurface(instance);
+        }
 
         public VulkanEXTDirectfbSurface(VkInstance instance)
         {
@@ -13037,9 +13909,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTVertexInputDynamicState
+    public unsafe sealed class VulkanEXTVertexInputDynamicState : IVulkanDeviceExtGeneric<VulkanEXTVertexInputDynamicState>
     {
         private IntPtr vkCmdSetVertexInputEXT_ptr;
+
+        public static string Name => "VK_EXT_vertex_input_dynamic_state";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTVertexInputDynamicState Create(VkDevice device)
+        {
+            return new VulkanEXTVertexInputDynamicState(device);
+        }
 
         public VulkanEXTVertexInputDynamicState(VkDevice device)
         {
@@ -13101,10 +13981,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanFuchsiaExternalMemory
+    public unsafe sealed class VulkanFuchsiaExternalMemory : IVulkanDeviceExtGeneric<VulkanFuchsiaExternalMemory>
     {
         private IntPtr vkGetMemoryZirconHandleFUCHSIA_ptr;
         private IntPtr vkGetMemoryZirconHandlePropertiesFUCHSIA_ptr;
+
+        public static string Name => "VK_FUCHSIA_external_memory";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanFuchsiaExternalMemory Create(VkDevice device)
+        {
+            return new VulkanFuchsiaExternalMemory(device);
+        }
 
         public VulkanFuchsiaExternalMemory(VkDevice device)
         {
@@ -13169,10 +14057,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanFuchsiaExternalSemaphore
+    public unsafe sealed class VulkanFuchsiaExternalSemaphore : IVulkanDeviceExtGeneric<VulkanFuchsiaExternalSemaphore>
     {
         private IntPtr vkGetSemaphoreZirconHandleFUCHSIA_ptr;
         private IntPtr vkImportSemaphoreZirconHandleFUCHSIA_ptr;
+
+        public static string Name => "VK_FUCHSIA_external_semaphore";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanFuchsiaExternalSemaphore Create(VkDevice device)
+        {
+            return new VulkanFuchsiaExternalSemaphore(device);
+        }
 
         public VulkanFuchsiaExternalSemaphore(VkDevice device)
         {
@@ -13244,13 +14140,21 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanFuchsiaBufferCollection
+    public unsafe sealed class VulkanFuchsiaBufferCollection : IVulkanDeviceExtGeneric<VulkanFuchsiaBufferCollection>
     {
         private IntPtr vkCreateBufferCollectionFUCHSIA_ptr;
         private IntPtr vkDestroyBufferCollectionFUCHSIA_ptr;
         private IntPtr vkGetBufferCollectionPropertiesFUCHSIA_ptr;
         private IntPtr vkSetBufferCollectionBufferConstraintsFUCHSIA_ptr;
         private IntPtr vkSetBufferCollectionImageConstraintsFUCHSIA_ptr;
+
+        public static string Name => "VK_FUCHSIA_buffer_collection";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanFuchsiaBufferCollection Create(VkDevice device)
+        {
+            return new VulkanFuchsiaBufferCollection(device);
+        }
 
         public VulkanFuchsiaBufferCollection(VkDevice device)
         {
@@ -13462,10 +14366,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanHuaweiSubpassShading
+    public unsafe sealed class VulkanHuaweiSubpassShading : IVulkanDeviceExtGeneric<VulkanHuaweiSubpassShading>
     {
         private IntPtr vkCmdSubpassShadingHUAWEI_ptr;
         private IntPtr vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI_ptr;
+
+        public static string Name => "VK_HUAWEI_subpass_shading";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanHuaweiSubpassShading Create(VkDevice device)
+        {
+            return new VulkanHuaweiSubpassShading(device);
+        }
 
         public VulkanHuaweiSubpassShading(VkDevice device)
         {
@@ -13494,9 +14406,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanHuaweiInvocationMask
+    public unsafe sealed class VulkanHuaweiInvocationMask : IVulkanDeviceExtGeneric<VulkanHuaweiInvocationMask>
     {
         private IntPtr vkCmdBindInvocationMaskHUAWEI_ptr;
+
+        public static string Name => "VK_HUAWEI_invocation_mask";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanHuaweiInvocationMask Create(VkDevice device)
+        {
+            return new VulkanHuaweiInvocationMask(device);
+        }
 
         public VulkanHuaweiInvocationMask(VkDevice device)
         {
@@ -13510,9 +14430,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVExternalMemoryRdma
+    public unsafe sealed class VulkanNVExternalMemoryRdma : IVulkanDeviceExtGeneric<VulkanNVExternalMemoryRdma>
     {
         private IntPtr vkGetMemoryRemoteAddressNV_ptr;
+
+        public static string Name => "VK_NV_external_memory_rdma";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVExternalMemoryRdma Create(VkDevice device)
+        {
+            return new VulkanNVExternalMemoryRdma(device);
+        }
 
         public VulkanNVExternalMemoryRdma(VkDevice device)
         {
@@ -13541,9 +14469,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTPipelineProperties
+    public unsafe sealed class VulkanEXTPipelineProperties : IVulkanDeviceExtGeneric<VulkanEXTPipelineProperties>
     {
         private IntPtr vkGetPipelinePropertiesEXT_ptr;
+
+        public static string Name => "VK_EXT_pipeline_properties";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTPipelineProperties Create(VkDevice device)
+        {
+            return new VulkanEXTPipelineProperties(device);
+        }
 
         public VulkanEXTPipelineProperties(VkDevice device)
         {
@@ -13593,10 +14529,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTExtendedDynamicState2
+    public unsafe sealed class VulkanEXTExtendedDynamicState2 : IVulkanDeviceExtGeneric<VulkanEXTExtendedDynamicState2>
     {
         private IntPtr vkCmdSetLogicOpEXT_ptr;
         private IntPtr vkCmdSetPatchControlPointsEXT_ptr;
+
+        public static string Name => "VK_EXT_extended_dynamic_state2";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTExtendedDynamicState2 Create(VkDevice device)
+        {
+            return new VulkanEXTExtendedDynamicState2(device);
+        }
 
         public VulkanEXTExtendedDynamicState2(VkDevice device)
         {
@@ -13617,10 +14561,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanQnxScreenSurface
+    public unsafe sealed class VulkanQnxScreenSurface : IVulkanInstanceExtGeneric<VulkanQnxScreenSurface>
     {
         private IntPtr vkCreateScreenSurfaceQNX_ptr;
         private IntPtr vkGetPhysicalDeviceScreenPresentationSupportQNX_ptr;
+
+        public static string Name => "VK_QNX_screen_surface";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanQnxScreenSurface Create(VkInstance instance)
+        {
+            return new VulkanQnxScreenSurface(instance);
+        }
 
         public VulkanQnxScreenSurface(VkInstance instance)
         {
@@ -13767,9 +14719,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTColorWriteEnable
+    public unsafe sealed class VulkanEXTColorWriteEnable : IVulkanDeviceExtGeneric<VulkanEXTColorWriteEnable>
     {
         private IntPtr vkCmdSetColorWriteEnableEXT_ptr;
+
+        public static string Name => "VK_EXT_color_write_enable";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTColorWriteEnable Create(VkDevice device)
+        {
+            return new VulkanEXTColorWriteEnable(device);
+        }
 
         public VulkanEXTColorWriteEnable(VkDevice device)
         {
@@ -13795,9 +14755,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRRayTracingMaintenance1
+    public unsafe sealed class VulkanKHRRayTracingMaintenance1 : IVulkanDeviceExtGeneric<VulkanKHRRayTracingMaintenance1>
     {
         private IntPtr vkCmdTraceRaysIndirect2KHR_ptr;
+
+        public static string Name => "VK_KHR_ray_tracing_maintenance1";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRRayTracingMaintenance1 Create(VkDevice device)
+        {
+            return new VulkanKHRRayTracingMaintenance1(device);
+        }
 
         public VulkanKHRRayTracingMaintenance1(VkDevice device)
         {
@@ -13811,10 +14779,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTMultiDraw
+    public unsafe sealed class VulkanEXTMultiDraw : IVulkanDeviceExtGeneric<VulkanEXTMultiDraw>
     {
         private IntPtr vkCmdDrawMultiEXT_ptr;
         private IntPtr vkCmdDrawMultiIndexedEXT_ptr;
+
+        public static string Name => "VK_EXT_multi_draw";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTMultiDraw Create(VkDevice device)
+        {
+            return new VulkanEXTMultiDraw(device);
+        }
 
         public VulkanEXTMultiDraw(VkDevice device)
         {
@@ -13895,7 +14871,7 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTOpacityMicromap
+    public unsafe sealed class VulkanEXTOpacityMicromap : IVulkanDeviceExtGeneric<VulkanEXTOpacityMicromap>
     {
         private IntPtr vkBuildMicromapsEXT_ptr;
         private IntPtr vkCmdBuildMicromapsEXT_ptr;
@@ -13911,6 +14887,14 @@ namespace Vulkan
         private IntPtr vkGetDeviceMicromapCompatibilityEXT_ptr;
         private IntPtr vkGetMicromapBuildSizesEXT_ptr;
         private IntPtr vkWriteMicromapsPropertiesEXT_ptr;
+
+        public static string Name => "VK_EXT_opacity_micromap";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTOpacityMicromap Create(VkDevice device)
+        {
+            return new VulkanEXTOpacityMicromap(device);
+        }
 
         public VulkanEXTOpacityMicromap(VkDevice device)
         {
@@ -14355,9 +15339,17 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTPageableDeviceLocalMemory
+    public unsafe sealed class VulkanEXTPageableDeviceLocalMemory : IVulkanDeviceExtGeneric<VulkanEXTPageableDeviceLocalMemory>
     {
         private IntPtr vkSetDeviceMemoryPriorityEXT_ptr;
+
+        public static string Name => "VK_EXT_pageable_device_local_memory";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTPageableDeviceLocalMemory Create(VkDevice device)
+        {
+            return new VulkanEXTPageableDeviceLocalMemory(device);
+        }
 
         public VulkanEXTPageableDeviceLocalMemory(VkDevice device)
         {
@@ -14371,8 +15363,16 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanKHRMaintenance4
+    public unsafe sealed class VulkanKHRMaintenance4 : IVulkanDeviceExtGeneric<VulkanKHRMaintenance4>
     {
+
+        public static string Name => "VK_KHR_maintenance4";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRMaintenance4 Create(VkDevice device)
+        {
+            return new VulkanKHRMaintenance4(device);
+        }
 
         public VulkanKHRMaintenance4(VkDevice device)
         {
@@ -14380,10 +15380,18 @@ namespace Vulkan
 
     }
 
-    public unsafe sealed class VulkanValveDescriptorSetHostMapping
+    public unsafe sealed class VulkanValveDescriptorSetHostMapping : IVulkanDeviceExtGeneric<VulkanValveDescriptorSetHostMapping>
     {
         private IntPtr vkGetDescriptorSetHostMappingVALVE_ptr;
         private IntPtr vkGetDescriptorSetLayoutHostMappingInfoVALVE_ptr;
+
+        public static string Name => "VK_VALVE_descriptor_set_host_mapping";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanValveDescriptorSetHostMapping Create(VkDevice device)
+        {
+            return new VulkanValveDescriptorSetHostMapping(device);
+        }
 
         public VulkanValveDescriptorSetHostMapping(VkDevice device)
         {
@@ -14434,10 +15442,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVCopyMemoryIndirect
+    public unsafe sealed class VulkanNVCopyMemoryIndirect : IVulkanDeviceExtGeneric<VulkanNVCopyMemoryIndirect>
     {
         private IntPtr vkCmdCopyMemoryIndirectNV_ptr;
         private IntPtr vkCmdCopyMemoryToImageIndirectNV_ptr;
+
+        public static string Name => "VK_NV_copy_memory_indirect";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVCopyMemoryIndirect Create(VkDevice device)
+        {
+            return new VulkanNVCopyMemoryIndirect(device);
+        }
 
         public VulkanNVCopyMemoryIndirect(VkDevice device)
         {
@@ -14470,10 +15486,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVMemoryDecompression
+    public unsafe sealed class VulkanNVMemoryDecompression : IVulkanDeviceExtGeneric<VulkanNVMemoryDecompression>
     {
         private IntPtr vkCmdDecompressMemoryIndirectCountNV_ptr;
         private IntPtr vkCmdDecompressMemoryNV_ptr;
+
+        public static string Name => "VK_NV_memory_decompression";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVMemoryDecompression Create(VkDevice device)
+        {
+            return new VulkanNVMemoryDecompression(device);
+        }
 
         public VulkanNVMemoryDecompression(VkDevice device)
         {
@@ -14506,7 +15530,7 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTExtendedDynamicState3
+    public unsafe sealed class VulkanEXTExtendedDynamicState3 : IVulkanDeviceExtGeneric<VulkanEXTExtendedDynamicState3>
     {
         private IntPtr vkCmdSetAlphaToCoverageEnableEXT_ptr;
         private IntPtr vkCmdSetAlphaToOneEnableEXT_ptr;
@@ -14539,6 +15563,14 @@ namespace Vulkan
         private IntPtr vkCmdSetTessellationDomainOriginEXT_ptr;
         private IntPtr vkCmdSetViewportSwizzleNV_ptr;
         private IntPtr vkCmdSetViewportWScalingEnableNV_ptr;
+
+        public static string Name => "VK_EXT_extended_dynamic_state3";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTExtendedDynamicState3 Create(VkDevice device)
+        {
+            return new VulkanEXTExtendedDynamicState3(device);
+        }
 
         public VulkanEXTExtendedDynamicState3(VkDevice device)
         {
@@ -14846,10 +15878,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanEXTShaderModuleIdentifier
+    public unsafe sealed class VulkanEXTShaderModuleIdentifier : IVulkanDeviceExtGeneric<VulkanEXTShaderModuleIdentifier>
     {
         private IntPtr vkGetShaderModuleCreateInfoIdentifierEXT_ptr;
         private IntPtr vkGetShaderModuleIdentifierEXT_ptr;
+
+        public static string Name => "VK_EXT_shader_module_identifier";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTShaderModuleIdentifier Create(VkDevice device)
+        {
+            return new VulkanEXTShaderModuleIdentifier(device);
+        }
 
         public VulkanEXTShaderModuleIdentifier(VkDevice device)
         {
@@ -14906,13 +15946,21 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanNVOpticalFlow
+    public unsafe sealed class VulkanNVOpticalFlow : IVulkanDeviceExtGeneric<VulkanNVOpticalFlow>
     {
         private IntPtr vkBindOpticalFlowSessionImageNV_ptr;
         private IntPtr vkCmdOpticalFlowExecuteNV_ptr;
         private IntPtr vkCreateOpticalFlowSessionNV_ptr;
         private IntPtr vkDestroyOpticalFlowSessionNV_ptr;
         private IntPtr vkGetPhysicalDeviceOpticalFlowImageFormatsNV_ptr;
+
+        public static string Name => "VK_NV_optical_flow";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVOpticalFlow Create(VkDevice device)
+        {
+            return new VulkanNVOpticalFlow(device);
+        }
 
         public VulkanNVOpticalFlow(VkDevice device)
         {
@@ -15219,10 +16267,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe sealed class VulkanQcomTileProperties
+    public unsafe sealed class VulkanQcomTileProperties : IVulkanDeviceExtGeneric<VulkanQcomTileProperties>
     {
         private IntPtr vkGetDynamicRenderingTilePropertiesQCOM_ptr;
         private IntPtr vkGetFramebufferTilePropertiesQCOM_ptr;
+
+        public static string Name => "VK_QCOM_tile_properties";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanQcomTileProperties Create(VkDevice device)
+        {
+            return new VulkanQcomTileProperties(device);
+        }
 
         public VulkanQcomTileProperties(VkDevice device)
         {
