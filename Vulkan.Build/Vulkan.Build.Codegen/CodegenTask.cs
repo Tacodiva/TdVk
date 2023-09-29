@@ -28,15 +28,24 @@ public sealed class CodegenTask : FrostingTask<VulkanFrostingContext>
         }
 
         TypeNameMappings tnm = new TypeNameMappings();
+
         foreach (var typedef in vs.Typedefs)
         {
             if (typedef.Requires != null)
             {
                 tnm.AddMapping(typedef.Requires, typedef.Name);
             }
-            else
+            else if (typedef.BitValues != null)
+            {
+                tnm.AddMapping(typedef.BitValues, typedef.Name);
+            }
+            else if (typedef.Type == "VkFlags")
             {
                 tnm.AddMapping(typedef.Name, "uint");
+            }
+            else
+            {
+                throw new Exception($"Unknown typedef mapping {typedef.Name} -> {typedef.Type}");
             }
         }
 

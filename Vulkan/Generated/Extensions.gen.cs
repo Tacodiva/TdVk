@@ -13198,7 +13198,7 @@ namespace Vulkan
         private IntPtr vkGetQueueCheckpointData2NV_ptr;
 
         [Generator.CalliRewrite]
-        public unsafe void vkCmdWriteBufferMarker2AMD(VkCommandBuffer commandBuffer, uint stage, VkBuffer dstBuffer, ulong dstOffset, uint marker)
+        public unsafe void vkCmdWriteBufferMarker2AMD(VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkBuffer dstBuffer, ulong dstOffset, uint marker)
         {
             throw VulkanNative.CreateUnpatchedException();
         }

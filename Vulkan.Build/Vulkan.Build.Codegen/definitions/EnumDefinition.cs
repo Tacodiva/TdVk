@@ -9,10 +9,11 @@ namespace Vulkan.Build.Codegen
     public class EnumDefinition
     {
         public string Name { get; }
+        public int Bitwidth;
         public EnumType Type { get; }
         public EnumValue[] Values { get; set; }
 
-        public EnumDefinition(string name, EnumType type, EnumValue[] values)
+        public EnumDefinition(string name, int bitwidth, EnumType type, EnumValue[] values)
         {
             Require.NotNullOrEmpty(name);
             Require.NotNull(values);
@@ -20,6 +21,7 @@ namespace Vulkan.Build.Codegen
             Name = name;
             Type = type;
             Values = values;
+            Bitwidth = bitwidth;
         }
 
         public static EnumDefinition CreateFromXml(XElement xe)
@@ -39,11 +41,12 @@ namespace Vulkan.Build.Codegen
             }
 
             string name = xe.Attribute("name").Value;
+            int bitwidth = int.Parse(xe.Attribute("bitwidth")?.Value ?? "32");
             EnumValue[] values = xe.Elements("enum")
                 .Where(typex => typex.Attribute("alias") == null)
                 .Select(valuesx => EnumValue.CreateFromXml(valuesx, type == EnumType.Bitmask))
                 .ToArray();
-            return new EnumDefinition(name, type, values);
+            return new EnumDefinition(name, bitwidth, type, values);
         }
 
         public override string ToString()

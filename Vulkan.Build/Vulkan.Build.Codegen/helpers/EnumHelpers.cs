@@ -52,9 +52,17 @@ namespace Vulkan.Build.Codegen
             {
                 cw.WriteLine("[Flags]");
             }
+
+            string extendFrom = enumDef.Bitwidth switch
+            {
+                32 => "int",
+                64 => "long",
+                _ => throw new ArgumentException($"Unknown bitwidth '{enumDef.Bitwidth}'.")
+            };
+
             string mappedName = tnm.GetMappedName(enumDef.Name);
             string enumNamePrefix = GetEnumNamePrefix(mappedName);
-            using (cw.PushBlock("public enum " + mappedName))
+            using (cw.PushBlock($"public enum {mappedName} : {extendFrom}"))
             {
                 if (enumDef.Type == EnumType.Bitmask && !enumDef.Values.Any(ev => GetPrettyEnumName(ev.Name, enumNamePrefix) == "None"))
                 {
@@ -98,7 +106,8 @@ namespace Vulkan.Build.Codegen
             int chunkStart = 0;
             for (int i = 0; i < typeName.Length; i++)
             {
-                if (char.IsUpper(typeName[i]))
+                char typeNameChar = typeName[i];
+                if (char.IsUpper(typeNameChar))
                 {
                     if (chunkStart != i)
                     {
@@ -117,6 +126,7 @@ namespace Vulkan.Build.Codegen
                 }
             }
 
+
             for (int i = 0; i < parts.Count; i++)
             {
                 if (
@@ -129,6 +139,11 @@ namespace Vulkan.Build.Codegen
                     )
                 {
                     parts = new List<string>(parts.Take(i));
+                    break;
+                }
+                if (parts[i] == "Flags2") {
+                    parts = new List<string>(parts.Take(i));
+                    parts.Add("2");
                     break;
                 }
             }

@@ -7,12 +7,14 @@ namespace Vulkan.Build.Codegen
         public string Name { get; }
         public string Requires { get; }
         public string Type { get; }
+        public string BitValues { get; }
 
-        public TypedefDefinition(string name, string requires, string type)
+        public TypedefDefinition(string name, string requires, string type, string bitValues)
         {
             Name = name;
             Requires = requires;
             Type = type;
+            BitValues = bitValues;
         }
 
         public static TypedefDefinition CreateFromXml(XElement xe)
@@ -20,7 +22,8 @@ namespace Vulkan.Build.Codegen
             string name = xe.GetNameElement();
             string requires = xe.Attribute("requires")?.Value;
             string type = xe.GetTypeElement();
-            return new TypedefDefinition(name, requires, type);
+            string bitValues = xe.Attribute("bitvalues")?.Value;
+            return new TypedefDefinition(name, requires, type, bitValues);
         }
 
         public override string ToString()

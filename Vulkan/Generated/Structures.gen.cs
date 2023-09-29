@@ -6429,7 +6429,7 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
-        public uint decompressionMethods;
+        public VkMemoryDecompressionMethodFlagsNV decompressionMethods;
         public ulong maxDecompressionIndirectCount;
         public static VkPhysicalDeviceMemoryDecompressionPropertiesNV New()
         {
@@ -10054,10 +10054,10 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
-        public uint srcStageMask;
-        public uint srcAccessMask;
-        public uint dstStageMask;
-        public uint dstAccessMask;
+        public VkPipelineStageFlags2 srcStageMask;
+        public VkAccessFlags2 srcAccessMask;
+        public VkPipelineStageFlags2 dstStageMask;
+        public VkAccessFlags2 dstAccessMask;
         public static VkMemoryBarrier2 New()
         {
             VkMemoryBarrier2 ret = new VkMemoryBarrier2();
@@ -10074,10 +10074,10 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
-        public uint srcStageMask;
-        public uint srcAccessMask;
-        public uint dstStageMask;
-        public uint dstAccessMask;
+        public VkPipelineStageFlags2 srcStageMask;
+        public VkAccessFlags2 srcAccessMask;
+        public VkPipelineStageFlags2 dstStageMask;
+        public VkAccessFlags2 dstAccessMask;
         public VkImageLayout oldLayout;
         public VkImageLayout newLayout;
         public uint srcQueueFamilyIndex;
@@ -10100,10 +10100,10 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
-        public uint srcStageMask;
-        public uint srcAccessMask;
-        public uint dstStageMask;
-        public uint dstAccessMask;
+        public VkPipelineStageFlags2 srcStageMask;
+        public VkAccessFlags2 srcAccessMask;
+        public VkPipelineStageFlags2 dstStageMask;
+        public VkAccessFlags2 dstAccessMask;
         public uint srcQueueFamilyIndex;
         public uint dstQueueFamilyIndex;
         public VkBuffer buffer;
@@ -10150,7 +10150,7 @@ namespace Vulkan
         public void* pNext;
         public VkSemaphore semaphore;
         public ulong value;
-        public uint stageMask;
+        public VkPipelineStageFlags2 stageMask;
         public uint deviceIndex;
         public static VkSemaphoreSubmitInfo New()
         {
@@ -10209,7 +10209,7 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
-        public uint checkpointExecutionStageMask;
+        public VkPipelineStageFlags2 checkpointExecutionStageMask;
         public static VkQueueFamilyCheckpointProperties2NV New()
         {
             VkQueueFamilyCheckpointProperties2NV ret = new VkQueueFamilyCheckpointProperties2NV();
@@ -10222,7 +10222,7 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
-        public uint stage;
+        public VkPipelineStageFlags2 stage;
         public void* pCheckpointMarker;
         public static VkCheckpointData2NV New()
         {
@@ -12035,9 +12035,9 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
-        public uint linearTilingFeatures;
-        public uint optimalTilingFeatures;
-        public uint bufferFeatures;
+        public VkFormatFeatureFlags2 linearTilingFeatures;
+        public VkFormatFeatureFlags2 optimalTilingFeatures;
+        public VkFormatFeatureFlags2 bufferFeatures;
         public static VkFormatProperties3 New()
         {
             VkFormatProperties3 ret = new VkFormatProperties3();
@@ -12068,7 +12068,7 @@ namespace Vulkan
     {
         public ulong drmFormatModifier;
         public uint drmFormatModifierPlaneCount;
-        public uint drmFormatModifierTilingFeatures;
+        public VkFormatFeatureFlags2 drmFormatModifierTilingFeatures;
     }
 
     public unsafe partial struct VkAndroidHardwareBufferFormatProperties2ANDROID
@@ -12077,7 +12077,7 @@ namespace Vulkan
         public void* pNext;
         public VkFormat format;
         public ulong externalFormat;
-        public uint formatFeatures;
+        public VkFormatFeatureFlags2 formatFeatures;
         public VkComponentMapping samplerYcbcrConversionComponents;
         public VkSamplerYcbcrModelConversion suggestedYcbcrModel;
         public VkSamplerYcbcrRange suggestedYcbcrRange;
@@ -13386,7 +13386,7 @@ namespace Vulkan
         public ulong dstAddress;
         public ulong compressedSize;
         public ulong decompressedSize;
-        public uint decompressionMethod;
+        public VkMemoryDecompressionMethodFlagsNV decompressionMethod;
     }
 
     public unsafe partial struct VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM

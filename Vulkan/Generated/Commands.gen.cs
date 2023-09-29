@@ -1988,7 +1988,7 @@ namespace Vulkan
         }
 
         [Generator.CalliRewrite]
-        public static unsafe void vkCmdResetEvent2(VkCommandBuffer commandBuffer, VkEvent @event, uint stageMask)
+        public static unsafe void vkCmdResetEvent2(VkCommandBuffer commandBuffer, VkEvent @event, VkPipelineStageFlags2 stageMask)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
@@ -2822,7 +2822,7 @@ namespace Vulkan
         }
 
         [Generator.CalliRewrite]
-        public static unsafe void vkCmdWriteTimestamp2(VkCommandBuffer commandBuffer, uint stage, VkQueryPool queryPool, uint query)
+        public static unsafe void vkCmdWriteTimestamp2(VkCommandBuffer commandBuffer, VkPipelineStageFlags2 stage, VkQueryPool queryPool, uint query)
         {
             throw VulkanNative.CreateUnpatchedException();
         }

@@ -40,11 +40,7 @@ namespace Vulkan.Build.Codegen
             return new ParameterDefinition(name, type, ParameterModifier.None, isOptional);
         }
 
-        public string GetMappedAndNormalizedString(TypeNameMappings tnm)
-        {
-            if ($"{GetModifierString()}{Type.MapTypeSpec(tnm)} {CodegenUtil.NormalizeFieldName(Name)}" == "out void pAddress") {
-                Console.WriteLine(Type + " -> " + Type.MapTypeSpec(tnm));
-            }
+        public string GetMappedAndNormalizedString(TypeNameMappings tnm) {
             return $"{GetModifierString()}{Type.MapTypeSpec(tnm)} {CodegenUtil.NormalizeFieldName(Name)}";
         }
 
