@@ -13,6 +13,7 @@ namespace Vulkan.Build.Codegen
 
         public static void WriteStructure(CsCodeWriter cw, StructureDefinition structure, TypeNameMappings tnm, ConstantDefinition[] constants)
         {
+            // cw.WriteLine("[System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential)]");
             using (cw.PushBlock("public unsafe partial struct " + structure.Name))
             {
                 foreach (var member in structure.Members)
