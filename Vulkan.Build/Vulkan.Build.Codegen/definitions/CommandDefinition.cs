@@ -15,12 +15,13 @@ namespace Vulkan.Build.Codegen
         public string Name { get; }
         public TypeSpec ReturnType { get; }
         public ParameterDefinition[] Parameters { get; }
+        public string API { get; }
         public string[] SuccessCodes { get; }
         public string[] ErrorCodes { get; }
         public bool IsVariant { get; }
         public ExtensionDefinition Extension { get; set; }
 
-        public CommandDefinition(string name, TypeSpec returnType, ParameterDefinition[] parameters, string[] successCodes, string[] errorCodes, bool isVariant, ExtensionDefinition ext = null)
+        public CommandDefinition(string name, TypeSpec returnType, ParameterDefinition[] parameters, string api, string[] successCodes, string[] errorCodes, bool isVariant, ExtensionDefinition ext = null)
         {
             Require.NotNull(parameters);
             Require.NotNull(successCodes);
@@ -29,6 +30,7 @@ namespace Vulkan.Build.Codegen
             Name = name;
             ReturnType = returnType;
             Parameters = parameters;
+            API = api;
             SuccessCodes = successCodes;
             ErrorCodes = errorCodes;
             IsVariant = isVariant;
@@ -44,6 +46,8 @@ namespace Vulkan.Build.Codegen
             string returnTypeName = proto.Element("type").Value;
             TypeSpec returnType = new TypeSpec(returnTypeName);
 
+            string api = xe.Attribute("api")?.Value;
+
             var successAttr = xe.Attribute("successcodes");
             string[] successCodes = successAttr != null
                 ? successAttr.Value.Split(',').ToArray()
@@ -57,17 +61,17 @@ namespace Vulkan.Build.Codegen
             ParameterDefinition[] parameters = xe.Elements("param")
                 .Select(paramXml => ParameterDefinition.CreateFromXml(paramXml)).ToArray();
 
-            return new CommandDefinition(name, returnType, parameters, successCodes, errorCodes, false);
+            return new CommandDefinition(name, returnType, parameters, api, successCodes, errorCodes, false);
         }
 
-        public string GetParametersSignature(TypeNameMappings tnm)
+        public string GetParametersSignature(TypeNameMappings tnm, string api = "vulkan")
         {
-            return string.Join(", ", Parameters.Select(pd => pd.GetMappedAndNormalizedString(tnm)));
+            return string.Join(", ", Parameters.Where(pd => pd.API == null || pd.API == api).Select(pd => pd.GetMappedAndNormalizedString(tnm)));
         }
 
-        public string GetParametersSignature()
+        public string GetParametersSignature(string api = "vulkan")
         {
-            return string.Join(", ", Parameters.Select(pd => pd.ToString()));
+            return string.Join(", ", Parameters.Where(pd => pd.API == null || pd.API == api).Select(pd => pd.ToString()));
         }
 
         public bool IsDeviceLevel()

@@ -12,8 +12,9 @@ namespace Vulkan.Build.Codegen
         public string ElementCountSymbolic { get; }
         public string Comment { get; }
         public string LegalValues { get; }
+        public string API { get; }
 
-        public MemberSpec(string name, TypeSpec type, bool isOptional, int elementCount, string elementCountSymbolic, string comment, string legalValues)
+        public MemberSpec(string name, TypeSpec type, bool isOptional, int elementCount, string elementCountSymbolic, string comment, string legalValues, string api)
         {
             Name = name;
             Type = type;
@@ -22,6 +23,7 @@ namespace Vulkan.Build.Codegen
             ElementCountSymbolic = elementCountSymbolic;
             Comment = comment;
             LegalValues = legalValues;
+            API = api;
         }
 
         public static MemberSpec CreateFromXml(XElement xe)
@@ -62,8 +64,9 @@ namespace Vulkan.Build.Codegen
             }
 
             string value = xe.Attribute("values")?.Value;
+            string api = xe.Attribute("api")?.Value;
 
-            return new MemberSpec(name, type, isOptional, elementCount, elementCountSymbolic, string.Empty, value);
+            return new MemberSpec(name, type, isOptional, elementCount, elementCountSymbolic, string.Empty, value, api);
         }
 
         public override string ToString()

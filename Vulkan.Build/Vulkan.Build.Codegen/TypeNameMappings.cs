@@ -54,6 +54,7 @@ namespace Vulkan.Build.Codegen
 
             { "_screen_context", "Screen.ScreenContext" },
             { "_screen_window", "Screen.ScreenWindow" },
+            { "_screen_buffer", "Screen.ScreenBuffer" },
 
             { "CAMetalLayer", "void" },
             { "MTLDevice_id", "void*" },
@@ -61,7 +62,14 @@ namespace Vulkan.Build.Codegen
             { "MTLBuffer_id", "void*" },
             { "MTLTexture_id", "void*" },
             { "MTLSharedEvent_id", "void*" },
-            { "IOSurfaceRef", "void*" }
+            { "IOSurfaceRef", "void*" },
+
+            { "NvSciBufAttrList", "NvCsi.NvSciBufAttrList" },
+            { "NvSciBufObj", "NvCsi.NvSciBufObj" },
+            { "NvSciSyncAttrList", "NvCsi.NvSciSyncAttrList" },
+            { "NvSciSyncObj", "NvCsi.NvSciSyncObj" },
+            { "NvSciSyncFence", "NvCsi.NvSciSyncFence" },
+
         };
 
         internal IEnumerable<KeyValuePair<string, string>> GetAllMappings()

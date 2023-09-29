@@ -128,8 +128,19 @@ namespace Vulkan
         }
     }
 
-    namespace Screen {
+    namespace Screen
+    {
         public struct ScreenContext { }
         public struct ScreenWindow { }
+        public struct ScreenBuffer { }
+    }
+
+    namespace NvCsi
+    {
+        public struct NvSciBufAttrList { public int Handle; }
+        public struct NvSciBufObj { public int Handle; }
+        public struct NvSciSyncAttrList { public int Handle; }
+        public struct NvSciSyncObj { public int Handle; }
+        public struct NvSciSyncFence { public int Handle; }
     }
 }

@@ -69,8 +69,9 @@ namespace Vulkan.Build.Codegen
                 }
             }
 
-            IEnumerable<CommandDefinition> allVariants = spec.Commands.SelectMany(cd => VariantGenerator.GenerateVariants(cd, tnm));
-            IEnumerable<CommandDefinition> allCommandsWithVariants = spec.Commands.Concat(allVariants).OrderBy(cd => cd.Name);
+            IEnumerable<CommandDefinition> allCommands = spec.Commands.Where(cd => cd.API == null || cd.API == "vulkan");
+            IEnumerable<CommandDefinition> allVariants = allCommands.SelectMany(cd => VariantGenerator.GenerateVariants(cd, tnm));
+            IEnumerable<CommandDefinition> allCommandsWithVariants = allCommands.Concat(allVariants).OrderBy(cd => cd.Name);
             IEnumerable<CommandDefinition> loaderLinkableCommands = allCommandsWithVariants.Where(cmd => LoaderLinkableExtensions.Contains(cmd.Extension.Name));
 
             using (StreamWriter commandWriter = File.CreateText(Path.Combine(path, "Commands.gen.cs")))

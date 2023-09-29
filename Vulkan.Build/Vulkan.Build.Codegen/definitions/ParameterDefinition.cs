@@ -6,16 +6,18 @@ namespace Vulkan.Build.Codegen
     public class ParameterDefinition
     {
         public string Name { get; }
-        public TypeSpec Type { get;  }
+        public TypeSpec Type { get; }
         public ParameterModifier Modifier { get; }
         public bool IsOptional { get; }
+        public string API { get; }
 
-        public ParameterDefinition(string name, TypeSpec type, ParameterModifier modifier, bool isOptional)
+        public ParameterDefinition(string name, TypeSpec type, ParameterModifier modifier, bool isOptional, string api)
         {
             Name = name;
             Type = type;
             Modifier = modifier;
             IsOptional = isOptional;
+            API = api;
         }
 
         public static ParameterDefinition CreateFromXml(XElement xe)
@@ -29,18 +31,20 @@ namespace Vulkan.Build.Codegen
             {
                 pointerLevel = 2;
             }
-            else if(xe.Value.Contains($"{typeName}*"))
+            else if (xe.Value.Contains($"{typeName}*"))
             {
                 pointerLevel = 1;
             }
 
+            string api = xe.Attribute("api")?.Value;
 
             TypeSpec type = new TypeSpec(typeName, pointerLevel);
 
-            return new ParameterDefinition(name, type, ParameterModifier.None, isOptional);
+            return new ParameterDefinition(name, type, ParameterModifier.None, isOptional, api);
         }
 
-        public string GetMappedAndNormalizedString(TypeNameMappings tnm) {
+        public string GetMappedAndNormalizedString(TypeNameMappings tnm)
+        {
             return $"{GetModifierString()}{Type.MapTypeSpec(tnm)} {CodegenUtil.NormalizeFieldName(Name)}";
         }
 

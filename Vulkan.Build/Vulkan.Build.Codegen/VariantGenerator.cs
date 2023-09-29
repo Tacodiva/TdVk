@@ -20,7 +20,7 @@ namespace Vulkan.Build.Codegen
             var combos = GetCombinations(definitions).ToArray();
             CommandDefinition[] commands = combos.Skip(1).Select(pd =>
             {
-                return new CommandDefinition(cd.Name, cd.ReturnType, pd, cd.SuccessCodes, cd.ErrorCodes, true, cd.Extension);
+                return new CommandDefinition(cd.Name, cd.ReturnType, pd, cd.API, cd.SuccessCodes, cd.ErrorCodes, true, cd.Extension);
             }).ToArray();
 
             return commands;
@@ -74,36 +74,36 @@ namespace Vulkan.Build.Codegen
         private static ParameterDefinition StringVariant(ParameterDefinition pd)
         {
             TypeSpec typeSpec = new TypeSpec("string");
-            return new ParameterDefinition(pd.Name, typeSpec, ParameterModifier.None, pd.IsOptional);
+            return new ParameterDefinition(pd.Name, typeSpec, ParameterModifier.None, pd.IsOptional, pd.API);
         }
 
         private static ParameterDefinition ArrayVariant(ParameterDefinition pd, int dimensions)
         {
             TypeSpec typeSpec = new TypeSpec(pd.Type.Name, pd.Type.PointerIndirection - 1, dimensions);
-            return new ParameterDefinition(pd.Name, typeSpec, ParameterModifier.None, pd.IsOptional);
+            return new ParameterDefinition(pd.Name, typeSpec, ParameterModifier.None, pd.IsOptional, pd.API);
         }
 
         private static ParameterDefinition OutVariant(ParameterDefinition pd)
         {
             TypeSpec typeSpec = new TypeSpec(pd.Type.Name, pd.Type.PointerIndirection - 1);
-            return new ParameterDefinition(pd.Name, typeSpec, ParameterModifier.Out, pd.IsOptional);
+            return new ParameterDefinition(pd.Name, typeSpec, ParameterModifier.Out, pd.IsOptional, pd.API);
         }
 
         private static ParameterDefinition RefVariant(ParameterDefinition pd)
         {
             TypeSpec typeSpec = new TypeSpec(pd.Type.Name, pd.Type.PointerIndirection - 1);
-            return new ParameterDefinition(pd.Name, typeSpec, ParameterModifier.Ref, pd.IsOptional);
+            return new ParameterDefinition(pd.Name, typeSpec, ParameterModifier.Ref, pd.IsOptional, pd.API);
         }
 
         private static ParameterDefinition IntPtrVariant(ParameterDefinition pd)
         {
             TypeSpec typeSpec = new TypeSpec(nameof(IntPtr));
-            return new ParameterDefinition(pd.Name, typeSpec, ParameterModifier.None, pd.IsOptional);
+            return new ParameterDefinition(pd.Name, typeSpec, ParameterModifier.None, pd.IsOptional, pd.API);
         }
 
         private static bool CanHaveVariant(ParameterDefinition pd, TypeNameMappings tnm)
         {
-            return pd.Type.PointerIndirection > 0 && tnm.GetMappedName(pd.Type.Name) != "void";
+            return pd.Type.PointerIndirection > 0 && tnm.GetMappedName(pd.Type.Name) != "void" && (pd.API == null || pd.API == "vulkan");
         }
 
         private static T[] GetSubArray<T>(T[] array, int skip)

@@ -65,7 +65,8 @@ namespace Vulkan.Build.Codegen
             var commands = registry.Element("commands");
             CommandDefinition[] commandDefinitions = commands?.Elements("command")
                 .Where(xe => xe.Attribute("alias") == null)
-                .Select(commandx => CommandDefinition.CreateFromXml(commandx)).ToArray();
+                .Select(commandx => CommandDefinition.CreateFromXml(commandx))
+                .Where(cd => cd != null).ToArray();
 
             var types = registry.Elements("types");
             TypedefDefinition[] typedefDefinitions = types.Elements("type").Where(xe => xe.Value.Contains("typedef") && xe.HasCategoryAttribute("bitmask"))

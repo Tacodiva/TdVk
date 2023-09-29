@@ -18,6 +18,9 @@ namespace Vulkan.Build.Codegen
             {
                 foreach (var member in structure.Members)
                 {
+                    if (member.API != null && member.API != "vulkan")
+                        continue;
+
                     if (member.ElementCount > 1)
                     {
                         for (int i = 0; i < member.ElementCount; i++)

@@ -31,6 +31,8 @@ public sealed class CodegenTask : FrostingTask<VulkanFrostingContext>
 
         foreach (var typedef in vs.Typedefs)
         {
+            if (typedef.API != null && typedef.API != "vulkansc")
+                continue;
             if (typedef.Requires != null)
             {
                 tnm.AddMapping(typedef.Requires, typedef.Name);

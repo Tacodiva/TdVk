@@ -6305,7 +6305,7 @@ namespace Vulkan
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkEndCommandBuffer(VkCommandBuffer commandBuffer)
         {

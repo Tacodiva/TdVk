@@ -706,6 +706,24 @@ namespace Vulkan
         private string DebuggerDisplay => string.Format("VkMicromapEXT [0x{0}]", Handle.ToString("X"));
     }
 
+    ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
+    [DebuggerDisplay("{DebuggerDisplay,nq}")]
+    public partial struct VkShaderEXT : IEquatable<VkShaderEXT>
+    {
+        public readonly ulong Handle;
+        public VkShaderEXT(ulong existingHandle) { Handle = existingHandle; }
+        public static VkShaderEXT Null => new VkShaderEXT(0);
+        public static implicit operator VkShaderEXT(ulong handle) => new VkShaderEXT(handle);
+        public static bool operator ==(VkShaderEXT left, VkShaderEXT right) => left.Handle == right.Handle;
+        public static bool operator !=(VkShaderEXT left, VkShaderEXT right) => left.Handle != right.Handle;
+        public static bool operator ==(VkShaderEXT left, ulong right) => left.Handle == right;
+        public static bool operator !=(VkShaderEXT left, ulong right) => left.Handle != right;
+        public bool Equals(VkShaderEXT h) => Handle == h.Handle;
+        public override bool Equals(object o) => o is VkShaderEXT h && Equals(h);
+        public override int GetHashCode() => Handle.GetHashCode();
+        private string DebuggerDisplay => string.Format("VkShaderEXT [0x{0}]", Handle.ToString("X"));
+    }
+
     ///<summary>A non-dispatchable handle owned by a VkPhysicalDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
     public partial struct VkDisplayKHR : IEquatable<VkDisplayKHR>
@@ -848,5 +866,23 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkVideoSessionParametersKHR h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkVideoSessionParametersKHR [0x{0}]", Handle.ToString("X"));
+    }
+
+    ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
+    [DebuggerDisplay("{DebuggerDisplay,nq}")]
+    public partial struct VkSemaphoreSciSyncPoolNV : IEquatable<VkSemaphoreSciSyncPoolNV>
+    {
+        public readonly ulong Handle;
+        public VkSemaphoreSciSyncPoolNV(ulong existingHandle) { Handle = existingHandle; }
+        public static VkSemaphoreSciSyncPoolNV Null => new VkSemaphoreSciSyncPoolNV(0);
+        public static implicit operator VkSemaphoreSciSyncPoolNV(ulong handle) => new VkSemaphoreSciSyncPoolNV(handle);
+        public static bool operator ==(VkSemaphoreSciSyncPoolNV left, VkSemaphoreSciSyncPoolNV right) => left.Handle == right.Handle;
+        public static bool operator !=(VkSemaphoreSciSyncPoolNV left, VkSemaphoreSciSyncPoolNV right) => left.Handle != right.Handle;
+        public static bool operator ==(VkSemaphoreSciSyncPoolNV left, ulong right) => left.Handle == right;
+        public static bool operator !=(VkSemaphoreSciSyncPoolNV left, ulong right) => left.Handle != right;
+        public bool Equals(VkSemaphoreSciSyncPoolNV h) => Handle == h.Handle;
+        public override bool Equals(object o) => o is VkSemaphoreSciSyncPoolNV h && Equals(h);
+        public override int GetHashCode() => Handle.GetHashCode();
+        private string DebuggerDisplay => string.Format("VkSemaphoreSciSyncPoolNV [0x{0}]", Handle.ToString("X"));
     }
 }

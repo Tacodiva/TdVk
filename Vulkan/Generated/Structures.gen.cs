@@ -376,6 +376,19 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkBufferUsageFlags2CreateInfoKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBufferUsageFlags2KHR usage;
+        public static VkBufferUsageFlags2CreateInfoKHR New()
+        {
+            VkBufferUsageFlags2CreateInfoKHR ret = new VkBufferUsageFlags2CreateInfoKHR();
+            ret.sType = VkStructureType.BufferUsage2CreateInfoKHR;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkBufferCreateInfo
     {
         public VkStructureType sType;
@@ -789,6 +802,34 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkComputePipelineIndirectBufferInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public ulong deviceAddress;
+        public ulong size;
+        public ulong pipelineDeviceAddressCaptureReplay;
+        public static VkComputePipelineIndirectBufferInfoNV New()
+        {
+            VkComputePipelineIndirectBufferInfoNV ret = new VkComputePipelineIndirectBufferInfoNV();
+            ret.sType = VkStructureType.ComputePipelineIndirectBufferInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPipelineCreateFlags2CreateInfoKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkPipelineCreateFlags2KHR flags;
+        public static VkPipelineCreateFlags2CreateInfoKHR New()
+        {
+            VkPipelineCreateFlags2CreateInfoKHR ret = new VkPipelineCreateFlags2CreateInfoKHR();
+            ret.sType = VkStructureType.PipelineCreate2CreateInfoKHR;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkVertexInputBindingDescription
     {
         public uint binding;
@@ -925,7 +966,7 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
-        public VkPipelineColorBlendStateCreateFlags flags;
+        public uint flags;
         public VkBool32 logicOpEnable;
         public VkLogicOp logicOp;
         public uint attachmentCount;
@@ -972,7 +1013,7 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
-        public VkPipelineDepthStencilStateCreateFlags flags;
+        public uint flags;
         public VkBool32 depthTestEnable;
         public VkBool32 depthWriteEnable;
         public VkCompareOp depthCompareOp;
@@ -1041,6 +1082,33 @@ namespace Vulkan
         public uint vendorID;
         public uint deviceID;
         public fixed byte pipelineCacheUUID[(int)VulkanNative.UuidSize];
+    }
+
+    public unsafe partial struct VkPipelineCacheStageValidationIndexEntry
+    {
+        public ulong codeSize;
+        public ulong codeOffset;
+    }
+
+    public unsafe partial struct VkPipelineCacheSafetyCriticalIndexEntry
+    {
+        public fixed byte pipelineIdentifier[(int)VulkanNative.UuidSize];
+        public ulong pipelineMemorySize;
+        public ulong jsonSize;
+        public ulong jsonOffset;
+        public uint stageIndexCount;
+        public uint stageIndexStride;
+        public ulong stageIndexOffset;
+    }
+
+    public unsafe partial struct VkPipelineCacheHeaderVersionSafetyCriticalOne
+    {
+        public VkPipelineCacheHeaderVersionOne headerVersionOne;
+        public VkPipelineCacheValidationVersion validationVersion;
+        public uint implementationData;
+        public uint pipelineIndexCount;
+        public uint pipelineIndexStride;
+        public ulong pipelineIndexOffset;
     }
 
     public unsafe partial struct VkPushConstantRange
@@ -1913,6 +1981,22 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkApplicationParametersEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint vendorID;
+        public uint deviceID;
+        public uint key;
+        public ulong value;
+        public static VkApplicationParametersEXT New()
+        {
+            VkApplicationParametersEXT ret = new VkApplicationParametersEXT();
+            ret.sType = VkStructureType.ApplicationParametersEXT;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkPipelineRasterizationStateRasterizationOrderAMD
     {
         public VkStructureType sType;
@@ -2077,6 +2161,78 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkExportMemorySciBufInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public NvCsi.NvSciBufAttrList pAttributes;
+        public static VkExportMemorySciBufInfoNV New()
+        {
+            VkExportMemorySciBufInfoNV ret = new VkExportMemorySciBufInfoNV();
+            ret.sType = VkStructureType.ExportMemorySciBufInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkImportMemorySciBufInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkExternalMemoryHandleTypeFlags handleType;
+        public NvCsi.NvSciBufObj handle;
+        public static VkImportMemorySciBufInfoNV New()
+        {
+            VkImportMemorySciBufInfoNV ret = new VkImportMemorySciBufInfoNV();
+            ret.sType = VkStructureType.ImportMemorySciBufInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkMemoryGetSciBufInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkDeviceMemory memory;
+        public VkExternalMemoryHandleTypeFlags handleType;
+        public static VkMemoryGetSciBufInfoNV New()
+        {
+            VkMemoryGetSciBufInfoNV ret = new VkMemoryGetSciBufInfoNV();
+            ret.sType = VkStructureType.MemoryGetSciBufInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkMemorySciBufPropertiesNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint memoryTypeBits;
+        public static VkMemorySciBufPropertiesNV New()
+        {
+            VkMemorySciBufPropertiesNV ret = new VkMemorySciBufPropertiesNV();
+            ret.sType = VkStructureType.MemorySciBufPropertiesNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceExternalMemorySciBufFeaturesNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 sciBufImport;
+        public VkBool32 sciBufExport;
+        public static VkPhysicalDeviceExternalMemorySciBufFeaturesNV New()
+        {
+            VkPhysicalDeviceExternalMemorySciBufFeaturesNV ret = new VkPhysicalDeviceExternalMemorySciBufFeaturesNV();
+            ret.sType = VkStructureType.PhysicalDeviceExternalMemorySciBufFeaturesNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceExternalSciBufFeaturesNV
+    {
+    }
+
     public unsafe partial struct VkWin32KeyedMutexAcquireReleaseInfoNV
     {
         public VkStructureType sType;
@@ -2105,6 +2261,21 @@ namespace Vulkan
         {
             VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV ret = new VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV();
             ret.sType = VkStructureType.PhysicalDeviceDeviceGeneratedCommandsFeaturesNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 deviceGeneratedCompute;
+        public VkBool32 deviceGeneratedComputePipelines;
+        public VkBool32 deviceGeneratedComputeCaptureReplay;
+        public static VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV New()
+        {
+            VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV ret = new VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV();
+            ret.sType = VkStructureType.PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV;
             return ret;
         }
     }
@@ -2338,6 +2509,25 @@ namespace Vulkan
             ret.sType = VkStructureType.GeneratedCommandsMemoryRequirementsInfoNV;
             return ret;
         }
+    }
+
+    public unsafe partial struct VkPipelineIndirectDeviceAddressInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkPipelineBindPoint pipelineBindPoint;
+        public VkPipeline pipeline;
+        public static VkPipelineIndirectDeviceAddressInfoNV New()
+        {
+            VkPipelineIndirectDeviceAddressInfoNV ret = new VkPipelineIndirectDeviceAddressInfoNV();
+            ret.sType = VkStructureType.PipelineIndirectDeviceAddressInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkBindPipelineIndirectCommandNV
+    {
+        public ulong pipelineAddress;
     }
 
     public unsafe partial struct VkPhysicalDeviceFeatures2
@@ -3210,6 +3400,176 @@ namespace Vulkan
         {
             VkFenceGetFdInfoKHR ret = new VkFenceGetFdInfoKHR();
             ret.sType = VkStructureType.FenceGetFdInfoKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkExportFenceSciSyncInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public NvCsi.NvSciSyncAttrList pAttributes;
+        public static VkExportFenceSciSyncInfoNV New()
+        {
+            VkExportFenceSciSyncInfoNV ret = new VkExportFenceSciSyncInfoNV();
+            ret.sType = VkStructureType.ExportFenceSciSyncInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkImportFenceSciSyncInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkFence fence;
+        public VkExternalFenceHandleTypeFlags handleType;
+        public void* handle;
+        public static VkImportFenceSciSyncInfoNV New()
+        {
+            VkImportFenceSciSyncInfoNV ret = new VkImportFenceSciSyncInfoNV();
+            ret.sType = VkStructureType.ImportFenceSciSyncInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkFenceGetSciSyncInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkFence fence;
+        public VkExternalFenceHandleTypeFlags handleType;
+        public static VkFenceGetSciSyncInfoNV New()
+        {
+            VkFenceGetSciSyncInfoNV ret = new VkFenceGetSciSyncInfoNV();
+            ret.sType = VkStructureType.FenceGetSciSyncInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkExportSemaphoreSciSyncInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public NvCsi.NvSciSyncAttrList pAttributes;
+        public static VkExportSemaphoreSciSyncInfoNV New()
+        {
+            VkExportSemaphoreSciSyncInfoNV ret = new VkExportSemaphoreSciSyncInfoNV();
+            ret.sType = VkStructureType.ExportSemaphoreSciSyncInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkImportSemaphoreSciSyncInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkSemaphore semaphore;
+        public VkExternalSemaphoreHandleTypeFlags handleType;
+        public void* handle;
+        public static VkImportSemaphoreSciSyncInfoNV New()
+        {
+            VkImportSemaphoreSciSyncInfoNV ret = new VkImportSemaphoreSciSyncInfoNV();
+            ret.sType = VkStructureType.ImportSemaphoreSciSyncInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkSemaphoreGetSciSyncInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkSemaphore semaphore;
+        public VkExternalSemaphoreHandleTypeFlags handleType;
+        public static VkSemaphoreGetSciSyncInfoNV New()
+        {
+            VkSemaphoreGetSciSyncInfoNV ret = new VkSemaphoreGetSciSyncInfoNV();
+            ret.sType = VkStructureType.SemaphoreGetSciSyncInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkSciSyncAttributesInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkSciSyncClientTypeNV clientType;
+        public VkSciSyncPrimitiveTypeNV primitiveType;
+        public static VkSciSyncAttributesInfoNV New()
+        {
+            VkSciSyncAttributesInfoNV ret = new VkSciSyncAttributesInfoNV();
+            ret.sType = VkStructureType.SciSyncAttributesInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceExternalSciSyncFeaturesNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 sciSyncFence;
+        public VkBool32 sciSyncSemaphore;
+        public VkBool32 sciSyncImport;
+        public VkBool32 sciSyncExport;
+        public static VkPhysicalDeviceExternalSciSyncFeaturesNV New()
+        {
+            VkPhysicalDeviceExternalSciSyncFeaturesNV ret = new VkPhysicalDeviceExternalSciSyncFeaturesNV();
+            ret.sType = VkStructureType.PhysicalDeviceExternalSciSyncFeaturesNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceExternalSciSync2FeaturesNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 sciSyncFence;
+        public VkBool32 sciSyncSemaphore2;
+        public VkBool32 sciSyncImport;
+        public VkBool32 sciSyncExport;
+        public static VkPhysicalDeviceExternalSciSync2FeaturesNV New()
+        {
+            VkPhysicalDeviceExternalSciSync2FeaturesNV ret = new VkPhysicalDeviceExternalSciSync2FeaturesNV();
+            ret.sType = VkStructureType.PhysicalDeviceExternalSciSync2FeaturesNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkSemaphoreSciSyncPoolCreateInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public NvCsi.NvSciSyncObj handle;
+        public static VkSemaphoreSciSyncPoolCreateInfoNV New()
+        {
+            VkSemaphoreSciSyncPoolCreateInfoNV ret = new VkSemaphoreSciSyncPoolCreateInfoNV();
+            ret.sType = VkStructureType.SemaphoreSciSyncPoolCreateInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkSemaphoreSciSyncCreateInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkSemaphoreSciSyncPoolNV semaphorePool;
+        public NvCsi.NvSciSyncFence* pFence;
+        public static VkSemaphoreSciSyncCreateInfoNV New()
+        {
+            VkSemaphoreSciSyncCreateInfoNV ret = new VkSemaphoreSciSyncCreateInfoNV();
+            ret.sType = VkStructureType.SemaphoreSciSyncCreateInfoNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkDeviceSemaphoreSciSyncPoolReservationCreateInfoNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint semaphoreSciSyncPoolRequestCount;
+        public static VkDeviceSemaphoreSciSyncPoolReservationCreateInfoNV New()
+        {
+            VkDeviceSemaphoreSciSyncPoolReservationCreateInfoNV ret = new VkDeviceSemaphoreSciSyncPoolReservationCreateInfoNV();
+            ret.sType = VkStructureType.DeviceSemaphoreSciSyncPoolReservationCreateInfoNV;
             return ret;
         }
     }
@@ -4350,6 +4710,20 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkImageViewSlicedCreateInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint sliceOffset;
+        public uint sliceCount;
+        public static VkImageViewSlicedCreateInfoEXT New()
+        {
+            VkImageViewSlicedCreateInfoEXT ret = new VkImageViewSlicedCreateInfoEXT();
+            ret.sType = VkStructureType.ImageViewSlicedCreateInfoEXT;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkImageViewUsageCreateInfoKHR
     {
     }
@@ -4953,6 +5327,54 @@ namespace Vulkan
 
     public unsafe partial struct VkPhysicalDeviceMaintenance4PropertiesKHR
     {
+    }
+
+    public unsafe partial struct VkPhysicalDeviceMaintenance5FeaturesKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 maintenance5;
+        public static VkPhysicalDeviceMaintenance5FeaturesKHR New()
+        {
+            VkPhysicalDeviceMaintenance5FeaturesKHR ret = new VkPhysicalDeviceMaintenance5FeaturesKHR();
+            ret.sType = VkStructureType.PhysicalDeviceMaintenance5FeaturesKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceMaintenance5PropertiesKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 earlyFragmentMultisampleCoverageAfterSampleCounting;
+        public VkBool32 earlyFragmentSampleMaskTestBeforeSampleCounting;
+        public VkBool32 depthStencilSwizzleOneSupport;
+        public VkBool32 polygonModePointSize;
+        public VkBool32 nonStrictSinglePixelWideLinesUseParallelogram;
+        public VkBool32 nonStrictWideLinesUseParallelogram;
+        public static VkPhysicalDeviceMaintenance5PropertiesKHR New()
+        {
+            VkPhysicalDeviceMaintenance5PropertiesKHR ret = new VkPhysicalDeviceMaintenance5PropertiesKHR();
+            ret.sType = VkStructureType.PhysicalDeviceMaintenance5PropertiesKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkRenderingAreaInfoKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint viewMask;
+        public uint colorAttachmentCount;
+        public VkFormat* pColorAttachmentFormats;
+        public VkFormat depthAttachmentFormat;
+        public VkFormat stencilAttachmentFormat;
+        public static VkRenderingAreaInfoKHR New()
+        {
+            VkRenderingAreaInfoKHR ret = new VkRenderingAreaInfoKHR();
+            ret.sType = VkStructureType.RenderingAreaInfoKHR;
+            return ret;
+        }
     }
 
     public unsafe partial struct VkDescriptorSetLayoutSupport
@@ -7627,11 +8049,11 @@ namespace Vulkan
         public uint MSize;
         public uint NSize;
         public uint KSize;
-        public VkComponentTypeNV AType;
-        public VkComponentTypeNV BType;
-        public VkComponentTypeNV CType;
-        public VkComponentTypeNV DType;
-        public VkScopeNV scope;
+        public VkComponentTypeKHR AType;
+        public VkComponentTypeKHR BType;
+        public VkComponentTypeKHR CType;
+        public VkComponentTypeKHR DType;
+        public VkScopeKHR scope;
         public static VkCooperativeMatrixPropertiesNV New()
         {
             VkCooperativeMatrixPropertiesNV ret = new VkCooperativeMatrixPropertiesNV();
@@ -7899,6 +8321,19 @@ namespace Vulkan
         {
             VkPerformanceQuerySubmitInfoKHR ret = new VkPerformanceQuerySubmitInfoKHR();
             ret.sType = VkStructureType.PerformanceQuerySubmitInfoKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPerformanceQueryReservationInfoKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint maxPerformanceQueriesPerPool;
+        public static VkPerformanceQueryReservationInfoKHR New()
+        {
+            VkPerformanceQueryReservationInfoKHR ret = new VkPerformanceQueryReservationInfoKHR();
+            ret.sType = VkStructureType.PerformanceQueryReservationInfoKHR;
             return ret;
         }
     }
@@ -8395,6 +8830,10 @@ namespace Vulkan
     {
     }
 
+    public unsafe partial struct VkShaderRequiredSubgroupSizeCreateInfoEXT
+    {
+    }
+
     public unsafe partial struct VkSubpassShadingPipelineCreateInfoHUAWEI
     {
         public VkStructureType sType;
@@ -8418,6 +8857,26 @@ namespace Vulkan
         {
             VkPhysicalDeviceSubpassShadingPropertiesHUAWEI ret = new VkPhysicalDeviceSubpassShadingPropertiesHUAWEI();
             ret.sType = VkStructureType.PhysicalDeviceSubpassShadingPropertiesHuawei;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint maxWorkGroupCount_0;
+        public uint maxWorkGroupCount_1;
+        public uint maxWorkGroupCount_2;
+        public uint maxWorkGroupSize_0;
+        public uint maxWorkGroupSize_1;
+        public uint maxWorkGroupSize_2;
+        public uint maxOutputClusterCount;
+        public ulong indirectBufferOffsetAlignment;
+        public static VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI New()
+        {
+            VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI ret = new VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI();
+            ret.sType = VkStructureType.PhysicalDeviceClusterCullingShaderPropertiesHuawei;
             return ret;
         }
     }
@@ -8804,6 +9263,35 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkFaultData
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkFaultLevel faultLevel;
+        public VkFaultType faultType;
+        public static VkFaultData New()
+        {
+            VkFaultData ret = new VkFaultData();
+            ret.sType = VkStructureType.FaultData;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkFaultCallbackInfo
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint faultCount;
+        public VkFaultData* pFaults;
+        public IntPtr pfnFaultCallback;
+        public static VkFaultCallbackInfo New()
+        {
+            VkFaultCallbackInfo ret = new VkFaultCallbackInfo();
+            ret.sType = VkStructureType.FaultCallbackInfo;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkPhysicalDeviceToolProperties
     {
         public VkStructureType sType;
@@ -9141,6 +9629,27 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkRefreshObjectKHR
+    {
+        public VkObjectType objectType;
+        public ulong objectHandle;
+        public VkRefreshObjectFlagsKHR flags;
+    }
+
+    public unsafe partial struct VkRefreshObjectListKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint objectCount;
+        public VkRefreshObjectKHR* pObjects;
+        public static VkRefreshObjectListKHR New()
+        {
+            VkRefreshObjectListKHR ret = new VkRefreshObjectListKHR();
+            ret.sType = VkStructureType.RefreshObjectListKHR;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkPhysicalDeviceExtendedDynamicStateFeaturesEXT
     {
         public VkStructureType sType;
@@ -9310,6 +9819,21 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkPipelineOfflineCreateInfo
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public fixed byte pipelineIdentifier[(int)VulkanNative.UuidSize];
+        public VkPipelineMatchControl matchControl;
+        public ulong poolEntrySize;
+        public static VkPipelineOfflineCreateInfo New()
+        {
+            VkPipelineOfflineCreateInfo ret = new VkPipelineOfflineCreateInfo();
+            ret.sType = VkStructureType.PipelineOfflineCreateInfo;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures
     {
         public VkStructureType sType;
@@ -9465,6 +9989,20 @@ namespace Vulkan
         {
             VkPhysicalDeviceSubpassShadingFeaturesHUAWEI ret = new VkPhysicalDeviceSubpassShadingFeaturesHUAWEI();
             ret.sType = VkStructureType.PhysicalDeviceSubpassShadingFeaturesHuawei;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 clustercullingShader;
+        public VkBool32 multiviewClusterCullingShader;
+        public static VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI New()
+        {
+            VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI ret = new VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI();
+            ret.sType = VkStructureType.PhysicalDeviceClusterCullingShaderFeaturesHuawei;
             return ret;
         }
     }
@@ -9894,6 +10432,32 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 imageSlicedViewOf3D;
+        public static VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT New()
+        {
+            VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT ret = new VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT();
+            ret.sType = VkStructureType.PhysicalDeviceImageSlicedViewOf3dFeaturesEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 attachmentFeedbackLoopDynamicState;
+        public static VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT New()
+        {
+            VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT ret = new VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT();
+            ret.sType = VkStructureType.PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT
     {
         public VkStructureType sType;
@@ -10247,6 +10811,308 @@ namespace Vulkan
 
     public unsafe partial struct VkPhysicalDeviceSynchronization2FeaturesKHR
     {
+    }
+
+    public unsafe partial struct VkPhysicalDeviceHostImageCopyFeaturesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 hostImageCopy;
+        public static VkPhysicalDeviceHostImageCopyFeaturesEXT New()
+        {
+            VkPhysicalDeviceHostImageCopyFeaturesEXT ret = new VkPhysicalDeviceHostImageCopyFeaturesEXT();
+            ret.sType = VkStructureType.PhysicalDeviceHostImageCopyFeaturesEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceHostImageCopyPropertiesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint copySrcLayoutCount;
+        public VkImageLayout* pCopySrcLayouts;
+        public uint copyDstLayoutCount;
+        public VkImageLayout* pCopyDstLayouts;
+        public fixed byte optimalTilingLayoutUUID[(int)VulkanNative.UuidSize];
+        public VkBool32 identicalMemoryTypeRequirements;
+        public static VkPhysicalDeviceHostImageCopyPropertiesEXT New()
+        {
+            VkPhysicalDeviceHostImageCopyPropertiesEXT ret = new VkPhysicalDeviceHostImageCopyPropertiesEXT();
+            ret.sType = VkStructureType.PhysicalDeviceHostImageCopyPropertiesEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkMemoryToImageCopyEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public void* pHostPointer;
+        public uint memoryRowLength;
+        public uint memoryImageHeight;
+        public VkImageSubresourceLayers imageSubresource;
+        public VkOffset3D imageOffset;
+        public VkExtent3D imageExtent;
+        public static VkMemoryToImageCopyEXT New()
+        {
+            VkMemoryToImageCopyEXT ret = new VkMemoryToImageCopyEXT();
+            ret.sType = VkStructureType.MemoryToImageCopyEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkImageToMemoryCopyEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public void* pHostPointer;
+        public uint memoryRowLength;
+        public uint memoryImageHeight;
+        public VkImageSubresourceLayers imageSubresource;
+        public VkOffset3D imageOffset;
+        public VkExtent3D imageExtent;
+        public static VkImageToMemoryCopyEXT New()
+        {
+            VkImageToMemoryCopyEXT ret = new VkImageToMemoryCopyEXT();
+            ret.sType = VkStructureType.ImageToMemoryCopyEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkCopyMemoryToImageInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkHostImageCopyFlagsEXT flags;
+        public VkImage dstImage;
+        public VkImageLayout dstImageLayout;
+        public uint regionCount;
+        public VkMemoryToImageCopyEXT* pRegions;
+        public static VkCopyMemoryToImageInfoEXT New()
+        {
+            VkCopyMemoryToImageInfoEXT ret = new VkCopyMemoryToImageInfoEXT();
+            ret.sType = VkStructureType.CopyMemoryToImageInfoEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkCopyImageToMemoryInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkHostImageCopyFlagsEXT flags;
+        public VkImage srcImage;
+        public VkImageLayout srcImageLayout;
+        public uint regionCount;
+        public VkImageToMemoryCopyEXT* pRegions;
+        public static VkCopyImageToMemoryInfoEXT New()
+        {
+            VkCopyImageToMemoryInfoEXT ret = new VkCopyImageToMemoryInfoEXT();
+            ret.sType = VkStructureType.CopyImageToMemoryInfoEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkCopyImageToImageInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkHostImageCopyFlagsEXT flags;
+        public VkImage srcImage;
+        public VkImageLayout srcImageLayout;
+        public VkImage dstImage;
+        public VkImageLayout dstImageLayout;
+        public uint regionCount;
+        public VkImageCopy2* pRegions;
+        public static VkCopyImageToImageInfoEXT New()
+        {
+            VkCopyImageToImageInfoEXT ret = new VkCopyImageToImageInfoEXT();
+            ret.sType = VkStructureType.CopyImageToImageInfoEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkHostImageLayoutTransitionInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkImage image;
+        public VkImageLayout oldLayout;
+        public VkImageLayout newLayout;
+        public VkImageSubresourceRange subresourceRange;
+        public static VkHostImageLayoutTransitionInfoEXT New()
+        {
+            VkHostImageLayoutTransitionInfoEXT ret = new VkHostImageLayoutTransitionInfoEXT();
+            ret.sType = VkStructureType.HostImageLayoutTransitionInfoEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkSubresourceHostMemcpySizeEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public ulong size;
+        public static VkSubresourceHostMemcpySizeEXT New()
+        {
+            VkSubresourceHostMemcpySizeEXT ret = new VkSubresourceHostMemcpySizeEXT();
+            ret.sType = VkStructureType.SubresourceHostMemcpySizeEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkHostImageCopyDevicePerformanceQueryEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 optimalDeviceAccess;
+        public VkBool32 identicalMemoryLayout;
+        public static VkHostImageCopyDevicePerformanceQueryEXT New()
+        {
+            VkHostImageCopyDevicePerformanceQueryEXT ret = new VkHostImageCopyDevicePerformanceQueryEXT();
+            ret.sType = VkStructureType.HostImageCopyDevicePerformanceQueryEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceVulkanSC10Properties
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 deviceNoDynamicHostAllocations;
+        public VkBool32 deviceDestroyFreesMemory;
+        public VkBool32 commandPoolMultipleCommandBuffersRecording;
+        public VkBool32 commandPoolResetCommandBuffer;
+        public VkBool32 commandBufferSimultaneousUse;
+        public VkBool32 secondaryCommandBufferNullOrImagelessFramebuffer;
+        public VkBool32 recycleDescriptorSetMemory;
+        public VkBool32 recyclePipelineMemory;
+        public uint maxRenderPassSubpasses;
+        public uint maxRenderPassDependencies;
+        public uint maxSubpassInputAttachments;
+        public uint maxSubpassPreserveAttachments;
+        public uint maxFramebufferAttachments;
+        public uint maxDescriptorSetLayoutBindings;
+        public uint maxQueryFaultCount;
+        public uint maxCallbackFaultCount;
+        public uint maxCommandPoolCommandBuffers;
+        public ulong maxCommandBufferSize;
+        public static VkPhysicalDeviceVulkanSC10Properties New()
+        {
+            VkPhysicalDeviceVulkanSC10Properties ret = new VkPhysicalDeviceVulkanSC10Properties();
+            ret.sType = VkStructureType.PhysicalDeviceVulkanSc10Properties;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPipelinePoolSize
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public ulong poolEntrySize;
+        public uint poolEntryCount;
+        public static VkPipelinePoolSize New()
+        {
+            VkPipelinePoolSize ret = new VkPipelinePoolSize();
+            ret.sType = VkStructureType.PipelinePoolSize;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkDeviceObjectReservationCreateInfo
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint pipelineCacheCreateInfoCount;
+        public VkPipelineCacheCreateInfo* pPipelineCacheCreateInfos;
+        public uint pipelinePoolSizeCount;
+        public VkPipelinePoolSize* pPipelinePoolSizes;
+        public uint semaphoreRequestCount;
+        public uint commandBufferRequestCount;
+        public uint fenceRequestCount;
+        public uint deviceMemoryRequestCount;
+        public uint bufferRequestCount;
+        public uint imageRequestCount;
+        public uint eventRequestCount;
+        public uint queryPoolRequestCount;
+        public uint bufferViewRequestCount;
+        public uint imageViewRequestCount;
+        public uint layeredImageViewRequestCount;
+        public uint pipelineCacheRequestCount;
+        public uint pipelineLayoutRequestCount;
+        public uint renderPassRequestCount;
+        public uint graphicsPipelineRequestCount;
+        public uint computePipelineRequestCount;
+        public uint descriptorSetLayoutRequestCount;
+        public uint samplerRequestCount;
+        public uint descriptorPoolRequestCount;
+        public uint descriptorSetRequestCount;
+        public uint framebufferRequestCount;
+        public uint commandPoolRequestCount;
+        public uint samplerYcbcrConversionRequestCount;
+        public uint surfaceRequestCount;
+        public uint swapchainRequestCount;
+        public uint displayModeRequestCount;
+        public uint subpassDescriptionRequestCount;
+        public uint attachmentDescriptionRequestCount;
+        public uint descriptorSetLayoutBindingRequestCount;
+        public uint descriptorSetLayoutBindingLimit;
+        public uint maxImageViewMipLevels;
+        public uint maxImageViewArrayLayers;
+        public uint maxLayeredImageViewMipLevels;
+        public uint maxOcclusionQueriesPerPool;
+        public uint maxPipelineStatisticsQueriesPerPool;
+        public uint maxTimestampQueriesPerPool;
+        public uint maxImmutableSamplersPerDescriptorSetLayout;
+        public static VkDeviceObjectReservationCreateInfo New()
+        {
+            VkDeviceObjectReservationCreateInfo ret = new VkDeviceObjectReservationCreateInfo();
+            ret.sType = VkStructureType.DeviceObjectReservationCreateInfo;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkCommandPoolMemoryReservationCreateInfo
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public ulong commandPoolReservedSize;
+        public uint commandPoolMaxCommandBuffers;
+        public static VkCommandPoolMemoryReservationCreateInfo New()
+        {
+            VkCommandPoolMemoryReservationCreateInfo ret = new VkCommandPoolMemoryReservationCreateInfo();
+            ret.sType = VkStructureType.CommandPoolMemoryReservationCreateInfo;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkCommandPoolMemoryConsumption
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public ulong commandPoolAllocated;
+        public ulong commandPoolReservedSize;
+        public ulong commandBufferAllocated;
+        public static VkCommandPoolMemoryConsumption New()
+        {
+            VkCommandPoolMemoryConsumption ret = new VkCommandPoolMemoryConsumption();
+            ret.sType = VkStructureType.CommandPoolMemoryConsumption;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceVulkanSC10Features
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 shaderAtomicInstructions;
+        public static VkPhysicalDeviceVulkanSC10Features New()
+        {
+            VkPhysicalDeviceVulkanSC10Features ret = new VkPhysicalDeviceVulkanSC10Features();
+            ret.sType = VkStructureType.PhysicalDeviceVulkanSc10Features;
+            return ret;
+        }
     }
 
     public unsafe partial struct VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
@@ -10768,6 +11634,32 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkVideoEncodeSessionParametersGetInfoKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkVideoSessionParametersKHR videoSessionParameters;
+        public static VkVideoEncodeSessionParametersGetInfoKHR New()
+        {
+            VkVideoEncodeSessionParametersGetInfoKHR ret = new VkVideoEncodeSessionParametersGetInfoKHR();
+            ret.sType = VkStructureType.VideoEncodeSessionParametersGetInfoKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkVideoEncodeSessionParametersFeedbackInfoKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 hasOverrides;
+        public static VkVideoEncodeSessionParametersFeedbackInfoKHR New()
+        {
+            VkVideoEncodeSessionParametersFeedbackInfoKHR ret = new VkVideoEncodeSessionParametersFeedbackInfoKHR();
+            ret.sType = VkStructureType.VideoEncodeSessionParametersFeedbackInfoKHR;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkVideoBeginCodingInfoKHR
     {
         public VkStructureType sType;
@@ -10831,10 +11723,9 @@ namespace Vulkan
         public VkStructureType sType;
         public void* pNext;
         public uint flags;
-        public uint qualityLevel;
-        public VkBuffer dstBitstreamBuffer;
-        public ulong dstBitstreamBufferOffset;
-        public ulong dstBitstreamBufferMaxRange;
+        public VkBuffer dstBuffer;
+        public ulong dstBufferOffset;
+        public ulong dstBufferRange;
         public VkVideoPictureResourceInfoKHR srcPictureResource;
         public VkVideoReferenceSlotInfoKHR* pSetupReferenceSlot;
         public uint referenceSlotCount;
@@ -10848,14 +11739,70 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkQueryPoolVideoEncodeFeedbackCreateInfoKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkVideoEncodeFeedbackFlagsKHR encodeFeedbackFlags;
+        public static VkQueryPoolVideoEncodeFeedbackCreateInfoKHR New()
+        {
+            VkQueryPoolVideoEncodeFeedbackCreateInfoKHR ret = new VkQueryPoolVideoEncodeFeedbackCreateInfoKHR();
+            ret.sType = VkStructureType.QueryPoolVideoEncodeFeedbackCreateInfoKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkVideoEncodeQualityLevelInfoKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint qualityLevel;
+        public static VkVideoEncodeQualityLevelInfoKHR New()
+        {
+            VkVideoEncodeQualityLevelInfoKHR ret = new VkVideoEncodeQualityLevelInfoKHR();
+            ret.sType = VkStructureType.VideoEncodeQualityLevelInfoKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkVideoProfileInfoKHR* pVideoProfile;
+        public uint qualityLevel;
+        public static VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR New()
+        {
+            VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR ret = new VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR();
+            ret.sType = VkStructureType.PhysicalDeviceVideoEncodeQualityLevelInfoKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkVideoEncodeQualityLevelPropertiesKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkVideoEncodeRateControlModeFlagsKHR preferredRateControlMode;
+        public uint preferredRateControlLayerCount;
+        public static VkVideoEncodeQualityLevelPropertiesKHR New()
+        {
+            VkVideoEncodeQualityLevelPropertiesKHR ret = new VkVideoEncodeQualityLevelPropertiesKHR();
+            ret.sType = VkStructureType.VideoEncodeQualityLevelPropertiesKHR;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkVideoEncodeRateControlInfoKHR
     {
         public VkStructureType sType;
         public void* pNext;
         public uint flags;
         public VkVideoEncodeRateControlModeFlagsKHR rateControlMode;
-        public byte layerCount;
-        public VkVideoEncodeRateControlLayerInfoKHR* pLayerConfigs;
+        public uint layerCount;
+        public VkVideoEncodeRateControlLayerInfoKHR* pLayers;
+        public uint virtualBufferSizeInMs;
+        public uint initialVirtualBufferSizeInMs;
         public static VkVideoEncodeRateControlInfoKHR New()
         {
             VkVideoEncodeRateControlInfoKHR ret = new VkVideoEncodeRateControlInfoKHR();
@@ -10868,12 +11815,10 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
-        public uint averageBitrate;
-        public uint maxBitrate;
+        public ulong averageBitrate;
+        public ulong maxBitrate;
         public uint frameRateNumerator;
         public uint frameRateDenominator;
-        public uint virtualBufferSizeInMs;
-        public uint initialVirtualBufferSizeInMs;
         public static VkVideoEncodeRateControlLayerInfoKHR New()
         {
             VkVideoEncodeRateControlLayerInfoKHR ret = new VkVideoEncodeRateControlLayerInfoKHR();
@@ -10888,9 +11833,11 @@ namespace Vulkan
         public void* pNext;
         public VkVideoEncodeCapabilityFlagsKHR flags;
         public VkVideoEncodeRateControlModeFlagsKHR rateControlModes;
-        public byte rateControlLayerCount;
-        public byte qualityLevelCount;
-        public VkExtent2D inputImageDataFillAlignment;
+        public uint maxRateControlLayers;
+        public ulong maxBitrate;
+        public uint maxQualityLevels;
+        public VkExtent2D encodeInputPictureGranularity;
+        public VkVideoEncodeFeedbackFlagsKHR supportedEncodeFeedbackFlags;
         public static VkVideoEncodeCapabilitiesKHR New()
         {
             VkVideoEncodeCapabilitiesKHR ret = new VkVideoEncodeCapabilitiesKHR();
@@ -10904,20 +11851,57 @@ namespace Vulkan
         public VkStructureType sType;
         public void* pNext;
         public VkVideoEncodeH264CapabilityFlagsEXT flags;
-        public VkVideoEncodeH264InputModeFlagsEXT inputModeFlags;
-        public VkVideoEncodeH264OutputModeFlagsEXT outputModeFlags;
-        public byte maxPPictureL0ReferenceCount;
-        public byte maxBPictureL0ReferenceCount;
-        public byte maxL1ReferenceCount;
-        public VkBool32 motionVectorsOverPicBoundariesFlag;
-        public uint maxBytesPerPicDenom;
-        public uint maxBitsPerMbDenom;
-        public uint log2MaxMvLengthHorizontal;
-        public uint log2MaxMvLengthVertical;
+        public StdVideoH264LevelIdc maxLevelIdc;
+        public uint maxSliceCount;
+        public uint maxPPictureL0ReferenceCount;
+        public uint maxBPictureL0ReferenceCount;
+        public uint maxL1ReferenceCount;
+        public uint maxTemporalLayerCount;
+        public VkBool32 expectDyadicTemporalLayerPattern;
+        public int minQp;
+        public int maxQp;
+        public VkBool32 prefersGopRemainingFrames;
+        public VkBool32 requiresGopRemainingFrames;
+        public VkVideoEncodeH264StdFlagsEXT stdSyntaxFlags;
         public static VkVideoEncodeH264CapabilitiesEXT New()
         {
             VkVideoEncodeH264CapabilitiesEXT ret = new VkVideoEncodeH264CapabilitiesEXT();
             ret.sType = VkStructureType.VideoEncodeH264CapabilitiesEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkVideoEncodeH264QualityLevelPropertiesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkVideoEncodeH264RateControlFlagsEXT preferredRateControlFlags;
+        public uint preferredGopFrameCount;
+        public uint preferredIdrPeriod;
+        public uint preferredConsecutiveBFrameCount;
+        public uint preferredTemporalLayerCount;
+        public VkVideoEncodeH264QpEXT preferredConstantQp;
+        public uint preferredMaxL0ReferenceCount;
+        public uint preferredMaxL1ReferenceCount;
+        public VkBool32 preferredStdEntropyCodingModeFlag;
+        public static VkVideoEncodeH264QualityLevelPropertiesEXT New()
+        {
+            VkVideoEncodeH264QualityLevelPropertiesEXT ret = new VkVideoEncodeH264QualityLevelPropertiesEXT();
+            ret.sType = VkStructureType.VideoEncodeH264QualityLevelPropertiesEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkVideoEncodeH264SessionCreateInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 useMaxLevelIdc;
+        public StdVideoH264LevelIdc maxLevelIdc;
+        public static VkVideoEncodeH264SessionCreateInfoEXT New()
+        {
+            VkVideoEncodeH264SessionCreateInfoEXT ret = new VkVideoEncodeH264SessionCreateInfoEXT();
+            ret.sType = VkStructureType.VideoEncodeH264SessionCreateInfoEXT;
             return ret;
         }
     }
@@ -10953,11 +11937,40 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkVideoEncodeH264SessionParametersGetInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 writeStdSPS;
+        public VkBool32 writeStdPPS;
+        public uint stdSPSId;
+        public uint stdPPSId;
+        public static VkVideoEncodeH264SessionParametersGetInfoEXT New()
+        {
+            VkVideoEncodeH264SessionParametersGetInfoEXT ret = new VkVideoEncodeH264SessionParametersGetInfoEXT();
+            ret.sType = VkStructureType.VideoEncodeH264SessionParametersGetInfoEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkVideoEncodeH264SessionParametersFeedbackInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 hasStdSPSOverrides;
+        public VkBool32 hasStdPPSOverrides;
+        public static VkVideoEncodeH264SessionParametersFeedbackInfoEXT New()
+        {
+            VkVideoEncodeH264SessionParametersFeedbackInfoEXT ret = new VkVideoEncodeH264SessionParametersFeedbackInfoEXT();
+            ret.sType = VkStructureType.VideoEncodeH264SessionParametersFeedbackInfoEXT;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkVideoEncodeH264DpbSlotInfoEXT
     {
         public VkStructureType sType;
         public void* pNext;
-        public sbyte slotIndex;
         public StdVideoEncodeH264ReferenceInfo* pStdReferenceInfo;
         public static VkVideoEncodeH264DpbSlotInfoEXT New()
         {
@@ -10967,51 +11980,18 @@ namespace Vulkan
         }
     }
 
-    public unsafe partial struct VkVideoEncodeH264VclFrameInfoEXT
+    public unsafe partial struct VkVideoEncodeH264PictureInfoEXT
     {
         public VkStructureType sType;
         public void* pNext;
-        public VkVideoEncodeH264ReferenceListsInfoEXT* pReferenceFinalLists;
         public uint naluSliceEntryCount;
         public VkVideoEncodeH264NaluSliceInfoEXT* pNaluSliceEntries;
-        public StdVideoEncodeH264PictureInfo* pCurrentPictureInfo;
-        public static VkVideoEncodeH264VclFrameInfoEXT New()
+        public StdVideoEncodeH264PictureInfo* pStdPictureInfo;
+        public VkBool32 generatePrefixNalu;
+        public static VkVideoEncodeH264PictureInfoEXT New()
         {
-            VkVideoEncodeH264VclFrameInfoEXT ret = new VkVideoEncodeH264VclFrameInfoEXT();
-            ret.sType = VkStructureType.VideoEncodeH264VclFrameInfoEXT;
-            return ret;
-        }
-    }
-
-    public unsafe partial struct VkVideoEncodeH264ReferenceListsInfoEXT
-    {
-        public VkStructureType sType;
-        public void* pNext;
-        public byte referenceList0EntryCount;
-        public VkVideoEncodeH264DpbSlotInfoEXT* pReferenceList0Entries;
-        public byte referenceList1EntryCount;
-        public VkVideoEncodeH264DpbSlotInfoEXT* pReferenceList1Entries;
-        public StdVideoEncodeH264RefMemMgmtCtrlOperations* pMemMgmtCtrlOperations;
-        public static VkVideoEncodeH264ReferenceListsInfoEXT New()
-        {
-            VkVideoEncodeH264ReferenceListsInfoEXT ret = new VkVideoEncodeH264ReferenceListsInfoEXT();
-            ret.sType = VkStructureType.VideoEncodeH264ReferenceListsInfoEXT;
-            return ret;
-        }
-    }
-
-    public unsafe partial struct VkVideoEncodeH264EmitPictureParametersInfoEXT
-    {
-        public VkStructureType sType;
-        public void* pNext;
-        public byte spsId;
-        public VkBool32 emitSpsEnable;
-        public uint ppsIdEntryCount;
-        public byte* ppsIdEntries;
-        public static VkVideoEncodeH264EmitPictureParametersInfoEXT New()
-        {
-            VkVideoEncodeH264EmitPictureParametersInfoEXT ret = new VkVideoEncodeH264EmitPictureParametersInfoEXT();
-            ret.sType = VkStructureType.VideoEncodeH264EmitPictureParametersInfoEXT;
+            VkVideoEncodeH264PictureInfoEXT ret = new VkVideoEncodeH264PictureInfoEXT();
+            ret.sType = VkStructureType.VideoEncodeH264PictureInfoEXT;
             return ret;
         }
     }
@@ -11033,9 +12013,8 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
-        public uint mbCount;
-        public VkVideoEncodeH264ReferenceListsInfoEXT* pReferenceFinalLists;
-        public StdVideoEncodeH264SliceHeader* pSliceHeaderStd;
+        public int constantQp;
+        public StdVideoEncodeH264SliceHeader* pStdSliceHeader;
         public static VkVideoEncodeH264NaluSliceInfoEXT New()
         {
             VkVideoEncodeH264NaluSliceInfoEXT ret = new VkVideoEncodeH264NaluSliceInfoEXT();
@@ -11048,11 +12027,11 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
+        public VkVideoEncodeH264RateControlFlagsEXT flags;
         public uint gopFrameCount;
         public uint idrPeriod;
         public uint consecutiveBFrameCount;
-        public VkVideoEncodeH264RateControlStructureEXT rateControlStructure;
-        public byte temporalLayerCount;
+        public uint temporalLayerCount;
         public static VkVideoEncodeH264RateControlInfoEXT New()
         {
             VkVideoEncodeH264RateControlInfoEXT ret = new VkVideoEncodeH264RateControlInfoEXT();
@@ -11075,13 +12054,26 @@ namespace Vulkan
         public uint frameBSize;
     }
 
+    public unsafe partial struct VkVideoEncodeH264GopRemainingFrameInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 useGopRemainingFrames;
+        public uint gopRemainingI;
+        public uint gopRemainingP;
+        public uint gopRemainingB;
+        public static VkVideoEncodeH264GopRemainingFrameInfoEXT New()
+        {
+            VkVideoEncodeH264GopRemainingFrameInfoEXT ret = new VkVideoEncodeH264GopRemainingFrameInfoEXT();
+            ret.sType = VkStructureType.VideoEncodeH264GopRemainingFrameInfoEXT;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkVideoEncodeH264RateControlLayerInfoEXT
     {
         public VkStructureType sType;
         public void* pNext;
-        public byte temporalLayerId;
-        public VkBool32 useInitialRcQp;
-        public VkVideoEncodeH264QpEXT initialRcQp;
         public VkBool32 useMinQp;
         public VkVideoEncodeH264QpEXT minQp;
         public VkBool32 useMaxQp;
@@ -11101,29 +12093,59 @@ namespace Vulkan
         public VkStructureType sType;
         public void* pNext;
         public VkVideoEncodeH265CapabilityFlagsEXT flags;
-        public VkVideoEncodeH265InputModeFlagsEXT inputModeFlags;
-        public VkVideoEncodeH265OutputModeFlagsEXT outputModeFlags;
+        public StdVideoH265LevelIdc maxLevelIdc;
+        public uint maxSliceSegmentCount;
+        public VkExtent2D maxTiles;
         public VkVideoEncodeH265CtbSizeFlagsEXT ctbSizes;
         public VkVideoEncodeH265TransformBlockSizeFlagsEXT transformBlockSizes;
-        public byte maxPPictureL0ReferenceCount;
-        public byte maxBPictureL0ReferenceCount;
-        public byte maxL1ReferenceCount;
-        public byte maxSubLayersCount;
-        public byte minLog2MinLumaCodingBlockSizeMinus3;
-        public byte maxLog2MinLumaCodingBlockSizeMinus3;
-        public byte minLog2MinLumaTransformBlockSizeMinus2;
-        public byte maxLog2MinLumaTransformBlockSizeMinus2;
-        public byte minMaxTransformHierarchyDepthInter;
-        public byte maxMaxTransformHierarchyDepthInter;
-        public byte minMaxTransformHierarchyDepthIntra;
-        public byte maxMaxTransformHierarchyDepthIntra;
-        public byte maxDiffCuQpDeltaDepth;
-        public byte minMaxNumMergeCand;
-        public byte maxMaxNumMergeCand;
+        public uint maxPPictureL0ReferenceCount;
+        public uint maxBPictureL0ReferenceCount;
+        public uint maxL1ReferenceCount;
+        public uint maxSubLayerCount;
+        public VkBool32 expectDyadicTemporalSubLayerPattern;
+        public int minQp;
+        public int maxQp;
+        public VkBool32 prefersGopRemainingFrames;
+        public VkBool32 requiresGopRemainingFrames;
+        public VkVideoEncodeH265StdFlagsEXT stdSyntaxFlags;
         public static VkVideoEncodeH265CapabilitiesEXT New()
         {
             VkVideoEncodeH265CapabilitiesEXT ret = new VkVideoEncodeH265CapabilitiesEXT();
             ret.sType = VkStructureType.VideoEncodeH265CapabilitiesEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkVideoEncodeH265QualityLevelPropertiesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkVideoEncodeH265RateControlFlagsEXT preferredRateControlFlags;
+        public uint preferredGopFrameCount;
+        public uint preferredIdrPeriod;
+        public uint preferredConsecutiveBFrameCount;
+        public uint preferredSubLayerCount;
+        public VkVideoEncodeH265QpEXT preferredConstantQp;
+        public uint preferredMaxL0ReferenceCount;
+        public uint preferredMaxL1ReferenceCount;
+        public static VkVideoEncodeH265QualityLevelPropertiesEXT New()
+        {
+            VkVideoEncodeH265QualityLevelPropertiesEXT ret = new VkVideoEncodeH265QualityLevelPropertiesEXT();
+            ret.sType = VkStructureType.VideoEncodeH265QualityLevelPropertiesEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkVideoEncodeH265SessionCreateInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 useMaxLevelIdc;
+        public StdVideoH265LevelIdc maxLevelIdc;
+        public static VkVideoEncodeH265SessionCreateInfoEXT New()
+        {
+            VkVideoEncodeH265SessionCreateInfoEXT ret = new VkVideoEncodeH265SessionCreateInfoEXT();
+            ret.sType = VkStructureType.VideoEncodeH265SessionCreateInfoEXT;
             return ret;
         }
     }
@@ -11162,36 +12184,50 @@ namespace Vulkan
         }
     }
 
-    public unsafe partial struct VkVideoEncodeH265VclFrameInfoEXT
+    public unsafe partial struct VkVideoEncodeH265SessionParametersGetInfoEXT
     {
         public VkStructureType sType;
         public void* pNext;
-        public VkVideoEncodeH265ReferenceListsInfoEXT* pReferenceFinalLists;
-        public uint naluSliceSegmentEntryCount;
-        public VkVideoEncodeH265NaluSliceSegmentInfoEXT* pNaluSliceSegmentEntries;
-        public StdVideoEncodeH265PictureInfo* pCurrentPictureInfo;
-        public static VkVideoEncodeH265VclFrameInfoEXT New()
+        public VkBool32 writeStdVPS;
+        public VkBool32 writeStdSPS;
+        public VkBool32 writeStdPPS;
+        public uint stdVPSId;
+        public uint stdSPSId;
+        public uint stdPPSId;
+        public static VkVideoEncodeH265SessionParametersGetInfoEXT New()
         {
-            VkVideoEncodeH265VclFrameInfoEXT ret = new VkVideoEncodeH265VclFrameInfoEXT();
-            ret.sType = VkStructureType.VideoEncodeH265VclFrameInfoEXT;
+            VkVideoEncodeH265SessionParametersGetInfoEXT ret = new VkVideoEncodeH265SessionParametersGetInfoEXT();
+            ret.sType = VkStructureType.VideoEncodeH265SessionParametersGetInfoEXT;
             return ret;
         }
     }
 
-    public unsafe partial struct VkVideoEncodeH265EmitPictureParametersInfoEXT
+    public unsafe partial struct VkVideoEncodeH265SessionParametersFeedbackInfoEXT
     {
         public VkStructureType sType;
         public void* pNext;
-        public byte vpsId;
-        public byte spsId;
-        public VkBool32 emitVpsEnable;
-        public VkBool32 emitSpsEnable;
-        public uint ppsIdEntryCount;
-        public byte* ppsIdEntries;
-        public static VkVideoEncodeH265EmitPictureParametersInfoEXT New()
+        public VkBool32 hasStdVPSOverrides;
+        public VkBool32 hasStdSPSOverrides;
+        public VkBool32 hasStdPPSOverrides;
+        public static VkVideoEncodeH265SessionParametersFeedbackInfoEXT New()
         {
-            VkVideoEncodeH265EmitPictureParametersInfoEXT ret = new VkVideoEncodeH265EmitPictureParametersInfoEXT();
-            ret.sType = VkStructureType.VideoEncodeH265EmitPictureParametersInfoEXT;
+            VkVideoEncodeH265SessionParametersFeedbackInfoEXT ret = new VkVideoEncodeH265SessionParametersFeedbackInfoEXT();
+            ret.sType = VkStructureType.VideoEncodeH265SessionParametersFeedbackInfoEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkVideoEncodeH265PictureInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint naluSliceSegmentEntryCount;
+        public VkVideoEncodeH265NaluSliceSegmentInfoEXT* pNaluSliceSegmentEntries;
+        public StdVideoEncodeH265PictureInfo* pStdPictureInfo;
+        public static VkVideoEncodeH265PictureInfoEXT New()
+        {
+            VkVideoEncodeH265PictureInfoEXT ret = new VkVideoEncodeH265PictureInfoEXT();
+            ret.sType = VkStructureType.VideoEncodeH265PictureInfoEXT;
             return ret;
         }
     }
@@ -11200,9 +12236,8 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
-        public uint ctbCount;
-        public VkVideoEncodeH265ReferenceListsInfoEXT* pReferenceFinalLists;
-        public StdVideoEncodeH265SliceSegmentHeader* pSliceSegmentHeaderStd;
+        public int constantQp;
+        public StdVideoEncodeH265SliceSegmentHeader* pStdSliceSegmentHeader;
         public static VkVideoEncodeH265NaluSliceSegmentInfoEXT New()
         {
             VkVideoEncodeH265NaluSliceSegmentInfoEXT ret = new VkVideoEncodeH265NaluSliceSegmentInfoEXT();
@@ -11215,11 +12250,11 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
+        public VkVideoEncodeH265RateControlFlagsEXT flags;
         public uint gopFrameCount;
         public uint idrPeriod;
         public uint consecutiveBFrameCount;
-        public VkVideoEncodeH265RateControlStructureEXT rateControlStructure;
-        public byte subLayerCount;
+        public uint subLayerCount;
         public static VkVideoEncodeH265RateControlInfoEXT New()
         {
             VkVideoEncodeH265RateControlInfoEXT ret = new VkVideoEncodeH265RateControlInfoEXT();
@@ -11242,13 +12277,26 @@ namespace Vulkan
         public uint frameBSize;
     }
 
+    public unsafe partial struct VkVideoEncodeH265GopRemainingFrameInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 useGopRemainingFrames;
+        public uint gopRemainingI;
+        public uint gopRemainingP;
+        public uint gopRemainingB;
+        public static VkVideoEncodeH265GopRemainingFrameInfoEXT New()
+        {
+            VkVideoEncodeH265GopRemainingFrameInfoEXT ret = new VkVideoEncodeH265GopRemainingFrameInfoEXT();
+            ret.sType = VkStructureType.VideoEncodeH265GopRemainingFrameInfoEXT;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkVideoEncodeH265RateControlLayerInfoEXT
     {
         public VkStructureType sType;
         public void* pNext;
-        public byte temporalId;
-        public VkBool32 useInitialRcQp;
-        public VkVideoEncodeH265QpEXT initialRcQp;
         public VkBool32 useMinQp;
         public VkVideoEncodeH265QpEXT minQp;
         public VkBool32 useMaxQp;
@@ -11280,29 +12328,11 @@ namespace Vulkan
     {
         public VkStructureType sType;
         public void* pNext;
-        public sbyte slotIndex;
         public StdVideoEncodeH265ReferenceInfo* pStdReferenceInfo;
         public static VkVideoEncodeH265DpbSlotInfoEXT New()
         {
             VkVideoEncodeH265DpbSlotInfoEXT ret = new VkVideoEncodeH265DpbSlotInfoEXT();
             ret.sType = VkStructureType.VideoEncodeH265DpbSlotInfoEXT;
-            return ret;
-        }
-    }
-
-    public unsafe partial struct VkVideoEncodeH265ReferenceListsInfoEXT
-    {
-        public VkStructureType sType;
-        public void* pNext;
-        public byte referenceList0EntryCount;
-        public VkVideoEncodeH265DpbSlotInfoEXT* pReferenceList0Entries;
-        public byte referenceList1EntryCount;
-        public VkVideoEncodeH265DpbSlotInfoEXT* pReferenceList1Entries;
-        public StdVideoEncodeH265ReferenceModifications* pReferenceModifications;
-        public static VkVideoEncodeH265ReferenceListsInfoEXT New()
-        {
-            VkVideoEncodeH265ReferenceListsInfoEXT ret = new VkVideoEncodeH265ReferenceListsInfoEXT();
-            ret.sType = VkStructureType.VideoEncodeH265ReferenceListsInfoEXT;
             return ret;
         }
     }
@@ -12510,30 +13540,38 @@ namespace Vulkan
         }
     }
 
-    public unsafe partial struct VkImageSubresource2EXT
+    public unsafe partial struct VkImageSubresource2KHR
     {
         public VkStructureType sType;
         public void* pNext;
         public VkImageSubresource imageSubresource;
-        public static VkImageSubresource2EXT New()
+        public static VkImageSubresource2KHR New()
         {
-            VkImageSubresource2EXT ret = new VkImageSubresource2EXT();
-            ret.sType = VkStructureType.ImageSubresource2EXT;
+            VkImageSubresource2KHR ret = new VkImageSubresource2KHR();
+            ret.sType = VkStructureType.ImageSubresource2KHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkImageSubresource2EXT
+    {
+    }
+
+    public unsafe partial struct VkSubresourceLayout2KHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkSubresourceLayout subresourceLayout;
+        public static VkSubresourceLayout2KHR New()
+        {
+            VkSubresourceLayout2KHR ret = new VkSubresourceLayout2KHR();
+            ret.sType = VkStructureType.SubresourceLayout2KHR;
             return ret;
         }
     }
 
     public unsafe partial struct VkSubresourceLayout2EXT
     {
-        public VkStructureType sType;
-        public void* pNext;
-        public VkSubresourceLayout subresourceLayout;
-        public static VkSubresourceLayout2EXT New()
-        {
-            VkSubresourceLayout2EXT ret = new VkSubresourceLayout2EXT();
-            ret.sType = VkStructureType.SubresourceLayout2EXT;
-            return ret;
-        }
     }
 
     public unsafe partial struct VkRenderPassCreationControlEXT
@@ -12777,6 +13815,60 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkPhysicalDeviceDisplacementMicromapFeaturesNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 displacementMicromap;
+        public static VkPhysicalDeviceDisplacementMicromapFeaturesNV New()
+        {
+            VkPhysicalDeviceDisplacementMicromapFeaturesNV ret = new VkPhysicalDeviceDisplacementMicromapFeaturesNV();
+            ret.sType = VkStructureType.PhysicalDeviceDisplacementMicromapFeaturesNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceDisplacementMicromapPropertiesNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint maxDisplacementMicromapSubdivisionLevel;
+        public static VkPhysicalDeviceDisplacementMicromapPropertiesNV New()
+        {
+            VkPhysicalDeviceDisplacementMicromapPropertiesNV ret = new VkPhysicalDeviceDisplacementMicromapPropertiesNV();
+            ret.sType = VkStructureType.PhysicalDeviceDisplacementMicromapPropertiesNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkAccelerationStructureTrianglesDisplacementMicromapNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkFormat displacementBiasAndScaleFormat;
+        public VkFormat displacementVectorFormat;
+        public VkDeviceOrHostAddressConstKHR displacementBiasAndScaleBuffer;
+        public ulong displacementBiasAndScaleStride;
+        public VkDeviceOrHostAddressConstKHR displacementVectorBuffer;
+        public ulong displacementVectorStride;
+        public VkDeviceOrHostAddressConstKHR displacedMicromapPrimitiveFlags;
+        public ulong displacedMicromapPrimitiveFlagsStride;
+        public VkIndexType indexType;
+        public VkDeviceOrHostAddressConstKHR indexBuffer;
+        public ulong indexStride;
+        public uint baseTriangle;
+        public uint usageCountsCount;
+        public VkMicromapUsageEXT* pUsageCounts;
+        public VkMicromapUsageEXT** ppUsageCounts;
+        public VkMicromapEXT micromap;
+        public static VkAccelerationStructureTrianglesDisplacementMicromapNV New()
+        {
+            VkAccelerationStructureTrianglesDisplacementMicromapNV ret = new VkAccelerationStructureTrianglesDisplacementMicromapNV();
+            ret.sType = VkStructureType.AccelerationStructureTrianglesDisplacementMicromapNV;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkPipelinePropertiesIdentifierEXT
     {
         public VkStructureType sType;
@@ -12812,6 +13904,19 @@ namespace Vulkan
         {
             VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD ret = new VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD();
             ret.sType = VkStructureType.PhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkExternalMemoryAcquireUnmodifiedEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 acquireUnmodifiedMemory;
+        public static VkExternalMemoryAcquireUnmodifiedEXT New()
+        {
+            VkExternalMemoryAcquireUnmodifiedEXT ret = new VkExternalMemoryAcquireUnmodifiedEXT();
+            ret.sType = VkStructureType.ExternalMemoryAcquireUnmodifiedEXT;
             return ret;
         }
     }
@@ -13378,6 +14483,50 @@ namespace Vulkan
         public uint applicationNameOffset;
         public uint applicationVersion;
         public uint engineNameOffset;
+        public uint engineVersion;
+        public uint apiVersion;
+    }
+
+    public unsafe partial struct VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 pipelineLibraryGroupHandles;
+        public static VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT New()
+        {
+            VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT ret = new VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT();
+            ret.sType = VkStructureType.PhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkDepthBiasInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public float depthBiasConstantFactor;
+        public float depthBiasClamp;
+        public float depthBiasSlopeFactor;
+        public static VkDepthBiasInfoEXT New()
+        {
+            VkDepthBiasInfoEXT ret = new VkDepthBiasInfoEXT();
+            ret.sType = VkStructureType.DepthBiasInfoEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkDepthBiasRepresentationInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkDepthBiasRepresentationEXT depthBiasRepresentation;
+        public VkBool32 depthBiasExact;
+        public static VkDepthBiasRepresentationInfoEXT New()
+        {
+            VkDepthBiasRepresentationInfoEXT ret = new VkDepthBiasRepresentationInfoEXT();
+            ret.sType = VkStructureType.DepthBiasRepresentationInfoEXT;
+            return ret;
+        }
     }
 
     public unsafe partial struct VkDecompressMemoryRegionNV
@@ -13413,6 +14562,53 @@ namespace Vulkan
         {
             VkPhysicalDeviceShaderCoreBuiltinsFeaturesARM ret = new VkPhysicalDeviceShaderCoreBuiltinsFeaturesARM();
             ret.sType = VkStructureType.PhysicalDeviceShaderCoreBuiltinsFeaturesArm;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkFrameBoundaryEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkFrameBoundaryFlagsEXT flags;
+        public ulong frameID;
+        public uint imageCount;
+        public VkImage* pImages;
+        public uint bufferCount;
+        public VkBuffer* pBuffers;
+        public ulong tagName;
+        public UIntPtr tagSize;
+        public void* pTag;
+        public static VkFrameBoundaryEXT New()
+        {
+            VkFrameBoundaryEXT ret = new VkFrameBoundaryEXT();
+            ret.sType = VkStructureType.FrameBoundaryEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceFrameBoundaryFeaturesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 frameBoundary;
+        public static VkPhysicalDeviceFrameBoundaryFeaturesEXT New()
+        {
+            VkPhysicalDeviceFrameBoundaryFeaturesEXT ret = new VkPhysicalDeviceFrameBoundaryFeaturesEXT();
+            ret.sType = VkStructureType.PhysicalDeviceFrameBoundaryFeaturesEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 dynamicRenderingUnusedAttachments;
+        public static VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT New()
+        {
+            VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT ret = new VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT();
+            ret.sType = VkStructureType.PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT;
             return ret;
         }
     }
@@ -13546,6 +14742,22 @@ namespace Vulkan
         }
     }
 
+    public unsafe partial struct VkPhysicalDeviceDepthBiasControlFeaturesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 depthBiasControl;
+        public VkBool32 leastRepresentableValueForceUnormRepresentation;
+        public VkBool32 floatRepresentation;
+        public VkBool32 depthBiasExact;
+        public static VkPhysicalDeviceDepthBiasControlFeaturesEXT New()
+        {
+            VkPhysicalDeviceDepthBiasControlFeaturesEXT ret = new VkPhysicalDeviceDepthBiasControlFeaturesEXT();
+            ret.sType = VkStructureType.PhysicalDeviceDepthBiasControlFeaturesEXT;
+            return ret;
+        }
+    }
+
     public unsafe partial struct VkPhysicalDeviceRayTracingInvocationReorderFeaturesNV
     {
         public VkStructureType sType;
@@ -13610,6 +14822,557 @@ namespace Vulkan
         {
             VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM ret = new VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM();
             ret.sType = VkStructureType.PhysicalDeviceMultiviewPerViewViewportsFeaturesQcom;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 rayTracingPositionFetch;
+        public static VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR New()
+        {
+            VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR ret = new VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR();
+            ret.sType = VkStructureType.PhysicalDeviceRayTracingPositionFetchFeaturesKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkDeviceImageSubresourceInfoKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkImageCreateInfo* pCreateInfo;
+        public VkImageSubresource2KHR* pSubresource;
+        public static VkDeviceImageSubresourceInfoKHR New()
+        {
+            VkDeviceImageSubresourceInfoKHR ret = new VkDeviceImageSubresourceInfoKHR();
+            ret.sType = VkStructureType.DeviceImageSubresourceInfoKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceShaderCorePropertiesARM
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint pixelRate;
+        public uint texelRate;
+        public uint fmaRate;
+        public static VkPhysicalDeviceShaderCorePropertiesARM New()
+        {
+            VkPhysicalDeviceShaderCorePropertiesARM ret = new VkPhysicalDeviceShaderCorePropertiesARM();
+            ret.sType = VkStructureType.PhysicalDeviceShaderCorePropertiesArm;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 multiviewPerViewRenderAreas;
+        public static VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM New()
+        {
+            VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM ret = new VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM();
+            ret.sType = VkStructureType.PhysicalDeviceMultiviewPerViewRenderAreasFeaturesQcom;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint perViewRenderAreaCount;
+        public VkRect2D* pPerViewRenderAreas;
+        public static VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM New()
+        {
+            VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM ret = new VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM();
+            ret.sType = VkStructureType.MultiviewPerViewRenderAreasRenderPassBeginInfoQcom;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkQueryLowLatencySupportNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public void* pQueriedLowLatencyData;
+        public static VkQueryLowLatencySupportNV New()
+        {
+            VkQueryLowLatencySupportNV ret = new VkQueryLowLatencySupportNV();
+            ret.sType = VkStructureType.QueryLowLatencySupportNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkMemoryMapInfoKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint flags;
+        public VkDeviceMemory memory;
+        public ulong offset;
+        public ulong size;
+        public static VkMemoryMapInfoKHR New()
+        {
+            VkMemoryMapInfoKHR ret = new VkMemoryMapInfoKHR();
+            ret.sType = VkStructureType.MemoryMapInfoKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkMemoryUnmapInfoKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint flags;
+        public VkDeviceMemory memory;
+        public static VkMemoryUnmapInfoKHR New()
+        {
+            VkMemoryUnmapInfoKHR ret = new VkMemoryUnmapInfoKHR();
+            ret.sType = VkStructureType.MemoryUnmapInfoKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceShaderObjectFeaturesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 shaderObject;
+        public static VkPhysicalDeviceShaderObjectFeaturesEXT New()
+        {
+            VkPhysicalDeviceShaderObjectFeaturesEXT ret = new VkPhysicalDeviceShaderObjectFeaturesEXT();
+            ret.sType = VkStructureType.PhysicalDeviceShaderObjectFeaturesEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceShaderObjectPropertiesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public fixed byte shaderBinaryUUID[(int)VulkanNative.UuidSize];
+        public uint shaderBinaryVersion;
+        public static VkPhysicalDeviceShaderObjectPropertiesEXT New()
+        {
+            VkPhysicalDeviceShaderObjectPropertiesEXT ret = new VkPhysicalDeviceShaderObjectPropertiesEXT();
+            ret.sType = VkStructureType.PhysicalDeviceShaderObjectPropertiesEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkShaderCreateInfoEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkShaderCreateFlagsEXT flags;
+        public VkShaderStageFlags stage;
+        public VkShaderStageFlags nextStage;
+        public VkShaderCodeTypeEXT codeType;
+        public UIntPtr codeSize;
+        public void* pCode;
+        public byte* pName;
+        public uint setLayoutCount;
+        public VkDescriptorSetLayout* pSetLayouts;
+        public uint pushConstantRangeCount;
+        public VkPushConstantRange* pPushConstantRanges;
+        public VkSpecializationInfo* pSpecializationInfo;
+        public static VkShaderCreateInfoEXT New()
+        {
+            VkShaderCreateInfoEXT ret = new VkShaderCreateInfoEXT();
+            ret.sType = VkStructureType.ShaderCreateInfoEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceShaderTileImageFeaturesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 shaderTileImageColorReadAccess;
+        public VkBool32 shaderTileImageDepthReadAccess;
+        public VkBool32 shaderTileImageStencilReadAccess;
+        public static VkPhysicalDeviceShaderTileImageFeaturesEXT New()
+        {
+            VkPhysicalDeviceShaderTileImageFeaturesEXT ret = new VkPhysicalDeviceShaderTileImageFeaturesEXT();
+            ret.sType = VkStructureType.PhysicalDeviceShaderTileImageFeaturesEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceShaderTileImagePropertiesEXT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 shaderTileImageCoherentReadAccelerated;
+        public VkBool32 shaderTileImageReadSampleFromPixelRateInvocation;
+        public VkBool32 shaderTileImageReadFromHelperInvocation;
+        public static VkPhysicalDeviceShaderTileImagePropertiesEXT New()
+        {
+            VkPhysicalDeviceShaderTileImagePropertiesEXT ret = new VkPhysicalDeviceShaderTileImagePropertiesEXT();
+            ret.sType = VkStructureType.PhysicalDeviceShaderTileImagePropertiesEXT;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkImportScreenBufferInfoQNX
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public Screen.ScreenBuffer* buffer;
+        public static VkImportScreenBufferInfoQNX New()
+        {
+            VkImportScreenBufferInfoQNX ret = new VkImportScreenBufferInfoQNX();
+            ret.sType = VkStructureType.ImportScreenBufferInfoQnx;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkScreenBufferPropertiesQNX
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public ulong allocationSize;
+        public uint memoryTypeBits;
+        public static VkScreenBufferPropertiesQNX New()
+        {
+            VkScreenBufferPropertiesQNX ret = new VkScreenBufferPropertiesQNX();
+            ret.sType = VkStructureType.ScreenBufferPropertiesQnx;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkScreenBufferFormatPropertiesQNX
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkFormat format;
+        public ulong externalFormat;
+        public ulong screenUsage;
+        public VkFormatFeatureFlags formatFeatures;
+        public VkComponentMapping samplerYcbcrConversionComponents;
+        public VkSamplerYcbcrModelConversion suggestedYcbcrModel;
+        public VkSamplerYcbcrRange suggestedYcbcrRange;
+        public VkChromaLocation suggestedXChromaOffset;
+        public VkChromaLocation suggestedYChromaOffset;
+        public static VkScreenBufferFormatPropertiesQNX New()
+        {
+            VkScreenBufferFormatPropertiesQNX ret = new VkScreenBufferFormatPropertiesQNX();
+            ret.sType = VkStructureType.ScreenBufferFormatPropertiesQnx;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkExternalFormatQNX
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public ulong externalFormat;
+        public static VkExternalFormatQNX New()
+        {
+            VkExternalFormatQNX ret = new VkExternalFormatQNX();
+            ret.sType = VkStructureType.ExternalFormatQnx;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 screenBufferImport;
+        public static VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX New()
+        {
+            VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX ret = new VkPhysicalDeviceExternalMemoryScreenBufferFeaturesQNX();
+            ret.sType = VkStructureType.PhysicalDeviceExternalMemoryScreenBufferFeaturesQnx;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceCooperativeMatrixFeaturesKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 cooperativeMatrix;
+        public VkBool32 cooperativeMatrixRobustBufferAccess;
+        public static VkPhysicalDeviceCooperativeMatrixFeaturesKHR New()
+        {
+            VkPhysicalDeviceCooperativeMatrixFeaturesKHR ret = new VkPhysicalDeviceCooperativeMatrixFeaturesKHR();
+            ret.sType = VkStructureType.PhysicalDeviceCooperativeMatrixFeaturesKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkCooperativeMatrixPropertiesKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint MSize;
+        public uint NSize;
+        public uint KSize;
+        public VkComponentTypeKHR AType;
+        public VkComponentTypeKHR BType;
+        public VkComponentTypeKHR CType;
+        public VkComponentTypeKHR ResultType;
+        public VkBool32 saturatingAccumulation;
+        public VkScopeKHR scope;
+        public static VkCooperativeMatrixPropertiesKHR New()
+        {
+            VkCooperativeMatrixPropertiesKHR ret = new VkCooperativeMatrixPropertiesKHR();
+            ret.sType = VkStructureType.CooperativeMatrixPropertiesKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceCooperativeMatrixPropertiesKHR
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkShaderStageFlags cooperativeMatrixSupportedStages;
+        public static VkPhysicalDeviceCooperativeMatrixPropertiesKHR New()
+        {
+            VkPhysicalDeviceCooperativeMatrixPropertiesKHR ret = new VkPhysicalDeviceCooperativeMatrixPropertiesKHR();
+            ret.sType = VkStructureType.PhysicalDeviceCooperativeMatrixPropertiesKHR;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceShaderEnqueuePropertiesAMDX
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public uint maxExecutionGraphDepth;
+        public uint maxExecutionGraphShaderOutputNodes;
+        public uint maxExecutionGraphShaderPayloadSize;
+        public uint maxExecutionGraphShaderPayloadCount;
+        public uint executionGraphDispatchAddressAlignment;
+        public static VkPhysicalDeviceShaderEnqueuePropertiesAMDX New()
+        {
+            VkPhysicalDeviceShaderEnqueuePropertiesAMDX ret = new VkPhysicalDeviceShaderEnqueuePropertiesAMDX();
+            ret.sType = VkStructureType.PhysicalDeviceShaderEnqueuePropertiesAmdx;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceShaderEnqueueFeaturesAMDX
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 shaderEnqueue;
+        public static VkPhysicalDeviceShaderEnqueueFeaturesAMDX New()
+        {
+            VkPhysicalDeviceShaderEnqueueFeaturesAMDX ret = new VkPhysicalDeviceShaderEnqueueFeaturesAMDX();
+            ret.sType = VkStructureType.PhysicalDeviceShaderEnqueueFeaturesAmdx;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkExecutionGraphPipelineCreateInfoAMDX
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkPipelineCreateFlags flags;
+        public uint stageCount;
+        public VkPipelineShaderStageCreateInfo* pStages;
+        public VkPipelineLibraryCreateInfoKHR* pLibraryInfo;
+        public VkPipelineLayout layout;
+        public VkPipeline basePipelineHandle;
+        public int basePipelineIndex;
+        public static VkExecutionGraphPipelineCreateInfoAMDX New()
+        {
+            VkExecutionGraphPipelineCreateInfoAMDX ret = new VkExecutionGraphPipelineCreateInfoAMDX();
+            ret.sType = VkStructureType.ExecutionGraphPipelineCreateInfoAmdx;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPipelineShaderStageNodeCreateInfoAMDX
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public byte* pName;
+        public uint index;
+        public static VkPipelineShaderStageNodeCreateInfoAMDX New()
+        {
+            VkPipelineShaderStageNodeCreateInfoAMDX ret = new VkPipelineShaderStageNodeCreateInfoAMDX();
+            ret.sType = VkStructureType.PipelineShaderStageNodeCreateInfoAmdx;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkExecutionGraphPipelineScratchSizeAMDX
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public ulong size;
+        public static VkExecutionGraphPipelineScratchSizeAMDX New()
+        {
+            VkExecutionGraphPipelineScratchSizeAMDX ret = new VkExecutionGraphPipelineScratchSizeAMDX();
+            ret.sType = VkStructureType.ExecutionGraphPipelineScratchSizeAmdx;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkDispatchGraphInfoAMDX
+    {
+        public uint nodeIndex;
+        public uint payloadCount;
+        public VkDeviceOrHostAddressConstAMDX payloads;
+        public ulong payloadStride;
+    }
+
+    public unsafe partial struct VkDispatchGraphCountInfoAMDX
+    {
+        public uint count;
+        public VkDeviceOrHostAddressConstAMDX infos;
+        public ulong stride;
+    }
+
+    public unsafe partial struct VkPhysicalDeviceCubicClampFeaturesQCOM
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 cubicRangeClamp;
+        public static VkPhysicalDeviceCubicClampFeaturesQCOM New()
+        {
+            VkPhysicalDeviceCubicClampFeaturesQCOM ret = new VkPhysicalDeviceCubicClampFeaturesQCOM();
+            ret.sType = VkStructureType.PhysicalDeviceCubicClampFeaturesQcom;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceYcbcrDegammaFeaturesQCOM
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 ycbcrDegamma;
+        public static VkPhysicalDeviceYcbcrDegammaFeaturesQCOM New()
+        {
+            VkPhysicalDeviceYcbcrDegammaFeaturesQCOM ret = new VkPhysicalDeviceYcbcrDegammaFeaturesQCOM();
+            ret.sType = VkStructureType.PhysicalDeviceYcbcrDegammaFeaturesQcom;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 enableYDegamma;
+        public VkBool32 enableCbCrDegamma;
+        public static VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM New()
+        {
+            VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM ret = new VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM();
+            ret.sType = VkStructureType.SamplerYcbcrConversionYcbcrDegammaCreateInfoQcom;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceCubicWeightsFeaturesQCOM
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 selectableCubicWeights;
+        public static VkPhysicalDeviceCubicWeightsFeaturesQCOM New()
+        {
+            VkPhysicalDeviceCubicWeightsFeaturesQCOM ret = new VkPhysicalDeviceCubicWeightsFeaturesQCOM();
+            ret.sType = VkStructureType.PhysicalDeviceCubicWeightsFeaturesQcom;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkSamplerCubicWeightsCreateInfoQCOM
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkCubicFilterWeightsQCOM cubicWeights;
+        public static VkSamplerCubicWeightsCreateInfoQCOM New()
+        {
+            VkSamplerCubicWeightsCreateInfoQCOM ret = new VkSamplerCubicWeightsCreateInfoQCOM();
+            ret.sType = VkStructureType.SamplerCubicWeightsCreateInfoQcom;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkBlitImageCubicWeightsInfoQCOM
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkCubicFilterWeightsQCOM cubicWeights;
+        public static VkBlitImageCubicWeightsInfoQCOM New()
+        {
+            VkBlitImageCubicWeightsInfoQCOM ret = new VkBlitImageCubicWeightsInfoQCOM();
+            ret.sType = VkStructureType.BlitImageCubicWeightsInfoQcom;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceImageProcessing2FeaturesQCOM
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 textureBlockMatch2;
+        public static VkPhysicalDeviceImageProcessing2FeaturesQCOM New()
+        {
+            VkPhysicalDeviceImageProcessing2FeaturesQCOM ret = new VkPhysicalDeviceImageProcessing2FeaturesQCOM();
+            ret.sType = VkStructureType.PhysicalDeviceImageProcessing2FeaturesQcom;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceImageProcessing2PropertiesQCOM
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkExtent2D maxBlockMatchWindow;
+        public static VkPhysicalDeviceImageProcessing2PropertiesQCOM New()
+        {
+            VkPhysicalDeviceImageProcessing2PropertiesQCOM ret = new VkPhysicalDeviceImageProcessing2PropertiesQCOM();
+            ret.sType = VkStructureType.PhysicalDeviceImageProcessing2PropertiesQcom;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkSamplerBlockMatchWindowCreateInfoQCOM
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkExtent2D windowExtent;
+        public VkBlockMatchWindowCompareModeQCOM windowCompareMode;
+        public static VkSamplerBlockMatchWindowCreateInfoQCOM New()
+        {
+            VkSamplerBlockMatchWindowCreateInfoQCOM ret = new VkSamplerBlockMatchWindowCreateInfoQCOM();
+            ret.sType = VkStructureType.SamplerBlockMatchWindowCreateInfoQcom;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkBool32 descriptorPoolOverallocation;
+        public static VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV New()
+        {
+            VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV ret = new VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV();
+            ret.sType = VkStructureType.PhysicalDeviceDescriptorPoolOverallocationFeaturesNV;
+            return ret;
+        }
+    }
+
+    public unsafe partial struct VkPhysicalDeviceLayeredDriverPropertiesMSFT
+    {
+        public VkStructureType sType;
+        public void* pNext;
+        public VkLayeredDriverUnderlyingApiMSFT underlyingAPI;
+        public static VkPhysicalDeviceLayeredDriverPropertiesMSFT New()
+        {
+            VkPhysicalDeviceLayeredDriverPropertiesMSFT ret = new VkPhysicalDeviceLayeredDriverPropertiesMSFT();
+            ret.sType = VkStructureType.PhysicalDeviceLayeredDriverPropertiesMsft;
             return ret;
         }
     }
@@ -13814,27 +15577,30 @@ namespace Vulkan
     {
         public uint direct_spatial_mv_pred_flag;
         public uint num_ref_idx_active_override_flag;
-        public uint no_output_of_prior_pics_flag;
-        public uint adaptive_ref_pic_marking_mode_flag;
-        public uint no_prior_references_available_flag;
+        public uint reserved;
     }
 
     public unsafe partial struct StdVideoEncodeH264PictureInfoFlags
     {
-        public uint idr_flag;
-        public uint is_reference_flag;
-        public uint used_for_long_term_reference;
+        public uint IdrPicFlag;
+        public uint is_reference;
+        public uint no_output_of_prior_pics_flag;
+        public uint long_term_reference_flag;
+        public uint adaptive_ref_pic_marking_mode_flag;
+        public uint reserved;
     }
 
     public unsafe partial struct StdVideoEncodeH264ReferenceInfoFlags
     {
         public uint used_for_long_term_reference;
+        public uint reserved;
     }
 
-    public unsafe partial struct StdVideoEncodeH264RefMgmtFlags
+    public unsafe partial struct StdVideoEncodeH264ReferenceListsInfoFlags
     {
-        public uint ref_pic_list_modification_l0_flag;
-        public uint ref_pic_list_modification_l1_flag;
+        public uint ref_pic_list_modification_flag_l0;
+        public uint ref_pic_list_modification_flag_l1;
+        public uint reserved;
     }
 
     public unsafe partial struct StdVideoEncodeH264RefListModEntry
@@ -13846,21 +15612,32 @@ namespace Vulkan
 
     public unsafe partial struct StdVideoEncodeH264RefPicMarkingEntry
     {
-        public StdVideoH264MemMgmtControlOp operation;
+        public StdVideoH264MemMgmtControlOp memory_management_control_operation;
         public ushort difference_of_pic_nums_minus1;
         public ushort long_term_pic_num;
         public ushort long_term_frame_idx;
         public ushort max_long_term_frame_idx_plus1;
     }
 
-    public unsafe partial struct StdVideoEncodeH264RefMemMgmtCtrlOperations
+    public unsafe partial struct StdVideoEncodeH264ReferenceListsInfo
     {
-        public StdVideoEncodeH264RefMgmtFlags flags;
+        public StdVideoEncodeH264ReferenceListsInfoFlags flags;
+        public byte num_ref_idx_l0_active_minus1;
+        public byte num_ref_idx_l1_active_minus1;
+        public fixed byte RefPicList0[(int)VulkanNative.STD_VIDEO_H264_MAX_NUM_LIST_REF];
+        public fixed byte RefPicList1[(int)VulkanNative.STD_VIDEO_H264_MAX_NUM_LIST_REF];
         public byte refList0ModOpCount;
-        public StdVideoEncodeH264RefListModEntry* pRefList0ModOperations;
         public byte refList1ModOpCount;
-        public StdVideoEncodeH264RefListModEntry* pRefList1ModOperations;
         public byte refPicMarkingOpCount;
+        public byte reserved1_0;
+        public byte reserved1_1;
+        public byte reserved1_2;
+        public byte reserved1_3;
+        public byte reserved1_4;
+        public byte reserved1_5;
+        public byte reserved1_6;
+        public StdVideoEncodeH264RefListModEntry* pRefList0ModOperations;
+        public StdVideoEncodeH264RefListModEntry* pRefList1ModOperations;
         public StdVideoEncodeH264RefPicMarkingEntry* pRefPicMarkingOperations;
     }
 
@@ -13869,18 +15646,26 @@ namespace Vulkan
         public StdVideoEncodeH264PictureInfoFlags flags;
         public byte seq_parameter_set_id;
         public byte pic_parameter_set_id;
-        public StdVideoH264PictureType pictureType;
+        public ushort idr_pic_id;
+        public StdVideoH264PictureType primary_pic_type;
         public uint frame_num;
         public int PicOrderCnt;
+        public byte temporal_id;
+        public byte reserved1_0;
+        public byte reserved1_1;
+        public byte reserved1_2;
+        public StdVideoEncodeH264ReferenceListsInfo* pRefLists;
     }
 
     public unsafe partial struct StdVideoEncodeH264ReferenceInfo
     {
         public StdVideoEncodeH264ReferenceInfoFlags flags;
+        public StdVideoH264PictureType primary_pic_type;
         public uint FrameNum;
         public int PicOrderCnt;
         public ushort long_term_pic_num;
         public ushort long_term_frame_idx;
+        public byte temporal_id;
     }
 
     public unsafe partial struct StdVideoEncodeH264SliceHeader
@@ -13888,13 +15673,12 @@ namespace Vulkan
         public StdVideoEncodeH264SliceHeaderFlags flags;
         public uint first_mb_in_slice;
         public StdVideoH264SliceType slice_type;
-        public ushort idr_pic_id;
-        public byte num_ref_idx_l0_active_minus1;
-        public byte num_ref_idx_l1_active_minus1;
-        public StdVideoH264CabacInitIdc cabac_init_idc;
-        public StdVideoH264DisableDeblockingFilterIdc disable_deblocking_filter_idc;
         public sbyte slice_alpha_c0_offset_div2;
         public sbyte slice_beta_offset_div2;
+        public sbyte slice_qp_delta;
+        public byte reserved1;
+        public StdVideoH264CabacInitIdc cabac_init_idc;
+        public StdVideoH264DisableDeblockingFilterIdc disable_deblocking_filter_idc;
         public StdVideoEncodeH264WeightTable* pWeightTable;
     }
 
@@ -14293,7 +16077,7 @@ namespace Vulkan
         public sbyte delta_chroma_offset_l1;
     }
 
-    public unsafe partial struct StdVideoEncodeH265SliceSegmentLongTermRefPics
+    public unsafe partial struct StdVideoEncodeH265LongTermRefPics
     {
         public byte num_long_term_sps;
         public byte num_long_term_pics;
@@ -14307,11 +16091,7 @@ namespace Vulkan
     public unsafe partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     {
         public uint first_slice_segment_in_pic_flag;
-        public uint no_output_of_prior_pics_flag;
         public uint dependent_slice_segment_flag;
-        public uint pic_output_flag;
-        public uint short_term_ref_pic_set_sps_flag;
-        public uint slice_temporal_mvp_enable_flag;
         public uint slice_sao_luma_flag;
         public uint slice_sao_chroma_flag;
         public uint num_ref_idx_active_override_flag;
@@ -14322,6 +16102,7 @@ namespace Vulkan
         public uint slice_deblocking_filter_disabled_flag;
         public uint collocated_from_l0_flag;
         public uint slice_loop_filter_across_slices_enabled_flag;
+        public uint reserved;
     }
 
     public unsafe partial struct StdVideoEncodeH265SliceSegmentHeader
@@ -14329,10 +16110,7 @@ namespace Vulkan
         public StdVideoEncodeH265SliceSegmentHeaderFlags flags;
         public StdVideoH265SliceType slice_type;
         public uint slice_segment_address;
-        public byte short_term_ref_pic_set_idx;
         public byte collocated_ref_idx;
-        public byte num_ref_idx_l0_active_minus1;
-        public byte num_ref_idx_l1_active_minus1;
         public byte MaxNumMergeCand;
         public sbyte slice_cb_qp_offset;
         public sbyte slice_cr_qp_offset;
@@ -14341,55 +16119,76 @@ namespace Vulkan
         public sbyte slice_act_y_qp_offset;
         public sbyte slice_act_cb_qp_offset;
         public sbyte slice_act_cr_qp_offset;
-        public StdVideoH265ShortTermRefPicSet* pShortTermRefPicSet;
-        public StdVideoEncodeH265SliceSegmentLongTermRefPics* pLongTermRefPics;
+        public sbyte slice_qp_delta;
+        public ushort reserved1;
         public StdVideoEncodeH265WeightTable* pWeightTable;
     }
 
-    public unsafe partial struct StdVideoEncodeH265ReferenceModificationFlags
+    public unsafe partial struct StdVideoEncodeH265ReferenceListsInfoFlags
     {
         public uint ref_pic_list_modification_flag_l0;
         public uint ref_pic_list_modification_flag_l1;
+        public uint reserved;
     }
 
-    public unsafe partial struct StdVideoEncodeH265ReferenceModifications
+    public unsafe partial struct StdVideoEncodeH265ReferenceListsInfo
     {
-        public StdVideoEncodeH265ReferenceModificationFlags flags;
-        public byte referenceList0ModificationsCount;
-        public byte* pReferenceList0Modifications;
-        public byte referenceList1ModificationsCount;
-        public byte* pReferenceList1Modifications;
+        public StdVideoEncodeH265ReferenceListsInfoFlags flags;
+        public byte num_ref_idx_l0_active_minus1;
+        public byte num_ref_idx_l1_active_minus1;
+        public fixed byte RefPicList0[(int)VulkanNative.STD_VIDEO_H265_MAX_NUM_LIST_REF];
+        public fixed byte RefPicList1[(int)VulkanNative.STD_VIDEO_H265_MAX_NUM_LIST_REF];
+        public fixed byte list_entry_l0[(int)VulkanNative.STD_VIDEO_H265_MAX_NUM_LIST_REF];
+        public fixed byte list_entry_l1[(int)VulkanNative.STD_VIDEO_H265_MAX_NUM_LIST_REF];
     }
 
     public unsafe partial struct StdVideoEncodeH265PictureInfoFlags
     {
-        public uint is_reference_flag;
+        public uint is_reference;
         public uint IrapPicFlag;
-        public uint long_term_flag;
+        public uint used_for_long_term_reference;
         public uint discardable_flag;
         public uint cross_layer_bla_flag;
+        public uint pic_output_flag;
+        public uint no_output_of_prior_pics_flag;
+        public uint short_term_ref_pic_set_sps_flag;
+        public uint slice_temporal_mvp_enabled_flag;
+        public uint reserved;
     }
 
     public unsafe partial struct StdVideoEncodeH265PictureInfo
     {
         public StdVideoEncodeH265PictureInfoFlags flags;
-        public StdVideoH265PictureType PictureType;
+        public StdVideoH265PictureType pic_type;
         public byte sps_video_parameter_set_id;
         public byte pps_seq_parameter_set_id;
         public byte pps_pic_parameter_set_id;
+        public byte short_term_ref_pic_set_idx;
         public int PicOrderCntVal;
         public byte TemporalId;
+        public byte reserved1_0;
+        public byte reserved1_1;
+        public byte reserved1_2;
+        public byte reserved1_3;
+        public byte reserved1_4;
+        public byte reserved1_5;
+        public byte reserved1_6;
+        public StdVideoEncodeH265ReferenceListsInfo* pRefLists;
+        public StdVideoH265ShortTermRefPicSet* pShortTermRefPicSet;
+        public StdVideoEncodeH265LongTermRefPics* pLongTermRefPics;
     }
 
     public unsafe partial struct StdVideoEncodeH265ReferenceInfoFlags
     {
         public uint used_for_long_term_reference;
         public uint unused_for_reference;
+        public uint reserved;
     }
 
     public unsafe partial struct StdVideoEncodeH265ReferenceInfo
     {
         public StdVideoEncodeH265ReferenceInfoFlags flags;
+        public StdVideoH265PictureType pic_type;
         public int PicOrderCntVal;
         public byte TemporalId;
     }

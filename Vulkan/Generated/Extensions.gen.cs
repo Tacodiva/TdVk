@@ -2383,252 +2383,252 @@ namespace Vulkan
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, VkVideoSessionCreateInfoKHR* pCreateInfo, VkAllocationCallbacks* pAllocator, VkVideoSessionKHR* pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, VkVideoSessionCreateInfoKHR* pCreateInfo, VkAllocationCallbacks* pAllocator, out VkVideoSessionKHR pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, VkVideoSessionCreateInfoKHR* pCreateInfo, ref VkAllocationCallbacks pAllocator, VkVideoSessionKHR* pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, VkVideoSessionCreateInfoKHR* pCreateInfo, ref VkAllocationCallbacks pAllocator, out VkVideoSessionKHR pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, VkVideoSessionCreateInfoKHR* pCreateInfo, IntPtr pAllocator, VkVideoSessionKHR* pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, VkVideoSessionCreateInfoKHR* pCreateInfo, IntPtr pAllocator, out VkVideoSessionKHR pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, ref VkVideoSessionCreateInfoKHR pCreateInfo, VkAllocationCallbacks* pAllocator, VkVideoSessionKHR* pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, ref VkVideoSessionCreateInfoKHR pCreateInfo, VkAllocationCallbacks* pAllocator, out VkVideoSessionKHR pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, ref VkVideoSessionCreateInfoKHR pCreateInfo, ref VkAllocationCallbacks pAllocator, VkVideoSessionKHR* pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, ref VkVideoSessionCreateInfoKHR pCreateInfo, ref VkAllocationCallbacks pAllocator, out VkVideoSessionKHR pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, ref VkVideoSessionCreateInfoKHR pCreateInfo, IntPtr pAllocator, VkVideoSessionKHR* pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, ref VkVideoSessionCreateInfoKHR pCreateInfo, IntPtr pAllocator, out VkVideoSessionKHR pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, IntPtr pCreateInfo, VkAllocationCallbacks* pAllocator, VkVideoSessionKHR* pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, IntPtr pCreateInfo, VkAllocationCallbacks* pAllocator, out VkVideoSessionKHR pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, IntPtr pCreateInfo, ref VkAllocationCallbacks pAllocator, VkVideoSessionKHR* pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, IntPtr pCreateInfo, ref VkAllocationCallbacks pAllocator, out VkVideoSessionKHR pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, IntPtr pCreateInfo, IntPtr pAllocator, VkVideoSessionKHR* pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionKHR(VkDevice device, IntPtr pCreateInfo, IntPtr pAllocator, out VkVideoSessionKHR pVideoSession)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersCreateInfoKHR* pCreateInfo, VkAllocationCallbacks* pAllocator, VkVideoSessionParametersKHR* pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersCreateInfoKHR* pCreateInfo, VkAllocationCallbacks* pAllocator, out VkVideoSessionParametersKHR pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersCreateInfoKHR* pCreateInfo, ref VkAllocationCallbacks pAllocator, VkVideoSessionParametersKHR* pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersCreateInfoKHR* pCreateInfo, ref VkAllocationCallbacks pAllocator, out VkVideoSessionParametersKHR pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersCreateInfoKHR* pCreateInfo, IntPtr pAllocator, VkVideoSessionParametersKHR* pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersCreateInfoKHR* pCreateInfo, IntPtr pAllocator, out VkVideoSessionParametersKHR pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, ref VkVideoSessionParametersCreateInfoKHR pCreateInfo, VkAllocationCallbacks* pAllocator, VkVideoSessionParametersKHR* pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, ref VkVideoSessionParametersCreateInfoKHR pCreateInfo, VkAllocationCallbacks* pAllocator, out VkVideoSessionParametersKHR pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, ref VkVideoSessionParametersCreateInfoKHR pCreateInfo, ref VkAllocationCallbacks pAllocator, VkVideoSessionParametersKHR* pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, ref VkVideoSessionParametersCreateInfoKHR pCreateInfo, ref VkAllocationCallbacks pAllocator, out VkVideoSessionParametersKHR pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, ref VkVideoSessionParametersCreateInfoKHR pCreateInfo, IntPtr pAllocator, VkVideoSessionParametersKHR* pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, ref VkVideoSessionParametersCreateInfoKHR pCreateInfo, IntPtr pAllocator, out VkVideoSessionParametersKHR pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, IntPtr pCreateInfo, VkAllocationCallbacks* pAllocator, VkVideoSessionParametersKHR* pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, IntPtr pCreateInfo, VkAllocationCallbacks* pAllocator, out VkVideoSessionParametersKHR pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, IntPtr pCreateInfo, ref VkAllocationCallbacks pAllocator, VkVideoSessionParametersKHR* pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, IntPtr pCreateInfo, ref VkAllocationCallbacks pAllocator, out VkVideoSessionParametersKHR pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, IntPtr pCreateInfo, IntPtr pAllocator, VkVideoSessionParametersKHR* pVideoSessionParameters)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkCreateVideoSessionParametersKHR(VkDevice device, IntPtr pCreateInfo, IntPtr pAllocator, out VkVideoSessionParametersKHR pVideoSessionParameters)
         {
@@ -2881,21 +2881,21 @@ namespace Vulkan
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkUpdateVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersKHR videoSessionParameters, VkVideoSessionParametersUpdateInfoKHR* pUpdateInfo)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkUpdateVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersKHR videoSessionParameters, ref VkVideoSessionParametersUpdateInfoKHR pUpdateInfo)
         {
             throw VulkanNative.CreateUnpatchedException();
         }
 
-        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR</remarks>
         [Generator.CalliRewrite]
         public unsafe VkResult vkUpdateVideoSessionParametersKHR(VkDevice device, VkVideoSessionParametersKHR videoSessionParameters, IntPtr pUpdateInfo)
         {
@@ -5437,7 +5437,15 @@ namespace Vulkan
             return new VulkanEXTDiscardRectangles(device);
         }
 
+        private IntPtr vkCmdSetDiscardRectangleEnableEXT_ptr;
         private IntPtr vkCmdSetDiscardRectangleEXT_ptr;
+        private IntPtr vkCmdSetDiscardRectangleModeEXT_ptr;
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetDiscardRectangleEnableEXT(VkCommandBuffer commandBuffer, VkBool32 discardRectangleEnable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
 
         [Generator.CalliRewrite]
         public unsafe void vkCmdSetDiscardRectangleEXT(VkCommandBuffer commandBuffer, uint firstDiscardRectangle, uint discardRectangleCount, VkRect2D* pDiscardRectangles)
@@ -5457,9 +5465,17 @@ namespace Vulkan
             throw VulkanNative.CreateUnpatchedException();
         }
 
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetDiscardRectangleModeEXT(VkCommandBuffer commandBuffer, VkDiscardRectangleModeEXT discardRectangleMode)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
         public VulkanEXTDiscardRectangles(VkDevice device)
         {
+            vkCmdSetDiscardRectangleEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetDiscardRectangleEnableEXT", true);
             vkCmdSetDiscardRectangleEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetDiscardRectangleEXT", true);
+            vkCmdSetDiscardRectangleModeEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetDiscardRectangleModeEXT", true);
         }
     }
 
@@ -7131,6 +7147,308 @@ namespace Vulkan
         {
             vkGetAndroidHardwareBufferPropertiesANDROID_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetAndroidHardwareBufferPropertiesANDROID", true);
             vkGetMemoryAndroidHardwareBufferANDROID_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetMemoryAndroidHardwareBufferANDROID", true);
+        }
+    }
+
+    public unsafe sealed class VulkanAmdxShaderEnqueue : IVulkanDeviceExtGeneric<VulkanAmdxShaderEnqueue>
+    {
+        public static string Name => "VK_AMDX_shader_enqueue";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanAmdxShaderEnqueue Create(VkDevice device)
+        {
+            return new VulkanAmdxShaderEnqueue(device);
+        }
+
+        private IntPtr vkCmdDispatchGraphAMDX_ptr;
+        private IntPtr vkCmdDispatchGraphIndirectAMDX_ptr;
+        private IntPtr vkCmdDispatchGraphIndirectCountAMDX_ptr;
+        private IntPtr vkCmdInitializeGraphScratchMemoryAMDX_ptr;
+        private IntPtr vkCreateExecutionGraphPipelinesAMDX_ptr;
+        private IntPtr vkGetExecutionGraphPipelineNodeIndexAMDX_ptr;
+        private IntPtr vkGetExecutionGraphPipelineScratchSizeAMDX_ptr;
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdDispatchGraphAMDX(VkCommandBuffer commandBuffer, ulong scratch, VkDispatchGraphCountInfoAMDX* pCountInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdDispatchGraphAMDX(VkCommandBuffer commandBuffer, ulong scratch, ref VkDispatchGraphCountInfoAMDX pCountInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdDispatchGraphAMDX(VkCommandBuffer commandBuffer, ulong scratch, IntPtr pCountInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdDispatchGraphIndirectAMDX(VkCommandBuffer commandBuffer, ulong scratch, VkDispatchGraphCountInfoAMDX* pCountInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdDispatchGraphIndirectAMDX(VkCommandBuffer commandBuffer, ulong scratch, ref VkDispatchGraphCountInfoAMDX pCountInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdDispatchGraphIndirectAMDX(VkCommandBuffer commandBuffer, ulong scratch, IntPtr pCountInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdDispatchGraphIndirectCountAMDX(VkCommandBuffer commandBuffer, ulong scratch, ulong countInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdInitializeGraphScratchMemoryAMDX(VkCommandBuffer commandBuffer, ulong scratch)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, VkAllocationCallbacks* pAllocator, out VkPipeline pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, ref VkAllocationCallbacks pAllocator, VkPipeline* pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, ref VkAllocationCallbacks pAllocator, out VkPipeline pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, IntPtr pAllocator, VkPipeline* pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, IntPtr pAllocator, out VkPipeline pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, ref VkExecutionGraphPipelineCreateInfoAMDX pCreateInfos, VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, ref VkExecutionGraphPipelineCreateInfoAMDX pCreateInfos, VkAllocationCallbacks* pAllocator, out VkPipeline pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, ref VkExecutionGraphPipelineCreateInfoAMDX pCreateInfos, ref VkAllocationCallbacks pAllocator, VkPipeline* pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, ref VkExecutionGraphPipelineCreateInfoAMDX pCreateInfos, ref VkAllocationCallbacks pAllocator, out VkPipeline pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, ref VkExecutionGraphPipelineCreateInfoAMDX pCreateInfos, IntPtr pAllocator, VkPipeline* pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, ref VkExecutionGraphPipelineCreateInfoAMDX pCreateInfos, IntPtr pAllocator, out VkPipeline pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, IntPtr pCreateInfos, VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, IntPtr pCreateInfos, VkAllocationCallbacks* pAllocator, out VkPipeline pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, IntPtr pCreateInfos, ref VkAllocationCallbacks pAllocator, VkPipeline* pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, IntPtr pCreateInfos, ref VkAllocationCallbacks pAllocator, out VkPipeline pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, IntPtr pCreateInfos, IntPtr pAllocator, VkPipeline* pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, IntPtr pCreateInfos, IntPtr pAllocator, out VkPipeline pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX[] pCreateInfos, VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX[] pCreateInfos, VkAllocationCallbacks* pAllocator, out VkPipeline pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX[] pCreateInfos, ref VkAllocationCallbacks pAllocator, VkPipeline* pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX[] pCreateInfos, ref VkAllocationCallbacks pAllocator, out VkPipeline pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX[] pCreateInfos, IntPtr pAllocator, VkPipeline* pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_PIPELINE_COMPILE_REQUIRED_EXT. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateExecutionGraphPipelinesAMDX(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, VkExecutionGraphPipelineCreateInfoAMDX[] pCreateInfos, IntPtr pAllocator, out VkPipeline pPipelines)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetExecutionGraphPipelineNodeIndexAMDX(VkDevice device, VkPipeline executionGraph, VkPipelineShaderStageNodeCreateInfoAMDX* pNodeInfo, uint* pNodeIndex)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetExecutionGraphPipelineNodeIndexAMDX(VkDevice device, VkPipeline executionGraph, VkPipelineShaderStageNodeCreateInfoAMDX* pNodeInfo, out uint pNodeIndex)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetExecutionGraphPipelineNodeIndexAMDX(VkDevice device, VkPipeline executionGraph, ref VkPipelineShaderStageNodeCreateInfoAMDX pNodeInfo, uint* pNodeIndex)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetExecutionGraphPipelineNodeIndexAMDX(VkDevice device, VkPipeline executionGraph, ref VkPipelineShaderStageNodeCreateInfoAMDX pNodeInfo, out uint pNodeIndex)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetExecutionGraphPipelineNodeIndexAMDX(VkDevice device, VkPipeline executionGraph, IntPtr pNodeInfo, uint* pNodeIndex)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetExecutionGraphPipelineNodeIndexAMDX(VkDevice device, VkPipeline executionGraph, IntPtr pNodeInfo, out uint pNodeIndex)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetExecutionGraphPipelineScratchSizeAMDX(VkDevice device, VkPipeline executionGraph, VkExecutionGraphPipelineScratchSizeAMDX* pSizeInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetExecutionGraphPipelineScratchSizeAMDX(VkDevice device, VkPipeline executionGraph, out VkExecutionGraphPipelineScratchSizeAMDX pSizeInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanAmdxShaderEnqueue(VkDevice device)
+        {
+            vkCmdDispatchGraphAMDX_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdDispatchGraphAMDX", true);
+            vkCmdDispatchGraphIndirectAMDX_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdDispatchGraphIndirectAMDX", true);
+            vkCmdDispatchGraphIndirectCountAMDX_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdDispatchGraphIndirectCountAMDX", true);
+            vkCmdInitializeGraphScratchMemoryAMDX_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdInitializeGraphScratchMemoryAMDX", true);
+            vkCreateExecutionGraphPipelinesAMDX_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCreateExecutionGraphPipelinesAMDX", true);
+            vkGetExecutionGraphPipelineNodeIndexAMDX_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetExecutionGraphPipelineNodeIndexAMDX", true);
+            vkGetExecutionGraphPipelineScratchSizeAMDX_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetExecutionGraphPipelineScratchSizeAMDX", true);
         }
     }
 
@@ -10943,7 +11261,26 @@ namespace Vulkan
             return new VulkanNVScissorExclusive(device);
         }
 
+        private IntPtr vkCmdSetExclusiveScissorEnableNV_ptr;
         private IntPtr vkCmdSetExclusiveScissorNV_ptr;
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetExclusiveScissorEnableNV(VkCommandBuffer commandBuffer, uint firstExclusiveScissor, uint exclusiveScissorCount, VkBool32* pExclusiveScissorEnables)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetExclusiveScissorEnableNV(VkCommandBuffer commandBuffer, uint firstExclusiveScissor, uint exclusiveScissorCount, ref VkBool32 pExclusiveScissorEnables)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetExclusiveScissorEnableNV(VkCommandBuffer commandBuffer, uint firstExclusiveScissor, uint exclusiveScissorCount, IntPtr pExclusiveScissorEnables)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
 
         [Generator.CalliRewrite]
         public unsafe void vkCmdSetExclusiveScissorNV(VkCommandBuffer commandBuffer, uint firstExclusiveScissor, uint exclusiveScissorCount, VkRect2D* pExclusiveScissors)
@@ -10965,6 +11302,7 @@ namespace Vulkan
 
         public VulkanNVScissorExclusive(VkDevice device)
         {
+            vkCmdSetExclusiveScissorEnableNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetExclusiveScissorEnableNV", true);
             vkCmdSetExclusiveScissorNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetExclusiveScissorNV", true);
         }
     }
@@ -12765,6 +13103,176 @@ namespace Vulkan
         }
     }
 
+    public unsafe sealed class VulkanEXTHostImageCopy : IVulkanDeviceExtGeneric<VulkanEXTHostImageCopy>
+    {
+        public static string Name => "VK_EXT_host_image_copy";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTHostImageCopy Create(VkDevice device)
+        {
+            return new VulkanEXTHostImageCopy(device);
+        }
+
+        private IntPtr vkCopyImageToImageEXT_ptr;
+        private IntPtr vkCopyImageToMemoryEXT_ptr;
+        private IntPtr vkCopyMemoryToImageEXT_ptr;
+        private IntPtr vkTransitionImageLayoutEXT_ptr;
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCopyImageToImageEXT(VkDevice device, VkCopyImageToImageInfoEXT* pCopyImageToImageInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCopyImageToImageEXT(VkDevice device, ref VkCopyImageToImageInfoEXT pCopyImageToImageInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCopyImageToImageEXT(VkDevice device, IntPtr pCopyImageToImageInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCopyImageToMemoryEXT(VkDevice device, VkCopyImageToMemoryInfoEXT* pCopyImageToMemoryInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCopyImageToMemoryEXT(VkDevice device, ref VkCopyImageToMemoryInfoEXT pCopyImageToMemoryInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCopyImageToMemoryEXT(VkDevice device, IntPtr pCopyImageToMemoryInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCopyMemoryToImageEXT(VkDevice device, VkCopyMemoryToImageInfoEXT* pCopyMemoryToImageInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCopyMemoryToImageEXT(VkDevice device, ref VkCopyMemoryToImageInfoEXT pCopyMemoryToImageInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCopyMemoryToImageEXT(VkDevice device, IntPtr pCopyMemoryToImageInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkTransitionImageLayoutEXT(VkDevice device, uint transitionCount, VkHostImageLayoutTransitionInfoEXT* pTransitions)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkTransitionImageLayoutEXT(VkDevice device, uint transitionCount, ref VkHostImageLayoutTransitionInfoEXT pTransitions)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkTransitionImageLayoutEXT(VkDevice device, uint transitionCount, IntPtr pTransitions)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanEXTHostImageCopy(VkDevice device)
+        {
+            vkCopyImageToImageEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCopyImageToImageEXT", true);
+            vkCopyImageToMemoryEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCopyImageToMemoryEXT", true);
+            vkCopyMemoryToImageEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCopyMemoryToImageEXT", true);
+            vkTransitionImageLayoutEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkTransitionImageLayoutEXT", true);
+        }
+    }
+
+    public unsafe sealed class VulkanKHRMapMemory2 : IVulkanDeviceExtGeneric<VulkanKHRMapMemory2>
+    {
+        public static string Name => "VK_KHR_map_memory2";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRMapMemory2 Create(VkDevice device)
+        {
+            return new VulkanKHRMapMemory2(device);
+        }
+
+        private IntPtr vkMapMemory2KHR_ptr;
+        private IntPtr vkUnmapMemory2KHR_ptr;
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkMapMemory2KHR(VkDevice device, VkMemoryMapInfoKHR* pMemoryMapInfo, void** ppData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkMapMemory2KHR(VkDevice device, ref VkMemoryMapInfoKHR pMemoryMapInfo, void** ppData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_MEMORY_MAP_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkMapMemory2KHR(VkDevice device, IntPtr pMemoryMapInfo, void** ppData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkUnmapMemory2KHR(VkDevice device, VkMemoryUnmapInfoKHR* pMemoryUnmapInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkUnmapMemory2KHR(VkDevice device, ref VkMemoryUnmapInfoKHR pMemoryUnmapInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkUnmapMemory2KHR(VkDevice device, IntPtr pMemoryUnmapInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanKHRMapMemory2(VkDevice device)
+        {
+            vkMapMemory2KHR_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkMapMemory2KHR", true);
+            vkUnmapMemory2KHR_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkUnmapMemory2KHR", true);
+        }
+    }
+
     public unsafe sealed class VulkanEXTSwapchainMaintenance1 : IVulkanDeviceExtGeneric<VulkanEXTSwapchainMaintenance1>
     {
         public static string Name => "VK_EXT_swapchain_maintenance1";
@@ -13054,6 +13562,42 @@ namespace Vulkan
         }
     }
 
+    public unsafe sealed class VulkanEXTDepthBiasControl : IVulkanDeviceExtGeneric<VulkanEXTDepthBiasControl>
+    {
+        public static string Name => "VK_EXT_depth_bias_control";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTDepthBiasControl Create(VkDevice device)
+        {
+            return new VulkanEXTDepthBiasControl(device);
+        }
+
+        private IntPtr vkCmdSetDepthBias2EXT_ptr;
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetDepthBias2EXT(VkCommandBuffer commandBuffer, VkDepthBiasInfoEXT* pDepthBiasInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetDepthBias2EXT(VkCommandBuffer commandBuffer, ref VkDepthBiasInfoEXT pDepthBiasInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetDepthBias2EXT(VkCommandBuffer commandBuffer, IntPtr pDepthBiasInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanEXTDepthBiasControl(VkDevice device)
+        {
+            vkCmdSetDepthBias2EXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetDepthBias2EXT", true);
+        }
+    }
+
     public unsafe sealed class VulkanEXTAcquireDrmDisplay : IVulkanInstanceExtGeneric<VulkanEXTAcquireDrmDisplay>
     {
         public static string Name => "VK_EXT_acquire_drm_display";
@@ -13123,6 +13667,8 @@ namespace Vulkan
         }
 
         private IntPtr vkCmdEncodeVideoKHR_ptr;
+        private IntPtr vkGetEncodedVideoSessionParametersKHR_ptr;
+        private IntPtr vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR_ptr;
 
         [Generator.CalliRewrite]
         public unsafe void vkCmdEncodeVideoKHR(VkCommandBuffer commandBuffer, VkVideoEncodeInfoKHR* pEncodeInfo)
@@ -13142,9 +13688,322 @@ namespace Vulkan
             throw VulkanNative.CreateUnpatchedException();
         }
 
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, VkVideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo, VkVideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, UIntPtr* pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, VkVideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo, VkVideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, ref UIntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, VkVideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo, VkVideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, IntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, VkVideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo, ref VkVideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, UIntPtr* pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, VkVideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo, ref VkVideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, ref UIntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, VkVideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo, ref VkVideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, IntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, VkVideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo, IntPtr pFeedbackInfo, UIntPtr* pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, VkVideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo, IntPtr pFeedbackInfo, ref UIntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, VkVideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo, IntPtr pFeedbackInfo, IntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, ref VkVideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, VkVideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, UIntPtr* pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, ref VkVideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, VkVideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, ref UIntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, ref VkVideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, VkVideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, IntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, ref VkVideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, ref VkVideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, UIntPtr* pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, ref VkVideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, ref VkVideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, ref UIntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, ref VkVideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, ref VkVideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, IntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, ref VkVideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, IntPtr pFeedbackInfo, UIntPtr* pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, ref VkVideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, IntPtr pFeedbackInfo, ref UIntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, ref VkVideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, IntPtr pFeedbackInfo, IntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, IntPtr pVideoSessionParametersInfo, VkVideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, UIntPtr* pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, IntPtr pVideoSessionParametersInfo, VkVideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, ref UIntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, IntPtr pVideoSessionParametersInfo, VkVideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, IntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, IntPtr pVideoSessionParametersInfo, ref VkVideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, UIntPtr* pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, IntPtr pVideoSessionParametersInfo, ref VkVideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, ref UIntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, IntPtr pVideoSessionParametersInfo, ref VkVideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, IntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, IntPtr pVideoSessionParametersInfo, IntPtr pFeedbackInfo, UIntPtr* pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, IntPtr pVideoSessionParametersInfo, IntPtr pFeedbackInfo, ref UIntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetEncodedVideoSessionParametersKHR(VkDevice device, IntPtr pVideoSessionParametersInfo, IntPtr pFeedbackInfo, IntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_VIDEO_PROFILE_OPERATION_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PROFILE_FORMAT_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PICTURE_LAYOUT_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PROFILE_CODEC_NOT_SUPPORTED_KHR</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR* pQualityLevelInfo, VkVideoEncodeQualityLevelPropertiesKHR* pQualityLevelProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_VIDEO_PROFILE_OPERATION_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PROFILE_FORMAT_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PICTURE_LAYOUT_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PROFILE_CODEC_NOT_SUPPORTED_KHR</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR(VkPhysicalDevice physicalDevice, VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR* pQualityLevelInfo, out VkVideoEncodeQualityLevelPropertiesKHR pQualityLevelProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_VIDEO_PROFILE_OPERATION_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PROFILE_FORMAT_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PICTURE_LAYOUT_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PROFILE_CODEC_NOT_SUPPORTED_KHR</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR(VkPhysicalDevice physicalDevice, ref VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR pQualityLevelInfo, VkVideoEncodeQualityLevelPropertiesKHR* pQualityLevelProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_VIDEO_PROFILE_OPERATION_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PROFILE_FORMAT_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PICTURE_LAYOUT_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PROFILE_CODEC_NOT_SUPPORTED_KHR</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR(VkPhysicalDevice physicalDevice, ref VkPhysicalDeviceVideoEncodeQualityLevelInfoKHR pQualityLevelInfo, out VkVideoEncodeQualityLevelPropertiesKHR pQualityLevelProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_VIDEO_PROFILE_OPERATION_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PROFILE_FORMAT_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PICTURE_LAYOUT_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PROFILE_CODEC_NOT_SUPPORTED_KHR</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR(VkPhysicalDevice physicalDevice, IntPtr pQualityLevelInfo, VkVideoEncodeQualityLevelPropertiesKHR* pQualityLevelProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_VIDEO_PROFILE_OPERATION_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PROFILE_FORMAT_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PICTURE_LAYOUT_NOT_SUPPORTED_KHR, VK_ERROR_VIDEO_PROFILE_CODEC_NOT_SUPPORTED_KHR</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR(VkPhysicalDevice physicalDevice, IntPtr pQualityLevelInfo, out VkVideoEncodeQualityLevelPropertiesKHR pQualityLevelProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
         public VulkanKHRVideoEncodeQueue(VkDevice device)
         {
             vkCmdEncodeVideoKHR_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdEncodeVideoKHR", true);
+            vkGetEncodedVideoSessionParametersKHR_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetEncodedVideoSessionParametersKHR", true);
+            vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR", true);
+        }
+    }
+
+    public unsafe sealed class VulkanKHRObjectRefresh : IVulkanDeviceExtGeneric<VulkanKHRObjectRefresh>
+    {
+        public static string Name => "VK_KHR_object_refresh";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRObjectRefresh Create(VkDevice device)
+        {
+            return new VulkanKHRObjectRefresh(device);
+        }
+
+        private IntPtr vkCmdRefreshObjectsKHR_ptr;
+        private IntPtr vkGetPhysicalDeviceRefreshableObjectTypesKHR_ptr;
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdRefreshObjectsKHR(VkCommandBuffer commandBuffer, VkRefreshObjectListKHR* pRefreshObjects)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdRefreshObjectsKHR(VkCommandBuffer commandBuffer, ref VkRefreshObjectListKHR pRefreshObjects)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdRefreshObjectsKHR(VkCommandBuffer commandBuffer, IntPtr pRefreshObjects)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceRefreshableObjectTypesKHR(VkPhysicalDevice physicalDevice, uint* pRefreshableObjectTypeCount, VkObjectType* pRefreshableObjectTypes)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceRefreshableObjectTypesKHR(VkPhysicalDevice physicalDevice, uint* pRefreshableObjectTypeCount, out VkObjectType pRefreshableObjectTypes)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceRefreshableObjectTypesKHR(VkPhysicalDevice physicalDevice, ref uint pRefreshableObjectTypeCount, VkObjectType* pRefreshableObjectTypes)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceRefreshableObjectTypesKHR(VkPhysicalDevice physicalDevice, ref uint pRefreshableObjectTypeCount, out VkObjectType pRefreshableObjectTypes)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceRefreshableObjectTypesKHR(VkPhysicalDevice physicalDevice, IntPtr pRefreshableObjectTypeCount, VkObjectType* pRefreshableObjectTypes)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceRefreshableObjectTypesKHR(VkPhysicalDevice physicalDevice, IntPtr pRefreshableObjectTypeCount, out VkObjectType pRefreshableObjectTypes)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanKHRObjectRefresh(VkDevice device)
+        {
+            vkCmdRefreshObjectsKHR_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdRefreshObjectsKHR", true);
+            vkGetPhysicalDeviceRefreshableObjectTypesKHR_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetPhysicalDeviceRefreshableObjectTypesKHR", true);
         }
     }
 
@@ -13606,47 +14465,10 @@ namespace Vulkan
             return new VulkanEXTImageCompressionControl(device);
         }
 
-        private IntPtr vkGetImageSubresourceLayout2EXT_ptr;
 
-        [Generator.CalliRewrite]
-        public unsafe void vkGetImageSubresourceLayout2EXT(VkDevice device, VkImage image, VkImageSubresource2EXT* pSubresource, VkSubresourceLayout2EXT* pLayout)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkGetImageSubresourceLayout2EXT(VkDevice device, VkImage image, VkImageSubresource2EXT* pSubresource, out VkSubresourceLayout2EXT pLayout)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkGetImageSubresourceLayout2EXT(VkDevice device, VkImage image, ref VkImageSubresource2EXT pSubresource, VkSubresourceLayout2EXT* pLayout)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkGetImageSubresourceLayout2EXT(VkDevice device, VkImage image, ref VkImageSubresource2EXT pSubresource, out VkSubresourceLayout2EXT pLayout)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkGetImageSubresourceLayout2EXT(VkDevice device, VkImage image, IntPtr pSubresource, VkSubresourceLayout2EXT* pLayout)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkGetImageSubresourceLayout2EXT(VkDevice device, VkImage image, IntPtr pSubresource, out VkSubresourceLayout2EXT pLayout)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
 
         public VulkanEXTImageCompressionControl(VkDevice device)
         {
-            vkGetImageSubresourceLayout2EXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetImageSubresourceLayout2EXT", true);
         }
     }
 
@@ -13919,65 +14741,10 @@ namespace Vulkan
             return new VulkanEXTVertexInputDynamicState(device);
         }
 
-        private IntPtr vkCmdSetVertexInputEXT_ptr;
 
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, VkVertexInputBindingDescription2EXT* pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, VkVertexInputAttributeDescription2EXT* pVertexAttributeDescriptions)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, VkVertexInputBindingDescription2EXT* pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, ref VkVertexInputAttributeDescription2EXT pVertexAttributeDescriptions)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, VkVertexInputBindingDescription2EXT* pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, IntPtr pVertexAttributeDescriptions)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, ref VkVertexInputBindingDescription2EXT pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, VkVertexInputAttributeDescription2EXT* pVertexAttributeDescriptions)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, ref VkVertexInputBindingDescription2EXT pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, ref VkVertexInputAttributeDescription2EXT pVertexAttributeDescriptions)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, ref VkVertexInputBindingDescription2EXT pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, IntPtr pVertexAttributeDescriptions)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, IntPtr pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, VkVertexInputAttributeDescription2EXT* pVertexAttributeDescriptions)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, IntPtr pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, ref VkVertexInputAttributeDescription2EXT pVertexAttributeDescriptions)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, IntPtr pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, IntPtr pVertexAttributeDescriptions)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
 
         public VulkanEXTVertexInputDynamicState(VkDevice device)
         {
-            vkCmdSetVertexInputEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetVertexInputEXT", true);
         }
     }
 
@@ -14529,6 +15296,153 @@ namespace Vulkan
         }
     }
 
+    public unsafe sealed class VulkanNVExternalSciSync : IVulkanDeviceExtGeneric<VulkanNVExternalSciSync>
+    {
+        public static string Name => "VK_NV_external_sci_sync";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVExternalSciSync Create(VkDevice device)
+        {
+            return new VulkanNVExternalSciSync(device);
+        }
+
+        private IntPtr vkGetSemaphoreSciSyncObjNV_ptr;
+        private IntPtr vkImportSemaphoreSciSyncObjNV_ptr;
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetSemaphoreSciSyncObjNV(VkDevice device, VkSemaphoreGetSciSyncInfoNV* pGetSciSyncInfo, void* pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetSemaphoreSciSyncObjNV(VkDevice device, ref VkSemaphoreGetSciSyncInfoNV pGetSciSyncInfo, void* pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetSemaphoreSciSyncObjNV(VkDevice device, IntPtr pGetSciSyncInfo, void* pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkImportSemaphoreSciSyncObjNV(VkDevice device, VkImportSemaphoreSciSyncInfoNV* pImportSemaphoreSciSyncInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkImportSemaphoreSciSyncObjNV(VkDevice device, ref VkImportSemaphoreSciSyncInfoNV pImportSemaphoreSciSyncInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkImportSemaphoreSciSyncObjNV(VkDevice device, IntPtr pImportSemaphoreSciSyncInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanNVExternalSciSync(VkDevice device)
+        {
+            vkGetSemaphoreSciSyncObjNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetSemaphoreSciSyncObjNV", true);
+            vkImportSemaphoreSciSyncObjNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkImportSemaphoreSciSyncObjNV", true);
+        }
+    }
+
+    public unsafe sealed class VulkanNVExternalMemorySciBuf : IVulkanDeviceExtGeneric<VulkanNVExternalMemorySciBuf>
+    {
+        public static string Name => "VK_NV_external_memory_sci_buf";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVExternalMemorySciBuf Create(VkDevice device)
+        {
+            return new VulkanNVExternalMemorySciBuf(device);
+        }
+
+        private IntPtr vkGetMemorySciBufNV_ptr;
+        private IntPtr vkGetPhysicalDeviceExternalMemorySciBufPropertiesNV_ptr;
+        private IntPtr vkGetPhysicalDeviceSciBufAttributesNV_ptr;
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetMemorySciBufNV(VkDevice device, VkMemoryGetSciBufInfoNV* pGetSciBufInfo, NvCsi.NvSciBufObj* pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetMemorySciBufNV(VkDevice device, VkMemoryGetSciBufInfoNV* pGetSciBufInfo, out NvCsi.NvSciBufObj pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetMemorySciBufNV(VkDevice device, ref VkMemoryGetSciBufInfoNV pGetSciBufInfo, NvCsi.NvSciBufObj* pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetMemorySciBufNV(VkDevice device, ref VkMemoryGetSciBufInfoNV pGetSciBufInfo, out NvCsi.NvSciBufObj pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetMemorySciBufNV(VkDevice device, IntPtr pGetSciBufInfo, NvCsi.NvSciBufObj* pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetMemorySciBufNV(VkDevice device, IntPtr pGetSciBufInfo, out NvCsi.NvSciBufObj pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_EXTERNAL_HANDLE</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceExternalMemorySciBufPropertiesNV(VkPhysicalDevice physicalDevice, VkExternalMemoryHandleTypeFlags handleType, NvCsi.NvSciBufObj handle, VkMemorySciBufPropertiesNV* pMemorySciBufProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INVALID_EXTERNAL_HANDLE</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceExternalMemorySciBufPropertiesNV(VkPhysicalDevice physicalDevice, VkExternalMemoryHandleTypeFlags handleType, NvCsi.NvSciBufObj handle, out VkMemorySciBufPropertiesNV pMemorySciBufProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_INITIALIZATION_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceSciBufAttributesNV(VkPhysicalDevice physicalDevice, NvCsi.NvSciBufAttrList pAttributes)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanNVExternalMemorySciBuf(VkDevice device)
+        {
+            vkGetMemorySciBufNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetMemorySciBufNV", true);
+            vkGetPhysicalDeviceExternalMemorySciBufPropertiesNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetPhysicalDeviceExternalMemorySciBufPropertiesNV", true);
+            vkGetPhysicalDeviceSciBufAttributesNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetPhysicalDeviceSciBufAttributesNV", true);
+        }
+    }
+
     public unsafe sealed class VulkanEXTExtendedDynamicState2 : IVulkanDeviceExtGeneric<VulkanEXTExtendedDynamicState2>
     {
         public static string Name => "VK_EXT_extended_dynamic_state2";
@@ -14539,25 +15453,10 @@ namespace Vulkan
             return new VulkanEXTExtendedDynamicState2(device);
         }
 
-        private IntPtr vkCmdSetLogicOpEXT_ptr;
-        private IntPtr vkCmdSetPatchControlPointsEXT_ptr;
 
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetLogicOpEXT(VkCommandBuffer commandBuffer, VkLogicOp logicOp)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetPatchControlPointsEXT(VkCommandBuffer commandBuffer, uint patchControlPoints)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
 
         public VulkanEXTExtendedDynamicState2(VkDevice device)
         {
-            vkCmdSetLogicOpEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetLogicOpEXT", true);
-            vkCmdSetPatchControlPointsEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetPatchControlPointsEXT", true);
         }
     }
 
@@ -15339,6 +16238,38 @@ namespace Vulkan
         }
     }
 
+    public unsafe sealed class VulkanHuaweiClusterCullingShader : IVulkanDeviceExtGeneric<VulkanHuaweiClusterCullingShader>
+    {
+        public static string Name => "VK_HUAWEI_cluster_culling_shader";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanHuaweiClusterCullingShader Create(VkDevice device)
+        {
+            return new VulkanHuaweiClusterCullingShader(device);
+        }
+
+        private IntPtr vkCmdDrawClusterHUAWEI_ptr;
+        private IntPtr vkCmdDrawClusterIndirectHUAWEI_ptr;
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdDrawClusterHUAWEI(VkCommandBuffer commandBuffer, uint groupCountX, uint groupCountY, uint groupCountZ)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdDrawClusterIndirectHUAWEI(VkCommandBuffer commandBuffer, VkBuffer buffer, ulong offset)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanHuaweiClusterCullingShader(VkDevice device)
+        {
+            vkCmdDrawClusterHUAWEI_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdDrawClusterHUAWEI", true);
+            vkCmdDrawClusterIndirectHUAWEI_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdDrawClusterIndirectHUAWEI", true);
+        }
+    }
+
     public unsafe sealed class VulkanEXTPageableDeviceLocalMemory : IVulkanDeviceExtGeneric<VulkanEXTPageableDeviceLocalMemory>
     {
         public static string Name => "VK_EXT_pageable_device_local_memory";
@@ -15530,6 +16461,82 @@ namespace Vulkan
         }
     }
 
+    public unsafe sealed class VulkanNVDeviceGeneratedCommandsCompute : IVulkanDeviceExtGeneric<VulkanNVDeviceGeneratedCommandsCompute>
+    {
+        public static string Name => "VK_NV_device_generated_commands_compute";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVDeviceGeneratedCommandsCompute Create(VkDevice device)
+        {
+            return new VulkanNVDeviceGeneratedCommandsCompute(device);
+        }
+
+        private IntPtr vkCmdUpdatePipelineIndirectBufferNV_ptr;
+        private IntPtr vkGetPipelineIndirectDeviceAddressNV_ptr;
+        private IntPtr vkGetPipelineIndirectMemoryRequirementsNV_ptr;
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdUpdatePipelineIndirectBufferNV(VkCommandBuffer commandBuffer, VkPipelineBindPoint pipelineBindPoint, VkPipeline pipeline)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe ulong vkGetPipelineIndirectDeviceAddressNV(VkDevice device, VkPipelineIndirectDeviceAddressInfoNV* pInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe ulong vkGetPipelineIndirectDeviceAddressNV(VkDevice device, out VkPipelineIndirectDeviceAddressInfoNV pInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetPipelineIndirectMemoryRequirementsNV(VkDevice device, VkComputePipelineCreateInfo* pCreateInfo, VkMemoryRequirements2* pMemoryRequirements)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetPipelineIndirectMemoryRequirementsNV(VkDevice device, VkComputePipelineCreateInfo* pCreateInfo, out VkMemoryRequirements2 pMemoryRequirements)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetPipelineIndirectMemoryRequirementsNV(VkDevice device, ref VkComputePipelineCreateInfo pCreateInfo, VkMemoryRequirements2* pMemoryRequirements)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetPipelineIndirectMemoryRequirementsNV(VkDevice device, ref VkComputePipelineCreateInfo pCreateInfo, out VkMemoryRequirements2 pMemoryRequirements)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetPipelineIndirectMemoryRequirementsNV(VkDevice device, IntPtr pCreateInfo, VkMemoryRequirements2* pMemoryRequirements)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetPipelineIndirectMemoryRequirementsNV(VkDevice device, IntPtr pCreateInfo, out VkMemoryRequirements2 pMemoryRequirements)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanNVDeviceGeneratedCommandsCompute(VkDevice device)
+        {
+            vkCmdUpdatePipelineIndirectBufferNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdUpdatePipelineIndirectBufferNV", true);
+            vkGetPipelineIndirectDeviceAddressNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetPipelineIndirectDeviceAddressNV", true);
+            vkGetPipelineIndirectMemoryRequirementsNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetPipelineIndirectMemoryRequirementsNV", true);
+        }
+    }
+
     public unsafe sealed class VulkanEXTExtendedDynamicState3 : IVulkanDeviceExtGeneric<VulkanEXTExtendedDynamicState3>
     {
         public static string Name => "VK_EXT_extended_dynamic_state3";
@@ -15540,341 +16547,10 @@ namespace Vulkan
             return new VulkanEXTExtendedDynamicState3(device);
         }
 
-        private IntPtr vkCmdSetAlphaToCoverageEnableEXT_ptr;
-        private IntPtr vkCmdSetAlphaToOneEnableEXT_ptr;
-        private IntPtr vkCmdSetColorBlendAdvancedEXT_ptr;
-        private IntPtr vkCmdSetColorBlendEnableEXT_ptr;
-        private IntPtr vkCmdSetColorBlendEquationEXT_ptr;
-        private IntPtr vkCmdSetColorWriteMaskEXT_ptr;
-        private IntPtr vkCmdSetConservativeRasterizationModeEXT_ptr;
-        private IntPtr vkCmdSetCoverageModulationModeNV_ptr;
-        private IntPtr vkCmdSetCoverageModulationTableEnableNV_ptr;
-        private IntPtr vkCmdSetCoverageModulationTableNV_ptr;
-        private IntPtr vkCmdSetCoverageReductionModeNV_ptr;
-        private IntPtr vkCmdSetCoverageToColorEnableNV_ptr;
-        private IntPtr vkCmdSetCoverageToColorLocationNV_ptr;
-        private IntPtr vkCmdSetDepthClampEnableEXT_ptr;
-        private IntPtr vkCmdSetDepthClipEnableEXT_ptr;
-        private IntPtr vkCmdSetDepthClipNegativeOneToOneEXT_ptr;
-        private IntPtr vkCmdSetExtraPrimitiveOverestimationSizeEXT_ptr;
-        private IntPtr vkCmdSetLineRasterizationModeEXT_ptr;
-        private IntPtr vkCmdSetLineStippleEnableEXT_ptr;
-        private IntPtr vkCmdSetLogicOpEnableEXT_ptr;
-        private IntPtr vkCmdSetPolygonModeEXT_ptr;
-        private IntPtr vkCmdSetProvokingVertexModeEXT_ptr;
-        private IntPtr vkCmdSetRasterizationSamplesEXT_ptr;
-        private IntPtr vkCmdSetRasterizationStreamEXT_ptr;
-        private IntPtr vkCmdSetRepresentativeFragmentTestEnableNV_ptr;
-        private IntPtr vkCmdSetSampleLocationsEnableEXT_ptr;
-        private IntPtr vkCmdSetSampleMaskEXT_ptr;
-        private IntPtr vkCmdSetShadingRateImageEnableNV_ptr;
-        private IntPtr vkCmdSetTessellationDomainOriginEXT_ptr;
-        private IntPtr vkCmdSetViewportSwizzleNV_ptr;
-        private IntPtr vkCmdSetViewportWScalingEnableNV_ptr;
 
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetAlphaToCoverageEnableEXT(VkCommandBuffer commandBuffer, VkBool32 alphaToCoverageEnable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetAlphaToOneEnableEXT(VkCommandBuffer commandBuffer, VkBool32 alphaToOneEnable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetColorBlendAdvancedEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, VkColorBlendAdvancedEXT* pColorBlendAdvanced)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetColorBlendAdvancedEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, ref VkColorBlendAdvancedEXT pColorBlendAdvanced)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetColorBlendAdvancedEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, IntPtr pColorBlendAdvanced)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetColorBlendEnableEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, VkBool32* pColorBlendEnables)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetColorBlendEnableEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, ref VkBool32 pColorBlendEnables)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetColorBlendEnableEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, IntPtr pColorBlendEnables)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetColorBlendEquationEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, VkColorBlendEquationEXT* pColorBlendEquations)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetColorBlendEquationEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, ref VkColorBlendEquationEXT pColorBlendEquations)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetColorBlendEquationEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, IntPtr pColorBlendEquations)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetColorWriteMaskEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, VkColorComponentFlags* pColorWriteMasks)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetColorWriteMaskEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, ref VkColorComponentFlags pColorWriteMasks)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetColorWriteMaskEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, IntPtr pColorWriteMasks)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetConservativeRasterizationModeEXT(VkCommandBuffer commandBuffer, VkConservativeRasterizationModeEXT conservativeRasterizationMode)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetCoverageModulationModeNV(VkCommandBuffer commandBuffer, VkCoverageModulationModeNV coverageModulationMode)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetCoverageModulationTableEnableNV(VkCommandBuffer commandBuffer, VkBool32 coverageModulationTableEnable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetCoverageModulationTableNV(VkCommandBuffer commandBuffer, uint coverageModulationTableCount, float* pCoverageModulationTable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetCoverageModulationTableNV(VkCommandBuffer commandBuffer, uint coverageModulationTableCount, ref float pCoverageModulationTable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetCoverageModulationTableNV(VkCommandBuffer commandBuffer, uint coverageModulationTableCount, IntPtr pCoverageModulationTable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetCoverageReductionModeNV(VkCommandBuffer commandBuffer, VkCoverageReductionModeNV coverageReductionMode)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetCoverageToColorEnableNV(VkCommandBuffer commandBuffer, VkBool32 coverageToColorEnable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetCoverageToColorLocationNV(VkCommandBuffer commandBuffer, uint coverageToColorLocation)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetDepthClampEnableEXT(VkCommandBuffer commandBuffer, VkBool32 depthClampEnable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetDepthClipEnableEXT(VkCommandBuffer commandBuffer, VkBool32 depthClipEnable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetDepthClipNegativeOneToOneEXT(VkCommandBuffer commandBuffer, VkBool32 negativeOneToOne)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetExtraPrimitiveOverestimationSizeEXT(VkCommandBuffer commandBuffer, float extraPrimitiveOverestimationSize)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetLineRasterizationModeEXT(VkCommandBuffer commandBuffer, VkLineRasterizationModeEXT lineRasterizationMode)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetLineStippleEnableEXT(VkCommandBuffer commandBuffer, VkBool32 stippledLineEnable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetLogicOpEnableEXT(VkCommandBuffer commandBuffer, VkBool32 logicOpEnable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetPolygonModeEXT(VkCommandBuffer commandBuffer, VkPolygonMode polygonMode)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetProvokingVertexModeEXT(VkCommandBuffer commandBuffer, VkProvokingVertexModeEXT provokingVertexMode)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetRasterizationSamplesEXT(VkCommandBuffer commandBuffer, VkSampleCountFlags rasterizationSamples)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetRasterizationStreamEXT(VkCommandBuffer commandBuffer, uint rasterizationStream)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetRepresentativeFragmentTestEnableNV(VkCommandBuffer commandBuffer, VkBool32 representativeFragmentTestEnable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetSampleLocationsEnableEXT(VkCommandBuffer commandBuffer, VkBool32 sampleLocationsEnable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetSampleMaskEXT(VkCommandBuffer commandBuffer, VkSampleCountFlags samples, uint* pSampleMask)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetSampleMaskEXT(VkCommandBuffer commandBuffer, VkSampleCountFlags samples, ref uint pSampleMask)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetSampleMaskEXT(VkCommandBuffer commandBuffer, VkSampleCountFlags samples, IntPtr pSampleMask)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetShadingRateImageEnableNV(VkCommandBuffer commandBuffer, VkBool32 shadingRateImageEnable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetTessellationDomainOriginEXT(VkCommandBuffer commandBuffer, VkTessellationDomainOrigin domainOrigin)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetViewportSwizzleNV(VkCommandBuffer commandBuffer, uint firstViewport, uint viewportCount, VkViewportSwizzleNV* pViewportSwizzles)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetViewportSwizzleNV(VkCommandBuffer commandBuffer, uint firstViewport, uint viewportCount, ref VkViewportSwizzleNV pViewportSwizzles)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetViewportSwizzleNV(VkCommandBuffer commandBuffer, uint firstViewport, uint viewportCount, IntPtr pViewportSwizzles)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
-
-        [Generator.CalliRewrite]
-        public unsafe void vkCmdSetViewportWScalingEnableNV(VkCommandBuffer commandBuffer, VkBool32 viewportWScalingEnable)
-        {
-            throw VulkanNative.CreateUnpatchedException();
-        }
 
         public VulkanEXTExtendedDynamicState3(VkDevice device)
         {
-            vkCmdSetAlphaToCoverageEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetAlphaToCoverageEnableEXT", true);
-            vkCmdSetAlphaToOneEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetAlphaToOneEnableEXT", true);
-            vkCmdSetColorBlendAdvancedEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetColorBlendAdvancedEXT", true);
-            vkCmdSetColorBlendEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetColorBlendEnableEXT", true);
-            vkCmdSetColorBlendEquationEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetColorBlendEquationEXT", true);
-            vkCmdSetColorWriteMaskEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetColorWriteMaskEXT", true);
-            vkCmdSetConservativeRasterizationModeEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetConservativeRasterizationModeEXT", true);
-            vkCmdSetCoverageModulationModeNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetCoverageModulationModeNV", true);
-            vkCmdSetCoverageModulationTableEnableNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetCoverageModulationTableEnableNV", true);
-            vkCmdSetCoverageModulationTableNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetCoverageModulationTableNV", true);
-            vkCmdSetCoverageReductionModeNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetCoverageReductionModeNV", true);
-            vkCmdSetCoverageToColorEnableNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetCoverageToColorEnableNV", true);
-            vkCmdSetCoverageToColorLocationNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetCoverageToColorLocationNV", true);
-            vkCmdSetDepthClampEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetDepthClampEnableEXT", true);
-            vkCmdSetDepthClipEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetDepthClipEnableEXT", true);
-            vkCmdSetDepthClipNegativeOneToOneEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetDepthClipNegativeOneToOneEXT", true);
-            vkCmdSetExtraPrimitiveOverestimationSizeEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetExtraPrimitiveOverestimationSizeEXT", true);
-            vkCmdSetLineRasterizationModeEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetLineRasterizationModeEXT", true);
-            vkCmdSetLineStippleEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetLineStippleEnableEXT", true);
-            vkCmdSetLogicOpEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetLogicOpEnableEXT", true);
-            vkCmdSetPolygonModeEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetPolygonModeEXT", true);
-            vkCmdSetProvokingVertexModeEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetProvokingVertexModeEXT", true);
-            vkCmdSetRasterizationSamplesEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetRasterizationSamplesEXT", true);
-            vkCmdSetRasterizationStreamEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetRasterizationStreamEXT", true);
-            vkCmdSetRepresentativeFragmentTestEnableNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetRepresentativeFragmentTestEnableNV", true);
-            vkCmdSetSampleLocationsEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetSampleLocationsEnableEXT", true);
-            vkCmdSetSampleMaskEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetSampleMaskEXT", true);
-            vkCmdSetShadingRateImageEnableNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetShadingRateImageEnableNV", true);
-            vkCmdSetTessellationDomainOriginEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetTessellationDomainOriginEXT", true);
-            vkCmdSetViewportSwizzleNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetViewportSwizzleNV", true);
-            vkCmdSetViewportWScalingEnableNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetViewportWScalingEnableNV", true);
         }
     }
 
@@ -16267,6 +16943,833 @@ namespace Vulkan
         }
     }
 
+    public unsafe sealed class VulkanKHRMaintenance5 : IVulkanDeviceExtGeneric<VulkanKHRMaintenance5>
+    {
+        public static string Name => "VK_KHR_maintenance5";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRMaintenance5 Create(VkDevice device)
+        {
+            return new VulkanKHRMaintenance5(device);
+        }
+
+        private IntPtr vkCmdBindIndexBuffer2KHR_ptr;
+        private IntPtr vkGetDeviceImageSubresourceLayoutKHR_ptr;
+        private IntPtr vkGetImageSubresourceLayout2KHR_ptr;
+        private IntPtr vkGetRenderingAreaGranularityKHR_ptr;
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdBindIndexBuffer2KHR(VkCommandBuffer commandBuffer, VkBuffer buffer, ulong offset, ulong size, VkIndexType indexType)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetDeviceImageSubresourceLayoutKHR(VkDevice device, VkDeviceImageSubresourceInfoKHR* pInfo, VkSubresourceLayout2KHR* pLayout)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetDeviceImageSubresourceLayoutKHR(VkDevice device, VkDeviceImageSubresourceInfoKHR* pInfo, out VkSubresourceLayout2KHR pLayout)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetDeviceImageSubresourceLayoutKHR(VkDevice device, ref VkDeviceImageSubresourceInfoKHR pInfo, VkSubresourceLayout2KHR* pLayout)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetDeviceImageSubresourceLayoutKHR(VkDevice device, ref VkDeviceImageSubresourceInfoKHR pInfo, out VkSubresourceLayout2KHR pLayout)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetDeviceImageSubresourceLayoutKHR(VkDevice device, IntPtr pInfo, VkSubresourceLayout2KHR* pLayout)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetDeviceImageSubresourceLayoutKHR(VkDevice device, IntPtr pInfo, out VkSubresourceLayout2KHR pLayout)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetImageSubresourceLayout2KHR(VkDevice device, VkImage image, VkImageSubresource2KHR* pSubresource, VkSubresourceLayout2KHR* pLayout)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetImageSubresourceLayout2KHR(VkDevice device, VkImage image, VkImageSubresource2KHR* pSubresource, out VkSubresourceLayout2KHR pLayout)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetImageSubresourceLayout2KHR(VkDevice device, VkImage image, ref VkImageSubresource2KHR pSubresource, VkSubresourceLayout2KHR* pLayout)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetImageSubresourceLayout2KHR(VkDevice device, VkImage image, ref VkImageSubresource2KHR pSubresource, out VkSubresourceLayout2KHR pLayout)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetImageSubresourceLayout2KHR(VkDevice device, VkImage image, IntPtr pSubresource, VkSubresourceLayout2KHR* pLayout)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetImageSubresourceLayout2KHR(VkDevice device, VkImage image, IntPtr pSubresource, out VkSubresourceLayout2KHR pLayout)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetRenderingAreaGranularityKHR(VkDevice device, VkRenderingAreaInfoKHR* pRenderingAreaInfo, VkExtent2D* pGranularity)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetRenderingAreaGranularityKHR(VkDevice device, VkRenderingAreaInfoKHR* pRenderingAreaInfo, out VkExtent2D pGranularity)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetRenderingAreaGranularityKHR(VkDevice device, ref VkRenderingAreaInfoKHR pRenderingAreaInfo, VkExtent2D* pGranularity)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetRenderingAreaGranularityKHR(VkDevice device, ref VkRenderingAreaInfoKHR pRenderingAreaInfo, out VkExtent2D pGranularity)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetRenderingAreaGranularityKHR(VkDevice device, IntPtr pRenderingAreaInfo, VkExtent2D* pGranularity)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkGetRenderingAreaGranularityKHR(VkDevice device, IntPtr pRenderingAreaInfo, out VkExtent2D pGranularity)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanKHRMaintenance5(VkDevice device)
+        {
+            vkCmdBindIndexBuffer2KHR_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdBindIndexBuffer2KHR", true);
+            vkGetDeviceImageSubresourceLayoutKHR_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetDeviceImageSubresourceLayoutKHR", true);
+            vkGetImageSubresourceLayout2KHR_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetImageSubresourceLayout2KHR", true);
+            vkGetRenderingAreaGranularityKHR_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetRenderingAreaGranularityKHR", true);
+        }
+    }
+
+    public unsafe sealed class VulkanEXTShaderObject : IVulkanDeviceExtGeneric<VulkanEXTShaderObject>
+    {
+        public static string Name => "VK_EXT_shader_object";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTShaderObject Create(VkDevice device)
+        {
+            return new VulkanEXTShaderObject(device);
+        }
+
+        private IntPtr vkCmdBindShadersEXT_ptr;
+        private IntPtr vkCmdSetAlphaToCoverageEnableEXT_ptr;
+        private IntPtr vkCmdSetAlphaToOneEnableEXT_ptr;
+        private IntPtr vkCmdSetColorBlendAdvancedEXT_ptr;
+        private IntPtr vkCmdSetColorBlendEnableEXT_ptr;
+        private IntPtr vkCmdSetColorBlendEquationEXT_ptr;
+        private IntPtr vkCmdSetColorWriteMaskEXT_ptr;
+        private IntPtr vkCmdSetConservativeRasterizationModeEXT_ptr;
+        private IntPtr vkCmdSetCoverageModulationModeNV_ptr;
+        private IntPtr vkCmdSetCoverageModulationTableEnableNV_ptr;
+        private IntPtr vkCmdSetCoverageModulationTableNV_ptr;
+        private IntPtr vkCmdSetCoverageReductionModeNV_ptr;
+        private IntPtr vkCmdSetCoverageToColorEnableNV_ptr;
+        private IntPtr vkCmdSetCoverageToColorLocationNV_ptr;
+        private IntPtr vkCmdSetDepthClampEnableEXT_ptr;
+        private IntPtr vkCmdSetDepthClipEnableEXT_ptr;
+        private IntPtr vkCmdSetDepthClipNegativeOneToOneEXT_ptr;
+        private IntPtr vkCmdSetExtraPrimitiveOverestimationSizeEXT_ptr;
+        private IntPtr vkCmdSetLineRasterizationModeEXT_ptr;
+        private IntPtr vkCmdSetLineStippleEnableEXT_ptr;
+        private IntPtr vkCmdSetLogicOpEnableEXT_ptr;
+        private IntPtr vkCmdSetLogicOpEXT_ptr;
+        private IntPtr vkCmdSetPatchControlPointsEXT_ptr;
+        private IntPtr vkCmdSetPolygonModeEXT_ptr;
+        private IntPtr vkCmdSetProvokingVertexModeEXT_ptr;
+        private IntPtr vkCmdSetRasterizationSamplesEXT_ptr;
+        private IntPtr vkCmdSetRasterizationStreamEXT_ptr;
+        private IntPtr vkCmdSetRepresentativeFragmentTestEnableNV_ptr;
+        private IntPtr vkCmdSetSampleLocationsEnableEXT_ptr;
+        private IntPtr vkCmdSetSampleMaskEXT_ptr;
+        private IntPtr vkCmdSetShadingRateImageEnableNV_ptr;
+        private IntPtr vkCmdSetTessellationDomainOriginEXT_ptr;
+        private IntPtr vkCmdSetVertexInputEXT_ptr;
+        private IntPtr vkCmdSetViewportSwizzleNV_ptr;
+        private IntPtr vkCmdSetViewportWScalingEnableNV_ptr;
+        private IntPtr vkCreateShadersEXT_ptr;
+        private IntPtr vkDestroyShaderEXT_ptr;
+        private IntPtr vkGetShaderBinaryDataEXT_ptr;
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdBindShadersEXT(VkCommandBuffer commandBuffer, uint stageCount, VkShaderStageFlags* pStages, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdBindShadersEXT(VkCommandBuffer commandBuffer, uint stageCount, VkShaderStageFlags* pStages, ref VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdBindShadersEXT(VkCommandBuffer commandBuffer, uint stageCount, VkShaderStageFlags* pStages, IntPtr pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdBindShadersEXT(VkCommandBuffer commandBuffer, uint stageCount, ref VkShaderStageFlags pStages, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdBindShadersEXT(VkCommandBuffer commandBuffer, uint stageCount, ref VkShaderStageFlags pStages, ref VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdBindShadersEXT(VkCommandBuffer commandBuffer, uint stageCount, ref VkShaderStageFlags pStages, IntPtr pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdBindShadersEXT(VkCommandBuffer commandBuffer, uint stageCount, IntPtr pStages, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdBindShadersEXT(VkCommandBuffer commandBuffer, uint stageCount, IntPtr pStages, ref VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdBindShadersEXT(VkCommandBuffer commandBuffer, uint stageCount, IntPtr pStages, IntPtr pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetAlphaToCoverageEnableEXT(VkCommandBuffer commandBuffer, VkBool32 alphaToCoverageEnable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetAlphaToOneEnableEXT(VkCommandBuffer commandBuffer, VkBool32 alphaToOneEnable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetColorBlendAdvancedEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, VkColorBlendAdvancedEXT* pColorBlendAdvanced)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetColorBlendAdvancedEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, ref VkColorBlendAdvancedEXT pColorBlendAdvanced)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetColorBlendAdvancedEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, IntPtr pColorBlendAdvanced)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetColorBlendEnableEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, VkBool32* pColorBlendEnables)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetColorBlendEnableEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, ref VkBool32 pColorBlendEnables)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetColorBlendEnableEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, IntPtr pColorBlendEnables)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetColorBlendEquationEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, VkColorBlendEquationEXT* pColorBlendEquations)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetColorBlendEquationEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, ref VkColorBlendEquationEXT pColorBlendEquations)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetColorBlendEquationEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, IntPtr pColorBlendEquations)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetColorWriteMaskEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, VkColorComponentFlags* pColorWriteMasks)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetColorWriteMaskEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, ref VkColorComponentFlags pColorWriteMasks)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetColorWriteMaskEXT(VkCommandBuffer commandBuffer, uint firstAttachment, uint attachmentCount, IntPtr pColorWriteMasks)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetConservativeRasterizationModeEXT(VkCommandBuffer commandBuffer, VkConservativeRasterizationModeEXT conservativeRasterizationMode)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetCoverageModulationModeNV(VkCommandBuffer commandBuffer, VkCoverageModulationModeNV coverageModulationMode)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetCoverageModulationTableEnableNV(VkCommandBuffer commandBuffer, VkBool32 coverageModulationTableEnable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetCoverageModulationTableNV(VkCommandBuffer commandBuffer, uint coverageModulationTableCount, float* pCoverageModulationTable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetCoverageModulationTableNV(VkCommandBuffer commandBuffer, uint coverageModulationTableCount, ref float pCoverageModulationTable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetCoverageModulationTableNV(VkCommandBuffer commandBuffer, uint coverageModulationTableCount, IntPtr pCoverageModulationTable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetCoverageReductionModeNV(VkCommandBuffer commandBuffer, VkCoverageReductionModeNV coverageReductionMode)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetCoverageToColorEnableNV(VkCommandBuffer commandBuffer, VkBool32 coverageToColorEnable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetCoverageToColorLocationNV(VkCommandBuffer commandBuffer, uint coverageToColorLocation)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetDepthClampEnableEXT(VkCommandBuffer commandBuffer, VkBool32 depthClampEnable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetDepthClipEnableEXT(VkCommandBuffer commandBuffer, VkBool32 depthClipEnable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetDepthClipNegativeOneToOneEXT(VkCommandBuffer commandBuffer, VkBool32 negativeOneToOne)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetExtraPrimitiveOverestimationSizeEXT(VkCommandBuffer commandBuffer, float extraPrimitiveOverestimationSize)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetLineRasterizationModeEXT(VkCommandBuffer commandBuffer, VkLineRasterizationModeEXT lineRasterizationMode)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetLineStippleEnableEXT(VkCommandBuffer commandBuffer, VkBool32 stippledLineEnable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetLogicOpEnableEXT(VkCommandBuffer commandBuffer, VkBool32 logicOpEnable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetLogicOpEXT(VkCommandBuffer commandBuffer, VkLogicOp logicOp)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetPatchControlPointsEXT(VkCommandBuffer commandBuffer, uint patchControlPoints)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetPolygonModeEXT(VkCommandBuffer commandBuffer, VkPolygonMode polygonMode)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetProvokingVertexModeEXT(VkCommandBuffer commandBuffer, VkProvokingVertexModeEXT provokingVertexMode)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetRasterizationSamplesEXT(VkCommandBuffer commandBuffer, VkSampleCountFlags rasterizationSamples)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetRasterizationStreamEXT(VkCommandBuffer commandBuffer, uint rasterizationStream)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetRepresentativeFragmentTestEnableNV(VkCommandBuffer commandBuffer, VkBool32 representativeFragmentTestEnable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetSampleLocationsEnableEXT(VkCommandBuffer commandBuffer, VkBool32 sampleLocationsEnable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetSampleMaskEXT(VkCommandBuffer commandBuffer, VkSampleCountFlags samples, uint* pSampleMask)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetSampleMaskEXT(VkCommandBuffer commandBuffer, VkSampleCountFlags samples, ref uint pSampleMask)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetSampleMaskEXT(VkCommandBuffer commandBuffer, VkSampleCountFlags samples, IntPtr pSampleMask)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetShadingRateImageEnableNV(VkCommandBuffer commandBuffer, VkBool32 shadingRateImageEnable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetTessellationDomainOriginEXT(VkCommandBuffer commandBuffer, VkTessellationDomainOrigin domainOrigin)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, VkVertexInputBindingDescription2EXT* pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, VkVertexInputAttributeDescription2EXT* pVertexAttributeDescriptions)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, VkVertexInputBindingDescription2EXT* pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, ref VkVertexInputAttributeDescription2EXT pVertexAttributeDescriptions)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, VkVertexInputBindingDescription2EXT* pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, IntPtr pVertexAttributeDescriptions)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, ref VkVertexInputBindingDescription2EXT pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, VkVertexInputAttributeDescription2EXT* pVertexAttributeDescriptions)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, ref VkVertexInputBindingDescription2EXT pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, ref VkVertexInputAttributeDescription2EXT pVertexAttributeDescriptions)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, ref VkVertexInputBindingDescription2EXT pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, IntPtr pVertexAttributeDescriptions)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, IntPtr pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, VkVertexInputAttributeDescription2EXT* pVertexAttributeDescriptions)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, IntPtr pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, ref VkVertexInputAttributeDescription2EXT pVertexAttributeDescriptions)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetVertexInputEXT(VkCommandBuffer commandBuffer, uint vertexBindingDescriptionCount, IntPtr pVertexBindingDescriptions, uint vertexAttributeDescriptionCount, IntPtr pVertexAttributeDescriptions)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetViewportSwizzleNV(VkCommandBuffer commandBuffer, uint firstViewport, uint viewportCount, VkViewportSwizzleNV* pViewportSwizzles)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetViewportSwizzleNV(VkCommandBuffer commandBuffer, uint firstViewport, uint viewportCount, ref VkViewportSwizzleNV pViewportSwizzles)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetViewportSwizzleNV(VkCommandBuffer commandBuffer, uint firstViewport, uint viewportCount, IntPtr pViewportSwizzles)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetViewportWScalingEnableNV(VkCommandBuffer commandBuffer, VkBool32 viewportWScalingEnable)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, VkShaderCreateInfoEXT* pCreateInfos, VkAllocationCallbacks* pAllocator, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, VkShaderCreateInfoEXT* pCreateInfos, VkAllocationCallbacks* pAllocator, out VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, VkShaderCreateInfoEXT* pCreateInfos, ref VkAllocationCallbacks pAllocator, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, VkShaderCreateInfoEXT* pCreateInfos, ref VkAllocationCallbacks pAllocator, out VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, VkShaderCreateInfoEXT* pCreateInfos, IntPtr pAllocator, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, VkShaderCreateInfoEXT* pCreateInfos, IntPtr pAllocator, out VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, ref VkShaderCreateInfoEXT pCreateInfos, VkAllocationCallbacks* pAllocator, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, ref VkShaderCreateInfoEXT pCreateInfos, VkAllocationCallbacks* pAllocator, out VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, ref VkShaderCreateInfoEXT pCreateInfos, ref VkAllocationCallbacks pAllocator, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, ref VkShaderCreateInfoEXT pCreateInfos, ref VkAllocationCallbacks pAllocator, out VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, ref VkShaderCreateInfoEXT pCreateInfos, IntPtr pAllocator, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, ref VkShaderCreateInfoEXT pCreateInfos, IntPtr pAllocator, out VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, IntPtr pCreateInfos, VkAllocationCallbacks* pAllocator, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, IntPtr pCreateInfos, VkAllocationCallbacks* pAllocator, out VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, IntPtr pCreateInfos, ref VkAllocationCallbacks pAllocator, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, IntPtr pCreateInfos, ref VkAllocationCallbacks pAllocator, out VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, IntPtr pCreateInfos, IntPtr pAllocator, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, IntPtr pCreateInfos, IntPtr pAllocator, out VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, VkShaderCreateInfoEXT[] pCreateInfos, VkAllocationCallbacks* pAllocator, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, VkShaderCreateInfoEXT[] pCreateInfos, VkAllocationCallbacks* pAllocator, out VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, VkShaderCreateInfoEXT[] pCreateInfos, ref VkAllocationCallbacks pAllocator, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, VkShaderCreateInfoEXT[] pCreateInfos, ref VkAllocationCallbacks pAllocator, out VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, VkShaderCreateInfoEXT[] pCreateInfos, IntPtr pAllocator, VkShaderEXT* pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY, VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateShadersEXT(VkDevice device, uint createInfoCount, VkShaderCreateInfoEXT[] pCreateInfos, IntPtr pAllocator, out VkShaderEXT pShaders)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkDestroyShaderEXT(VkDevice device, VkShaderEXT shader, VkAllocationCallbacks* pAllocator)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkDestroyShaderEXT(VkDevice device, VkShaderEXT shader, ref VkAllocationCallbacks pAllocator)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkDestroyShaderEXT(VkDevice device, VkShaderEXT shader, IntPtr pAllocator)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetShaderBinaryDataEXT(VkDevice device, VkShaderEXT shader, UIntPtr* pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetShaderBinaryDataEXT(VkDevice device, VkShaderEXT shader, ref UIntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetShaderBinaryDataEXT(VkDevice device, VkShaderEXT shader, IntPtr pDataSize, void* pData)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanEXTShaderObject(VkDevice device)
+        {
+            vkCmdBindShadersEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdBindShadersEXT", true);
+            vkCmdSetAlphaToCoverageEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetAlphaToCoverageEnableEXT", true);
+            vkCmdSetAlphaToOneEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetAlphaToOneEnableEXT", true);
+            vkCmdSetColorBlendAdvancedEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetColorBlendAdvancedEXT", true);
+            vkCmdSetColorBlendEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetColorBlendEnableEXT", true);
+            vkCmdSetColorBlendEquationEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetColorBlendEquationEXT", true);
+            vkCmdSetColorWriteMaskEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetColorWriteMaskEXT", true);
+            vkCmdSetConservativeRasterizationModeEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetConservativeRasterizationModeEXT", true);
+            vkCmdSetCoverageModulationModeNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetCoverageModulationModeNV", true);
+            vkCmdSetCoverageModulationTableEnableNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetCoverageModulationTableEnableNV", true);
+            vkCmdSetCoverageModulationTableNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetCoverageModulationTableNV", true);
+            vkCmdSetCoverageReductionModeNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetCoverageReductionModeNV", true);
+            vkCmdSetCoverageToColorEnableNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetCoverageToColorEnableNV", true);
+            vkCmdSetCoverageToColorLocationNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetCoverageToColorLocationNV", true);
+            vkCmdSetDepthClampEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetDepthClampEnableEXT", true);
+            vkCmdSetDepthClipEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetDepthClipEnableEXT", true);
+            vkCmdSetDepthClipNegativeOneToOneEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetDepthClipNegativeOneToOneEXT", true);
+            vkCmdSetExtraPrimitiveOverestimationSizeEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetExtraPrimitiveOverestimationSizeEXT", true);
+            vkCmdSetLineRasterizationModeEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetLineRasterizationModeEXT", true);
+            vkCmdSetLineStippleEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetLineStippleEnableEXT", true);
+            vkCmdSetLogicOpEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetLogicOpEnableEXT", true);
+            vkCmdSetLogicOpEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetLogicOpEXT", true);
+            vkCmdSetPatchControlPointsEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetPatchControlPointsEXT", true);
+            vkCmdSetPolygonModeEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetPolygonModeEXT", true);
+            vkCmdSetProvokingVertexModeEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetProvokingVertexModeEXT", true);
+            vkCmdSetRasterizationSamplesEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetRasterizationSamplesEXT", true);
+            vkCmdSetRasterizationStreamEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetRasterizationStreamEXT", true);
+            vkCmdSetRepresentativeFragmentTestEnableNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetRepresentativeFragmentTestEnableNV", true);
+            vkCmdSetSampleLocationsEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetSampleLocationsEnableEXT", true);
+            vkCmdSetSampleMaskEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetSampleMaskEXT", true);
+            vkCmdSetShadingRateImageEnableNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetShadingRateImageEnableNV", true);
+            vkCmdSetTessellationDomainOriginEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetTessellationDomainOriginEXT", true);
+            vkCmdSetVertexInputEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetVertexInputEXT", true);
+            vkCmdSetViewportSwizzleNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetViewportSwizzleNV", true);
+            vkCmdSetViewportWScalingEnableNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetViewportWScalingEnableNV", true);
+            vkCreateShadersEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCreateShadersEXT", true);
+            vkDestroyShaderEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkDestroyShaderEXT", true);
+            vkGetShaderBinaryDataEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetShaderBinaryDataEXT", true);
+        }
+    }
+
     public unsafe sealed class VulkanQcomTileProperties : IVulkanDeviceExtGeneric<VulkanQcomTileProperties>
     {
         public static string Name => "VK_QCOM_tile_properties";
@@ -16368,6 +17871,429 @@ namespace Vulkan
         {
             vkGetDynamicRenderingTilePropertiesQCOM_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetDynamicRenderingTilePropertiesQCOM", true);
             vkGetFramebufferTilePropertiesQCOM_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetFramebufferTilePropertiesQCOM", true);
+        }
+    }
+
+    public unsafe sealed class VulkanNVExternalSciSync2 : IVulkanDeviceExtGeneric<VulkanNVExternalSciSync2>
+    {
+        public static string Name => "VK_NV_external_sci_sync2";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanNVExternalSciSync2 Create(VkDevice device)
+        {
+            return new VulkanNVExternalSciSync2(device);
+        }
+
+        private IntPtr vkCreateSemaphoreSciSyncPoolNV_ptr;
+        private IntPtr vkDestroySemaphoreSciSyncPoolNV_ptr;
+        private IntPtr vkGetFenceSciSyncFenceNV_ptr;
+        private IntPtr vkGetFenceSciSyncObjNV_ptr;
+        private IntPtr vkGetPhysicalDeviceSciSyncAttributesNV_ptr;
+        private IntPtr vkImportFenceSciSyncFenceNV_ptr;
+        private IntPtr vkImportFenceSciSyncObjNV_ptr;
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, VkSemaphoreSciSyncPoolCreateInfoNV* pCreateInfo, VkAllocationCallbacks* pAllocator, VkSemaphoreSciSyncPoolNV* pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, VkSemaphoreSciSyncPoolCreateInfoNV* pCreateInfo, VkAllocationCallbacks* pAllocator, out VkSemaphoreSciSyncPoolNV pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, VkSemaphoreSciSyncPoolCreateInfoNV* pCreateInfo, ref VkAllocationCallbacks pAllocator, VkSemaphoreSciSyncPoolNV* pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, VkSemaphoreSciSyncPoolCreateInfoNV* pCreateInfo, ref VkAllocationCallbacks pAllocator, out VkSemaphoreSciSyncPoolNV pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, VkSemaphoreSciSyncPoolCreateInfoNV* pCreateInfo, IntPtr pAllocator, VkSemaphoreSciSyncPoolNV* pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, VkSemaphoreSciSyncPoolCreateInfoNV* pCreateInfo, IntPtr pAllocator, out VkSemaphoreSciSyncPoolNV pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, ref VkSemaphoreSciSyncPoolCreateInfoNV pCreateInfo, VkAllocationCallbacks* pAllocator, VkSemaphoreSciSyncPoolNV* pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, ref VkSemaphoreSciSyncPoolCreateInfoNV pCreateInfo, VkAllocationCallbacks* pAllocator, out VkSemaphoreSciSyncPoolNV pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, ref VkSemaphoreSciSyncPoolCreateInfoNV pCreateInfo, ref VkAllocationCallbacks pAllocator, VkSemaphoreSciSyncPoolNV* pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, ref VkSemaphoreSciSyncPoolCreateInfoNV pCreateInfo, ref VkAllocationCallbacks pAllocator, out VkSemaphoreSciSyncPoolNV pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, ref VkSemaphoreSciSyncPoolCreateInfoNV pCreateInfo, IntPtr pAllocator, VkSemaphoreSciSyncPoolNV* pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, ref VkSemaphoreSciSyncPoolCreateInfoNV pCreateInfo, IntPtr pAllocator, out VkSemaphoreSciSyncPoolNV pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, IntPtr pCreateInfo, VkAllocationCallbacks* pAllocator, VkSemaphoreSciSyncPoolNV* pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, IntPtr pCreateInfo, VkAllocationCallbacks* pAllocator, out VkSemaphoreSciSyncPoolNV pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, IntPtr pCreateInfo, ref VkAllocationCallbacks pAllocator, VkSemaphoreSciSyncPoolNV* pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, IntPtr pCreateInfo, ref VkAllocationCallbacks pAllocator, out VkSemaphoreSciSyncPoolNV pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, IntPtr pCreateInfo, IntPtr pAllocator, VkSemaphoreSciSyncPoolNV* pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED, VK_ERROR_OUT_OF_HOST_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkCreateSemaphoreSciSyncPoolNV(VkDevice device, IntPtr pCreateInfo, IntPtr pAllocator, out VkSemaphoreSciSyncPoolNV pSemaphorePool)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkDestroySemaphoreSciSyncPoolNV(VkDevice device, VkSemaphoreSciSyncPoolNV semaphorePool, VkAllocationCallbacks* pAllocator)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkDestroySemaphoreSciSyncPoolNV(VkDevice device, VkSemaphoreSciSyncPoolNV semaphorePool, ref VkAllocationCallbacks pAllocator)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        [Generator.CalliRewrite]
+        public unsafe void vkDestroySemaphoreSciSyncPoolNV(VkDevice device, VkSemaphoreSciSyncPoolNV semaphorePool, IntPtr pAllocator)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetFenceSciSyncFenceNV(VkDevice device, VkFenceGetSciSyncInfoNV* pGetSciSyncHandleInfo, void* pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetFenceSciSyncFenceNV(VkDevice device, ref VkFenceGetSciSyncInfoNV pGetSciSyncHandleInfo, void* pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetFenceSciSyncFenceNV(VkDevice device, IntPtr pGetSciSyncHandleInfo, void* pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetFenceSciSyncObjNV(VkDevice device, VkFenceGetSciSyncInfoNV* pGetSciSyncHandleInfo, void* pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetFenceSciSyncObjNV(VkDevice device, ref VkFenceGetSciSyncInfoNV pGetSciSyncHandleInfo, void* pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetFenceSciSyncObjNV(VkDevice device, IntPtr pGetSciSyncHandleInfo, void* pHandle)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceSciSyncAttributesNV(VkPhysicalDevice physicalDevice, VkSciSyncAttributesInfoNV* pSciSyncAttributesInfo, NvCsi.NvSciSyncAttrList pAttributes)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceSciSyncAttributesNV(VkPhysicalDevice physicalDevice, ref VkSciSyncAttributesInfoNV pSciSyncAttributesInfo, NvCsi.NvSciSyncAttrList pAttributes)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INITIALIZATION_FAILED</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceSciSyncAttributesNV(VkPhysicalDevice physicalDevice, IntPtr pSciSyncAttributesInfo, NvCsi.NvSciSyncAttrList pAttributes)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkImportFenceSciSyncFenceNV(VkDevice device, VkImportFenceSciSyncInfoNV* pImportFenceSciSyncInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkImportFenceSciSyncFenceNV(VkDevice device, ref VkImportFenceSciSyncInfoNV pImportFenceSciSyncInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkImportFenceSciSyncFenceNV(VkDevice device, IntPtr pImportFenceSciSyncInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkImportFenceSciSyncObjNV(VkDevice device, VkImportFenceSciSyncInfoNV* pImportFenceSciSyncInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkImportFenceSciSyncObjNV(VkDevice device, ref VkImportFenceSciSyncInfoNV pImportFenceSciSyncInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_INVALID_EXTERNAL_HANDLE, VK_ERROR_NOT_PERMITTED_EXT</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkImportFenceSciSyncObjNV(VkDevice device, IntPtr pImportFenceSciSyncInfo)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanNVExternalSciSync2(VkDevice device)
+        {
+            vkCreateSemaphoreSciSyncPoolNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCreateSemaphoreSciSyncPoolNV", true);
+            vkDestroySemaphoreSciSyncPoolNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkDestroySemaphoreSciSyncPoolNV", true);
+            vkGetFenceSciSyncFenceNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetFenceSciSyncFenceNV", true);
+            vkGetFenceSciSyncObjNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetFenceSciSyncObjNV", true);
+            vkGetPhysicalDeviceSciSyncAttributesNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetPhysicalDeviceSciSyncAttributesNV", true);
+            vkImportFenceSciSyncFenceNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkImportFenceSciSyncFenceNV", true);
+            vkImportFenceSciSyncObjNV_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkImportFenceSciSyncObjNV", true);
+        }
+    }
+
+    public unsafe sealed class VulkanKHRCooperativeMatrix : IVulkanDeviceExtGeneric<VulkanKHRCooperativeMatrix>
+    {
+        public static string Name => "VK_KHR_cooperative_matrix";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanKHRCooperativeMatrix Create(VkDevice device)
+        {
+            return new VulkanKHRCooperativeMatrix(device);
+        }
+
+        private IntPtr vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR_ptr;
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR(VkPhysicalDevice physicalDevice, uint* pPropertyCount, VkCooperativeMatrixPropertiesKHR* pProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR(VkPhysicalDevice physicalDevice, uint* pPropertyCount, out VkCooperativeMatrixPropertiesKHR pProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR(VkPhysicalDevice physicalDevice, ref uint pPropertyCount, VkCooperativeMatrixPropertiesKHR* pProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR(VkPhysicalDevice physicalDevice, ref uint pPropertyCount, out VkCooperativeMatrixPropertiesKHR pProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR(VkPhysicalDevice physicalDevice, IntPtr pPropertyCount, VkCooperativeMatrixPropertiesKHR* pProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS, VK_INCOMPLETE. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_OUT_OF_DEVICE_MEMORY</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR(VkPhysicalDevice physicalDevice, IntPtr pPropertyCount, out VkCooperativeMatrixPropertiesKHR pProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanKHRCooperativeMatrix(VkDevice device)
+        {
+            vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR", true);
+        }
+    }
+
+    public unsafe sealed class VulkanEXTAttachmentFeedbackLoopDynamicState : IVulkanDeviceExtGeneric<VulkanEXTAttachmentFeedbackLoopDynamicState>
+    {
+        public static string Name => "VK_EXT_attachment_feedback_loop_dynamic_state";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanEXTAttachmentFeedbackLoopDynamicState Create(VkDevice device)
+        {
+            return new VulkanEXTAttachmentFeedbackLoopDynamicState(device);
+        }
+
+        private IntPtr vkCmdSetAttachmentFeedbackLoopEnableEXT_ptr;
+
+        [Generator.CalliRewrite]
+        public unsafe void vkCmdSetAttachmentFeedbackLoopEnableEXT(VkCommandBuffer commandBuffer, VkImageAspectFlags aspectMask)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanEXTAttachmentFeedbackLoopDynamicState(VkDevice device)
+        {
+            vkCmdSetAttachmentFeedbackLoopEnableEXT_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkCmdSetAttachmentFeedbackLoopEnableEXT", true);
+        }
+    }
+
+    public unsafe sealed class VulkanQnxExternalMemoryScreenBuffer : IVulkanDeviceExtGeneric<VulkanQnxExternalMemoryScreenBuffer>
+    {
+        public static string Name => "VK_QNX_external_memory_screen_buffer";
+        string IVulkanExt.GetName() => Name;
+
+        public static VulkanQnxExternalMemoryScreenBuffer Create(VkDevice device)
+        {
+            return new VulkanQnxExternalMemoryScreenBuffer(device);
+        }
+
+        private IntPtr vkGetScreenBufferPropertiesQNX_ptr;
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetScreenBufferPropertiesQNX(VkDevice device, Screen.ScreenBuffer* buffer, VkScreenBufferPropertiesQNX* pProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetScreenBufferPropertiesQNX(VkDevice device, Screen.ScreenBuffer* buffer, out VkScreenBufferPropertiesQNX pProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetScreenBufferPropertiesQNX(VkDevice device, ref Screen.ScreenBuffer buffer, VkScreenBufferPropertiesQNX* pProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetScreenBufferPropertiesQNX(VkDevice device, ref Screen.ScreenBuffer buffer, out VkScreenBufferPropertiesQNX pProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetScreenBufferPropertiesQNX(VkDevice device, IntPtr buffer, VkScreenBufferPropertiesQNX* pProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        ///<remarks>Success codes:VK_SUCCESS. Error codes:VK_ERROR_OUT_OF_HOST_MEMORY, VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR</remarks>
+        [Generator.CalliRewrite]
+        public unsafe VkResult vkGetScreenBufferPropertiesQNX(VkDevice device, IntPtr buffer, out VkScreenBufferPropertiesQNX pProperties)
+        {
+            throw VulkanNative.CreateUnpatchedException();
+        }
+
+        public VulkanQnxExternalMemoryScreenBuffer(VkDevice device)
+        {
+            vkGetScreenBufferPropertiesQNX_ptr = VulkanNative.LoadDeviceProcAddr(device, "vkGetScreenBufferPropertiesQNX", true);
         }
     }
 

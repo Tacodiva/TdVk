@@ -246,7 +246,7 @@ namespace Vulkan
         AccelerationStructureSerializationSizeKHR = 1000150001,
         AccelerationStructureCompactedSizeNV = 1000165000,
         PerformanceQueryIntel = 1000210000,
-        VideoEncodeBitstreamBufferRangeKHR = 1000299000,
+        VideoEncodeFeedbackKHR = 1000299000,
         MeshPrimitivesGeneratedEXT = 1000328000,
         PrimitivesGeneratedEXT = 1000382000,
         AccelerationStructureSerializationBottomLevelPointersKHR = 1000386000,
@@ -267,7 +267,7 @@ namespace Vulkan
         public const VkQueryType VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SERIALIZATION_SIZE_KHR = VkQueryType.AccelerationStructureSerializationSizeKHR;
         public const VkQueryType VK_QUERY_TYPE_ACCELERATION_STRUCTURE_COMPACTED_SIZE_NV = VkQueryType.AccelerationStructureCompactedSizeNV;
         public const VkQueryType VK_QUERY_TYPE_PERFORMANCE_QUERY_INTEL = VkQueryType.PerformanceQueryIntel;
-        public const VkQueryType VK_QUERY_TYPE_VIDEO_ENCODE_BITSTREAM_BUFFER_RANGE_KHR = VkQueryType.VideoEncodeBitstreamBufferRangeKHR;
+        public const VkQueryType VK_QUERY_TYPE_VIDEO_ENCODE_FEEDBACK_KHR = VkQueryType.VideoEncodeFeedbackKHR;
         public const VkQueryType VK_QUERY_TYPE_MESH_PRIMITIVES_GENERATED_EXT = VkQueryType.MeshPrimitivesGeneratedEXT;
         public const VkQueryType VK_QUERY_TYPE_PRIMITIVES_GENERATED_EXT = VkQueryType.PrimitivesGeneratedEXT;
         public const VkQueryType VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SERIALIZATION_BOTTOM_LEVEL_POINTERS_KHR = VkQueryType.AccelerationStructureSerializationBottomLevelPointersKHR;
@@ -303,6 +303,7 @@ namespace Vulkan
     {
         Graphics = 0,
         Compute = 1,
+        ExecutionGraphAmdx = 1000134000,
         RayTracingKHR = 1000165000,
         SubpassShadingHuawei = 1000369003,
     }
@@ -310,6 +311,7 @@ namespace Vulkan
     {
         public const VkPipelineBindPoint VK_PIPELINE_BIND_POINT_GRAPHICS = VkPipelineBindPoint.Graphics;
         public const VkPipelineBindPoint VK_PIPELINE_BIND_POINT_COMPUTE = VkPipelineBindPoint.Compute;
+        public const VkPipelineBindPoint VK_PIPELINE_BIND_POINT_EXECUTION_GRAPH_AMDX = VkPipelineBindPoint.ExecutionGraphAmdx;
         public const VkPipelineBindPoint VK_PIPELINE_BIND_POINT_RAY_TRACING_KHR = VkPipelineBindPoint.RayTracingKHR;
         public const VkPipelineBindPoint VK_PIPELINE_BIND_POINT_SUBPASS_SHADING_HUAWEI = VkPipelineBindPoint.SubpassShadingHuawei;
     }
@@ -317,10 +319,12 @@ namespace Vulkan
     public enum VkPipelineCacheHeaderVersion : int
     {
         One = 1,
+        SafetyCriticalOne = 1000298001,
     }
     public static partial class RawConstants
     {
         public const VkPipelineCacheHeaderVersion VK_PIPELINE_CACHE_HEADER_VERSION_ONE = VkPipelineCacheHeaderVersion.One;
+        public const VkPipelineCacheHeaderVersion VK_PIPELINE_CACHE_HEADER_VERSION_SAFETY_CRITICAL_ONE = VkPipelineCacheHeaderVersion.SafetyCriticalOne;
     }
 
     [Flags]
@@ -328,14 +332,14 @@ namespace Vulkan
     {
         None = 0,
         ExternallySynchronized = 1,
-        Reserved1EXT = 2,
-        Reserved2KHR = 4,
+        ReadOnly = 2,
+        UseApplicationStorage = 4,
     }
     public static partial class RawConstants
     {
         public const VkPipelineCacheCreateFlags VK_PIPELINE_CACHE_CREATE_EXTERNALLY_SYNCHRONIZED_BIT = VkPipelineCacheCreateFlags.ExternallySynchronized;
-        public const VkPipelineCacheCreateFlags VK_PIPELINE_CACHE_CREATE_RESERVED_1_BIT_EXT = VkPipelineCacheCreateFlags.Reserved1EXT;
-        public const VkPipelineCacheCreateFlags VK_PIPELINE_CACHE_CREATE_RESERVED_2_BIT_KHR = VkPipelineCacheCreateFlags.Reserved2KHR;
+        public const VkPipelineCacheCreateFlags VK_PIPELINE_CACHE_CREATE_READ_ONLY_BIT = VkPipelineCacheCreateFlags.ReadOnly;
+        public const VkPipelineCacheCreateFlags VK_PIPELINE_CACHE_CREATE_USE_APPLICATION_STORAGE_BIT = VkPipelineCacheCreateFlags.UseApplicationStorage;
     }
 
     public enum VkPrimitiveTopology : int
@@ -1037,6 +1041,8 @@ namespace Vulkan
         Astc6x6x6SrgbBlockEXT = 1000288028,
         Astc6x6x6SfloatBlockEXT = 1000288029,
         R16g16S105NV = 1000464000,
+        A1b5g5r5UnormPack16KHR = 1000470000,
+        A8UnormKHR = 1000470001,
     }
     public static partial class RawConstants
     {
@@ -1318,6 +1324,8 @@ namespace Vulkan
         public const VkFormat VK_FORMAT_ASTC_6x6x6_SRGB_BLOCK_EXT = VkFormat.Astc6x6x6SrgbBlockEXT;
         public const VkFormat VK_FORMAT_ASTC_6x6x6_SFLOAT_BLOCK_EXT = VkFormat.Astc6x6x6SfloatBlockEXT;
         public const VkFormat VK_FORMAT_R16G16_S10_5_NV = VkFormat.R16g16S105NV;
+        public const VkFormat VK_FORMAT_A1B5G5R5_UNORM_PACK16_KHR = VkFormat.A1b5g5r5UnormPack16KHR;
+        public const VkFormat VK_FORMAT_A8_UNORM_KHR = VkFormat.A8UnormKHR;
     }
 
     public enum VkStructureType : int
@@ -1540,6 +1548,15 @@ namespace Vulkan
         PhysicalDeviceMaintenance4Properties = 1000413001,
         DeviceBufferMemoryRequirements = 1000413002,
         DeviceImageMemoryRequirements = 1000413003,
+        PhysicalDeviceVulkanSc10Features = 1000298000,
+        PhysicalDeviceVulkanSc10Properties = 1000298001,
+        DeviceObjectReservationCreateInfo = 1000298002,
+        CommandPoolMemoryReservationCreateInfo = 1000298003,
+        CommandPoolMemoryConsumption = 1000298004,
+        PipelinePoolSize = 1000298005,
+        FaultData = 1000298007,
+        FaultCallbackInfo = 1000298008,
+        PipelineOfflineCreateInfo = 1000298010,
         SwapchainCreateInfoKHR = 1000001000,
         PresentInfoKHR = 1000001001,
         DeviceGroupPresentCapabilitiesKHR = 1000060007,
@@ -1598,25 +1615,31 @@ namespace Vulkan
         VideoEncodeH264CapabilitiesEXT = 1000038000,
         VideoEncodeH264SessionParametersCreateInfoEXT = 1000038001,
         VideoEncodeH264SessionParametersAddInfoEXT = 1000038002,
-        VideoEncodeH264VclFrameInfoEXT = 1000038003,
+        VideoEncodeH264PictureInfoEXT = 1000038003,
         VideoEncodeH264DpbSlotInfoEXT = 1000038004,
         VideoEncodeH264NaluSliceInfoEXT = 1000038005,
-        VideoEncodeH264EmitPictureParametersInfoEXT = 1000038006,
+        VideoEncodeH264GopRemainingFrameInfoEXT = 1000038006,
         VideoEncodeH264ProfileInfoEXT = 1000038007,
         VideoEncodeH264RateControlInfoEXT = 1000038008,
         VideoEncodeH264RateControlLayerInfoEXT = 1000038009,
-        VideoEncodeH264ReferenceListsInfoEXT = 1000038010,
+        VideoEncodeH264SessionCreateInfoEXT = 1000038010,
+        VideoEncodeH264QualityLevelPropertiesEXT = 1000038011,
+        VideoEncodeH264SessionParametersGetInfoEXT = 1000038012,
+        VideoEncodeH264SessionParametersFeedbackInfoEXT = 1000038013,
         VideoEncodeH265CapabilitiesEXT = 1000039000,
         VideoEncodeH265SessionParametersCreateInfoEXT = 1000039001,
         VideoEncodeH265SessionParametersAddInfoEXT = 1000039002,
-        VideoEncodeH265VclFrameInfoEXT = 1000039003,
+        VideoEncodeH265PictureInfoEXT = 1000039003,
         VideoEncodeH265DpbSlotInfoEXT = 1000039004,
         VideoEncodeH265NaluSliceSegmentInfoEXT = 1000039005,
-        VideoEncodeH265EmitPictureParametersInfoEXT = 1000039006,
+        VideoEncodeH265GopRemainingFrameInfoEXT = 1000039006,
         VideoEncodeH265ProfileInfoEXT = 1000039007,
-        VideoEncodeH265ReferenceListsInfoEXT = 1000039008,
         VideoEncodeH265RateControlInfoEXT = 1000039009,
         VideoEncodeH265RateControlLayerInfoEXT = 1000039010,
+        VideoEncodeH265SessionCreateInfoEXT = 1000039011,
+        VideoEncodeH265QualityLevelPropertiesEXT = 1000039012,
+        VideoEncodeH265SessionParametersGetInfoEXT = 1000039013,
+        VideoEncodeH265SessionParametersFeedbackInfoEXT = 1000039014,
         VideoDecodeH264CapabilitiesKHR = 1000040000,
         VideoDecodeH264PictureInfoKHR = 1000040001,
         VideoDecodeH264ProfileInfoKHR = 1000040003,
@@ -1630,6 +1653,7 @@ namespace Vulkan
         MultiviewPerViewAttributesInfoNVX = 1000044009,
         StreamDescriptorSurfaceCreateInfoGgp = 1000049000,
         PhysicalDeviceCornerSampledImageFeaturesNV = 1000050000,
+        PrivateVendorInfoPlaceholderOffset0NV = 1000051000,
         ExternalMemoryImageCreateInfoNV = 1000056000,
         ExportMemoryAllocateInfoNV = 1000056001,
         ImportMemoryWin32HandleInfoNV = 1000057000,
@@ -1690,6 +1714,7 @@ namespace Vulkan
         AcquireProfilingLockInfoKHR = 1000116004,
         PerformanceCounterKHR = 1000116005,
         PerformanceCounterDescriptionKHR = 1000116006,
+        PerformanceQueryReservationInfoKHR = 1000116007,
         PhysicalDeviceSurfaceInfo2KHR = 1000119000,
         SurfaceCapabilities2KHR = 1000119001,
         SurfaceFormat2KHR = 1000119002,
@@ -1712,6 +1737,11 @@ namespace Vulkan
         MemoryGetAndroidHardwareBufferInfoAndroid = 1000129004,
         ExternalFormatAndroid = 1000129005,
         AndroidHardwareBufferFormatProperties2Android = 1000129006,
+        PhysicalDeviceShaderEnqueueFeaturesAmdx = 1000134000,
+        PhysicalDeviceShaderEnqueuePropertiesAmdx = 1000134001,
+        ExecutionGraphPipelineScratchSizeAmdx = 1000134002,
+        ExecutionGraphPipelineCreateInfoAmdx = 1000134003,
+        PipelineShaderStageNodeCreateInfoAmdx = 1000134004,
         SampleLocationsInfoEXT = 1000143000,
         RenderPassSampleLocationsBeginInfoEXT = 1000143001,
         PipelineSampleLocationsStateCreateInfoEXT = 1000143002,
@@ -1862,6 +1892,18 @@ namespace Vulkan
         PipelineExecutableInfoKHR = 1000269003,
         PipelineExecutableStatisticKHR = 1000269004,
         PipelineExecutableInternalRepresentationKHR = 1000269005,
+        PhysicalDeviceHostImageCopyFeaturesEXT = 1000270000,
+        PhysicalDeviceHostImageCopyPropertiesEXT = 1000270001,
+        MemoryToImageCopyEXT = 1000270002,
+        ImageToMemoryCopyEXT = 1000270003,
+        CopyImageToMemoryInfoEXT = 1000270004,
+        CopyMemoryToImageInfoEXT = 1000270005,
+        HostImageLayoutTransitionInfoEXT = 1000270006,
+        CopyImageToImageInfoEXT = 1000270007,
+        SubresourceHostMemcpySizeEXT = 1000270008,
+        HostImageCopyDevicePerformanceQueryEXT = 1000270009,
+        MemoryMapInfoKHR = 1000271000,
+        MemoryUnmapInfoKHR = 1000271001,
         PhysicalDeviceShaderAtomicFloat2FeaturesEXT = 1000273000,
         SurfacePresentModeEXT = 1000274000,
         SurfacePresentScalingCapabilitiesEXT = 1000274001,
@@ -1885,6 +1927,9 @@ namespace Vulkan
         PhysicalDeviceTexelBufferAlignmentFeaturesEXT = 1000281000,
         CommandBufferInheritanceRenderPassTransformInfoQcom = 1000282000,
         RenderPassTransformBeginInfoQcom = 1000282001,
+        PhysicalDeviceDepthBiasControlFeaturesEXT = 1000283000,
+        DepthBiasInfoEXT = 1000283001,
+        DepthBiasRepresentationInfoEXT = 1000283002,
         PhysicalDeviceDeviceMemoryReportFeaturesEXT = 1000284000,
         DeviceDeviceMemoryReportCreateInfoEXT = 1000284001,
         DeviceMemoryReportCallbackDataEXT = 1000284002,
@@ -1904,9 +1949,16 @@ namespace Vulkan
         VideoEncodeRateControlLayerInfoKHR = 1000299002,
         VideoEncodeCapabilitiesKHR = 1000299003,
         VideoEncodeUsageInfoKHR = 1000299004,
+        QueryPoolVideoEncodeFeedbackCreateInfoKHR = 1000299005,
+        PhysicalDeviceVideoEncodeQualityLevelInfoKHR = 1000299006,
+        VideoEncodeQualityLevelPropertiesKHR = 1000299007,
+        VideoEncodeQualityLevelInfoKHR = 1000299008,
+        VideoEncodeSessionParametersGetInfoKHR = 1000299009,
+        VideoEncodeSessionParametersFeedbackInfoKHR = 1000299010,
         PhysicalDeviceDiagnosticsConfigFeaturesNV = 1000300000,
         DeviceDiagnosticsConfigCreateInfoNV = 1000300001,
-        ReservedQcom = 1000309000,
+        RefreshObjectListKHR = 1000308000,
+        QueryLowLatencySupportNV = 1000310000,
         ExportMetalObjectCreateInfoEXT = 1000311000,
         ExportMetalObjectsInfoEXT = 1000311001,
         ExportMetalDeviceInfoEXT = 1000311002,
@@ -1956,8 +2008,6 @@ namespace Vulkan
         PhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR = 1000336000,
         PhysicalDeviceImageCompressionControlFeaturesEXT = 1000338000,
         ImageCompressionControlEXT = 1000338001,
-        SubresourceLayout2EXT = 1000338002,
-        ImageSubresource2EXT = 1000338003,
         ImageCompressionPropertiesEXT = 1000338004,
         PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT = 1000339000,
         PhysicalDevice4444FormatsFeaturesEXT = 1000340000,
@@ -1998,6 +2048,21 @@ namespace Vulkan
         PhysicalDeviceExternalMemoryRdmaFeaturesNV = 1000371001,
         PipelinePropertiesIdentifierEXT = 1000372000,
         PhysicalDevicePipelinePropertiesFeaturesEXT = 1000372001,
+        ImportFenceSciSyncInfoNV = 1000373000,
+        ExportFenceSciSyncInfoNV = 1000373001,
+        FenceGetSciSyncInfoNV = 1000373002,
+        SciSyncAttributesInfoNV = 1000373003,
+        ImportSemaphoreSciSyncInfoNV = 1000373004,
+        ExportSemaphoreSciSyncInfoNV = 1000373005,
+        SemaphoreGetSciSyncInfoNV = 1000373006,
+        PhysicalDeviceExternalSciSyncFeaturesNV = 1000373007,
+        ImportMemorySciBufInfoNV = 1000374000,
+        ExportMemorySciBufInfoNV = 1000374001,
+        MemoryGetSciBufInfoNV = 1000374002,
+        MemorySciBufPropertiesNV = 1000374003,
+        PhysicalDeviceExternalMemorySciBufFeaturesNV = 1000374004,
+        PhysicalDeviceFrameBoundaryFeaturesEXT = 1000375000,
+        FrameBoundaryEXT = 1000375001,
         PhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT = 1000376000,
         SubpassResolvePerformanceQueryEXT = 1000376001,
         MultisampledRenderToSingleSampledInfoEXT = 1000376002,
@@ -2012,6 +2077,8 @@ namespace Vulkan
         PhysicalDeviceMultiDrawFeaturesEXT = 1000392000,
         PhysicalDeviceMultiDrawPropertiesEXT = 1000392001,
         PhysicalDeviceImage2dViewOf3dFeaturesEXT = 1000393000,
+        PhysicalDeviceShaderTileImageFeaturesEXT = 1000395000,
+        PhysicalDeviceShaderTileImagePropertiesEXT = 1000395001,
         MicromapBuildInfoEXT = 1000396000,
         MicromapVersionInfoEXT = 1000396001,
         CopyMicromapInfoEXT = 1000396002,
@@ -2022,9 +2089,17 @@ namespace Vulkan
         MicromapCreateInfoEXT = 1000396007,
         MicromapBuildSizesInfoEXT = 1000396008,
         AccelerationStructureTrianglesOpacityMicromapEXT = 1000396009,
+        PhysicalDeviceDisplacementMicromapFeaturesNV = 1000397000,
+        PhysicalDeviceDisplacementMicromapPropertiesNV = 1000397001,
+        AccelerationStructureTrianglesDisplacementMicromapNV = 1000397002,
+        PhysicalDeviceClusterCullingShaderFeaturesHuawei = 1000404000,
+        PhysicalDeviceClusterCullingShaderPropertiesHuawei = 1000404001,
         PhysicalDeviceBorderColorSwizzleFeaturesEXT = 1000411000,
         SamplerBorderColorComponentMappingCreateInfoEXT = 1000411001,
         PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT = 1000412000,
+        PhysicalDeviceShaderCorePropertiesArm = 1000415000,
+        PhysicalDeviceImageSlicedViewOf3dFeaturesEXT = 1000418000,
+        ImageViewSlicedCreateInfoEXT = 1000418001,
         PhysicalDeviceDescriptorSetHostMappingFeaturesValve = 1000420000,
         DescriptorSetBindingReferenceValve = 1000420001,
         DescriptorSetLayoutHostMappingInfoValve = 1000420002,
@@ -2037,11 +2112,16 @@ namespace Vulkan
         PhysicalDeviceCopyMemoryIndirectPropertiesNV = 1000426001,
         PhysicalDeviceMemoryDecompressionFeaturesNV = 1000427000,
         PhysicalDeviceMemoryDecompressionPropertiesNV = 1000427001,
+        PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV = 1000428000,
+        ComputePipelineIndirectBufferInfoNV = 1000428001,
+        PipelineIndirectDeviceAddressInfoNV = 1000428002,
         PhysicalDeviceLinearColorAttachmentFeaturesNV = 1000430000,
+        ApplicationParametersEXT = 1000435000,
         PhysicalDeviceImageCompressionControlSwapchainFeaturesEXT = 1000437000,
         PhysicalDeviceImageProcessingFeaturesQcom = 1000440000,
         PhysicalDeviceImageProcessingPropertiesQcom = 1000440001,
         ImageViewSampleWeightCreateInfoQcom = 1000440002,
+        ExternalMemoryAcquireUnmodifiedEXT = 1000453000,
         PhysicalDeviceExtendedDynamicState3FeaturesEXT = 1000455000,
         PhysicalDeviceExtendedDynamicState3PropertiesEXT = 1000455001,
         PhysicalDeviceSubpassMergeFeedbackFeaturesEXT = 1000458000,
@@ -2064,17 +2144,57 @@ namespace Vulkan
         OpticalFlowSessionCreatePrivateDataInfoNV = 1000464010,
         PhysicalDeviceLegacyDitheringFeaturesEXT = 1000465000,
         PhysicalDevicePipelineProtectedAccessFeaturesEXT = 1000466000,
+        PhysicalDeviceMaintenance5FeaturesKHR = 1000470000,
+        PhysicalDeviceMaintenance5PropertiesKHR = 1000470001,
+        RenderingAreaInfoKHR = 1000470003,
+        DeviceImageSubresourceInfoKHR = 1000470004,
+        SubresourceLayout2KHR = 1000338002,
+        ImageSubresource2KHR = 1000338003,
+        PipelineCreate2CreateInfoKHR = 1000470005,
+        BufferUsage2CreateInfoKHR = 1000470006,
+        PhysicalDeviceRayTracingPositionFetchFeaturesKHR = 1000481000,
+        PhysicalDeviceShaderObjectFeaturesEXT = 1000482000,
+        PhysicalDeviceShaderObjectPropertiesEXT = 1000482001,
+        ShaderCreateInfoEXT = 1000482002,
         PhysicalDeviceTilePropertiesFeaturesQcom = 1000484000,
         TilePropertiesQcom = 1000484001,
         PhysicalDeviceAmigoProfilingFeaturesSec = 1000485000,
         AmigoProfilingSubmitInfoSec = 1000485001,
         PhysicalDeviceMultiviewPerViewViewportsFeaturesQcom = 1000488000,
+        SemaphoreSciSyncPoolCreateInfoNV = 1000489000,
+        SemaphoreSciSyncCreateInfoNV = 1000489001,
+        PhysicalDeviceExternalSciSync2FeaturesNV = 1000489002,
+        DeviceSemaphoreSciSyncPoolReservationCreateInfoNV = 1000489003,
         PhysicalDeviceRayTracingInvocationReorderFeaturesNV = 1000490000,
         PhysicalDeviceRayTracingInvocationReorderPropertiesNV = 1000490001,
         PhysicalDeviceMutableDescriptorTypeFeaturesEXT = 1000351000,
         MutableDescriptorTypeCreateInfoEXT = 1000351002,
         PhysicalDeviceShaderCoreBuiltinsFeaturesArm = 1000497000,
         PhysicalDeviceShaderCoreBuiltinsPropertiesArm = 1000497001,
+        PhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT = 1000498000,
+        PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT = 1000499000,
+        PhysicalDeviceCooperativeMatrixFeaturesKHR = 1000506000,
+        CooperativeMatrixPropertiesKHR = 1000506001,
+        PhysicalDeviceCooperativeMatrixPropertiesKHR = 1000506002,
+        PhysicalDeviceMultiviewPerViewRenderAreasFeaturesQcom = 1000510000,
+        MultiviewPerViewRenderAreasRenderPassBeginInfoQcom = 1000510001,
+        PhysicalDeviceImageProcessing2FeaturesQcom = 1000518000,
+        PhysicalDeviceImageProcessing2PropertiesQcom = 1000518001,
+        SamplerBlockMatchWindowCreateInfoQcom = 1000518002,
+        SamplerCubicWeightsCreateInfoQcom = 1000519000,
+        PhysicalDeviceCubicWeightsFeaturesQcom = 1000519001,
+        BlitImageCubicWeightsInfoQcom = 1000519002,
+        PhysicalDeviceYcbcrDegammaFeaturesQcom = 1000520000,
+        SamplerYcbcrConversionYcbcrDegammaCreateInfoQcom = 1000520001,
+        PhysicalDeviceCubicClampFeaturesQcom = 1000521000,
+        PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT = 1000524000,
+        ScreenBufferPropertiesQnx = 1000529000,
+        ScreenBufferFormatPropertiesQnx = 1000529001,
+        ImportScreenBufferInfoQnx = 1000529002,
+        ExternalFormatQnx = 1000529003,
+        PhysicalDeviceExternalMemoryScreenBufferFeaturesQnx = 1000529004,
+        PhysicalDeviceLayeredDriverPropertiesMsft = 1000530000,
+        PhysicalDeviceDescriptorPoolOverallocationFeaturesNV = 1000546000,
     }
     public static partial class RawConstants
     {
@@ -2296,6 +2416,15 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_4_PROPERTIES = VkStructureType.PhysicalDeviceMaintenance4Properties;
         public const VkStructureType VK_STRUCTURE_TYPE_DEVICE_BUFFER_MEMORY_REQUIREMENTS = VkStructureType.DeviceBufferMemoryRequirements;
         public const VkStructureType VK_STRUCTURE_TYPE_DEVICE_IMAGE_MEMORY_REQUIREMENTS = VkStructureType.DeviceImageMemoryRequirements;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_SC_1_0_FEATURES = VkStructureType.PhysicalDeviceVulkanSc10Features;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_SC_1_0_PROPERTIES = VkStructureType.PhysicalDeviceVulkanSc10Properties;
+        public const VkStructureType VK_STRUCTURE_TYPE_DEVICE_OBJECT_RESERVATION_CREATE_INFO = VkStructureType.DeviceObjectReservationCreateInfo;
+        public const VkStructureType VK_STRUCTURE_TYPE_COMMAND_POOL_MEMORY_RESERVATION_CREATE_INFO = VkStructureType.CommandPoolMemoryReservationCreateInfo;
+        public const VkStructureType VK_STRUCTURE_TYPE_COMMAND_POOL_MEMORY_CONSUMPTION = VkStructureType.CommandPoolMemoryConsumption;
+        public const VkStructureType VK_STRUCTURE_TYPE_PIPELINE_POOL_SIZE = VkStructureType.PipelinePoolSize;
+        public const VkStructureType VK_STRUCTURE_TYPE_FAULT_DATA = VkStructureType.FaultData;
+        public const VkStructureType VK_STRUCTURE_TYPE_FAULT_CALLBACK_INFO = VkStructureType.FaultCallbackInfo;
+        public const VkStructureType VK_STRUCTURE_TYPE_PIPELINE_OFFLINE_CREATE_INFO = VkStructureType.PipelineOfflineCreateInfo;
         public const VkStructureType VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR = VkStructureType.SwapchainCreateInfoKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_PRESENT_INFO_KHR = VkStructureType.PresentInfoKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_DEVICE_GROUP_PRESENT_CAPABILITIES_KHR = VkStructureType.DeviceGroupPresentCapabilitiesKHR;
@@ -2354,25 +2483,31 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_CAPABILITIES_EXT = VkStructureType.VideoEncodeH264CapabilitiesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_CREATE_INFO_EXT = VkStructureType.VideoEncodeH264SessionParametersCreateInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_ADD_INFO_EXT = VkStructureType.VideoEncodeH264SessionParametersAddInfoEXT;
-        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_VCL_FRAME_INFO_EXT = VkStructureType.VideoEncodeH264VclFrameInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_PICTURE_INFO_EXT = VkStructureType.VideoEncodeH264PictureInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_DPB_SLOT_INFO_EXT = VkStructureType.VideoEncodeH264DpbSlotInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_NALU_SLICE_INFO_EXT = VkStructureType.VideoEncodeH264NaluSliceInfoEXT;
-        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_EMIT_PICTURE_PARAMETERS_INFO_EXT = VkStructureType.VideoEncodeH264EmitPictureParametersInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_GOP_REMAINING_FRAME_INFO_EXT = VkStructureType.VideoEncodeH264GopRemainingFrameInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_PROFILE_INFO_EXT = VkStructureType.VideoEncodeH264ProfileInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_INFO_EXT = VkStructureType.VideoEncodeH264RateControlInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_LAYER_INFO_EXT = VkStructureType.VideoEncodeH264RateControlLayerInfoEXT;
-        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_REFERENCE_LISTS_INFO_EXT = VkStructureType.VideoEncodeH264ReferenceListsInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_CREATE_INFO_EXT = VkStructureType.VideoEncodeH264SessionCreateInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_QUALITY_LEVEL_PROPERTIES_EXT = VkStructureType.VideoEncodeH264QualityLevelPropertiesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_GET_INFO_EXT = VkStructureType.VideoEncodeH264SessionParametersGetInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_FEEDBACK_INFO_EXT = VkStructureType.VideoEncodeH264SessionParametersFeedbackInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_CAPABILITIES_EXT = VkStructureType.VideoEncodeH265CapabilitiesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_CREATE_INFO_EXT = VkStructureType.VideoEncodeH265SessionParametersCreateInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_ADD_INFO_EXT = VkStructureType.VideoEncodeH265SessionParametersAddInfoEXT;
-        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_VCL_FRAME_INFO_EXT = VkStructureType.VideoEncodeH265VclFrameInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_PICTURE_INFO_EXT = VkStructureType.VideoEncodeH265PictureInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_DPB_SLOT_INFO_EXT = VkStructureType.VideoEncodeH265DpbSlotInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_NALU_SLICE_SEGMENT_INFO_EXT = VkStructureType.VideoEncodeH265NaluSliceSegmentInfoEXT;
-        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_EMIT_PICTURE_PARAMETERS_INFO_EXT = VkStructureType.VideoEncodeH265EmitPictureParametersInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_GOP_REMAINING_FRAME_INFO_EXT = VkStructureType.VideoEncodeH265GopRemainingFrameInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_PROFILE_INFO_EXT = VkStructureType.VideoEncodeH265ProfileInfoEXT;
-        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_REFERENCE_LISTS_INFO_EXT = VkStructureType.VideoEncodeH265ReferenceListsInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_INFO_EXT = VkStructureType.VideoEncodeH265RateControlInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_LAYER_INFO_EXT = VkStructureType.VideoEncodeH265RateControlLayerInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_CREATE_INFO_EXT = VkStructureType.VideoEncodeH265SessionCreateInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_QUALITY_LEVEL_PROPERTIES_EXT = VkStructureType.VideoEncodeH265QualityLevelPropertiesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_GET_INFO_EXT = VkStructureType.VideoEncodeH265SessionParametersGetInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_FEEDBACK_INFO_EXT = VkStructureType.VideoEncodeH265SessionParametersFeedbackInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_CAPABILITIES_KHR = VkStructureType.VideoDecodeH264CapabilitiesKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_PICTURE_INFO_KHR = VkStructureType.VideoDecodeH264PictureInfoKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_PROFILE_INFO_KHR = VkStructureType.VideoDecodeH264ProfileInfoKHR;
@@ -2386,6 +2521,7 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_MULTIVIEW_PER_VIEW_ATTRIBUTES_INFO_NVX = VkStructureType.MultiviewPerViewAttributesInfoNVX;
         public const VkStructureType VK_STRUCTURE_TYPE_STREAM_DESCRIPTOR_SURFACE_CREATE_INFO_GGP = VkStructureType.StreamDescriptorSurfaceCreateInfoGgp;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CORNER_SAMPLED_IMAGE_FEATURES_NV = VkStructureType.PhysicalDeviceCornerSampledImageFeaturesNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_PRIVATE_VENDOR_INFO_PLACEHOLDER_OFFSET_0_NV = VkStructureType.PrivateVendorInfoPlaceholderOffset0NV;
         public const VkStructureType VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_IMAGE_CREATE_INFO_NV = VkStructureType.ExternalMemoryImageCreateInfoNV;
         public const VkStructureType VK_STRUCTURE_TYPE_EXPORT_MEMORY_ALLOCATE_INFO_NV = VkStructureType.ExportMemoryAllocateInfoNV;
         public const VkStructureType VK_STRUCTURE_TYPE_IMPORT_MEMORY_WIN32_HANDLE_INFO_NV = VkStructureType.ImportMemoryWin32HandleInfoNV;
@@ -2446,6 +2582,7 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_ACQUIRE_PROFILING_LOCK_INFO_KHR = VkStructureType.AcquireProfilingLockInfoKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_PERFORMANCE_COUNTER_KHR = VkStructureType.PerformanceCounterKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_PERFORMANCE_COUNTER_DESCRIPTION_KHR = VkStructureType.PerformanceCounterDescriptionKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_PERFORMANCE_QUERY_RESERVATION_INFO_KHR = VkStructureType.PerformanceQueryReservationInfoKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SURFACE_INFO_2_KHR = VkStructureType.PhysicalDeviceSurfaceInfo2KHR;
         public const VkStructureType VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES_2_KHR = VkStructureType.SurfaceCapabilities2KHR;
         public const VkStructureType VK_STRUCTURE_TYPE_SURFACE_FORMAT_2_KHR = VkStructureType.SurfaceFormat2KHR;
@@ -2468,6 +2605,11 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_MEMORY_GET_ANDROID_HARDWARE_BUFFER_INFO_ANDROID = VkStructureType.MemoryGetAndroidHardwareBufferInfoAndroid;
         public const VkStructureType VK_STRUCTURE_TYPE_EXTERNAL_FORMAT_ANDROID = VkStructureType.ExternalFormatAndroid;
         public const VkStructureType VK_STRUCTURE_TYPE_ANDROID_HARDWARE_BUFFER_FORMAT_PROPERTIES_2_ANDROID = VkStructureType.AndroidHardwareBufferFormatProperties2Android;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ENQUEUE_FEATURES_AMDX = VkStructureType.PhysicalDeviceShaderEnqueueFeaturesAmdx;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ENQUEUE_PROPERTIES_AMDX = VkStructureType.PhysicalDeviceShaderEnqueuePropertiesAmdx;
+        public const VkStructureType VK_STRUCTURE_TYPE_EXECUTION_GRAPH_PIPELINE_SCRATCH_SIZE_AMDX = VkStructureType.ExecutionGraphPipelineScratchSizeAmdx;
+        public const VkStructureType VK_STRUCTURE_TYPE_EXECUTION_GRAPH_PIPELINE_CREATE_INFO_AMDX = VkStructureType.ExecutionGraphPipelineCreateInfoAmdx;
+        public const VkStructureType VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_NODE_CREATE_INFO_AMDX = VkStructureType.PipelineShaderStageNodeCreateInfoAmdx;
         public const VkStructureType VK_STRUCTURE_TYPE_SAMPLE_LOCATIONS_INFO_EXT = VkStructureType.SampleLocationsInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_RENDER_PASS_SAMPLE_LOCATIONS_BEGIN_INFO_EXT = VkStructureType.RenderPassSampleLocationsBeginInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PIPELINE_SAMPLE_LOCATIONS_STATE_CREATE_INFO_EXT = VkStructureType.PipelineSampleLocationsStateCreateInfoEXT;
@@ -2618,6 +2760,18 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_INFO_KHR = VkStructureType.PipelineExecutableInfoKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_STATISTIC_KHR = VkStructureType.PipelineExecutableStatisticKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_INTERNAL_REPRESENTATION_KHR = VkStructureType.PipelineExecutableInternalRepresentationKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_IMAGE_COPY_FEATURES_EXT = VkStructureType.PhysicalDeviceHostImageCopyFeaturesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_IMAGE_COPY_PROPERTIES_EXT = VkStructureType.PhysicalDeviceHostImageCopyPropertiesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_MEMORY_TO_IMAGE_COPY_EXT = VkStructureType.MemoryToImageCopyEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_IMAGE_TO_MEMORY_COPY_EXT = VkStructureType.ImageToMemoryCopyEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_COPY_IMAGE_TO_MEMORY_INFO_EXT = VkStructureType.CopyImageToMemoryInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_COPY_MEMORY_TO_IMAGE_INFO_EXT = VkStructureType.CopyMemoryToImageInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_HOST_IMAGE_LAYOUT_TRANSITION_INFO_EXT = VkStructureType.HostImageLayoutTransitionInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_COPY_IMAGE_TO_IMAGE_INFO_EXT = VkStructureType.CopyImageToImageInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_SUBRESOURCE_HOST_MEMCPY_SIZE_EXT = VkStructureType.SubresourceHostMemcpySizeEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_HOST_IMAGE_COPY_DEVICE_PERFORMANCE_QUERY_EXT = VkStructureType.HostImageCopyDevicePerformanceQueryEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_MEMORY_MAP_INFO_KHR = VkStructureType.MemoryMapInfoKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_MEMORY_UNMAP_INFO_KHR = VkStructureType.MemoryUnmapInfoKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_FLOAT_2_FEATURES_EXT = VkStructureType.PhysicalDeviceShaderAtomicFloat2FeaturesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_EXT = VkStructureType.SurfacePresentModeEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_SURFACE_PRESENT_SCALING_CAPABILITIES_EXT = VkStructureType.SurfacePresentScalingCapabilitiesEXT;
@@ -2641,6 +2795,9 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXEL_BUFFER_ALIGNMENT_FEATURES_EXT = VkStructureType.PhysicalDeviceTexelBufferAlignmentFeaturesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_RENDER_PASS_TRANSFORM_INFO_QCOM = VkStructureType.CommandBufferInheritanceRenderPassTransformInfoQcom;
         public const VkStructureType VK_STRUCTURE_TYPE_RENDER_PASS_TRANSFORM_BEGIN_INFO_QCOM = VkStructureType.RenderPassTransformBeginInfoQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_BIAS_CONTROL_FEATURES_EXT = VkStructureType.PhysicalDeviceDepthBiasControlFeaturesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_DEPTH_BIAS_INFO_EXT = VkStructureType.DepthBiasInfoEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_DEPTH_BIAS_REPRESENTATION_INFO_EXT = VkStructureType.DepthBiasRepresentationInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_MEMORY_REPORT_FEATURES_EXT = VkStructureType.PhysicalDeviceDeviceMemoryReportFeaturesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_DEVICE_DEVICE_MEMORY_REPORT_CREATE_INFO_EXT = VkStructureType.DeviceDeviceMemoryReportCreateInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_DEVICE_MEMORY_REPORT_CALLBACK_DATA_EXT = VkStructureType.DeviceMemoryReportCallbackDataEXT;
@@ -2660,9 +2817,16 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_RATE_CONTROL_LAYER_INFO_KHR = VkStructureType.VideoEncodeRateControlLayerInfoKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_CAPABILITIES_KHR = VkStructureType.VideoEncodeCapabilitiesKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_USAGE_INFO_KHR = VkStructureType.VideoEncodeUsageInfoKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_QUERY_POOL_VIDEO_ENCODE_FEEDBACK_CREATE_INFO_KHR = VkStructureType.QueryPoolVideoEncodeFeedbackCreateInfoKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_ENCODE_QUALITY_LEVEL_INFO_KHR = VkStructureType.PhysicalDeviceVideoEncodeQualityLevelInfoKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_QUALITY_LEVEL_PROPERTIES_KHR = VkStructureType.VideoEncodeQualityLevelPropertiesKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_QUALITY_LEVEL_INFO_KHR = VkStructureType.VideoEncodeQualityLevelInfoKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_SESSION_PARAMETERS_GET_INFO_KHR = VkStructureType.VideoEncodeSessionParametersGetInfoKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_VIDEO_ENCODE_SESSION_PARAMETERS_FEEDBACK_INFO_KHR = VkStructureType.VideoEncodeSessionParametersFeedbackInfoKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DIAGNOSTICS_CONFIG_FEATURES_NV = VkStructureType.PhysicalDeviceDiagnosticsConfigFeaturesNV;
         public const VkStructureType VK_STRUCTURE_TYPE_DEVICE_DIAGNOSTICS_CONFIG_CREATE_INFO_NV = VkStructureType.DeviceDiagnosticsConfigCreateInfoNV;
-        public const VkStructureType VK_STRUCTURE_TYPE_RESERVED_QCOM = VkStructureType.ReservedQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_REFRESH_OBJECT_LIST_KHR = VkStructureType.RefreshObjectListKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_QUERY_LOW_LATENCY_SUPPORT_NV = VkStructureType.QueryLowLatencySupportNV;
         public const VkStructureType VK_STRUCTURE_TYPE_EXPORT_METAL_OBJECT_CREATE_INFO_EXT = VkStructureType.ExportMetalObjectCreateInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_EXPORT_METAL_OBJECTS_INFO_EXT = VkStructureType.ExportMetalObjectsInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_EXPORT_METAL_DEVICE_INFO_EXT = VkStructureType.ExportMetalDeviceInfoEXT;
@@ -2712,8 +2876,6 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_WORKGROUP_MEMORY_EXPLICIT_LAYOUT_FEATURES_KHR = VkStructureType.PhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_COMPRESSION_CONTROL_FEATURES_EXT = VkStructureType.PhysicalDeviceImageCompressionControlFeaturesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_IMAGE_COMPRESSION_CONTROL_EXT = VkStructureType.ImageCompressionControlEXT;
-        public const VkStructureType VK_STRUCTURE_TYPE_SUBRESOURCE_LAYOUT_2_EXT = VkStructureType.SubresourceLayout2EXT;
-        public const VkStructureType VK_STRUCTURE_TYPE_IMAGE_SUBRESOURCE_2_EXT = VkStructureType.ImageSubresource2EXT;
         public const VkStructureType VK_STRUCTURE_TYPE_IMAGE_COMPRESSION_PROPERTIES_EXT = VkStructureType.ImageCompressionPropertiesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ATTACHMENT_FEEDBACK_LOOP_LAYOUT_FEATURES_EXT = VkStructureType.PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_4444_FORMATS_FEATURES_EXT = VkStructureType.PhysicalDevice4444FormatsFeaturesEXT;
@@ -2754,6 +2916,21 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_MEMORY_RDMA_FEATURES_NV = VkStructureType.PhysicalDeviceExternalMemoryRdmaFeaturesNV;
         public const VkStructureType VK_STRUCTURE_TYPE_PIPELINE_PROPERTIES_IDENTIFIER_EXT = VkStructureType.PipelinePropertiesIdentifierEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_PROPERTIES_FEATURES_EXT = VkStructureType.PhysicalDevicePipelinePropertiesFeaturesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_IMPORT_FENCE_SCI_SYNC_INFO_NV = VkStructureType.ImportFenceSciSyncInfoNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_EXPORT_FENCE_SCI_SYNC_INFO_NV = VkStructureType.ExportFenceSciSyncInfoNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_FENCE_GET_SCI_SYNC_INFO_NV = VkStructureType.FenceGetSciSyncInfoNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_SCI_SYNC_ATTRIBUTES_INFO_NV = VkStructureType.SciSyncAttributesInfoNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_IMPORT_SEMAPHORE_SCI_SYNC_INFO_NV = VkStructureType.ImportSemaphoreSciSyncInfoNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_EXPORT_SEMAPHORE_SCI_SYNC_INFO_NV = VkStructureType.ExportSemaphoreSciSyncInfoNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_SEMAPHORE_GET_SCI_SYNC_INFO_NV = VkStructureType.SemaphoreGetSciSyncInfoNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_SCI_SYNC_FEATURES_NV = VkStructureType.PhysicalDeviceExternalSciSyncFeaturesNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_IMPORT_MEMORY_SCI_BUF_INFO_NV = VkStructureType.ImportMemorySciBufInfoNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_EXPORT_MEMORY_SCI_BUF_INFO_NV = VkStructureType.ExportMemorySciBufInfoNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_MEMORY_GET_SCI_BUF_INFO_NV = VkStructureType.MemoryGetSciBufInfoNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_MEMORY_SCI_BUF_PROPERTIES_NV = VkStructureType.MemorySciBufPropertiesNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_MEMORY_SCI_BUF_FEATURES_NV = VkStructureType.PhysicalDeviceExternalMemorySciBufFeaturesNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAME_BOUNDARY_FEATURES_EXT = VkStructureType.PhysicalDeviceFrameBoundaryFeaturesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_FRAME_BOUNDARY_EXT = VkStructureType.FrameBoundaryEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_FEATURES_EXT = VkStructureType.PhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_SUBPASS_RESOLVE_PERFORMANCE_QUERY_EXT = VkStructureType.SubpassResolvePerformanceQueryEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_INFO_EXT = VkStructureType.MultisampledRenderToSingleSampledInfoEXT;
@@ -2768,6 +2945,8 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTI_DRAW_FEATURES_EXT = VkStructureType.PhysicalDeviceMultiDrawFeaturesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTI_DRAW_PROPERTIES_EXT = VkStructureType.PhysicalDeviceMultiDrawPropertiesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_2D_VIEW_OF_3D_FEATURES_EXT = VkStructureType.PhysicalDeviceImage2dViewOf3dFeaturesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_TILE_IMAGE_FEATURES_EXT = VkStructureType.PhysicalDeviceShaderTileImageFeaturesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_TILE_IMAGE_PROPERTIES_EXT = VkStructureType.PhysicalDeviceShaderTileImagePropertiesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_MICROMAP_BUILD_INFO_EXT = VkStructureType.MicromapBuildInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_MICROMAP_VERSION_INFO_EXT = VkStructureType.MicromapVersionInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_COPY_MICROMAP_INFO_EXT = VkStructureType.CopyMicromapInfoEXT;
@@ -2778,9 +2957,17 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_MICROMAP_CREATE_INFO_EXT = VkStructureType.MicromapCreateInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_MICROMAP_BUILD_SIZES_INFO_EXT = VkStructureType.MicromapBuildSizesInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_TRIANGLES_OPACITY_MICROMAP_EXT = VkStructureType.AccelerationStructureTrianglesOpacityMicromapEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DISPLACEMENT_MICROMAP_FEATURES_NV = VkStructureType.PhysicalDeviceDisplacementMicromapFeaturesNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DISPLACEMENT_MICROMAP_PROPERTIES_NV = VkStructureType.PhysicalDeviceDisplacementMicromapPropertiesNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_TRIANGLES_DISPLACEMENT_MICROMAP_NV = VkStructureType.AccelerationStructureTrianglesDisplacementMicromapNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_CULLING_SHADER_FEATURES_HUAWEI = VkStructureType.PhysicalDeviceClusterCullingShaderFeaturesHuawei;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_CULLING_SHADER_PROPERTIES_HUAWEI = VkStructureType.PhysicalDeviceClusterCullingShaderPropertiesHuawei;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BORDER_COLOR_SWIZZLE_FEATURES_EXT = VkStructureType.PhysicalDeviceBorderColorSwizzleFeaturesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_SAMPLER_BORDER_COLOR_COMPONENT_MAPPING_CREATE_INFO_EXT = VkStructureType.SamplerBorderColorComponentMappingCreateInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PAGEABLE_DEVICE_LOCAL_MEMORY_FEATURES_EXT = VkStructureType.PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_PROPERTIES_ARM = VkStructureType.PhysicalDeviceShaderCorePropertiesArm;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_SLICED_VIEW_OF_3D_FEATURES_EXT = VkStructureType.PhysicalDeviceImageSlicedViewOf3dFeaturesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_IMAGE_VIEW_SLICED_CREATE_INFO_EXT = VkStructureType.ImageViewSlicedCreateInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_SET_HOST_MAPPING_FEATURES_VALVE = VkStructureType.PhysicalDeviceDescriptorSetHostMappingFeaturesValve;
         public const VkStructureType VK_STRUCTURE_TYPE_DESCRIPTOR_SET_BINDING_REFERENCE_VALVE = VkStructureType.DescriptorSetBindingReferenceValve;
         public const VkStructureType VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_HOST_MAPPING_INFO_VALVE = VkStructureType.DescriptorSetLayoutHostMappingInfoValve;
@@ -2793,11 +2980,16 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_PROPERTIES_NV = VkStructureType.PhysicalDeviceCopyMemoryIndirectPropertiesNV;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_FEATURES_NV = VkStructureType.PhysicalDeviceMemoryDecompressionFeaturesNV;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_PROPERTIES_NV = VkStructureType.PhysicalDeviceMemoryDecompressionPropertiesNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_GENERATED_COMMANDS_COMPUTE_FEATURES_NV = VkStructureType.PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_COMPUTE_PIPELINE_INDIRECT_BUFFER_INFO_NV = VkStructureType.ComputePipelineIndirectBufferInfoNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_PIPELINE_INDIRECT_DEVICE_ADDRESS_INFO_NV = VkStructureType.PipelineIndirectDeviceAddressInfoNV;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINEAR_COLOR_ATTACHMENT_FEATURES_NV = VkStructureType.PhysicalDeviceLinearColorAttachmentFeaturesNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_APPLICATION_PARAMETERS_EXT = VkStructureType.ApplicationParametersEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_FEATURES_EXT = VkStructureType.PhysicalDeviceImageCompressionControlSwapchainFeaturesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_PROCESSING_FEATURES_QCOM = VkStructureType.PhysicalDeviceImageProcessingFeaturesQcom;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_PROCESSING_PROPERTIES_QCOM = VkStructureType.PhysicalDeviceImageProcessingPropertiesQcom;
         public const VkStructureType VK_STRUCTURE_TYPE_IMAGE_VIEW_SAMPLE_WEIGHT_CREATE_INFO_QCOM = VkStructureType.ImageViewSampleWeightCreateInfoQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_ACQUIRE_UNMODIFIED_EXT = VkStructureType.ExternalMemoryAcquireUnmodifiedEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_3_FEATURES_EXT = VkStructureType.PhysicalDeviceExtendedDynamicState3FeaturesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_3_PROPERTIES_EXT = VkStructureType.PhysicalDeviceExtendedDynamicState3PropertiesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBPASS_MERGE_FEEDBACK_FEATURES_EXT = VkStructureType.PhysicalDeviceSubpassMergeFeedbackFeaturesEXT;
@@ -2820,17 +3012,57 @@ namespace Vulkan
         public const VkStructureType VK_STRUCTURE_TYPE_OPTICAL_FLOW_SESSION_CREATE_PRIVATE_DATA_INFO_NV = VkStructureType.OpticalFlowSessionCreatePrivateDataInfoNV;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LEGACY_DITHERING_FEATURES_EXT = VkStructureType.PhysicalDeviceLegacyDitheringFeaturesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_PROTECTED_ACCESS_FEATURES_EXT = VkStructureType.PhysicalDevicePipelineProtectedAccessFeaturesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_5_FEATURES_KHR = VkStructureType.PhysicalDeviceMaintenance5FeaturesKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_5_PROPERTIES_KHR = VkStructureType.PhysicalDeviceMaintenance5PropertiesKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_RENDERING_AREA_INFO_KHR = VkStructureType.RenderingAreaInfoKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_DEVICE_IMAGE_SUBRESOURCE_INFO_KHR = VkStructureType.DeviceImageSubresourceInfoKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_SUBRESOURCE_LAYOUT_2_KHR = VkStructureType.SubresourceLayout2KHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_IMAGE_SUBRESOURCE_2_KHR = VkStructureType.ImageSubresource2KHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_PIPELINE_CREATE_FLAGS_2_CREATE_INFO_KHR = VkStructureType.PipelineCreate2CreateInfoKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_BUFFER_USAGE_FLAGS_2_CREATE_INFO_KHR = VkStructureType.BufferUsage2CreateInfoKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_POSITION_FETCH_FEATURES_KHR = VkStructureType.PhysicalDeviceRayTracingPositionFetchFeaturesKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_OBJECT_FEATURES_EXT = VkStructureType.PhysicalDeviceShaderObjectFeaturesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_OBJECT_PROPERTIES_EXT = VkStructureType.PhysicalDeviceShaderObjectPropertiesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_SHADER_CREATE_INFO_EXT = VkStructureType.ShaderCreateInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TILE_PROPERTIES_FEATURES_QCOM = VkStructureType.PhysicalDeviceTilePropertiesFeaturesQcom;
         public const VkStructureType VK_STRUCTURE_TYPE_TILE_PROPERTIES_QCOM = VkStructureType.TilePropertiesQcom;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_AMIGO_PROFILING_FEATURES_SEC = VkStructureType.PhysicalDeviceAmigoProfilingFeaturesSec;
         public const VkStructureType VK_STRUCTURE_TYPE_AMIGO_PROFILING_SUBMIT_INFO_SEC = VkStructureType.AmigoProfilingSubmitInfoSec;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PER_VIEW_VIEWPORTS_FEATURES_QCOM = VkStructureType.PhysicalDeviceMultiviewPerViewViewportsFeaturesQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_SEMAPHORE_SCI_SYNC_POOL_CREATE_INFO_NV = VkStructureType.SemaphoreSciSyncPoolCreateInfoNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_SEMAPHORE_SCI_SYNC_CREATE_INFO_NV = VkStructureType.SemaphoreSciSyncCreateInfoNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_SCI_SYNC_2_FEATURES_NV = VkStructureType.PhysicalDeviceExternalSciSync2FeaturesNV;
+        public const VkStructureType VK_STRUCTURE_TYPE_DEVICE_SEMAPHORE_SCI_SYNC_POOL_RESERVATION_CREATE_INFO_NV = VkStructureType.DeviceSemaphoreSciSyncPoolReservationCreateInfoNV;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_INVOCATION_REORDER_FEATURES_NV = VkStructureType.PhysicalDeviceRayTracingInvocationReorderFeaturesNV;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_INVOCATION_REORDER_PROPERTIES_NV = VkStructureType.PhysicalDeviceRayTracingInvocationReorderPropertiesNV;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MUTABLE_DESCRIPTOR_TYPE_FEATURES_EXT = VkStructureType.PhysicalDeviceMutableDescriptorTypeFeaturesEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_EXT = VkStructureType.MutableDescriptorTypeCreateInfoEXT;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_BUILTINS_FEATURES_ARM = VkStructureType.PhysicalDeviceShaderCoreBuiltinsFeaturesArm;
         public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_BUILTINS_PROPERTIES_ARM = VkStructureType.PhysicalDeviceShaderCoreBuiltinsPropertiesArm;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_LIBRARY_GROUP_HANDLES_FEATURES_EXT = VkStructureType.PhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_UNUSED_ATTACHMENTS_FEATURES_EXT = VkStructureType.PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_FEATURES_KHR = VkStructureType.PhysicalDeviceCooperativeMatrixFeaturesKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_COOPERATIVE_MATRIX_PROPERTIES_KHR = VkStructureType.CooperativeMatrixPropertiesKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_PROPERTIES_KHR = VkStructureType.PhysicalDeviceCooperativeMatrixPropertiesKHR;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PER_VIEW_RENDER_AREAS_FEATURES_QCOM = VkStructureType.PhysicalDeviceMultiviewPerViewRenderAreasFeaturesQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_MULTIVIEW_PER_VIEW_RENDER_AREAS_RENDER_PASS_BEGIN_INFO_QCOM = VkStructureType.MultiviewPerViewRenderAreasRenderPassBeginInfoQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_PROCESSING_2_FEATURES_QCOM = VkStructureType.PhysicalDeviceImageProcessing2FeaturesQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_PROCESSING_2_PROPERTIES_QCOM = VkStructureType.PhysicalDeviceImageProcessing2PropertiesQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_SAMPLER_BLOCK_MATCH_WINDOW_CREATE_INFO_QCOM = VkStructureType.SamplerBlockMatchWindowCreateInfoQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_SAMPLER_CUBIC_WEIGHTS_CREATE_INFO_QCOM = VkStructureType.SamplerCubicWeightsCreateInfoQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUBIC_WEIGHTS_FEATURES_QCOM = VkStructureType.PhysicalDeviceCubicWeightsFeaturesQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_BLIT_IMAGE_CUBIC_WEIGHTS_INFO_QCOM = VkStructureType.BlitImageCubicWeightsInfoQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_YCBCR_DEGAMMA_FEATURES_QCOM = VkStructureType.PhysicalDeviceYcbcrDegammaFeaturesQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_YCBCR_DEGAMMA_CREATE_INFO_QCOM = VkStructureType.SamplerYcbcrConversionYcbcrDegammaCreateInfoQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUBIC_CLAMP_FEATURES_QCOM = VkStructureType.PhysicalDeviceCubicClampFeaturesQcom;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ATTACHMENT_FEEDBACK_LOOP_DYNAMIC_STATE_FEATURES_EXT = VkStructureType.PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT;
+        public const VkStructureType VK_STRUCTURE_TYPE_SCREEN_BUFFER_PROPERTIES_QNX = VkStructureType.ScreenBufferPropertiesQnx;
+        public const VkStructureType VK_STRUCTURE_TYPE_SCREEN_BUFFER_FORMAT_PROPERTIES_QNX = VkStructureType.ScreenBufferFormatPropertiesQnx;
+        public const VkStructureType VK_STRUCTURE_TYPE_IMPORT_SCREEN_BUFFER_INFO_QNX = VkStructureType.ImportScreenBufferInfoQnx;
+        public const VkStructureType VK_STRUCTURE_TYPE_EXTERNAL_FORMAT_QNX = VkStructureType.ExternalFormatQnx;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_MEMORY_SCREEN_BUFFER_FEATURES_QNX = VkStructureType.PhysicalDeviceExternalMemoryScreenBufferFeaturesQnx;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LAYERED_DRIVER_PROPERTIES_MSFT = VkStructureType.PhysicalDeviceLayeredDriverPropertiesMsft;
+        public const VkStructureType VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_POOL_OVERALLOCATION_FEATURES_NV = VkStructureType.PhysicalDeviceDescriptorPoolOverallocationFeaturesNV;
     }
 
     public enum VkSubpassContents : int
@@ -2889,6 +3121,9 @@ namespace Vulkan
         ErrorFragmentation = -1000161000,
         ErrorInvalidOpaqueCaptureAddress = -1000257000,
         PipelineCompileRequired = 1000297000,
+        ErrorValidationFailed = -1000011001,
+        ErrorInvalidPipelineCacheData = -1000298000,
+        ErrorNoPipelineMatch = -1000298001,
         ErrorSurfaceLostKHR = -1000000000,
         ErrorNativeWindowInUseKHR = -1000000001,
         SuboptimalKHR = 1000001003,
@@ -2909,7 +3144,9 @@ namespace Vulkan
         ThreadDoneKHR = 1000268001,
         OperationDeferredKHR = 1000268002,
         OperationNotDeferredKHR = 1000268003,
+        ErrorInvalidVideoStdParametersKHR = -1000299000,
         ErrorCompressionExhaustedEXT = -1000338000,
+        ErrorIncompatibleShaderBinaryEXT = 1000482000,
     }
     public static partial class RawConstants
     {
@@ -2956,6 +3193,9 @@ namespace Vulkan
         public const VkResult VK_ERROR_FRAGMENTATION = VkResult.ErrorFragmentation;
         public const VkResult VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS = VkResult.ErrorInvalidOpaqueCaptureAddress;
         public const VkResult VK_PIPELINE_COMPILE_REQUIRED = VkResult.PipelineCompileRequired;
+        public const VkResult VK_ERROR_VALIDATION_FAILED = VkResult.ErrorValidationFailed;
+        public const VkResult VK_ERROR_INVALID_PIPELINE_CACHE_DATA = VkResult.ErrorInvalidPipelineCacheData;
+        public const VkResult VK_ERROR_NO_PIPELINE_MATCH = VkResult.ErrorNoPipelineMatch;
         public const VkResult VK_ERROR_SURFACE_LOST_KHR = VkResult.ErrorSurfaceLostKHR;
         public const VkResult VK_ERROR_NATIVE_WINDOW_IN_USE_KHR = VkResult.ErrorNativeWindowInUseKHR;
         public const VkResult VK_SUBOPTIMAL_KHR = VkResult.SuboptimalKHR;
@@ -2976,7 +3216,9 @@ namespace Vulkan
         public const VkResult VK_THREAD_DONE_KHR = VkResult.ThreadDoneKHR;
         public const VkResult VK_OPERATION_DEFERRED_KHR = VkResult.OperationDeferredKHR;
         public const VkResult VK_OPERATION_NOT_DEFERRED_KHR = VkResult.OperationNotDeferredKHR;
+        public const VkResult VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR = VkResult.ErrorInvalidVideoStdParametersKHR;
         public const VkResult VK_ERROR_COMPRESSION_EXHAUSTED_EXT = VkResult.ErrorCompressionExhaustedEXT;
+        public const VkResult VK_ERROR_INCOMPATIBLE_SHADER_BINARY_EXT = VkResult.ErrorIncompatibleShaderBinaryEXT;
     }
 
     public enum VkDynamicState : int
@@ -3007,10 +3249,13 @@ namespace Vulkan
         PrimitiveRestartEnable = 1000377004,
         ViewportWScalingNV = 1000087000,
         DiscardRectangleEXT = 1000099000,
+        DiscardRectangleEnableEXT = 1000099001,
+        DiscardRectangleModeEXT = 1000099002,
         SampleLocationsEXT = 1000143000,
         RayTracingPipelineStackSizeKHR = 1000347000,
         ViewportShadingRatePaletteNV = 1000164004,
         ViewportCoarseSampleOrderNV = 1000164006,
+        ExclusiveScissorEnableNV = 1000205000,
         ExclusiveScissorNV = 1000205001,
         FragmentShadingRateKHR = 1000226000,
         LineStippleEXT = 1000259000,
@@ -3049,6 +3294,7 @@ namespace Vulkan
         ShadingRateImageEnableNV = 1000455030,
         RepresentativeFragmentTestEnableNV = 1000455031,
         CoverageReductionModeNV = 1000455032,
+        AttachmentFeedbackLoopEnableEXT = 1000524000,
     }
     public static partial class RawConstants
     {
@@ -3078,10 +3324,13 @@ namespace Vulkan
         public const VkDynamicState VK_DYNAMIC_STATE_PRIMITIVE_RESTART_ENABLE = VkDynamicState.PrimitiveRestartEnable;
         public const VkDynamicState VK_DYNAMIC_STATE_VIEWPORT_W_SCALING_NV = VkDynamicState.ViewportWScalingNV;
         public const VkDynamicState VK_DYNAMIC_STATE_DISCARD_RECTANGLE_EXT = VkDynamicState.DiscardRectangleEXT;
+        public const VkDynamicState VK_DYNAMIC_STATE_DISCARD_RECTANGLE_ENABLE_EXT = VkDynamicState.DiscardRectangleEnableEXT;
+        public const VkDynamicState VK_DYNAMIC_STATE_DISCARD_RECTANGLE_MODE_EXT = VkDynamicState.DiscardRectangleModeEXT;
         public const VkDynamicState VK_DYNAMIC_STATE_SAMPLE_LOCATIONS_EXT = VkDynamicState.SampleLocationsEXT;
         public const VkDynamicState VK_DYNAMIC_STATE_RAY_TRACING_PIPELINE_STACK_SIZE_KHR = VkDynamicState.RayTracingPipelineStackSizeKHR;
         public const VkDynamicState VK_DYNAMIC_STATE_VIEWPORT_SHADING_RATE_PALETTE_NV = VkDynamicState.ViewportShadingRatePaletteNV;
         public const VkDynamicState VK_DYNAMIC_STATE_VIEWPORT_COARSE_SAMPLE_ORDER_NV = VkDynamicState.ViewportCoarseSampleOrderNV;
+        public const VkDynamicState VK_DYNAMIC_STATE_EXCLUSIVE_SCISSOR_ENABLE_NV = VkDynamicState.ExclusiveScissorEnableNV;
         public const VkDynamicState VK_DYNAMIC_STATE_EXCLUSIVE_SCISSOR_NV = VkDynamicState.ExclusiveScissorNV;
         public const VkDynamicState VK_DYNAMIC_STATE_FRAGMENT_SHADING_RATE_KHR = VkDynamicState.FragmentShadingRateKHR;
         public const VkDynamicState VK_DYNAMIC_STATE_LINE_STIPPLE_EXT = VkDynamicState.LineStippleEXT;
@@ -3120,6 +3369,7 @@ namespace Vulkan
         public const VkDynamicState VK_DYNAMIC_STATE_SHADING_RATE_IMAGE_ENABLE_NV = VkDynamicState.ShadingRateImageEnableNV;
         public const VkDynamicState VK_DYNAMIC_STATE_REPRESENTATIVE_FRAGMENT_TEST_ENABLE_NV = VkDynamicState.RepresentativeFragmentTestEnableNV;
         public const VkDynamicState VK_DYNAMIC_STATE_COVERAGE_REDUCTION_MODE_NV = VkDynamicState.CoverageReductionModeNV;
+        public const VkDynamicState VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT = VkDynamicState.AttachmentFeedbackLoopEnableEXT;
     }
 
     public enum VkDescriptorUpdateTemplateType : int
@@ -3185,6 +3435,8 @@ namespace Vulkan
         BufferCollectionFuchsia = 1000366000,
         MicromapEXT = 1000396000,
         OpticalFlowSessionNV = 1000464000,
+        ShaderEXT = 1000482000,
+        SemaphoreSciSyncPoolNV = 1000489000,
     }
     public static partial class RawConstants
     {
@@ -3236,6 +3488,8 @@ namespace Vulkan
         public const VkObjectType VK_OBJECT_TYPE_BUFFER_COLLECTION_FUCHSIA = VkObjectType.BufferCollectionFuchsia;
         public const VkObjectType VK_OBJECT_TYPE_MICROMAP_EXT = VkObjectType.MicromapEXT;
         public const VkObjectType VK_OBJECT_TYPE_OPTICAL_FLOW_SESSION_NV = VkObjectType.OpticalFlowSessionNV;
+        public const VkObjectType VK_OBJECT_TYPE_SHADER_EXT = VkObjectType.ShaderEXT;
+        public const VkObjectType VK_OBJECT_TYPE_SEMAPHORE_SCI_SYNC_POOL_NV = VkObjectType.SemaphoreSciSyncPoolNV;
     }
 
     public enum VkRayTracingInvocationReorderModeNV : int
@@ -3277,7 +3531,9 @@ namespace Vulkan
         Reserved9EXT = 512,
         VideoEncodeKHR = 64,
         Reserved7Qcom = 128,
+        Reserved11Arm = 2048,
         OpticalFlowNV = 256,
+        Reserved10EXT = 1024,
     }
     public static partial class RawConstants
     {
@@ -3294,7 +3550,9 @@ namespace Vulkan
         public const VkQueueFlags VK_QUEUE_RESERVED_9_BIT_EXT = VkQueueFlags.Reserved9EXT;
         public const VkQueueFlags VK_QUEUE_VIDEO_ENCODE_BIT_KHR = VkQueueFlags.VideoEncodeKHR;
         public const VkQueueFlags VK_QUEUE_RESERVED_7_BIT_QCOM = VkQueueFlags.Reserved7Qcom;
+        public const VkQueueFlags VK_QUEUE_RESERVED_11_BIT_ARM = VkQueueFlags.Reserved11Arm;
         public const VkQueueFlags VK_QUEUE_OPTICAL_FLOW_BIT_NV = VkQueueFlags.OpticalFlowNV;
+        public const VkQueueFlags VK_QUEUE_RESERVED_10_BIT_EXT = VkQueueFlags.Reserved10EXT;
     }
 
     [Flags]
@@ -3383,14 +3641,14 @@ namespace Vulkan
         ///<summary>If set, heap represents device memory</summary>
         DeviceLocal = 1,
         MultiInstance = 2,
-        Reserved2KHR = 4,
+        SeuSafe = 4,
     }
     public static partial class RawConstants
     {
         ///<summary>If set, heap represents device memory</summary>
         public const VkMemoryHeapFlags VK_MEMORY_HEAP_DEVICE_LOCAL_BIT = VkMemoryHeapFlags.DeviceLocal;
         public const VkMemoryHeapFlags VK_MEMORY_HEAP_MULTI_INSTANCE_BIT = VkMemoryHeapFlags.MultiInstance;
-        public const VkMemoryHeapFlags VK_MEMORY_HEAP_RESERVED_2_BIT_KHR = VkMemoryHeapFlags.Reserved2KHR;
+        public const VkMemoryHeapFlags VK_MEMORY_HEAP_SEU_SAFE_BIT = VkMemoryHeapFlags.SeuSafe;
     }
 
     [Flags]
@@ -3521,13 +3779,14 @@ namespace Vulkan
         TransformFeedbackBufferEXT = 2048,
         TransformFeedbackCounterBufferEXT = 4096,
         ConditionalRenderingEXT = 512,
-        Reserved25AMD = 33554432,
+        ExecutionGraphScratchAmdx = 33554432,
         AccelerationStructureBuildInputReadOnlyKHR = 524288,
         AccelerationStructureStorageKHR = 1048576,
         ShaderBindingTableKHR = 1024,
         Reserved18Qcom = 262144,
         VideoEncodeDstKHR = 32768,
         VideoEncodeSrcKHR = 65536,
+        Reserved27Qcom = 134217728,
         SamplerDescriptorBufferEXT = 2097152,
         ResourceDescriptorBufferEXT = 4194304,
         PushDescriptorsDescriptorBufferEXT = 67108864,
@@ -3560,18 +3819,82 @@ namespace Vulkan
         public const VkBufferUsageFlags VK_BUFFER_USAGE_TRANSFORM_FEEDBACK_BUFFER_BIT_EXT = VkBufferUsageFlags.TransformFeedbackBufferEXT;
         public const VkBufferUsageFlags VK_BUFFER_USAGE_TRANSFORM_FEEDBACK_COUNTER_BUFFER_BIT_EXT = VkBufferUsageFlags.TransformFeedbackCounterBufferEXT;
         public const VkBufferUsageFlags VK_BUFFER_USAGE_CONDITIONAL_RENDERING_BIT_EXT = VkBufferUsageFlags.ConditionalRenderingEXT;
-        public const VkBufferUsageFlags VK_BUFFER_USAGE_RESERVED_25_BIT_AMD = VkBufferUsageFlags.Reserved25AMD;
+        public const VkBufferUsageFlags VK_BUFFER_USAGE_EXECUTION_GRAPH_SCRATCH_BIT_AMDX = VkBufferUsageFlags.ExecutionGraphScratchAmdx;
         public const VkBufferUsageFlags VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR = VkBufferUsageFlags.AccelerationStructureBuildInputReadOnlyKHR;
         public const VkBufferUsageFlags VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_STORAGE_BIT_KHR = VkBufferUsageFlags.AccelerationStructureStorageKHR;
         public const VkBufferUsageFlags VK_BUFFER_USAGE_SHADER_BINDING_TABLE_BIT_KHR = VkBufferUsageFlags.ShaderBindingTableKHR;
         public const VkBufferUsageFlags VK_BUFFER_USAGE_RESERVED_18_BIT_QCOM = VkBufferUsageFlags.Reserved18Qcom;
         public const VkBufferUsageFlags VK_BUFFER_USAGE_VIDEO_ENCODE_DST_BIT_KHR = VkBufferUsageFlags.VideoEncodeDstKHR;
         public const VkBufferUsageFlags VK_BUFFER_USAGE_VIDEO_ENCODE_SRC_BIT_KHR = VkBufferUsageFlags.VideoEncodeSrcKHR;
+        public const VkBufferUsageFlags VK_BUFFER_USAGE_RESERVED_27_BIT_QCOM = VkBufferUsageFlags.Reserved27Qcom;
         public const VkBufferUsageFlags VK_BUFFER_USAGE_SAMPLER_DESCRIPTOR_BUFFER_BIT_EXT = VkBufferUsageFlags.SamplerDescriptorBufferEXT;
         public const VkBufferUsageFlags VK_BUFFER_USAGE_RESOURCE_DESCRIPTOR_BUFFER_BIT_EXT = VkBufferUsageFlags.ResourceDescriptorBufferEXT;
         public const VkBufferUsageFlags VK_BUFFER_USAGE_PUSH_DESCRIPTORS_DESCRIPTOR_BUFFER_BIT_EXT = VkBufferUsageFlags.PushDescriptorsDescriptorBufferEXT;
         public const VkBufferUsageFlags VK_BUFFER_USAGE_MICROMAP_BUILD_INPUT_READ_ONLY_BIT_EXT = VkBufferUsageFlags.MicromapBuildInputReadOnlyEXT;
         public const VkBufferUsageFlags VK_BUFFER_USAGE_MICROMAP_STORAGE_BIT_EXT = VkBufferUsageFlags.MicromapStorageEXT;
+    }
+
+    [Flags]
+    public enum VkBufferUsageFlags2KHR : long
+    {
+        None = 0,
+        TransferSrcKHR = 1,
+        TransferDstKHR = 2,
+        UniformTexelBufferKHR = 4,
+        StorageTexelBufferKHR = 8,
+        UniformBufferKHR = 16,
+        StorageBufferKHR = 32,
+        IndexBufferKHR = 64,
+        VertexBufferKHR = 128,
+        IndirectBufferKHR = 256,
+        ExecutionGraphScratchAmdx = 33554432,
+        Reserved18Qcom = 262144,
+        ConditionalRenderingEXT = 512,
+        ShaderBindingTableKHR = 1024,
+        TransformFeedbackBufferEXT = 2048,
+        TransformFeedbackCounterBufferEXT = 4096,
+        VideoDecodeSrcKHR = 8192,
+        VideoDecodeDstKHR = 16384,
+        VideoEncodeDstKHR = 32768,
+        VideoEncodeSrcKHR = 65536,
+        ShaderDeviceAddressKHR = 131072,
+        AccelerationStructureBuildInputReadOnlyKHR = 524288,
+        AccelerationStructureStorageKHR = 1048576,
+        SamplerDescriptorBufferEXT = 2097152,
+        ResourceDescriptorBufferEXT = 4194304,
+        PushDescriptorsDescriptorBufferEXT = 67108864,
+        MicromapBuildInputReadOnlyEXT = 8388608,
+        MicromapStorageEXT = 16777216,
+    }
+    public static partial class RawConstants
+    {
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_TRANSFER_SRC_BIT_KHR = VkBufferUsageFlags2KHR.TransferSrcKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_TRANSFER_DST_BIT_KHR = VkBufferUsageFlags2KHR.TransferDstKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_UNIFORM_TEXEL_BUFFER_BIT_KHR = VkBufferUsageFlags2KHR.UniformTexelBufferKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_STORAGE_TEXEL_BUFFER_BIT_KHR = VkBufferUsageFlags2KHR.StorageTexelBufferKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_UNIFORM_BUFFER_BIT_KHR = VkBufferUsageFlags2KHR.UniformBufferKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_STORAGE_BUFFER_BIT_KHR = VkBufferUsageFlags2KHR.StorageBufferKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_INDEX_BUFFER_BIT_KHR = VkBufferUsageFlags2KHR.IndexBufferKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_VERTEX_BUFFER_BIT_KHR = VkBufferUsageFlags2KHR.VertexBufferKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_INDIRECT_BUFFER_BIT_KHR = VkBufferUsageFlags2KHR.IndirectBufferKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_EXECUTION_GRAPH_SCRATCH_BIT_AMDX = VkBufferUsageFlags2KHR.ExecutionGraphScratchAmdx;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_RESERVED_18_BIT_QCOM = VkBufferUsageFlags2KHR.Reserved18Qcom;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_CONDITIONAL_RENDERING_BIT_EXT = VkBufferUsageFlags2KHR.ConditionalRenderingEXT;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_SHADER_BINDING_TABLE_BIT_KHR = VkBufferUsageFlags2KHR.ShaderBindingTableKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_TRANSFORM_FEEDBACK_BUFFER_BIT_EXT = VkBufferUsageFlags2KHR.TransformFeedbackBufferEXT;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_TRANSFORM_FEEDBACK_COUNTER_BUFFER_BIT_EXT = VkBufferUsageFlags2KHR.TransformFeedbackCounterBufferEXT;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_VIDEO_DECODE_SRC_BIT_KHR = VkBufferUsageFlags2KHR.VideoDecodeSrcKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_VIDEO_DECODE_DST_BIT_KHR = VkBufferUsageFlags2KHR.VideoDecodeDstKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_VIDEO_ENCODE_DST_BIT_KHR = VkBufferUsageFlags2KHR.VideoEncodeDstKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_VIDEO_ENCODE_SRC_BIT_KHR = VkBufferUsageFlags2KHR.VideoEncodeSrcKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_SHADER_DEVICE_ADDRESS_BIT_KHR = VkBufferUsageFlags2KHR.ShaderDeviceAddressKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR = VkBufferUsageFlags2KHR.AccelerationStructureBuildInputReadOnlyKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_ACCELERATION_STRUCTURE_STORAGE_BIT_KHR = VkBufferUsageFlags2KHR.AccelerationStructureStorageKHR;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_SAMPLER_DESCRIPTOR_BUFFER_BIT_EXT = VkBufferUsageFlags2KHR.SamplerDescriptorBufferEXT;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_RESOURCE_DESCRIPTOR_BUFFER_BIT_EXT = VkBufferUsageFlags2KHR.ResourceDescriptorBufferEXT;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_PUSH_DESCRIPTORS_DESCRIPTOR_BUFFER_BIT_EXT = VkBufferUsageFlags2KHR.PushDescriptorsDescriptorBufferEXT;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_MICROMAP_BUILD_INPUT_READ_ONLY_BIT_EXT = VkBufferUsageFlags2KHR.MicromapBuildInputReadOnlyEXT;
+        public const VkBufferUsageFlags2KHR VK_BUFFER_USAGE_2_MICROMAP_STORAGE_BIT_EXT = VkBufferUsageFlags2KHR.MicromapStorageEXT;
     }
 
     [Flags]
@@ -3587,6 +3910,7 @@ namespace Vulkan
         Protected = 8,
         DeviceAddressCaptureReplay = 16,
         DescriptorBufferCaptureReplayEXT = 32,
+        Reserved6KHR = 64,
     }
     public static partial class RawConstants
     {
@@ -3599,6 +3923,7 @@ namespace Vulkan
         public const VkBufferCreateFlags VK_BUFFER_CREATE_PROTECTED_BIT = VkBufferCreateFlags.Protected;
         public const VkBufferCreateFlags VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT = VkBufferCreateFlags.DeviceAddressCaptureReplay;
         public const VkBufferCreateFlags VK_BUFFER_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT = VkBufferCreateFlags.DescriptorBufferCaptureReplayEXT;
+        public const VkBufferCreateFlags VK_BUFFER_CREATE_RESERVED_6_BIT_KHR = VkBufferCreateFlags.Reserved6KHR;
     }
 
     [Flags]
@@ -3622,10 +3947,7 @@ namespace Vulkan
         TaskEXT = 64,
         MeshEXT = 128,
         SubpassShadingHuawei = 16384,
-        Reserved19Huawei = 524288,
-        EXT483Reserve15 = 32768,
-        EXT483Reserve16 = 65536,
-        EXT483Reserve17 = 131072,
+        ClusterCullingHuawei = 524288,
     }
     public static partial class RawConstants
     {
@@ -3646,10 +3968,7 @@ namespace Vulkan
         public const VkShaderStageFlags VK_SHADER_STAGE_TASK_BIT_EXT = VkShaderStageFlags.TaskEXT;
         public const VkShaderStageFlags VK_SHADER_STAGE_MESH_BIT_EXT = VkShaderStageFlags.MeshEXT;
         public const VkShaderStageFlags VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI = VkShaderStageFlags.SubpassShadingHuawei;
-        public const VkShaderStageFlags VK_SHADER_STAGE_RESERVED_19_BIT_HUAWEI = VkShaderStageFlags.Reserved19Huawei;
-        public const VkShaderStageFlags VK_SHADER_STAGE_EXT_483_RESERVE_15 = VkShaderStageFlags.EXT483Reserve15;
-        public const VkShaderStageFlags VK_SHADER_STAGE_EXT_483_RESERVE_16 = VkShaderStageFlags.EXT483Reserve16;
-        public const VkShaderStageFlags VK_SHADER_STAGE_EXT_483_RESERVE_17 = VkShaderStageFlags.EXT483Reserve17;
+        public const VkShaderStageFlags VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI = VkShaderStageFlags.ClusterCullingHuawei;
     }
 
     [Flags]
@@ -3679,7 +3998,7 @@ namespace Vulkan
         Reserved17Qcom = 131072,
         FragmentDensityMapEXT = 512,
         FragmentShadingRateAttachmentKHR = 256,
-        Reserved22EXT = 4194304,
+        HostTransferEXT = 4194304,
         VideoEncodeDstKHR = 8192,
         VideoEncodeSrcKHR = 16384,
         VideoEncodeDpbKHR = 32768,
@@ -3687,6 +4006,8 @@ namespace Vulkan
         InvocationMaskHuawei = 262144,
         SampleWeightQcom = 1048576,
         SampleBlockMatchQcom = 2097152,
+        Reserved24Coreavi = 16777216,
+        Reserved23EXT = 8388608,
     }
     public static partial class RawConstants
     {
@@ -3713,7 +4034,7 @@ namespace Vulkan
         public const VkImageUsageFlags VK_IMAGE_USAGE_RESERVED_17_BIT_QCOM = VkImageUsageFlags.Reserved17Qcom;
         public const VkImageUsageFlags VK_IMAGE_USAGE_FRAGMENT_DENSITY_MAP_BIT_EXT = VkImageUsageFlags.FragmentDensityMapEXT;
         public const VkImageUsageFlags VK_IMAGE_USAGE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR = VkImageUsageFlags.FragmentShadingRateAttachmentKHR;
-        public const VkImageUsageFlags VK_IMAGE_USAGE_RESERVED_22_BIT_EXT = VkImageUsageFlags.Reserved22EXT;
+        public const VkImageUsageFlags VK_IMAGE_USAGE_HOST_TRANSFER_BIT_EXT = VkImageUsageFlags.HostTransferEXT;
         public const VkImageUsageFlags VK_IMAGE_USAGE_VIDEO_ENCODE_DST_BIT_KHR = VkImageUsageFlags.VideoEncodeDstKHR;
         public const VkImageUsageFlags VK_IMAGE_USAGE_VIDEO_ENCODE_SRC_BIT_KHR = VkImageUsageFlags.VideoEncodeSrcKHR;
         public const VkImageUsageFlags VK_IMAGE_USAGE_VIDEO_ENCODE_DPB_BIT_KHR = VkImageUsageFlags.VideoEncodeDpbKHR;
@@ -3721,6 +4042,8 @@ namespace Vulkan
         public const VkImageUsageFlags VK_IMAGE_USAGE_INVOCATION_MASK_BIT_HUAWEI = VkImageUsageFlags.InvocationMaskHuawei;
         public const VkImageUsageFlags VK_IMAGE_USAGE_SAMPLE_WEIGHT_BIT_QCOM = VkImageUsageFlags.SampleWeightQcom;
         public const VkImageUsageFlags VK_IMAGE_USAGE_SAMPLE_BLOCK_MATCH_BIT_QCOM = VkImageUsageFlags.SampleBlockMatchQcom;
+        public const VkImageUsageFlags VK_IMAGE_USAGE_RESERVED_24_BIT_COREAVI = VkImageUsageFlags.Reserved24Coreavi;
+        public const VkImageUsageFlags VK_IMAGE_USAGE_RESERVED_23_BIT_EXT = VkImageUsageFlags.Reserved23EXT;
     }
 
     [Flags]
@@ -3752,6 +4075,7 @@ namespace Vulkan
         MultisampledRenderToSingleSampledEXT = 262144,
         _2dViewCompatibleEXT = 131072,
         FragmentDensityMapOffsetQcom = 32768,
+        Reserved20KHR = 1048576,
     }
     public static partial class RawConstants
     {
@@ -3780,6 +4104,7 @@ namespace Vulkan
         public const VkImageCreateFlags VK_IMAGE_CREATE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_BIT_EXT = VkImageCreateFlags.MultisampledRenderToSingleSampledEXT;
         public const VkImageCreateFlags VK_IMAGE_CREATE_2D_VIEW_COMPATIBLE_BIT_EXT = VkImageCreateFlags._2dViewCompatibleEXT;
         public const VkImageCreateFlags VK_IMAGE_CREATE_FRAGMENT_DENSITY_MAP_OFFSET_BIT_QCOM = VkImageCreateFlags.FragmentDensityMapOffsetQcom;
+        public const VkImageCreateFlags VK_IMAGE_CREATE_RESERVED_20_BIT_KHR = VkImageCreateFlags.Reserved20KHR;
     }
 
     [Flags]
@@ -3789,14 +4114,12 @@ namespace Vulkan
         FragmentDensityMapDynamicEXT = 1,
         DescriptorBufferCaptureReplayEXT = 4,
         FragmentDensityMapDeferredEXT = 2,
-        Reserved3EXT = 8,
     }
     public static partial class RawConstants
     {
         public const VkImageViewCreateFlags VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DYNAMIC_BIT_EXT = VkImageViewCreateFlags.FragmentDensityMapDynamicEXT;
         public const VkImageViewCreateFlags VK_IMAGE_VIEW_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT = VkImageViewCreateFlags.DescriptorBufferCaptureReplayEXT;
         public const VkImageViewCreateFlags VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DEFERRED_BIT_EXT = VkImageViewCreateFlags.FragmentDensityMapDeferredEXT;
-        public const VkImageViewCreateFlags VK_IMAGE_VIEW_CREATE_RESERVED_3_BIT_EXT = VkImageViewCreateFlags.Reserved3EXT;
     }
 
     [Flags]
@@ -3850,7 +4173,7 @@ namespace Vulkan
         ColorAttachmentFeedbackLoopEXT = 33554432,
         DepthStencilAttachmentFeedbackLoopEXT = 67108864,
         RayTracingOpacityMicromapEXT = 16777216,
-        Reserved28NV = 268435456,
+        RayTracingDisplacementMicromapNV = 268435456,
         NoProtectedAccessEXT = 134217728,
         ProtectedAccessOnlyEXT = 1073741824,
     }
@@ -3884,9 +4207,82 @@ namespace Vulkan
         public const VkPipelineCreateFlags VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT = VkPipelineCreateFlags.ColorAttachmentFeedbackLoopEXT;
         public const VkPipelineCreateFlags VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT = VkPipelineCreateFlags.DepthStencilAttachmentFeedbackLoopEXT;
         public const VkPipelineCreateFlags VK_PIPELINE_CREATE_RAY_TRACING_OPACITY_MICROMAP_BIT_EXT = VkPipelineCreateFlags.RayTracingOpacityMicromapEXT;
-        public const VkPipelineCreateFlags VK_PIPELINE_CREATE_RESERVED_BIT_28_NV = VkPipelineCreateFlags.Reserved28NV;
+        public const VkPipelineCreateFlags VK_PIPELINE_CREATE_RAY_TRACING_DISPLACEMENT_MICROMAP_BIT_NV = VkPipelineCreateFlags.RayTracingDisplacementMicromapNV;
         public const VkPipelineCreateFlags VK_PIPELINE_CREATE_NO_PROTECTED_ACCESS_BIT_EXT = VkPipelineCreateFlags.NoProtectedAccessEXT;
         public const VkPipelineCreateFlags VK_PIPELINE_CREATE_PROTECTED_ACCESS_ONLY_BIT_EXT = VkPipelineCreateFlags.ProtectedAccessOnlyEXT;
+    }
+
+    [Flags]
+    public enum VkPipelineCreateFlags2KHR : long
+    {
+        None = 0,
+        DisableOptimizationKHR = 1,
+        AllowDerivativesKHR = 2,
+        DerivativeKHR = 4,
+        ViewIndexFromDeviceIndexKHR = 8,
+        DispatchBaseKHR = 16,
+        DeferCompileNV = 32,
+        CaptureStatisticsKHR = 64,
+        CaptureInternalRepresentationsKHR = 128,
+        FailOnPipelineCompileRequiredKHR = 256,
+        EarlyReturnOnFailureKHR = 512,
+        LinkTimeOptimizationEXT = 1024,
+        RetainLinkTimeOptimizationInfoEXT = 8388608,
+        LibraryKHR = 2048,
+        RayTracingSkipTrianglesKHR = 4096,
+        RayTracingSkipAabbsKHR = 8192,
+        RayTracingNoNullAnyHitShadersKHR = 16384,
+        RayTracingNoNullClosestHitShadersKHR = 32768,
+        RayTracingNoNullMissShadersKHR = 65536,
+        RayTracingNoNullIntersectionShadersKHR = 131072,
+        RayTracingShaderGroupHandleCaptureReplayKHR = 524288,
+        IndirectBindableNV = 262144,
+        RayTracingAllowMotionNV = 1048576,
+        RenderingFragmentShadingRateAttachmentKHR = 2097152,
+        RenderingFragmentDensityMapAttachmentEXT = 4194304,
+        RayTracingOpacityMicromapEXT = 16777216,
+        ColorAttachmentFeedbackLoopEXT = 33554432,
+        DepthStencilAttachmentFeedbackLoopEXT = 67108864,
+        NoProtectedAccessEXT = 134217728,
+        ProtectedAccessOnlyEXT = 1073741824,
+        RayTracingDisplacementMicromapNV = 268435456,
+        DescriptorBufferEXT = 536870912,
+        Reserved31KHR = -2147483648,
+    }
+    public static partial class RawConstants
+    {
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_DISABLE_OPTIMIZATION_BIT_KHR = VkPipelineCreateFlags2KHR.DisableOptimizationKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_ALLOW_DERIVATIVES_BIT_KHR = VkPipelineCreateFlags2KHR.AllowDerivativesKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_DERIVATIVE_BIT_KHR = VkPipelineCreateFlags2KHR.DerivativeKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR = VkPipelineCreateFlags2KHR.ViewIndexFromDeviceIndexKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_DISPATCH_BASE_BIT_KHR = VkPipelineCreateFlags2KHR.DispatchBaseKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_DEFER_COMPILE_BIT_NV = VkPipelineCreateFlags2KHR.DeferCompileNV;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_CAPTURE_STATISTICS_BIT_KHR = VkPipelineCreateFlags2KHR.CaptureStatisticsKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_CAPTURE_INTERNAL_REPRESENTATIONS_BIT_KHR = VkPipelineCreateFlags2KHR.CaptureInternalRepresentationsKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_FAIL_ON_PIPELINE_COMPILE_REQUIRED_BIT_KHR = VkPipelineCreateFlags2KHR.FailOnPipelineCompileRequiredKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_EARLY_RETURN_ON_FAILURE_BIT_KHR = VkPipelineCreateFlags2KHR.EarlyReturnOnFailureKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_LINK_TIME_OPTIMIZATION_BIT_EXT = VkPipelineCreateFlags2KHR.LinkTimeOptimizationEXT;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RETAIN_LINK_TIME_OPTIMIZATION_INFO_BIT_EXT = VkPipelineCreateFlags2KHR.RetainLinkTimeOptimizationInfoEXT;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_LIBRARY_BIT_KHR = VkPipelineCreateFlags2KHR.LibraryKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RAY_TRACING_SKIP_TRIANGLES_BIT_KHR = VkPipelineCreateFlags2KHR.RayTracingSkipTrianglesKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RAY_TRACING_SKIP_AABBS_BIT_KHR = VkPipelineCreateFlags2KHR.RayTracingSkipAabbsKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RAY_TRACING_NO_NULL_ANY_HIT_SHADERS_BIT_KHR = VkPipelineCreateFlags2KHR.RayTracingNoNullAnyHitShadersKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RAY_TRACING_NO_NULL_CLOSEST_HIT_SHADERS_BIT_KHR = VkPipelineCreateFlags2KHR.RayTracingNoNullClosestHitShadersKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RAY_TRACING_NO_NULL_MISS_SHADERS_BIT_KHR = VkPipelineCreateFlags2KHR.RayTracingNoNullMissShadersKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RAY_TRACING_NO_NULL_INTERSECTION_SHADERS_BIT_KHR = VkPipelineCreateFlags2KHR.RayTracingNoNullIntersectionShadersKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RAY_TRACING_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_BIT_KHR = VkPipelineCreateFlags2KHR.RayTracingShaderGroupHandleCaptureReplayKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_INDIRECT_BINDABLE_BIT_NV = VkPipelineCreateFlags2KHR.IndirectBindableNV;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RAY_TRACING_ALLOW_MOTION_BIT_NV = VkPipelineCreateFlags2KHR.RayTracingAllowMotionNV;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RENDERING_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR = VkPipelineCreateFlags2KHR.RenderingFragmentShadingRateAttachmentKHR;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RENDERING_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT = VkPipelineCreateFlags2KHR.RenderingFragmentDensityMapAttachmentEXT;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RAY_TRACING_OPACITY_MICROMAP_BIT_EXT = VkPipelineCreateFlags2KHR.RayTracingOpacityMicromapEXT;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT = VkPipelineCreateFlags2KHR.ColorAttachmentFeedbackLoopEXT;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT = VkPipelineCreateFlags2KHR.DepthStencilAttachmentFeedbackLoopEXT;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_NO_PROTECTED_ACCESS_BIT_EXT = VkPipelineCreateFlags2KHR.NoProtectedAccessEXT;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_PROTECTED_ACCESS_ONLY_BIT_EXT = VkPipelineCreateFlags2KHR.ProtectedAccessOnlyEXT;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RAY_TRACING_DISPLACEMENT_MICROMAP_BIT_NV = VkPipelineCreateFlags2KHR.RayTracingDisplacementMicromapNV;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_DESCRIPTOR_BUFFER_BIT_EXT = VkPipelineCreateFlags2KHR.DescriptorBufferEXT;
+        public const VkPipelineCreateFlags2KHR VK_PIPELINE_CREATE_2_RESERVED_31_BIT_KHR = VkPipelineCreateFlags2KHR.Reserved31KHR;
     }
 
     [Flags]
@@ -4123,6 +4519,7 @@ namespace Vulkan
         ComputeShaderInvocations = 1024,
         TaskShaderInvocationsEXT = 2048,
         MeshShaderInvocationsEXT = 4096,
+        ClusterCullingShaderInvocationsHuawei = 8192,
     }
     public static partial class RawConstants
     {
@@ -4150,6 +4547,7 @@ namespace Vulkan
         public const VkQueryPipelineStatisticFlags VK_QUERY_PIPELINE_STATISTIC_COMPUTE_SHADER_INVOCATIONS_BIT = VkQueryPipelineStatisticFlags.ComputeShaderInvocations;
         public const VkQueryPipelineStatisticFlags VK_QUERY_PIPELINE_STATISTIC_TASK_SHADER_INVOCATIONS_BIT_EXT = VkQueryPipelineStatisticFlags.TaskShaderInvocationsEXT;
         public const VkQueryPipelineStatisticFlags VK_QUERY_PIPELINE_STATISTIC_MESH_SHADER_INVOCATIONS_BIT_EXT = VkQueryPipelineStatisticFlags.MeshShaderInvocationsEXT;
+        public const VkQueryPipelineStatisticFlags VK_QUERY_PIPELINE_STATISTIC_CLUSTER_CULLING_SHADER_INVOCATIONS_BIT_HUAWEI = VkQueryPipelineStatisticFlags.ClusterCullingShaderInvocationsHuawei;
     }
 
     [Flags]
@@ -4440,6 +4838,8 @@ namespace Vulkan
         FreeDescriptorSet = 1,
         UpdateAfterBind = 2,
         HostOnlyEXT = 4,
+        AllowOverallocationSetsNV = 8,
+        AllowOverallocationPoolsNV = 16,
     }
     public static partial class RawConstants
     {
@@ -4447,6 +4847,8 @@ namespace Vulkan
         public const VkDescriptorPoolCreateFlags VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT = VkDescriptorPoolCreateFlags.FreeDescriptorSet;
         public const VkDescriptorPoolCreateFlags VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT = VkDescriptorPoolCreateFlags.UpdateAfterBind;
         public const VkDescriptorPoolCreateFlags VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_EXT = VkDescriptorPoolCreateFlags.HostOnlyEXT;
+        public const VkDescriptorPoolCreateFlags VK_DESCRIPTOR_POOL_CREATE_ALLOW_OVERALLOCATION_SETS_BIT_NV = VkDescriptorPoolCreateFlags.AllowOverallocationSetsNV;
+        public const VkDescriptorPoolCreateFlags VK_DESCRIPTOR_POOL_CREATE_ALLOW_OVERALLOCATION_POOLS_BIT_NV = VkDescriptorPoolCreateFlags.AllowOverallocationPoolsNV;
     }
 
     [Flags]
@@ -4930,6 +5332,8 @@ namespace Vulkan
         VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_NV = 6,
         VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_TASKS_NV = 7,
         VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_MESH_TASKS_NV = 1000328000,
+        VK_INDIRECT_COMMANDS_TOKEN_TYPE_PIPELINE_NV = 1000428003,
+        VK_INDIRECT_COMMANDS_TOKEN_TYPE_DISPATCH_NV = 1000428004,
     }
     public static partial class RawConstants
     {
@@ -4942,15 +5346,19 @@ namespace Vulkan
         public const VkIndirectCommandsTokenTypeNV VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_NV = VkIndirectCommandsTokenTypeNV.VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_NV;
         public const VkIndirectCommandsTokenTypeNV VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_TASKS_NV = VkIndirectCommandsTokenTypeNV.VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_TASKS_NV;
         public const VkIndirectCommandsTokenTypeNV VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_MESH_TASKS_NV = VkIndirectCommandsTokenTypeNV.VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_MESH_TASKS_NV;
+        public const VkIndirectCommandsTokenTypeNV VK_INDIRECT_COMMANDS_TOKEN_TYPE_PIPELINE_NV = VkIndirectCommandsTokenTypeNV.VK_INDIRECT_COMMANDS_TOKEN_TYPE_PIPELINE_NV;
+        public const VkIndirectCommandsTokenTypeNV VK_INDIRECT_COMMANDS_TOKEN_TYPE_DISPATCH_NV = VkIndirectCommandsTokenTypeNV.VK_INDIRECT_COMMANDS_TOKEN_TYPE_DISPATCH_NV;
     }
 
     [Flags]
     public enum VkPrivateDataSlotCreateFlagBits : int
     {
         None = 0,
+        Reserved0NV = 1,
     }
     public static partial class RawConstants
     {
+        public const VkPrivateDataSlotCreateFlagBits VK_PRIVATE_DATA_SLOT_CREATE_RESERVED_0_BIT_NV = VkPrivateDataSlotCreateFlagBits.Reserved0NV;
     }
 
     [Flags]
@@ -4962,7 +5370,9 @@ namespace Vulkan
         DescriptorBufferEXT = 16,
         EmbeddedImmutableSamplersEXT = 32,
         Reserved3AMD = 8,
+        IndirectBindableNV = 128,
         HostOnlyPoolEXT = 4,
+        Reserved6EXT = 64,
     }
     public static partial class RawConstants
     {
@@ -4971,7 +5381,9 @@ namespace Vulkan
         public const VkDescriptorSetLayoutCreateFlags VK_DESCRIPTOR_SET_LAYOUT_CREATE_DESCRIPTOR_BUFFER_BIT_EXT = VkDescriptorSetLayoutCreateFlags.DescriptorBufferEXT;
         public const VkDescriptorSetLayoutCreateFlags VK_DESCRIPTOR_SET_LAYOUT_CREATE_EMBEDDED_IMMUTABLE_SAMPLERS_BIT_EXT = VkDescriptorSetLayoutCreateFlags.EmbeddedImmutableSamplersEXT;
         public const VkDescriptorSetLayoutCreateFlags VK_DESCRIPTOR_SET_LAYOUT_CREATE_RESERVED_3_BIT_AMD = VkDescriptorSetLayoutCreateFlags.Reserved3AMD;
+        public const VkDescriptorSetLayoutCreateFlags VK_DESCRIPTOR_SET_LAYOUT_CREATE_INDIRECT_BINDABLE_BIT_NV = VkDescriptorSetLayoutCreateFlags.IndirectBindableNV;
         public const VkDescriptorSetLayoutCreateFlags VK_DESCRIPTOR_SET_LAYOUT_CREATE_HOST_ONLY_POOL_BIT_EXT = VkDescriptorSetLayoutCreateFlags.HostOnlyPoolEXT;
+        public const VkDescriptorSetLayoutCreateFlags VK_DESCRIPTOR_SET_LAYOUT_CREATE_RESERVED_6_BIT_EXT = VkDescriptorSetLayoutCreateFlags.Reserved6EXT;
     }
 
     [Flags]
@@ -4991,7 +5403,8 @@ namespace Vulkan
         HostMappedForeignMemoryEXT = 256,
         ZirconVmoFuchsia = 2048,
         RdmaAddressNV = 4096,
-        Reserved13NV = 8192,
+        SciBufNV = 8192,
+        ScreenBufferQnx = 16384,
     }
     public static partial class RawConstants
     {
@@ -5008,7 +5421,8 @@ namespace Vulkan
         public const VkExternalMemoryHandleTypeFlags VK_EXTERNAL_MEMORY_HANDLE_TYPE_HOST_MAPPED_FOREIGN_MEMORY_BIT_EXT = VkExternalMemoryHandleTypeFlags.HostMappedForeignMemoryEXT;
         public const VkExternalMemoryHandleTypeFlags VK_EXTERNAL_MEMORY_HANDLE_TYPE_ZIRCON_VMO_BIT_FUCHSIA = VkExternalMemoryHandleTypeFlags.ZirconVmoFuchsia;
         public const VkExternalMemoryHandleTypeFlags VK_EXTERNAL_MEMORY_HANDLE_TYPE_RDMA_ADDRESS_BIT_NV = VkExternalMemoryHandleTypeFlags.RdmaAddressNV;
-        public const VkExternalMemoryHandleTypeFlags VK_EXTERNAL_MEMORY_HANDLE_TYPE_RESERVED_13_BIT_NV = VkExternalMemoryHandleTypeFlags.Reserved13NV;
+        public const VkExternalMemoryHandleTypeFlags VK_EXTERNAL_MEMORY_HANDLE_TYPE_SCI_BUF_BIT_NV = VkExternalMemoryHandleTypeFlags.SciBufNV;
+        public const VkExternalMemoryHandleTypeFlags VK_EXTERNAL_MEMORY_HANDLE_TYPE_SCREEN_BUFFER_BIT_QNX = VkExternalMemoryHandleTypeFlags.ScreenBufferQnx;
     }
 
     [Flags]
@@ -5036,7 +5450,7 @@ namespace Vulkan
         D3d12Fence = 8,
         SyncFd = 16,
         ZirconEventFuchsia = 128,
-        Reserved5NV = 32,
+        SciSyncObjNV = 32,
     }
     public static partial class RawConstants
     {
@@ -5046,7 +5460,7 @@ namespace Vulkan
         public const VkExternalSemaphoreHandleTypeFlags VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_D3D12_FENCE_BIT = VkExternalSemaphoreHandleTypeFlags.D3d12Fence;
         public const VkExternalSemaphoreHandleTypeFlags VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_SYNC_FD_BIT = VkExternalSemaphoreHandleTypeFlags.SyncFd;
         public const VkExternalSemaphoreHandleTypeFlags VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_ZIRCON_EVENT_BIT_FUCHSIA = VkExternalSemaphoreHandleTypeFlags.ZirconEventFuchsia;
-        public const VkExternalSemaphoreHandleTypeFlags VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_RESERVED_5_BIT_NV = VkExternalSemaphoreHandleTypeFlags.Reserved5NV;
+        public const VkExternalSemaphoreHandleTypeFlags VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_SCI_SYNC_OBJ_BIT_NV = VkExternalSemaphoreHandleTypeFlags.SciSyncObjNV;
     }
 
     [Flags]
@@ -5081,8 +5495,8 @@ namespace Vulkan
         OpaqueWin32 = 2,
         OpaqueWin32Kmt = 4,
         SyncFd = 8,
-        Reserved4NV = 16,
-        Reserved5NV = 32,
+        SciSyncObjNV = 16,
+        SciSyncFenceNV = 32,
     }
     public static partial class RawConstants
     {
@@ -5090,8 +5504,8 @@ namespace Vulkan
         public const VkExternalFenceHandleTypeFlags VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_BIT = VkExternalFenceHandleTypeFlags.OpaqueWin32;
         public const VkExternalFenceHandleTypeFlags VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT = VkExternalFenceHandleTypeFlags.OpaqueWin32Kmt;
         public const VkExternalFenceHandleTypeFlags VK_EXTERNAL_FENCE_HANDLE_TYPE_SYNC_FD_BIT = VkExternalFenceHandleTypeFlags.SyncFd;
-        public const VkExternalFenceHandleTypeFlags VK_EXTERNAL_FENCE_HANDLE_TYPE_RESERVED_4_BIT_NV = VkExternalFenceHandleTypeFlags.Reserved4NV;
-        public const VkExternalFenceHandleTypeFlags VK_EXTERNAL_FENCE_HANDLE_TYPE_RESERVED_5_BIT_NV = VkExternalFenceHandleTypeFlags.Reserved5NV;
+        public const VkExternalFenceHandleTypeFlags VK_EXTERNAL_FENCE_HANDLE_TYPE_SCI_SYNC_OBJ_BIT_NV = VkExternalFenceHandleTypeFlags.SciSyncObjNV;
+        public const VkExternalFenceHandleTypeFlags VK_EXTERNAL_FENCE_HANDLE_TYPE_SCI_SYNC_FENCE_BIT_NV = VkExternalFenceHandleTypeFlags.SciSyncFenceNV;
     }
 
     [Flags]
@@ -5321,12 +5735,14 @@ namespace Vulkan
         WeightedAverage = 0,
         Min = 1,
         Max = 2,
+        WeightedAverageRangeclampQcom = 1000521000,
     }
     public static partial class RawConstants
     {
         public const VkSamplerReductionMode VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE = VkSamplerReductionMode.WeightedAverage;
         public const VkSamplerReductionMode VK_SAMPLER_REDUCTION_MODE_MIN = VkSamplerReductionMode.Min;
         public const VkSamplerReductionMode VK_SAMPLER_REDUCTION_MODE_MAX = VkSamplerReductionMode.Max;
+        public const VkSamplerReductionMode VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_RANGECLAMP_QCOM = VkSamplerReductionMode.WeightedAverageRangeclampQcom;
     }
 
     public enum VkTessellationDomainOrigin : int
@@ -5547,6 +5963,8 @@ namespace Vulkan
         Mesa = 65541,
         ///<summary>PoCL vendor ID</summary>
         Pocl = 65542,
+        ///<summary>Mobileye vendor ID</summary>
+        Mobileye = 65543,
     }
     public static partial class RawConstants
     {
@@ -5562,6 +5980,8 @@ namespace Vulkan
         public const VkVendorId VK_VENDOR_ID_MESA = VkVendorId.Mesa;
         ///<summary>PoCL vendor ID</summary>
         public const VkVendorId VK_VENDOR_ID_POCL = VkVendorId.Pocl;
+        ///<summary>Mobileye vendor ID</summary>
+        public const VkVendorId VK_VENDOR_ID_MOBILEYE = VkVendorId.Mobileye;
     }
 
     public enum VkDriverId : int
@@ -5614,6 +6034,10 @@ namespace Vulkan
         MesaDozen = 23,
         ///<summary>Mesa open source project</summary>
         MesaNvk = 24,
+        ///<summary>Imagination Technologies</summary>
+        ImaginationOpenSourceMesa = 25,
+        ///<summary>Mesa open source project</summary>
+        MesaAgxv = 26,
     }
     public static partial class RawConstants
     {
@@ -5665,6 +6089,10 @@ namespace Vulkan
         public const VkDriverId VK_DRIVER_ID_MESA_DOZEN = VkDriverId.MesaDozen;
         ///<summary>Mesa open source project</summary>
         public const VkDriverId VK_DRIVER_ID_MESA_NVK = VkDriverId.MesaNvk;
+        ///<summary>Imagination Technologies</summary>
+        public const VkDriverId VK_DRIVER_ID_IMAGINATION_OPEN_SOURCE_MESA = VkDriverId.ImaginationOpenSourceMesa;
+        ///<summary>Mesa open source project</summary>
+        public const VkDriverId VK_DRIVER_ID_MESA_AGXV = VkDriverId.MesaAgxv;
     }
 
     [Flags]
@@ -5686,6 +6114,7 @@ namespace Vulkan
         Average = 2,
         Min = 4,
         Max = 8,
+        Extension469Flag4Android = 16,
     }
     public static partial class RawConstants
     {
@@ -5694,6 +6123,7 @@ namespace Vulkan
         public const VkResolveModeFlags VK_RESOLVE_MODE_AVERAGE_BIT = VkResolveModeFlags.Average;
         public const VkResolveModeFlags VK_RESOLVE_MODE_MIN_BIT = VkResolveModeFlags.Min;
         public const VkResolveModeFlags VK_RESOLVE_MODE_MAX_BIT = VkResolveModeFlags.Max;
+        public const VkResolveModeFlags VK_RESOLVE_MODE_EXTENSION_469_FLAG_4_BIT_ANDROID = VkResolveModeFlags.Extension469Flag4Android;
     }
 
     public enum VkShadingRatePaletteEntryNV : int
@@ -5789,8 +6219,8 @@ namespace Vulkan
         AllowOpacityMicromapUpdateEXT = 64,
         AllowDisableOpacityMicromapsEXT = 128,
         AllowOpacityMicromapDataUpdateEXT = 256,
-        Reserved9NV = 512,
-        Reserved10NV = 1024,
+        AllowDisplacementMicromapUpdateNV = 512,
+        AllowDataAccessKHR = 2048,
     }
     public static partial class RawConstants
     {
@@ -5803,8 +6233,8 @@ namespace Vulkan
         public const VkBuildAccelerationStructureFlagsKHR VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_UPDATE_EXT = VkBuildAccelerationStructureFlagsKHR.AllowOpacityMicromapUpdateEXT;
         public const VkBuildAccelerationStructureFlagsKHR VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISABLE_OPACITY_MICROMAPS_EXT = VkBuildAccelerationStructureFlagsKHR.AllowDisableOpacityMicromapsEXT;
         public const VkBuildAccelerationStructureFlagsKHR VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_DATA_UPDATE_EXT = VkBuildAccelerationStructureFlagsKHR.AllowOpacityMicromapDataUpdateEXT;
-        public const VkBuildAccelerationStructureFlagsKHR VK_BUILD_ACCELERATION_STRUCTURE_RESERVED_BIT_9_NV = VkBuildAccelerationStructureFlagsKHR.Reserved9NV;
-        public const VkBuildAccelerationStructureFlagsKHR VK_BUILD_ACCELERATION_STRUCTURE_RESERVED_BIT_10_NV = VkBuildAccelerationStructureFlagsKHR.Reserved10NV;
+        public const VkBuildAccelerationStructureFlagsKHR VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISPLACEMENT_MICROMAP_UPDATE_NV = VkBuildAccelerationStructureFlagsKHR.AllowDisplacementMicromapUpdateNV;
+        public const VkBuildAccelerationStructureFlagsKHR VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DATA_ACCESS_KHR = VkBuildAccelerationStructureFlagsKHR.AllowDataAccessKHR;
     }
 
     [Flags]
@@ -5963,50 +6393,6 @@ namespace Vulkan
         public const VkFramebufferCreateFlags VK_FRAMEBUFFER_CREATE_IMAGELESS_BIT = VkFramebufferCreateFlags.Imageless;
     }
 
-    public enum VkScopeNV : int
-    {
-        VK_SCOPE_DEVICE_NV = 1,
-        VK_SCOPE_WORKGROUP_NV = 2,
-        VK_SCOPE_SUBGROUP_NV = 3,
-        VK_SCOPE_QUEUE_FAMILY_NV = 5,
-    }
-    public static partial class RawConstants
-    {
-        public const VkScopeNV VK_SCOPE_DEVICE_NV = VkScopeNV.VK_SCOPE_DEVICE_NV;
-        public const VkScopeNV VK_SCOPE_WORKGROUP_NV = VkScopeNV.VK_SCOPE_WORKGROUP_NV;
-        public const VkScopeNV VK_SCOPE_SUBGROUP_NV = VkScopeNV.VK_SCOPE_SUBGROUP_NV;
-        public const VkScopeNV VK_SCOPE_QUEUE_FAMILY_NV = VkScopeNV.VK_SCOPE_QUEUE_FAMILY_NV;
-    }
-
-    public enum VkComponentTypeNV : int
-    {
-        VK_COMPONENT_TYPE_FLOAT16_NV = 0,
-        VK_COMPONENT_TYPE_FLOAT32_NV = 1,
-        VK_COMPONENT_TYPE_FLOAT64_NV = 2,
-        VK_COMPONENT_TYPE_SINT8_NV = 3,
-        VK_COMPONENT_TYPE_SINT16_NV = 4,
-        VK_COMPONENT_TYPE_SINT32_NV = 5,
-        VK_COMPONENT_TYPE_SINT64_NV = 6,
-        VK_COMPONENT_TYPE_UINT8_NV = 7,
-        VK_COMPONENT_TYPE_UINT16_NV = 8,
-        VK_COMPONENT_TYPE_UINT32_NV = 9,
-        VK_COMPONENT_TYPE_UINT64_NV = 10,
-    }
-    public static partial class RawConstants
-    {
-        public const VkComponentTypeNV VK_COMPONENT_TYPE_FLOAT16_NV = VkComponentTypeNV.VK_COMPONENT_TYPE_FLOAT16_NV;
-        public const VkComponentTypeNV VK_COMPONENT_TYPE_FLOAT32_NV = VkComponentTypeNV.VK_COMPONENT_TYPE_FLOAT32_NV;
-        public const VkComponentTypeNV VK_COMPONENT_TYPE_FLOAT64_NV = VkComponentTypeNV.VK_COMPONENT_TYPE_FLOAT64_NV;
-        public const VkComponentTypeNV VK_COMPONENT_TYPE_SINT8_NV = VkComponentTypeNV.VK_COMPONENT_TYPE_SINT8_NV;
-        public const VkComponentTypeNV VK_COMPONENT_TYPE_SINT16_NV = VkComponentTypeNV.VK_COMPONENT_TYPE_SINT16_NV;
-        public const VkComponentTypeNV VK_COMPONENT_TYPE_SINT32_NV = VkComponentTypeNV.VK_COMPONENT_TYPE_SINT32_NV;
-        public const VkComponentTypeNV VK_COMPONENT_TYPE_SINT64_NV = VkComponentTypeNV.VK_COMPONENT_TYPE_SINT64_NV;
-        public const VkComponentTypeNV VK_COMPONENT_TYPE_UINT8_NV = VkComponentTypeNV.VK_COMPONENT_TYPE_UINT8_NV;
-        public const VkComponentTypeNV VK_COMPONENT_TYPE_UINT16_NV = VkComponentTypeNV.VK_COMPONENT_TYPE_UINT16_NV;
-        public const VkComponentTypeNV VK_COMPONENT_TYPE_UINT32_NV = VkComponentTypeNV.VK_COMPONENT_TYPE_UINT32_NV;
-        public const VkComponentTypeNV VK_COMPONENT_TYPE_UINT64_NV = VkComponentTypeNV.VK_COMPONENT_TYPE_UINT64_NV;
-    }
-
     [Flags]
     public enum VkDeviceDiagnosticsConfigFlagsNV : int
     {
@@ -6157,6 +6543,15 @@ namespace Vulkan
     {
     }
 
+    [Flags]
+    public enum VkRefreshObjectFlagsKHR : int
+    {
+        None = 0,
+    }
+    public static partial class RawConstants
+    {
+    }
+
     public enum VkPerformanceConfigurationTypeINTEL : int
     {
         VK_PERFORMANCE_CONFIGURATION_TYPE_COMMAND_QUEUE_METRICS_DISCOVERY_ACTIVATED_INTEL = 0,
@@ -6275,6 +6670,51 @@ namespace Vulkan
     {
     }
 
+    public enum VkFaultLevel : int
+    {
+        Unassigned = 0,
+        Critical = 1,
+        Recoverable = 2,
+        Warning = 3,
+    }
+    public static partial class RawConstants
+    {
+        public const VkFaultLevel VK_FAULT_LEVEL_UNASSIGNED = VkFaultLevel.Unassigned;
+        public const VkFaultLevel VK_FAULT_LEVEL_CRITICAL = VkFaultLevel.Critical;
+        public const VkFaultLevel VK_FAULT_LEVEL_RECOVERABLE = VkFaultLevel.Recoverable;
+        public const VkFaultLevel VK_FAULT_LEVEL_WARNING = VkFaultLevel.Warning;
+    }
+
+    public enum VkFaultType : int
+    {
+        Invalid = 0,
+        Unassigned = 1,
+        Implementation = 2,
+        System = 3,
+        PhysicalDevice = 4,
+        CommandBufferFull = 5,
+        InvalidApiUsage = 6,
+    }
+    public static partial class RawConstants
+    {
+        public const VkFaultType VK_FAULT_TYPE_INVALID = VkFaultType.Invalid;
+        public const VkFaultType VK_FAULT_TYPE_UNASSIGNED = VkFaultType.Unassigned;
+        public const VkFaultType VK_FAULT_TYPE_IMPLEMENTATION = VkFaultType.Implementation;
+        public const VkFaultType VK_FAULT_TYPE_SYSTEM = VkFaultType.System;
+        public const VkFaultType VK_FAULT_TYPE_PHYSICAL_DEVICE = VkFaultType.PhysicalDevice;
+        public const VkFaultType VK_FAULT_TYPE_COMMAND_BUFFER_FULL = VkFaultType.CommandBufferFull;
+        public const VkFaultType VK_FAULT_TYPE_INVALID_API_USAGE = VkFaultType.InvalidApiUsage;
+    }
+
+    public enum VkFaultQueryBehavior : int
+    {
+        GetAndClearAllFaults = 0,
+    }
+    public static partial class RawConstants
+    {
+        public const VkFaultQueryBehavior VK_FAULT_QUERY_BEHAVIOR_GET_AND_CLEAR_ALL_FAULTS = VkFaultQueryBehavior.GetAndClearAllFaults;
+    }
+
     [Flags]
     public enum VkToolPurposeFlags : int
     {
@@ -6296,6 +6736,15 @@ namespace Vulkan
         public const VkToolPurposeFlags VK_TOOL_PURPOSE_MODIFYING_FEATURES_BIT = VkToolPurposeFlags.ModifyingFeatures;
         public const VkToolPurposeFlags VK_TOOL_PURPOSE_DEBUG_REPORTING_BIT_EXT = VkToolPurposeFlags.DebugReportingEXT;
         public const VkToolPurposeFlags VK_TOOL_PURPOSE_DEBUG_MARKERS_BIT_EXT = VkToolPurposeFlags.DebugMarkersEXT;
+    }
+
+    public enum VkPipelineMatchControl : int
+    {
+        ApplicationUuidExactMatch = 0,
+    }
+    public static partial class RawConstants
+    {
+        public const VkPipelineMatchControl VK_PIPELINE_MATCH_CONTROL_APPLICATION_UUID_EXACT_MATCH = VkPipelineMatchControl.ApplicationUuidExactMatch;
     }
 
     public enum VkFragmentShadingRateCombinerOpKHR : int
@@ -6418,9 +6867,13 @@ namespace Vulkan
         ShaderStorageWrite = 4,
         VideoDecodeReadKHR = 8,
         VideoDecodeWriteKHR = 16,
-        Reserved46EXT = 16384,
+        Reserved46Intel = 16384,
         VideoEncodeReadKHR = 32,
         VideoEncodeWriteKHR = 64,
+        Reserved51Qcom = 524288,
+        Reserved52Qcom = 1048576,
+        Reserved53Qcom = 2097152,
+        Reserved54Qcom = 4194304,
         TransformFeedbackWriteEXT = 33554432,
         TransformFeedbackCounterReadEXT = 67108864,
         TransformFeedbackCounterWriteEXT = 134217728,
@@ -6437,8 +6890,12 @@ namespace Vulkan
         ShaderBindingTableReadKHR = 256,
         MicromapReadEXT = 4096,
         MicromapWriteEXT = 8192,
+        Reserved49Arm = 131072,
+        Reserved50Arm = 262144,
         OpticalFlowReadNV = 1024,
         OpticalFlowWriteNV = 2048,
+        Reserved47EXT = 32768,
+        Reserved48EXT = 65536,
     }
     public static partial class RawConstants
     {
@@ -6465,9 +6922,13 @@ namespace Vulkan
         public const VkAccessFlags2 VK_ACCESS_2_SHADER_STORAGE_WRITE_BIT = VkAccessFlags2.ShaderStorageWrite;
         public const VkAccessFlags2 VK_ACCESS_2_VIDEO_DECODE_READ_BIT_KHR = VkAccessFlags2.VideoDecodeReadKHR;
         public const VkAccessFlags2 VK_ACCESS_2_VIDEO_DECODE_WRITE_BIT_KHR = VkAccessFlags2.VideoDecodeWriteKHR;
-        public const VkAccessFlags2 VK_ACCESS_2_RESERVED_46_BIT_EXT = VkAccessFlags2.Reserved46EXT;
+        public const VkAccessFlags2 VK_ACCESS_2_RESERVED_46_BIT_INTEL = VkAccessFlags2.Reserved46Intel;
         public const VkAccessFlags2 VK_ACCESS_2_VIDEO_ENCODE_READ_BIT_KHR = VkAccessFlags2.VideoEncodeReadKHR;
         public const VkAccessFlags2 VK_ACCESS_2_VIDEO_ENCODE_WRITE_BIT_KHR = VkAccessFlags2.VideoEncodeWriteKHR;
+        public const VkAccessFlags2 VK_ACCESS_2_RESERVED_51_BIT_QCOM = VkAccessFlags2.Reserved51Qcom;
+        public const VkAccessFlags2 VK_ACCESS_2_RESERVED_52_BIT_QCOM = VkAccessFlags2.Reserved52Qcom;
+        public const VkAccessFlags2 VK_ACCESS_2_RESERVED_53_BIT_QCOM = VkAccessFlags2.Reserved53Qcom;
+        public const VkAccessFlags2 VK_ACCESS_2_RESERVED_54_BIT_QCOM = VkAccessFlags2.Reserved54Qcom;
         public const VkAccessFlags2 VK_ACCESS_2_TRANSFORM_FEEDBACK_WRITE_BIT_EXT = VkAccessFlags2.TransformFeedbackWriteEXT;
         public const VkAccessFlags2 VK_ACCESS_2_TRANSFORM_FEEDBACK_COUNTER_READ_BIT_EXT = VkAccessFlags2.TransformFeedbackCounterReadEXT;
         public const VkAccessFlags2 VK_ACCESS_2_TRANSFORM_FEEDBACK_COUNTER_WRITE_BIT_EXT = VkAccessFlags2.TransformFeedbackCounterWriteEXT;
@@ -6484,8 +6945,12 @@ namespace Vulkan
         public const VkAccessFlags2 VK_ACCESS_2_SHADER_BINDING_TABLE_READ_BIT_KHR = VkAccessFlags2.ShaderBindingTableReadKHR;
         public const VkAccessFlags2 VK_ACCESS_2_MICROMAP_READ_BIT_EXT = VkAccessFlags2.MicromapReadEXT;
         public const VkAccessFlags2 VK_ACCESS_2_MICROMAP_WRITE_BIT_EXT = VkAccessFlags2.MicromapWriteEXT;
+        public const VkAccessFlags2 VK_ACCESS_2_RESERVED_49_BIT_ARM = VkAccessFlags2.Reserved49Arm;
+        public const VkAccessFlags2 VK_ACCESS_2_RESERVED_50_BIT_ARM = VkAccessFlags2.Reserved50Arm;
         public const VkAccessFlags2 VK_ACCESS_2_OPTICAL_FLOW_READ_BIT_NV = VkAccessFlags2.OpticalFlowReadNV;
         public const VkAccessFlags2 VK_ACCESS_2_OPTICAL_FLOW_WRITE_BIT_NV = VkAccessFlags2.OpticalFlowWriteNV;
+        public const VkAccessFlags2 VK_ACCESS_2_RESERVED_47_BIT_EXT = VkAccessFlags2.Reserved47EXT;
+        public const VkAccessFlags2 VK_ACCESS_2_RESERVED_48_BIT_EXT = VkAccessFlags2.Reserved48EXT;
     }
 
     [Flags]
@@ -6527,12 +6992,14 @@ namespace Vulkan
         FragmentDensityProcessEXT = 8388608,
         TaskShaderEXT = 524288,
         MeshShaderEXT = 1048576,
-        SubpassShadingHuawei = 128,
+        SubpassShaderHuawei = 128,
         InvocationMaskHuawei = 256,
         AccelerationStructureCopyKHR = 268435456,
         MicromapBuildEXT = 1073741824,
-        Reseved41Huawei = 512,
+        ClusterCullingShaderHuawei = 512,
+        Reserved43Arm = 2048,
         OpticalFlowNV = 536870912,
+        Reserved42EXT = 1024,
     }
     public static partial class RawConstants
     {
@@ -6572,12 +7039,14 @@ namespace Vulkan
         public const VkPipelineStageFlags2 VK_PIPELINE_STAGE_2_FRAGMENT_DENSITY_PROCESS_BIT_EXT = VkPipelineStageFlags2.FragmentDensityProcessEXT;
         public const VkPipelineStageFlags2 VK_PIPELINE_STAGE_2_TASK_SHADER_BIT_EXT = VkPipelineStageFlags2.TaskShaderEXT;
         public const VkPipelineStageFlags2 VK_PIPELINE_STAGE_2_MESH_SHADER_BIT_EXT = VkPipelineStageFlags2.MeshShaderEXT;
-        public const VkPipelineStageFlags2 VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI = VkPipelineStageFlags2.SubpassShadingHuawei;
+        public const VkPipelineStageFlags2 VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI = VkPipelineStageFlags2.SubpassShaderHuawei;
         public const VkPipelineStageFlags2 VK_PIPELINE_STAGE_2_INVOCATION_MASK_BIT_HUAWEI = VkPipelineStageFlags2.InvocationMaskHuawei;
         public const VkPipelineStageFlags2 VK_PIPELINE_STAGE_2_ACCELERATION_STRUCTURE_COPY_BIT_KHR = VkPipelineStageFlags2.AccelerationStructureCopyKHR;
         public const VkPipelineStageFlags2 VK_PIPELINE_STAGE_2_MICROMAP_BUILD_BIT_EXT = VkPipelineStageFlags2.MicromapBuildEXT;
-        public const VkPipelineStageFlags2 VK_PIPELINE_STAGE_2_RESEVED_41_BIT_HUAWEI = VkPipelineStageFlags2.Reseved41Huawei;
+        public const VkPipelineStageFlags2 VK_PIPELINE_STAGE_2_CLUSTER_CULLING_SHADER_BIT_HUAWEI = VkPipelineStageFlags2.ClusterCullingShaderHuawei;
+        public const VkPipelineStageFlags2 VK_PIPELINE_STAGE_2_RESERVED_43_BIT_ARM = VkPipelineStageFlags2.Reserved43Arm;
         public const VkPipelineStageFlags2 VK_PIPELINE_STAGE_2_OPTICAL_FLOW_BIT_NV = VkPipelineStageFlags2.OpticalFlowNV;
+        public const VkPipelineStageFlags2 VK_PIPELINE_STAGE_2_RESERVED_42_BIT_EXT = VkPipelineStageFlags2.Reserved42EXT;
     }
 
     [Flags]
@@ -6615,6 +7084,30 @@ namespace Vulkan
         public const VkPipelineLayoutCreateFlags VK_PIPELINE_LAYOUT_CREATE_INDEPENDENT_SETS_BIT_EXT = VkPipelineLayoutCreateFlags.IndependentSetsEXT;
     }
 
+    public enum VkSciSyncClientTypeNV : int
+    {
+        VK_SCI_SYNC_CLIENT_TYPE_SIGNALER_NV = 0,
+        VK_SCI_SYNC_CLIENT_TYPE_WAITER_NV = 1,
+        VK_SCI_SYNC_CLIENT_TYPE_SIGNALER_WAITER_NV = 2,
+    }
+    public static partial class RawConstants
+    {
+        public const VkSciSyncClientTypeNV VK_SCI_SYNC_CLIENT_TYPE_SIGNALER_NV = VkSciSyncClientTypeNV.VK_SCI_SYNC_CLIENT_TYPE_SIGNALER_NV;
+        public const VkSciSyncClientTypeNV VK_SCI_SYNC_CLIENT_TYPE_WAITER_NV = VkSciSyncClientTypeNV.VK_SCI_SYNC_CLIENT_TYPE_WAITER_NV;
+        public const VkSciSyncClientTypeNV VK_SCI_SYNC_CLIENT_TYPE_SIGNALER_WAITER_NV = VkSciSyncClientTypeNV.VK_SCI_SYNC_CLIENT_TYPE_SIGNALER_WAITER_NV;
+    }
+
+    public enum VkSciSyncPrimitiveTypeNV : int
+    {
+        VK_SCI_SYNC_PRIMITIVE_TYPE_FENCE_NV = 0,
+        VK_SCI_SYNC_PRIMITIVE_TYPE_SEMAPHORE_NV = 1,
+    }
+    public static partial class RawConstants
+    {
+        public const VkSciSyncPrimitiveTypeNV VK_SCI_SYNC_PRIMITIVE_TYPE_FENCE_NV = VkSciSyncPrimitiveTypeNV.VK_SCI_SYNC_PRIMITIVE_TYPE_FENCE_NV;
+        public const VkSciSyncPrimitiveTypeNV VK_SCI_SYNC_PRIMITIVE_TYPE_SEMAPHORE_NV = VkSciSyncPrimitiveTypeNV.VK_SCI_SYNC_PRIMITIVE_TYPE_SEMAPHORE_NV;
+    }
+
     public enum VkProvokingVertexModeEXT : int
     {
         FirstVertexEXT = 0,
@@ -6624,6 +7117,15 @@ namespace Vulkan
     {
         public const VkProvokingVertexModeEXT VK_PROVOKING_VERTEX_MODE_FIRST_VERTEX_EXT = VkProvokingVertexModeEXT.FirstVertexEXT;
         public const VkProvokingVertexModeEXT VK_PROVOKING_VERTEX_MODE_LAST_VERTEX_EXT = VkProvokingVertexModeEXT.LastVertexEXT;
+    }
+
+    public enum VkPipelineCacheValidationVersion : int
+    {
+        SafetyCriticalOne = 1,
+    }
+    public static partial class RawConstants
+    {
+        public const VkPipelineCacheValidationVersion VK_PIPELINE_CACHE_VALIDATION_VERSION_SAFETY_CRITICAL_ONE = VkPipelineCacheValidationVersion.SafetyCriticalOne;
     }
 
     public enum VkAccelerationStructureMotionInstanceTypeNV : int
@@ -6640,18 +7142,18 @@ namespace Vulkan
     }
 
     [Flags]
-    public enum VkPipelineColorBlendStateCreateFlags : int
+    public enum VkPipelineColorBlendStateCreateFlagBits : int
     {
         None = 0,
         RasterizationOrderAttachmentAccessEXT = 1,
     }
     public static partial class RawConstants
     {
-        public const VkPipelineColorBlendStateCreateFlags VK_PIPELINE_COLOR_BLEND_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_BIT_EXT = VkPipelineColorBlendStateCreateFlags.RasterizationOrderAttachmentAccessEXT;
+        public const VkPipelineColorBlendStateCreateFlagBits VK_PIPELINE_COLOR_BLEND_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_BIT_EXT = VkPipelineColorBlendStateCreateFlagBits.RasterizationOrderAttachmentAccessEXT;
     }
 
     [Flags]
-    public enum VkPipelineDepthStencilStateCreateFlags : int
+    public enum VkPipelineDepthStencilStateCreateFlagBits : int
     {
         None = 0,
         RasterizationOrderAttachmentDepthAccessEXT = 1,
@@ -6659,8 +7161,8 @@ namespace Vulkan
     }
     public static partial class RawConstants
     {
-        public const VkPipelineDepthStencilStateCreateFlags VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_EXT = VkPipelineDepthStencilStateCreateFlags.RasterizationOrderAttachmentDepthAccessEXT;
-        public const VkPipelineDepthStencilStateCreateFlags VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_EXT = VkPipelineDepthStencilStateCreateFlags.RasterizationOrderAttachmentStencilAccessEXT;
+        public const VkPipelineDepthStencilStateCreateFlagBits VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_EXT = VkPipelineDepthStencilStateCreateFlagBits.RasterizationOrderAttachmentDepthAccessEXT;
+        public const VkPipelineDepthStencilStateCreateFlagBits VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_EXT = VkPipelineDepthStencilStateCreateFlagBits.RasterizationOrderAttachmentStencilAccessEXT;
     }
 
     [Flags]
@@ -6700,6 +7202,17 @@ namespace Vulkan
     {
         public const VkDeviceAddressBindingTypeEXT VK_DEVICE_ADDRESS_BINDING_TYPE_BIND_EXT = VkDeviceAddressBindingTypeEXT.BindEXT;
         public const VkDeviceAddressBindingTypeEXT VK_DEVICE_ADDRESS_BINDING_TYPE_UNBIND_EXT = VkDeviceAddressBindingTypeEXT.UnbindEXT;
+    }
+
+    [Flags]
+    public enum VkFrameBoundaryFlagsEXT : int
+    {
+        None = 0,
+        FrameEndEXT = 1,
+    }
+    public static partial class RawConstants
+    {
+        public const VkFrameBoundaryFlagsEXT VK_FRAME_BOUNDARY_FRAME_END_BIT_EXT = VkFrameBoundaryFlagsEXT.FrameEndEXT;
     }
 
     [Flags]
@@ -6805,10 +7318,12 @@ namespace Vulkan
     {
         None = 0,
         ProtectedContentKHR = 1,
+        AllowEncodeParameterOptimizationsKHR = 2,
     }
     public static partial class RawConstants
     {
         public const VkVideoSessionCreateFlagsKHR VK_VIDEO_SESSION_CREATE_PROTECTED_CONTENT_BIT_KHR = VkVideoSessionCreateFlagsKHR.ProtectedContentKHR;
+        public const VkVideoSessionCreateFlagsKHR VK_VIDEO_SESSION_CREATE_ALLOW_ENCODE_PARAMETER_OPTIMIZATIONS_BIT_KHR = VkVideoSessionCreateFlagsKHR.AllowEncodeParameterOptimizationsKHR;
     }
 
     [Flags]
@@ -6832,13 +7347,13 @@ namespace Vulkan
         None = 0,
         ResetKHR = 1,
         EncodeRateControlKHR = 2,
-        EncodeRateControlLayerKHR = 4,
+        EncodeQualityLevelKHR = 4,
     }
     public static partial class RawConstants
     {
         public const VkVideoCodingControlFlagsKHR VK_VIDEO_CODING_CONTROL_RESET_BIT_KHR = VkVideoCodingControlFlagsKHR.ResetKHR;
         public const VkVideoCodingControlFlagsKHR VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_BIT_KHR = VkVideoCodingControlFlagsKHR.EncodeRateControlKHR;
-        public const VkVideoCodingControlFlagsKHR VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_LAYER_BIT_KHR = VkVideoCodingControlFlagsKHR.EncodeRateControlLayerKHR;
+        public const VkVideoCodingControlFlagsKHR VK_VIDEO_CODING_CONTROL_ENCODE_QUALITY_LEVEL_BIT_KHR = VkVideoCodingControlFlagsKHR.EncodeQualityLevelKHR;
     }
 
     public enum VkQueryResultStatusKHR : int
@@ -6846,12 +7361,14 @@ namespace Vulkan
         ErrorKHR = -1,
         NotReadyKHR = 0,
         CompleteKHR = 1,
+        InsufficientBitstreamBufferRangeKHR = -1000299000,
     }
     public static partial class RawConstants
     {
         public const VkQueryResultStatusKHR VK_QUERY_RESULT_STATUS_ERROR_KHR = VkQueryResultStatusKHR.ErrorKHR;
         public const VkQueryResultStatusKHR VK_QUERY_RESULT_STATUS_NOT_READY_KHR = VkQueryResultStatusKHR.NotReadyKHR;
         public const VkQueryResultStatusKHR VK_QUERY_RESULT_STATUS_COMPLETE_KHR = VkQueryResultStatusKHR.CompleteKHR;
+        public const VkQueryResultStatusKHR VK_QUERY_RESULT_STATUS_INSUFFICIENT_BITSTREAM_BUFFER_RANGE_KHR = VkQueryResultStatusKHR.InsufficientBitstreamBufferRangeKHR;
     }
 
     [Flags]
@@ -6942,23 +7459,42 @@ namespace Vulkan
     {
         None = 0,
         PrecedingExternallyEncodedBytesKHR = 1,
+        InsufficientBitstreamBufferRangeDetectionKHR = 2,
     }
     public static partial class RawConstants
     {
         public const VkVideoEncodeCapabilityFlagsKHR VK_VIDEO_ENCODE_CAPABILITY_PRECEDING_EXTERNALLY_ENCODED_BYTES_BIT_KHR = VkVideoEncodeCapabilityFlagsKHR.PrecedingExternallyEncodedBytesKHR;
+        public const VkVideoEncodeCapabilityFlagsKHR VK_VIDEO_ENCODE_CAPABILITY_INSUFFICIENT_BITSTREAM_BUFFER_RANGE_DETECTION_BIT_KHR = VkVideoEncodeCapabilityFlagsKHR.InsufficientBitstreamBufferRangeDetectionKHR;
+    }
+
+    [Flags]
+    public enum VkVideoEncodeFeedbackFlagsKHR : int
+    {
+        None = 0,
+        BitstreamBufferOffsetKHR = 1,
+        BitstreamBytesWrittenKHR = 2,
+        BitstreamHasOverridesKHR = 4,
+    }
+    public static partial class RawConstants
+    {
+        public const VkVideoEncodeFeedbackFlagsKHR VK_VIDEO_ENCODE_FEEDBACK_BITSTREAM_BUFFER_OFFSET_BIT_KHR = VkVideoEncodeFeedbackFlagsKHR.BitstreamBufferOffsetKHR;
+        public const VkVideoEncodeFeedbackFlagsKHR VK_VIDEO_ENCODE_FEEDBACK_BITSTREAM_BYTES_WRITTEN_BIT_KHR = VkVideoEncodeFeedbackFlagsKHR.BitstreamBytesWrittenKHR;
+        public const VkVideoEncodeFeedbackFlagsKHR VK_VIDEO_ENCODE_FEEDBACK_BITSTREAM_HAS_OVERRIDES_BIT_KHR = VkVideoEncodeFeedbackFlagsKHR.BitstreamHasOverridesKHR;
     }
 
     [Flags]
     public enum VkVideoEncodeRateControlModeFlagsKHR : int
     {
         None = 0,
-        NoneKHR = 0,
-        CbrKHR = 1,
-        VbrKHR = 2,
+        DefaultKHR = 0,
+        DisabledKHR = 1,
+        CbrKHR = 2,
+        VbrKHR = 4,
     }
     public static partial class RawConstants
     {
-        public const VkVideoEncodeRateControlModeFlagsKHR VK_VIDEO_ENCODE_RATE_CONTROL_MODE_NONE_BIT_KHR = VkVideoEncodeRateControlModeFlagsKHR.NoneKHR;
+        public const VkVideoEncodeRateControlModeFlagsKHR VK_VIDEO_ENCODE_RATE_CONTROL_MODE_DEFAULT_KHR = VkVideoEncodeRateControlModeFlagsKHR.DefaultKHR;
+        public const VkVideoEncodeRateControlModeFlagsKHR VK_VIDEO_ENCODE_RATE_CONTROL_MODE_DISABLED_BIT_KHR = VkVideoEncodeRateControlModeFlagsKHR.DisabledKHR;
         public const VkVideoEncodeRateControlModeFlagsKHR VK_VIDEO_ENCODE_RATE_CONTROL_MODE_CBR_BIT_KHR = VkVideoEncodeRateControlModeFlagsKHR.CbrKHR;
         public const VkVideoEncodeRateControlModeFlagsKHR VK_VIDEO_ENCODE_RATE_CONTROL_MODE_VBR_BIT_KHR = VkVideoEncodeRateControlModeFlagsKHR.VbrKHR;
     }
@@ -6967,102 +7503,106 @@ namespace Vulkan
     public enum VkVideoEncodeH264CapabilityFlagsEXT : int
     {
         None = 0,
-        Direct8x8InferenceEnabledEXT = 1,
-        Direct8x8InferenceDisabledEXT = 2,
-        SeparateColourPlaneEXT = 4,
-        QpprimeYZeroTransformBypassEXT = 8,
-        ScalingListsEXT = 16,
-        HrdComplianceEXT = 32,
-        ChromaQpOffsetEXT = 64,
-        SecondChromaQpOffsetEXT = 128,
-        PicInitQpMinus26EXT = 256,
-        WeightedPredEXT = 512,
-        WeightedBipredExplicitEXT = 1024,
-        WeightedBipredImplicitEXT = 2048,
-        WeightedPredNoTableEXT = 4096,
-        Transform8x8EXT = 8192,
-        CabacEXT = 16384,
-        CavlcEXT = 32768,
-        DeblockingFilterDisabledEXT = 65536,
-        DeblockingFilterEnabledEXT = 131072,
-        DeblockingFilterPartialEXT = 262144,
-        DisableDirectSpatialMvPredEXT = 524288,
-        MultipleSlicePerFrameEXT = 1048576,
-        SliceMbCountEXT = 2097152,
-        RowUnalignedSliceEXT = 4194304,
-        DifferentSliceTypeEXT = 8388608,
-        BFrameInL1ListEXT = 16777216,
+        HrdComplianceEXT = 1,
+        PredictionWeightTableGeneratedEXT = 2,
+        RowUnalignedSliceEXT = 4,
+        DifferentSliceTypeEXT = 8,
+        BFrameInL0ListEXT = 16,
+        BFrameInL1ListEXT = 32,
+        PerPictureTypeMinMaxQpEXT = 64,
+        PerSliceConstantQpEXT = 128,
+        GeneratePrefixNaluEXT = 256,
     }
     public static partial class RawConstants
     {
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_DIRECT_8X8_INFERENCE_ENABLED_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.Direct8x8InferenceEnabledEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_DIRECT_8X8_INFERENCE_DISABLED_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.Direct8x8InferenceDisabledEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_SEPARATE_COLOUR_PLANE_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.SeparateColourPlaneEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_QPPRIME_Y_ZERO_TRANSFORM_BYPASS_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.QpprimeYZeroTransformBypassEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_SCALING_LISTS_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.ScalingListsEXT;
         public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_HRD_COMPLIANCE_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.HrdComplianceEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_CHROMA_QP_OFFSET_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.ChromaQpOffsetEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_SECOND_CHROMA_QP_OFFSET_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.SecondChromaQpOffsetEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_PIC_INIT_QP_MINUS26_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.PicInitQpMinus26EXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_WEIGHTED_PRED_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.WeightedPredEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_WEIGHTED_BIPRED_EXPLICIT_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.WeightedBipredExplicitEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_WEIGHTED_BIPRED_IMPLICIT_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.WeightedBipredImplicitEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_WEIGHTED_PRED_NO_TABLE_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.WeightedPredNoTableEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_TRANSFORM_8X8_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.Transform8x8EXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_CABAC_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.CabacEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_CAVLC_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.CavlcEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_DEBLOCKING_FILTER_DISABLED_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.DeblockingFilterDisabledEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_DEBLOCKING_FILTER_ENABLED_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.DeblockingFilterEnabledEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_DEBLOCKING_FILTER_PARTIAL_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.DeblockingFilterPartialEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_DISABLE_DIRECT_SPATIAL_MV_PRED_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.DisableDirectSpatialMvPredEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_MULTIPLE_SLICE_PER_FRAME_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.MultipleSlicePerFrameEXT;
-        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_SLICE_MB_COUNT_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.SliceMbCountEXT;
+        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_PREDICTION_WEIGHT_TABLE_GENERATED_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.PredictionWeightTableGeneratedEXT;
         public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_ROW_UNALIGNED_SLICE_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.RowUnalignedSliceEXT;
         public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_DIFFERENT_SLICE_TYPE_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.DifferentSliceTypeEXT;
+        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_B_FRAME_IN_L0_LIST_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.BFrameInL0ListEXT;
         public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_B_FRAME_IN_L1_LIST_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.BFrameInL1ListEXT;
+        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_PER_PICTURE_TYPE_MIN_MAX_QP_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.PerPictureTypeMinMaxQpEXT;
+        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_PER_SLICE_CONSTANT_QP_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.PerSliceConstantQpEXT;
+        public const VkVideoEncodeH264CapabilityFlagsEXT VK_VIDEO_ENCODE_H264_CAPABILITY_GENERATE_PREFIX_NALU_BIT_EXT = VkVideoEncodeH264CapabilityFlagsEXT.GeneratePrefixNaluEXT;
     }
 
     [Flags]
-    public enum VkVideoEncodeH264InputModeFlagsEXT : int
+    public enum VkVideoEncodeH264StdFlagsEXT : int
     {
         None = 0,
-        FrameEXT = 1,
-        SliceEXT = 2,
-        NonVclEXT = 4,
+        SeparateColorPlaneFlagSetEXT = 1,
+        QpprimeYZeroTransformBypassFlagSetEXT = 2,
+        ScalingMatrixPresentFlagSetEXT = 4,
+        ChromaQpIndexOffsetEXT = 8,
+        SecondChromaQpIndexOffsetEXT = 16,
+        PicInitQpMinus26EXT = 32,
+        WeightedPredFlagSetEXT = 64,
+        WeightedBipredIdcExplicitEXT = 128,
+        WeightedBipredIdcImplicitEXT = 256,
+        Transform8x8ModeFlagSetEXT = 512,
+        DirectSpatialMvPredFlagUnsetEXT = 1024,
+        EntropyCodingModeFlagUnsetEXT = 2048,
+        EntropyCodingModeFlagSetEXT = 4096,
+        Direct8x8InferenceFlagUnsetEXT = 8192,
+        ConstrainedIntraPredFlagSetEXT = 16384,
+        DeblockingFilterDisabledEXT = 32768,
+        DeblockingFilterEnabledEXT = 65536,
+        DeblockingFilterPartialEXT = 131072,
+        SliceQpDeltaEXT = 524288,
+        DifferentSliceQpDeltaEXT = 1048576,
     }
     public static partial class RawConstants
     {
-        public const VkVideoEncodeH264InputModeFlagsEXT VK_VIDEO_ENCODE_H264_INPUT_MODE_FRAME_BIT_EXT = VkVideoEncodeH264InputModeFlagsEXT.FrameEXT;
-        public const VkVideoEncodeH264InputModeFlagsEXT VK_VIDEO_ENCODE_H264_INPUT_MODE_SLICE_BIT_EXT = VkVideoEncodeH264InputModeFlagsEXT.SliceEXT;
-        public const VkVideoEncodeH264InputModeFlagsEXT VK_VIDEO_ENCODE_H264_INPUT_MODE_NON_VCL_BIT_EXT = VkVideoEncodeH264InputModeFlagsEXT.NonVclEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_SEPARATE_COLOR_PLANE_FLAG_SET_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.SeparateColorPlaneFlagSetEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_QPPRIME_Y_ZERO_TRANSFORM_BYPASS_FLAG_SET_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.QpprimeYZeroTransformBypassFlagSetEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_SCALING_MATRIX_PRESENT_FLAG_SET_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.ScalingMatrixPresentFlagSetEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_CHROMA_QP_INDEX_OFFSET_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.ChromaQpIndexOffsetEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_SECOND_CHROMA_QP_INDEX_OFFSET_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.SecondChromaQpIndexOffsetEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_PIC_INIT_QP_MINUS26_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.PicInitQpMinus26EXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_WEIGHTED_PRED_FLAG_SET_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.WeightedPredFlagSetEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_WEIGHTED_BIPRED_IDC_EXPLICIT_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.WeightedBipredIdcExplicitEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_WEIGHTED_BIPRED_IDC_IMPLICIT_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.WeightedBipredIdcImplicitEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_TRANSFORM_8X8_MODE_FLAG_SET_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.Transform8x8ModeFlagSetEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_DIRECT_SPATIAL_MV_PRED_FLAG_UNSET_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.DirectSpatialMvPredFlagUnsetEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_ENTROPY_CODING_MODE_FLAG_UNSET_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.EntropyCodingModeFlagUnsetEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_ENTROPY_CODING_MODE_FLAG_SET_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.EntropyCodingModeFlagSetEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_DIRECT_8X8_INFERENCE_FLAG_UNSET_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.Direct8x8InferenceFlagUnsetEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_CONSTRAINED_INTRA_PRED_FLAG_SET_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.ConstrainedIntraPredFlagSetEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_DEBLOCKING_FILTER_DISABLED_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.DeblockingFilterDisabledEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_DEBLOCKING_FILTER_ENABLED_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.DeblockingFilterEnabledEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_DEBLOCKING_FILTER_PARTIAL_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.DeblockingFilterPartialEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_SLICE_QP_DELTA_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.SliceQpDeltaEXT;
+        public const VkVideoEncodeH264StdFlagsEXT VK_VIDEO_ENCODE_H264_STD_DIFFERENT_SLICE_QP_DELTA_BIT_EXT = VkVideoEncodeH264StdFlagsEXT.DifferentSliceQpDeltaEXT;
     }
 
     [Flags]
-    public enum VkVideoEncodeH264OutputModeFlagsEXT : int
+    public enum VkVideoEncodeH264RateControlFlagsEXT : int
     {
         None = 0,
-        FrameEXT = 1,
-        SliceEXT = 2,
-        NonVclEXT = 4,
+        AttemptHrdComplianceEXT = 1,
+        RegularGopEXT = 2,
+        ReferencePatternFlatEXT = 4,
+        ReferencePatternDyadicEXT = 8,
+        TemporalLayerPatternDyadicEXT = 16,
     }
     public static partial class RawConstants
     {
-        public const VkVideoEncodeH264OutputModeFlagsEXT VK_VIDEO_ENCODE_H264_OUTPUT_MODE_FRAME_BIT_EXT = VkVideoEncodeH264OutputModeFlagsEXT.FrameEXT;
-        public const VkVideoEncodeH264OutputModeFlagsEXT VK_VIDEO_ENCODE_H264_OUTPUT_MODE_SLICE_BIT_EXT = VkVideoEncodeH264OutputModeFlagsEXT.SliceEXT;
-        public const VkVideoEncodeH264OutputModeFlagsEXT VK_VIDEO_ENCODE_H264_OUTPUT_MODE_NON_VCL_BIT_EXT = VkVideoEncodeH264OutputModeFlagsEXT.NonVclEXT;
+        public const VkVideoEncodeH264RateControlFlagsEXT VK_VIDEO_ENCODE_H264_RATE_CONTROL_ATTEMPT_HRD_COMPLIANCE_BIT_EXT = VkVideoEncodeH264RateControlFlagsEXT.AttemptHrdComplianceEXT;
+        public const VkVideoEncodeH264RateControlFlagsEXT VK_VIDEO_ENCODE_H264_RATE_CONTROL_REGULAR_GOP_BIT_EXT = VkVideoEncodeH264RateControlFlagsEXT.RegularGopEXT;
+        public const VkVideoEncodeH264RateControlFlagsEXT VK_VIDEO_ENCODE_H264_RATE_CONTROL_REFERENCE_PATTERN_FLAT_BIT_EXT = VkVideoEncodeH264RateControlFlagsEXT.ReferencePatternFlatEXT;
+        public const VkVideoEncodeH264RateControlFlagsEXT VK_VIDEO_ENCODE_H264_RATE_CONTROL_REFERENCE_PATTERN_DYADIC_BIT_EXT = VkVideoEncodeH264RateControlFlagsEXT.ReferencePatternDyadicEXT;
+        public const VkVideoEncodeH264RateControlFlagsEXT VK_VIDEO_ENCODE_H264_RATE_CONTROL_TEMPORAL_LAYER_PATTERN_DYADIC_BIT_EXT = VkVideoEncodeH264RateControlFlagsEXT.TemporalLayerPatternDyadicEXT;
     }
 
-    public enum VkVideoEncodeH264RateControlStructureEXT : int
+    [Flags]
+    public enum VkHostImageCopyFlagsEXT : int
     {
-        UnknownEXT = 0,
-        FlatEXT = 1,
-        DyadicEXT = 2,
+        None = 0,
+        MemcpyEXT = 1,
     }
     public static partial class RawConstants
     {
-        public const VkVideoEncodeH264RateControlStructureEXT VK_VIDEO_ENCODE_H264_RATE_CONTROL_STRUCTURE_UNKNOWN_EXT = VkVideoEncodeH264RateControlStructureEXT.UnknownEXT;
-        public const VkVideoEncodeH264RateControlStructureEXT VK_VIDEO_ENCODE_H264_RATE_CONTROL_STRUCTURE_FLAT_EXT = VkVideoEncodeH264RateControlStructureEXT.FlatEXT;
-        public const VkVideoEncodeH264RateControlStructureEXT VK_VIDEO_ENCODE_H264_RATE_CONTROL_STRUCTURE_DYADIC_EXT = VkVideoEncodeH264RateControlStructureEXT.DyadicEXT;
+        public const VkHostImageCopyFlagsEXT VK_HOST_IMAGE_COPY_MEMCPY_EXT = VkHostImageCopyFlagsEXT.MemcpyEXT;
     }
 
     [Flags]
@@ -7131,6 +7671,7 @@ namespace Vulkan
         FragmentShadingRateAttachmentKHR = 1073741824,
         Reserved44EXT = 4096,
         Reserved45EXT = 8192,
+        HostImageTransferEXT = 16384,
         VideoEncodeInputKHR = 134217728,
         VideoEncodeDpbKHR = 268435456,
         LinearColorAttachmentNV = 64,
@@ -7138,10 +7679,12 @@ namespace Vulkan
         WeightSampledImageQcom = 8,
         BlockMatchingQcom = 16,
         BoxFilterSampledQcom = 32,
+        Reserved47Arm = 32768,
         Reserved39EXT = 128,
         OpticalFlowImageNV = 256,
         OpticalFlowVectorNV = 512,
         OpticalFlowCostNV = 1024,
+        Reserved48EXT = 65536,
     }
     public static partial class RawConstants
     {
@@ -7179,6 +7722,7 @@ namespace Vulkan
         public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR = VkFormatFeatureFlags2.FragmentShadingRateAttachmentKHR;
         public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_RESERVED_44_BIT_EXT = VkFormatFeatureFlags2.Reserved44EXT;
         public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_RESERVED_45_BIT_EXT = VkFormatFeatureFlags2.Reserved45EXT;
+        public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_HOST_IMAGE_TRANSFER_BIT_EXT = VkFormatFeatureFlags2.HostImageTransferEXT;
         public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_VIDEO_ENCODE_INPUT_BIT_KHR = VkFormatFeatureFlags2.VideoEncodeInputKHR;
         public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_VIDEO_ENCODE_DPB_BIT_KHR = VkFormatFeatureFlags2.VideoEncodeDpbKHR;
         public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_LINEAR_COLOR_ATTACHMENT_BIT_NV = VkFormatFeatureFlags2.LinearColorAttachmentNV;
@@ -7186,10 +7730,12 @@ namespace Vulkan
         public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_WEIGHT_SAMPLED_IMAGE_BIT_QCOM = VkFormatFeatureFlags2.WeightSampledImageQcom;
         public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_BLOCK_MATCHING_BIT_QCOM = VkFormatFeatureFlags2.BlockMatchingQcom;
         public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_BOX_FILTER_SAMPLED_BIT_QCOM = VkFormatFeatureFlags2.BoxFilterSampledQcom;
+        public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_RESERVED_47_BIT_ARM = VkFormatFeatureFlags2.Reserved47Arm;
         public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_RESERVED_39_BIT_EXT = VkFormatFeatureFlags2.Reserved39EXT;
         public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_OPTICAL_FLOW_IMAGE_BIT_NV = VkFormatFeatureFlags2.OpticalFlowImageNV;
         public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_OPTICAL_FLOW_VECTOR_BIT_NV = VkFormatFeatureFlags2.OpticalFlowVectorNV;
         public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_OPTICAL_FLOW_COST_BIT_NV = VkFormatFeatureFlags2.OpticalFlowCostNV;
+        public const VkFormatFeatureFlags2 VK_FORMAT_FEATURE_2_RESERVED_48_BIT_EXT = VkFormatFeatureFlags2.Reserved48EXT;
     }
 
     [Flags]
@@ -7213,104 +7759,99 @@ namespace Vulkan
     public enum VkVideoEncodeH265CapabilityFlagsEXT : int
     {
         None = 0,
-        SeparateColourPlaneEXT = 1,
-        ScalingListsEXT = 2,
-        SampleAdaptiveOffsetEnabledEXT = 4,
-        PcmEnableEXT = 8,
-        SpsTemporalMvpEnabledEXT = 16,
-        HrdComplianceEXT = 32,
-        InitQpMinus26EXT = 64,
-        Log2ParallelMergeLevelMinus2EXT = 128,
-        SignDataHidingEnabledEXT = 256,
-        TransformSkipEnabledEXT = 512,
-        TransformSkipDisabledEXT = 1024,
-        PpsSliceChromaQpOffsetsPresentEXT = 2048,
-        WeightedPredEXT = 4096,
-        WeightedBipredEXT = 8192,
-        WeightedPredNoTableEXT = 16384,
-        TransquantBypassEnabledEXT = 32768,
-        EntropyCodingSyncEnabledEXT = 65536,
-        DeblockingFilterOverrideEnabledEXT = 131072,
-        MultipleTilePerFrameEXT = 262144,
-        MultipleSlicePerTileEXT = 524288,
-        MultipleTilePerSliceEXT = 1048576,
-        SliceSegmentCtbCountEXT = 2097152,
-        RowUnalignedSliceSegmentEXT = 4194304,
-        DependentSliceSegmentEXT = 8388608,
-        DifferentSliceTypeEXT = 16777216,
-        BFrameInL1ListEXT = 33554432,
+        HrdComplianceEXT = 1,
+        PredictionWeightTableGeneratedEXT = 2,
+        RowUnalignedSliceSegmentEXT = 4,
+        DifferentSliceSegmentTypeEXT = 8,
+        BFrameInL0ListEXT = 16,
+        BFrameInL1ListEXT = 32,
+        PerPictureTypeMinMaxQpEXT = 64,
+        PerSliceSegmentConstantQpEXT = 128,
+        MultipleTilesPerSliceSegmentEXT = 256,
+        MultipleSliceSegmentsPerTileEXT = 512,
     }
     public static partial class RawConstants
     {
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_SEPARATE_COLOUR_PLANE_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.SeparateColourPlaneEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_SCALING_LISTS_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.ScalingListsEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_SAMPLE_ADAPTIVE_OFFSET_ENABLED_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.SampleAdaptiveOffsetEnabledEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_PCM_ENABLE_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.PcmEnableEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_SPS_TEMPORAL_MVP_ENABLED_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.SpsTemporalMvpEnabledEXT;
         public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_HRD_COMPLIANCE_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.HrdComplianceEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_INIT_QP_MINUS26_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.InitQpMinus26EXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_LOG2_PARALLEL_MERGE_LEVEL_MINUS2_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.Log2ParallelMergeLevelMinus2EXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_SIGN_DATA_HIDING_ENABLED_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.SignDataHidingEnabledEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_TRANSFORM_SKIP_ENABLED_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.TransformSkipEnabledEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_TRANSFORM_SKIP_DISABLED_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.TransformSkipDisabledEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_PPS_SLICE_CHROMA_QP_OFFSETS_PRESENT_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.PpsSliceChromaQpOffsetsPresentEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_WEIGHTED_PRED_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.WeightedPredEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_WEIGHTED_BIPRED_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.WeightedBipredEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_WEIGHTED_PRED_NO_TABLE_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.WeightedPredNoTableEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_TRANSQUANT_BYPASS_ENABLED_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.TransquantBypassEnabledEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_ENTROPY_CODING_SYNC_ENABLED_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.EntropyCodingSyncEnabledEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_DEBLOCKING_FILTER_OVERRIDE_ENABLED_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.DeblockingFilterOverrideEnabledEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_TILE_PER_FRAME_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.MultipleTilePerFrameEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_SLICE_PER_TILE_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.MultipleSlicePerTileEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_TILE_PER_SLICE_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.MultipleTilePerSliceEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_SLICE_SEGMENT_CTB_COUNT_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.SliceSegmentCtbCountEXT;
+        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_PREDICTION_WEIGHT_TABLE_GENERATED_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.PredictionWeightTableGeneratedEXT;
         public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_ROW_UNALIGNED_SLICE_SEGMENT_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.RowUnalignedSliceSegmentEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_DEPENDENT_SLICE_SEGMENT_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.DependentSliceSegmentEXT;
-        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_DIFFERENT_SLICE_TYPE_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.DifferentSliceTypeEXT;
+        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_DIFFERENT_SLICE_SEGMENT_TYPE_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.DifferentSliceSegmentTypeEXT;
+        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_B_FRAME_IN_L0_LIST_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.BFrameInL0ListEXT;
         public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_B_FRAME_IN_L1_LIST_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.BFrameInL1ListEXT;
+        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_PER_PICTURE_TYPE_MIN_MAX_QP_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.PerPictureTypeMinMaxQpEXT;
+        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_PER_SLICE_SEGMENT_CONSTANT_QP_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.PerSliceSegmentConstantQpEXT;
+        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_TILES_PER_SLICE_SEGMENT_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.MultipleTilesPerSliceSegmentEXT;
+        public const VkVideoEncodeH265CapabilityFlagsEXT VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_SLICE_SEGMENTS_PER_TILE_BIT_EXT = VkVideoEncodeH265CapabilityFlagsEXT.MultipleSliceSegmentsPerTileEXT;
     }
 
     [Flags]
-    public enum VkVideoEncodeH265InputModeFlagsEXT : int
+    public enum VkVideoEncodeH265StdFlagsEXT : int
     {
         None = 0,
-        FrameEXT = 1,
-        SliceSegmentEXT = 2,
-        NonVclEXT = 4,
+        SeparateColorPlaneFlagSetEXT = 1,
+        SampleAdaptiveOffsetEnabledFlagSetEXT = 2,
+        ScalingListDataPresentFlagSetEXT = 4,
+        PcmEnabledFlagSetEXT = 8,
+        SpsTemporalMvpEnabledFlagSetEXT = 16,
+        InitQpMinus26EXT = 32,
+        WeightedPredFlagSetEXT = 64,
+        WeightedBipredFlagSetEXT = 128,
+        Log2ParallelMergeLevelMinus2EXT = 256,
+        SignDataHidingEnabledFlagSetEXT = 512,
+        TransformSkipEnabledFlagSetEXT = 1024,
+        TransformSkipEnabledFlagUnsetEXT = 2048,
+        PpsSliceChromaQpOffsetsPresentFlagSetEXT = 4096,
+        TransquantBypassEnabledFlagSetEXT = 8192,
+        ConstrainedIntraPredFlagSetEXT = 16384,
+        EntropyCodingSyncEnabledFlagSetEXT = 32768,
+        DeblockingFilterOverrideEnabledFlagSetEXT = 65536,
+        DependentSliceSegmentsEnabledFlagSetEXT = 131072,
+        DependentSliceSegmentFlagSetEXT = 262144,
+        SliceQpDeltaEXT = 524288,
+        DifferentSliceQpDeltaEXT = 1048576,
     }
     public static partial class RawConstants
     {
-        public const VkVideoEncodeH265InputModeFlagsEXT VK_VIDEO_ENCODE_H265_INPUT_MODE_FRAME_BIT_EXT = VkVideoEncodeH265InputModeFlagsEXT.FrameEXT;
-        public const VkVideoEncodeH265InputModeFlagsEXT VK_VIDEO_ENCODE_H265_INPUT_MODE_SLICE_SEGMENT_BIT_EXT = VkVideoEncodeH265InputModeFlagsEXT.SliceSegmentEXT;
-        public const VkVideoEncodeH265InputModeFlagsEXT VK_VIDEO_ENCODE_H265_INPUT_MODE_NON_VCL_BIT_EXT = VkVideoEncodeH265InputModeFlagsEXT.NonVclEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_SEPARATE_COLOR_PLANE_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.SeparateColorPlaneFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_SAMPLE_ADAPTIVE_OFFSET_ENABLED_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.SampleAdaptiveOffsetEnabledFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_SCALING_LIST_DATA_PRESENT_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.ScalingListDataPresentFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_PCM_ENABLED_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.PcmEnabledFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_SPS_TEMPORAL_MVP_ENABLED_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.SpsTemporalMvpEnabledFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_INIT_QP_MINUS26_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.InitQpMinus26EXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_WEIGHTED_PRED_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.WeightedPredFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_WEIGHTED_BIPRED_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.WeightedBipredFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_LOG2_PARALLEL_MERGE_LEVEL_MINUS2_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.Log2ParallelMergeLevelMinus2EXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_SIGN_DATA_HIDING_ENABLED_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.SignDataHidingEnabledFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_TRANSFORM_SKIP_ENABLED_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.TransformSkipEnabledFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_TRANSFORM_SKIP_ENABLED_FLAG_UNSET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.TransformSkipEnabledFlagUnsetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_PPS_SLICE_CHROMA_QP_OFFSETS_PRESENT_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.PpsSliceChromaQpOffsetsPresentFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_TRANSQUANT_BYPASS_ENABLED_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.TransquantBypassEnabledFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_CONSTRAINED_INTRA_PRED_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.ConstrainedIntraPredFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_ENTROPY_CODING_SYNC_ENABLED_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.EntropyCodingSyncEnabledFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_DEBLOCKING_FILTER_OVERRIDE_ENABLED_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.DeblockingFilterOverrideEnabledFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_DEPENDENT_SLICE_SEGMENTS_ENABLED_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.DependentSliceSegmentsEnabledFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_DEPENDENT_SLICE_SEGMENT_FLAG_SET_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.DependentSliceSegmentFlagSetEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_SLICE_QP_DELTA_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.SliceQpDeltaEXT;
+        public const VkVideoEncodeH265StdFlagsEXT VK_VIDEO_ENCODE_H265_STD_DIFFERENT_SLICE_QP_DELTA_BIT_EXT = VkVideoEncodeH265StdFlagsEXT.DifferentSliceQpDeltaEXT;
     }
 
     [Flags]
-    public enum VkVideoEncodeH265OutputModeFlagsEXT : int
+    public enum VkVideoEncodeH265RateControlFlagsEXT : int
     {
         None = 0,
-        FrameEXT = 1,
-        SliceSegmentEXT = 2,
-        NonVclEXT = 4,
+        AttemptHrdComplianceEXT = 1,
+        RegularGopEXT = 2,
+        ReferencePatternFlatEXT = 4,
+        ReferencePatternDyadicEXT = 8,
+        TemporalSubLayerPatternDyadicEXT = 16,
     }
     public static partial class RawConstants
     {
-        public const VkVideoEncodeH265OutputModeFlagsEXT VK_VIDEO_ENCODE_H265_OUTPUT_MODE_FRAME_BIT_EXT = VkVideoEncodeH265OutputModeFlagsEXT.FrameEXT;
-        public const VkVideoEncodeH265OutputModeFlagsEXT VK_VIDEO_ENCODE_H265_OUTPUT_MODE_SLICE_SEGMENT_BIT_EXT = VkVideoEncodeH265OutputModeFlagsEXT.SliceSegmentEXT;
-        public const VkVideoEncodeH265OutputModeFlagsEXT VK_VIDEO_ENCODE_H265_OUTPUT_MODE_NON_VCL_BIT_EXT = VkVideoEncodeH265OutputModeFlagsEXT.NonVclEXT;
-    }
-
-    public enum VkVideoEncodeH265RateControlStructureEXT : int
-    {
-        UnknownEXT = 0,
-        FlatEXT = 1,
-        DyadicEXT = 2,
-    }
-    public static partial class RawConstants
-    {
-        public const VkVideoEncodeH265RateControlStructureEXT VK_VIDEO_ENCODE_H265_RATE_CONTROL_STRUCTURE_UNKNOWN_EXT = VkVideoEncodeH265RateControlStructureEXT.UnknownEXT;
-        public const VkVideoEncodeH265RateControlStructureEXT VK_VIDEO_ENCODE_H265_RATE_CONTROL_STRUCTURE_FLAT_EXT = VkVideoEncodeH265RateControlStructureEXT.FlatEXT;
-        public const VkVideoEncodeH265RateControlStructureEXT VK_VIDEO_ENCODE_H265_RATE_CONTROL_STRUCTURE_DYADIC_EXT = VkVideoEncodeH265RateControlStructureEXT.DyadicEXT;
+        public const VkVideoEncodeH265RateControlFlagsEXT VK_VIDEO_ENCODE_H265_RATE_CONTROL_ATTEMPT_HRD_COMPLIANCE_BIT_EXT = VkVideoEncodeH265RateControlFlagsEXT.AttemptHrdComplianceEXT;
+        public const VkVideoEncodeH265RateControlFlagsEXT VK_VIDEO_ENCODE_H265_RATE_CONTROL_REGULAR_GOP_BIT_EXT = VkVideoEncodeH265RateControlFlagsEXT.RegularGopEXT;
+        public const VkVideoEncodeH265RateControlFlagsEXT VK_VIDEO_ENCODE_H265_RATE_CONTROL_REFERENCE_PATTERN_FLAT_BIT_EXT = VkVideoEncodeH265RateControlFlagsEXT.ReferencePatternFlatEXT;
+        public const VkVideoEncodeH265RateControlFlagsEXT VK_VIDEO_ENCODE_H265_RATE_CONTROL_REFERENCE_PATTERN_DYADIC_BIT_EXT = VkVideoEncodeH265RateControlFlagsEXT.ReferencePatternDyadicEXT;
+        public const VkVideoEncodeH265RateControlFlagsEXT VK_VIDEO_ENCODE_H265_RATE_CONTROL_TEMPORAL_SUB_LAYER_PATTERN_DYADIC_BIT_EXT = VkVideoEncodeH265RateControlFlagsEXT.TemporalSubLayerPatternDyadicEXT;
     }
 
     [Flags]
@@ -7596,10 +8137,12 @@ namespace Vulkan
     public enum VkMicromapTypeEXT : int
     {
         OpacityMicromapEXT = 0,
+        DisplacementMicromapNV = 1000397000,
     }
     public static partial class RawConstants
     {
         public const VkMicromapTypeEXT VK_MICROMAP_TYPE_OPACITY_MICROMAP_EXT = VkMicromapTypeEXT.OpacityMicromapEXT;
+        public const VkMicromapTypeEXT VK_MICROMAP_TYPE_DISPLACEMENT_MICROMAP_NV = VkMicromapTypeEXT.DisplacementMicromapNV;
     }
 
     [Flags]
@@ -7678,6 +8221,19 @@ namespace Vulkan
         public const VkOpacityMicromapSpecialIndexEXT VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_OPAQUE_EXT = VkOpacityMicromapSpecialIndexEXT.FullyUnknownOpaqueEXT;
     }
 
+    public enum VkDepthBiasRepresentationEXT : int
+    {
+        LeastRepresentableValueFormatEXT = 0,
+        LeastRepresentableValueForceUnormEXT = 1,
+        FloatEXT = 2,
+    }
+    public static partial class RawConstants
+    {
+        public const VkDepthBiasRepresentationEXT VK_DEPTH_BIAS_REPRESENTATION_LEAST_REPRESENTABLE_VALUE_FORMAT_EXT = VkDepthBiasRepresentationEXT.LeastRepresentableValueFormatEXT;
+        public const VkDepthBiasRepresentationEXT VK_DEPTH_BIAS_REPRESENTATION_LEAST_REPRESENTABLE_VALUE_FORCE_UNORM_EXT = VkDepthBiasRepresentationEXT.LeastRepresentableValueForceUnormEXT;
+        public const VkDepthBiasRepresentationEXT VK_DEPTH_BIAS_REPRESENTATION_FLOAT_EXT = VkDepthBiasRepresentationEXT.FloatEXT;
+    }
+
     public enum VkDeviceFaultAddressTypeEXT : int
     {
         ///<summary>Currently unused</summary>
@@ -7708,6 +8264,134 @@ namespace Vulkan
     public static partial class RawConstants
     {
         public const VkDeviceFaultVendorBinaryHeaderVersionEXT VK_DEVICE_FAULT_VENDOR_BINARY_HEADER_VERSION_ONE_EXT = VkDeviceFaultVendorBinaryHeaderVersionEXT.OneEXT;
+    }
+
+    public enum VkDisplacementMicromapFormatNV : int
+    {
+        VK_DISPLACEMENT_MICROMAP_FORMAT_64_TRIANGLES_64_BYTES_NV = 1,
+        VK_DISPLACEMENT_MICROMAP_FORMAT_256_TRIANGLES_128_BYTES_NV = 2,
+        VK_DISPLACEMENT_MICROMAP_FORMAT_1024_TRIANGLES_128_BYTES_NV = 3,
+    }
+    public static partial class RawConstants
+    {
+        public const VkDisplacementMicromapFormatNV VK_DISPLACEMENT_MICROMAP_FORMAT_64_TRIANGLES_64_BYTES_NV = VkDisplacementMicromapFormatNV.VK_DISPLACEMENT_MICROMAP_FORMAT_64_TRIANGLES_64_BYTES_NV;
+        public const VkDisplacementMicromapFormatNV VK_DISPLACEMENT_MICROMAP_FORMAT_256_TRIANGLES_128_BYTES_NV = VkDisplacementMicromapFormatNV.VK_DISPLACEMENT_MICROMAP_FORMAT_256_TRIANGLES_128_BYTES_NV;
+        public const VkDisplacementMicromapFormatNV VK_DISPLACEMENT_MICROMAP_FORMAT_1024_TRIANGLES_128_BYTES_NV = VkDisplacementMicromapFormatNV.VK_DISPLACEMENT_MICROMAP_FORMAT_1024_TRIANGLES_128_BYTES_NV;
+    }
+
+    [Flags]
+    public enum VkShaderCreateFlagsEXT : int
+    {
+        None = 0,
+        LinkStageEXT = 1,
+        AllowVaryingSubgroupSizeEXT = 2,
+        RequireFullSubgroupsEXT = 4,
+        NoTaskShaderEXT = 8,
+        DispatchBaseEXT = 16,
+        FragmentShadingRateAttachmentEXT = 32,
+        FragmentDensityMapAttachmentEXT = 64,
+    }
+    public static partial class RawConstants
+    {
+        public const VkShaderCreateFlagsEXT VK_SHADER_CREATE_LINK_STAGE_BIT_EXT = VkShaderCreateFlagsEXT.LinkStageEXT;
+        public const VkShaderCreateFlagsEXT VK_SHADER_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT = VkShaderCreateFlagsEXT.AllowVaryingSubgroupSizeEXT;
+        public const VkShaderCreateFlagsEXT VK_SHADER_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT = VkShaderCreateFlagsEXT.RequireFullSubgroupsEXT;
+        public const VkShaderCreateFlagsEXT VK_SHADER_CREATE_NO_TASK_SHADER_BIT_EXT = VkShaderCreateFlagsEXT.NoTaskShaderEXT;
+        public const VkShaderCreateFlagsEXT VK_SHADER_CREATE_DISPATCH_BASE_BIT_EXT = VkShaderCreateFlagsEXT.DispatchBaseEXT;
+        public const VkShaderCreateFlagsEXT VK_SHADER_CREATE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_EXT = VkShaderCreateFlagsEXT.FragmentShadingRateAttachmentEXT;
+        public const VkShaderCreateFlagsEXT VK_SHADER_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT = VkShaderCreateFlagsEXT.FragmentDensityMapAttachmentEXT;
+    }
+
+    public enum VkShaderCodeTypeEXT : int
+    {
+        BinaryEXT = 0,
+        SpirvEXT = 1,
+    }
+    public static partial class RawConstants
+    {
+        public const VkShaderCodeTypeEXT VK_SHADER_CODE_TYPE_BINARY_EXT = VkShaderCodeTypeEXT.BinaryEXT;
+        public const VkShaderCodeTypeEXT VK_SHADER_CODE_TYPE_SPIRV_EXT = VkShaderCodeTypeEXT.SpirvEXT;
+    }
+
+    public enum VkScopeKHR : int
+    {
+        DeviceKHR = 1,
+        WorkgroupKHR = 2,
+        SubgroupKHR = 3,
+        QueueFamilyKHR = 5,
+    }
+    public static partial class RawConstants
+    {
+        public const VkScopeKHR VK_SCOPE_DEVICE_KHR = VkScopeKHR.DeviceKHR;
+        public const VkScopeKHR VK_SCOPE_WORKGROUP_KHR = VkScopeKHR.WorkgroupKHR;
+        public const VkScopeKHR VK_SCOPE_SUBGROUP_KHR = VkScopeKHR.SubgroupKHR;
+        public const VkScopeKHR VK_SCOPE_QUEUE_FAMILY_KHR = VkScopeKHR.QueueFamilyKHR;
+    }
+
+    public enum VkComponentTypeKHR : int
+    {
+        Float16KHR = 0,
+        Float32KHR = 1,
+        Float64KHR = 2,
+        Sint8KHR = 3,
+        Sint16KHR = 4,
+        Sint32KHR = 5,
+        Sint64KHR = 6,
+        Uint8KHR = 7,
+        Uint16KHR = 8,
+        Uint32KHR = 9,
+        Uint64KHR = 10,
+    }
+    public static partial class RawConstants
+    {
+        public const VkComponentTypeKHR VK_COMPONENT_TYPE_FLOAT16_KHR = VkComponentTypeKHR.Float16KHR;
+        public const VkComponentTypeKHR VK_COMPONENT_TYPE_FLOAT32_KHR = VkComponentTypeKHR.Float32KHR;
+        public const VkComponentTypeKHR VK_COMPONENT_TYPE_FLOAT64_KHR = VkComponentTypeKHR.Float64KHR;
+        public const VkComponentTypeKHR VK_COMPONENT_TYPE_SINT8_KHR = VkComponentTypeKHR.Sint8KHR;
+        public const VkComponentTypeKHR VK_COMPONENT_TYPE_SINT16_KHR = VkComponentTypeKHR.Sint16KHR;
+        public const VkComponentTypeKHR VK_COMPONENT_TYPE_SINT32_KHR = VkComponentTypeKHR.Sint32KHR;
+        public const VkComponentTypeKHR VK_COMPONENT_TYPE_SINT64_KHR = VkComponentTypeKHR.Sint64KHR;
+        public const VkComponentTypeKHR VK_COMPONENT_TYPE_UINT8_KHR = VkComponentTypeKHR.Uint8KHR;
+        public const VkComponentTypeKHR VK_COMPONENT_TYPE_UINT16_KHR = VkComponentTypeKHR.Uint16KHR;
+        public const VkComponentTypeKHR VK_COMPONENT_TYPE_UINT32_KHR = VkComponentTypeKHR.Uint32KHR;
+        public const VkComponentTypeKHR VK_COMPONENT_TYPE_UINT64_KHR = VkComponentTypeKHR.Uint64KHR;
+    }
+
+    public enum VkCubicFilterWeightsQCOM : int
+    {
+        VK_CUBIC_FILTER_WEIGHTS_CATMULL_ROM_QCOM = 0,
+        VK_CUBIC_FILTER_WEIGHTS_ZERO_TANGENT_CARDINAL_QCOM = 1,
+        VK_CUBIC_FILTER_WEIGHTS_B_SPLINE_QCOM = 2,
+        VK_CUBIC_FILTER_WEIGHTS_MITCHELL_NETRAVALI_QCOM = 3,
+    }
+    public static partial class RawConstants
+    {
+        public const VkCubicFilterWeightsQCOM VK_CUBIC_FILTER_WEIGHTS_CATMULL_ROM_QCOM = VkCubicFilterWeightsQCOM.VK_CUBIC_FILTER_WEIGHTS_CATMULL_ROM_QCOM;
+        public const VkCubicFilterWeightsQCOM VK_CUBIC_FILTER_WEIGHTS_ZERO_TANGENT_CARDINAL_QCOM = VkCubicFilterWeightsQCOM.VK_CUBIC_FILTER_WEIGHTS_ZERO_TANGENT_CARDINAL_QCOM;
+        public const VkCubicFilterWeightsQCOM VK_CUBIC_FILTER_WEIGHTS_B_SPLINE_QCOM = VkCubicFilterWeightsQCOM.VK_CUBIC_FILTER_WEIGHTS_B_SPLINE_QCOM;
+        public const VkCubicFilterWeightsQCOM VK_CUBIC_FILTER_WEIGHTS_MITCHELL_NETRAVALI_QCOM = VkCubicFilterWeightsQCOM.VK_CUBIC_FILTER_WEIGHTS_MITCHELL_NETRAVALI_QCOM;
+    }
+
+    public enum VkBlockMatchWindowCompareModeQCOM : int
+    {
+        VK_BLOCK_MATCH_WINDOW_COMPARE_MODE_MIN_QCOM = 0,
+        VK_BLOCK_MATCH_WINDOW_COMPARE_MODE_MAX_QCOM = 1,
+    }
+    public static partial class RawConstants
+    {
+        public const VkBlockMatchWindowCompareModeQCOM VK_BLOCK_MATCH_WINDOW_COMPARE_MODE_MIN_QCOM = VkBlockMatchWindowCompareModeQCOM.VK_BLOCK_MATCH_WINDOW_COMPARE_MODE_MIN_QCOM;
+        public const VkBlockMatchWindowCompareModeQCOM VK_BLOCK_MATCH_WINDOW_COMPARE_MODE_MAX_QCOM = VkBlockMatchWindowCompareModeQCOM.VK_BLOCK_MATCH_WINDOW_COMPARE_MODE_MAX_QCOM;
+    }
+
+    public enum VkLayeredDriverUnderlyingApiMSFT : int
+    {
+        VK_LAYERED_DRIVER_UNDERLYING_API_NONE_MSFT = 0,
+        VK_LAYERED_DRIVER_UNDERLYING_API_D3D12_MSFT = 1,
+    }
+    public static partial class RawConstants
+    {
+        public const VkLayeredDriverUnderlyingApiMSFT VK_LAYERED_DRIVER_UNDERLYING_API_NONE_MSFT = VkLayeredDriverUnderlyingApiMSFT.VK_LAYERED_DRIVER_UNDERLYING_API_NONE_MSFT;
+        public const VkLayeredDriverUnderlyingApiMSFT VK_LAYERED_DRIVER_UNDERLYING_API_D3D12_MSFT = VkLayeredDriverUnderlyingApiMSFT.VK_LAYERED_DRIVER_UNDERLYING_API_D3D12_MSFT;
     }
 
     public enum StdVideoH264ChromaFormatIdc : int
