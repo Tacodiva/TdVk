@@ -167,7 +167,7 @@ namespace Vulkan.Build.Codegen
 
                     if (prev != null)
                     {
-                        if (prev.ValueOrBitPosition != value)
+                        if (prev.Value != value)
                         {
                             throw new InvalidOperationException("The same enum cannot have different values");
                         }

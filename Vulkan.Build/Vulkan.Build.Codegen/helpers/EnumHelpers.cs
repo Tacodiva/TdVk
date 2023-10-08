@@ -76,7 +76,7 @@ namespace Vulkan.Build.Codegen
                     }
 
                     string prettyName = GetPrettyEnumName(value.Name, enumNamePrefix);
-                    cw.WriteLine($"{prettyName} = {value.ValueOrBitPosition},");
+                    cw.WriteLine($"{prettyName} = {value.Value},");
                 }
             }
 

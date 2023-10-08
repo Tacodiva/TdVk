@@ -65,13 +65,13 @@ namespace Vulkan.Build.Codegen
     public class EnumValue
     {
         public string Name { get; }
-        public int ValueOrBitPosition { get; }
+        public long Value { get; }
         public string Comment { get; }
 
-        public EnumValue(string name, int value, string comment)
+        public EnumValue(string name, long value, string comment)
         {
             Name = name;
-            ValueOrBitPosition = value;
+            Value = value;
             Comment = comment;
         }
 
@@ -81,24 +81,24 @@ namespace Vulkan.Build.Codegen
 
             string name = xe.Attribute("name").Value;
 
-            int value;
+            long value;
             string valueStr = xe.Attribute("value")?.Value;
             if (valueStr != null)
             {
                 if (valueStr.StartsWith("0x"))
                 {
                     valueStr = valueStr.Substring(2);
-                    value = int.Parse(valueStr, System.Globalization.NumberStyles.HexNumber);
+                    value = long.Parse(valueStr, System.Globalization.NumberStyles.HexNumber);
                 }
                 else
                 {
-                    value = int.Parse(valueStr);
+                    value = long.Parse(valueStr);
                 }
             }
             else
             {
                 string bitposStr = xe.Attribute("bitpos").Value;
-                value = 1 << int.Parse(bitposStr);
+                value = 1L << int.Parse(bitposStr);
             }
 
             var commentAttr = xe.Attribute("comment");
