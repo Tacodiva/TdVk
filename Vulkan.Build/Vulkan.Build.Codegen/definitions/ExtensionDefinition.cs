@@ -83,7 +83,7 @@ namespace Vulkan.Build.Codegen
                             if (bitPosString != null)
                             {
                                 int shift = int.Parse(bitPosString);
-                                valueString = (1 << shift).ToString();
+                                valueString = ((long)(1UL << shift)).ToString();
                             }
                             else
                             {

@@ -163,7 +163,7 @@ namespace Vulkan.Build.Codegen
                 {
                     EnumDefinition enumDef = GetEnumDef(enums, enumEx.ExtendedType);
                     var prev = enumDef.Values.FirstOrDefault(val => val.Name == enumEx.Name);
-                    int value = int.Parse(enumEx.Value);
+                    long value = long.Parse(enumEx.Value);
 
                     if (prev != null)
                     {

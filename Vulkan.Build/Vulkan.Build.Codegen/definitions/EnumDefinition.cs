@@ -88,7 +88,7 @@ namespace Vulkan.Build.Codegen
                 if (valueStr.StartsWith("0x"))
                 {
                     valueStr = valueStr.Substring(2);
-                    value = long.Parse(valueStr, System.Globalization.NumberStyles.HexNumber);
+                    value = (long) ulong.Parse(valueStr, System.Globalization.NumberStyles.HexNumber);
                 }
                 else
                 {
@@ -98,7 +98,7 @@ namespace Vulkan.Build.Codegen
             else
             {
                 string bitposStr = xe.Attribute("bitpos").Value;
-                value = 1L << int.Parse(bitposStr);
+                value = (long) (1UL << int.Parse(bitposStr));
             }
 
             var commentAttr = xe.Attribute("comment");
