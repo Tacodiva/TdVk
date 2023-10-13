@@ -82,7 +82,6 @@ namespace Vulkan
         public static implicit operator StringPtr(byte* ptr) => new StringPtr(ptr);
 
 
-#if NET 
         public unsafe Span<char> AsSpan()
         {
             return new Span<char>((void*)Handle, Length);
@@ -94,6 +93,5 @@ namespace Vulkan
                 return new StringPtr(new IntPtr(ptr), span.Length);
             }
         }
-#endif
     }
 }

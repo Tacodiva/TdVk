@@ -1,10 +1,6 @@
 using Cake.Frosting;
-using Vulkan.Build;
 using Cake.Common.Tools.DotNet;
 using Cake.Common.Tools.DotNet.Publish;
-using Cake.Common.Solution;
-using Cake.Common.Tools.DotNet.NuGet;
-using Cake.Common.Tools.DotNet.Pack;
 using System.IO;
 using Cake.Core.Diagnostics;
 
@@ -15,13 +11,9 @@ namespace Vulkan.Build;
 public class PackTask : FrostingTask<VulkanFrostingContext>
 {
     public static readonly string[] TargetFrameworks = {
-        "netstandard1.4",
-        "netstandard2.1",
-        "netcoreapp3.1",
-        "net471",
-        "net5.0",
         "net6.0",
-        "net7.0"
+        "net7.0",
+        "net8.0"
     };
 
     public override void Run(VulkanFrostingContext context)

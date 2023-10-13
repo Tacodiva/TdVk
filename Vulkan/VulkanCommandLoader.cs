@@ -8,7 +8,7 @@ namespace Vulkan
 {
     public static partial class VulkanNative
     {
-        private static NativeLibrary s_nativeLib;
+        private static IntPtr s_nativeLib;
 
         static VulkanNative()
         {
@@ -16,7 +16,7 @@ namespace Vulkan
             LoadFunctionPointers();
         }
 
-        private static NativeLibrary LoadNativeLibrary()
+        private static IntPtr LoadNativeLibrary()
         {
             return NativeLibrary.Load(GetNativeLibraryName());
         }
@@ -40,12 +40,10 @@ namespace Vulkan
                     return "libvulkan.so.1";
                 }
             }
-#if NET5_0
             else if (OperatingSystem.IsAndroid())
             {
                 return "libvulkan.so";
             }
-#endif
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
                 return "libvulkan.dylib";
@@ -75,9 +73,9 @@ namespace Vulkan
 
         private unsafe static IntPtr LoadStaticProcAddr(string name)
         {
-            IntPtr ptr = s_nativeLib.LoadFunctionPointer(name);
-            if (ptr == IntPtr.Zero) return GetErrorFnPtr();
-            return ptr;
+            if (NativeLibrary.TryGetExport(s_nativeLib, name, out IntPtr ptr))
+                return ptr;
+            return GetErrorFnPtr();
         }
 
         internal unsafe static IntPtr LoadInstanceProcAddr(VkInstance instance, string name, bool required)
