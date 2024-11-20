@@ -2,6 +2,7 @@ using Cake.Common;
 using Cake.Core;
 using Cake.Frosting;
 using System.IO;
+using System;
 
 namespace Vulkan.Build;
 
@@ -30,7 +31,7 @@ public class VulkanFrostingContext : FrostingContext
         ProjectSolution = context.Argument("project_solution", Path.Join(ProjectDirectory, ProjectName + ".csproj"));
 
         PublishOutputDirectory = context.Argument("publish_out", "bin");
-        PublishFramework = context.Argument("publish_framework", "net7.0");
+        PublishFramework = context.Argument("publish_framework", $"net{System.Environment.Version.Major}.{System.Environment.Version.Minor}");
 
         PackOutputDirectory = context.Argument("pack_out", "package");
 
