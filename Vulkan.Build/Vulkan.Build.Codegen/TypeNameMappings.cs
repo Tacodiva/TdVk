@@ -12,6 +12,7 @@ namespace Vulkan.Build.Codegen
             { "uint16_t", "ushort" },
             { "uint32_t", "uint" },
             { "uint64_t", "ulong" },
+            { "int16_t", "short" },
             { "int32_t", "int" },
             { "int64_t", "long" },
             { "int64_t*", "long*" },
@@ -21,6 +22,8 @@ namespace Vulkan.Build.Codegen
 
             { "ANativeWindow", "Android.ANativeWindow" },
             { "AHardwareBuffer", "Android.AHardwareBuffer" },
+
+            { "OHNativeWindow", "OpenHarmony.OHNativeWindow"},
 
             { "MirConnection", "Mir.MirConnection" },
             { "MirSurface", "Mir.MirSurface" },
