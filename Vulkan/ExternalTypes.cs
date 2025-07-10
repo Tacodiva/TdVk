@@ -55,6 +55,12 @@ namespace Vulkan
         public struct AHardwareBuffer { }
     }
 
+    // Open Harmony
+    namespace OpenHarmony
+    {
+        public struct OHNativeWindow { }
+    }
+
     // Linux
     namespace Mir
     {

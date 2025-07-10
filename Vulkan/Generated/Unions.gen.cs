@@ -43,6 +43,17 @@ namespace Vulkan
     }
 
     [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct VkClusterAccelerationStructureOpInputNV
+    {
+        [FieldOffset(0)]
+        public VkClusterAccelerationStructureClustersBottomLevelInputNV* pClustersBottomLevel;
+        [FieldOffset(0)]
+        public VkClusterAccelerationStructureTriangleClusterInputNV* pTriangleClusters;
+        [FieldOffset(0)]
+        public VkClusterAccelerationStructureMoveObjectsInputNV* pMoveObjects;
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct VkPerformanceCounterResultKHR
     {
         [FieldOffset(0)]
@@ -123,6 +134,28 @@ namespace Vulkan
         public VkAccelerationStructureGeometryAabbsDataKHR aabbs;
         [FieldOffset(0)]
         public VkAccelerationStructureGeometryInstancesDataKHR instances;
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct VkIndirectExecutionSetInfoEXT
+    {
+        [FieldOffset(0)]
+        public VkIndirectExecutionSetPipelineInfoEXT* pPipelineInfo;
+        [FieldOffset(0)]
+        public VkIndirectExecutionSetShaderInfoEXT* pShaderInfo;
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct VkIndirectCommandsTokenDataEXT
+    {
+        [FieldOffset(0)]
+        public VkIndirectCommandsPushConstantTokenEXT* pPushConstant;
+        [FieldOffset(0)]
+        public VkIndirectCommandsVertexBufferTokenEXT* pVertexBuffer;
+        [FieldOffset(0)]
+        public VkIndirectCommandsIndexBufferTokenEXT* pIndexBuffer;
+        [FieldOffset(0)]
+        public VkIndirectCommandsExecutionSetTokenEXT* pExecutionSet;
     }
 
     [StructLayout(LayoutKind.Explicit)]
