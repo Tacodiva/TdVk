@@ -13,7 +13,8 @@ public class PackTask : FrostingTask<VulkanFrostingContext>
     public static readonly string[] TargetFrameworks = {
         "net6.0",
         "net7.0",
-        "net8.0"
+        "net8.0",
+        "net9.0"
     };
 
     public override void Run(VulkanFrostingContext context)
