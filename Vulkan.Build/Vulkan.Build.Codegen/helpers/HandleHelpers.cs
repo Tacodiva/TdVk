@@ -15,8 +15,11 @@ namespace Vulkan.Build.Codegen
                 cw.Write(Environment.NewLine);
             }
             cw.WriteLine($"[DebuggerDisplay(\"{{DebuggerDisplay,nq}}\")]");
-            using (cw.PushBlock($"public partial struct {handle.Name} : IEquatable<{handle.Name}>"))
+            using (cw.PushBlock($"public partial struct {handle.Name} : IVulkanHandle, IEquatable<{handle.Name}>"))
             {
+
+                cw.WriteLine($"public static VkObjectType VkObjectType => VkObjectType.{EnumHelpers.GetPrettyEnumName(handle.ObjTypeEnum, "VK_OBJECT_TYPE")};");
+
                 string handleType = handle.Dispatchable ? "IntPtr" : "ulong";
                 string nullValue = handle.Dispatchable ? "IntPtr.Zero" : "0";
 
@@ -33,6 +36,14 @@ namespace Vulkan.Build.Codegen
                 cw.WriteLine($"public override bool Equals(object o) => o is {handle.Name} h && Equals(h);");
                 cw.WriteLine($"public override int GetHashCode() => Handle.GetHashCode();");
                 cw.WriteLine($"private string DebuggerDisplay => string.Format(\"{handle.Name} [0x{{0}}]\", Handle.ToString(\"X\"));");
+
+                cw.WriteLine($"VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;");
+
+                if (handle.Dispatchable)
+                    cw.WriteLine($"ulong IVulkanHandle.GetHandle() => (ulong)Handle;");
+                else
+                    cw.WriteLine($"ulong IVulkanHandle.GetHandle() => Handle;");
+
             }
         }
     }

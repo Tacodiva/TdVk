@@ -6,8 +6,9 @@ using System.Diagnostics;
 namespace Vulkan
 {
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkInstance : IEquatable<VkInstance>
+    public partial struct VkInstance : IVulkanHandle, IEquatable<VkInstance>
     {
+        public static VkObjectType VkObjectType => VkObjectType.Instance;
         public readonly IntPtr Handle;
         public VkInstance(IntPtr existingHandle) { Handle = existingHandle; }
         public static VkInstance Null => new VkInstance(IntPtr.Zero);
@@ -20,12 +21,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkInstance h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkInstance [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => (ulong)Handle;
     }
 
     ///<summary>A dispatchable handle owned by a VkInstance.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkPhysicalDevice : IEquatable<VkPhysicalDevice>
+    public partial struct VkPhysicalDevice : IVulkanHandle, IEquatable<VkPhysicalDevice>
     {
+        public static VkObjectType VkObjectType => VkObjectType.PhysicalDevice;
         public readonly IntPtr Handle;
         public VkPhysicalDevice(IntPtr existingHandle) { Handle = existingHandle; }
         public static VkPhysicalDevice Null => new VkPhysicalDevice(IntPtr.Zero);
@@ -38,12 +42,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkPhysicalDevice h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkPhysicalDevice [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => (ulong)Handle;
     }
 
     ///<summary>A dispatchable handle owned by a VkPhysicalDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkDevice : IEquatable<VkDevice>
+    public partial struct VkDevice : IVulkanHandle, IEquatable<VkDevice>
     {
+        public static VkObjectType VkObjectType => VkObjectType.Device;
         public readonly IntPtr Handle;
         public VkDevice(IntPtr existingHandle) { Handle = existingHandle; }
         public static VkDevice Null => new VkDevice(IntPtr.Zero);
@@ -56,12 +63,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkDevice h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkDevice [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => (ulong)Handle;
     }
 
     ///<summary>A dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkQueue : IEquatable<VkQueue>
+    public partial struct VkQueue : IVulkanHandle, IEquatable<VkQueue>
     {
+        public static VkObjectType VkObjectType => VkObjectType.Queue;
         public readonly IntPtr Handle;
         public VkQueue(IntPtr existingHandle) { Handle = existingHandle; }
         public static VkQueue Null => new VkQueue(IntPtr.Zero);
@@ -74,12 +84,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkQueue h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkQueue [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => (ulong)Handle;
     }
 
     ///<summary>A dispatchable handle owned by a VkCommandPool.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkCommandBuffer : IEquatable<VkCommandBuffer>
+    public partial struct VkCommandBuffer : IVulkanHandle, IEquatable<VkCommandBuffer>
     {
+        public static VkObjectType VkObjectType => VkObjectType.CommandBuffer;
         public readonly IntPtr Handle;
         public VkCommandBuffer(IntPtr existingHandle) { Handle = existingHandle; }
         public static VkCommandBuffer Null => new VkCommandBuffer(IntPtr.Zero);
@@ -92,12 +105,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkCommandBuffer h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkCommandBuffer [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => (ulong)Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkDeviceMemory : IEquatable<VkDeviceMemory>
+    public partial struct VkDeviceMemory : IVulkanHandle, IEquatable<VkDeviceMemory>
     {
+        public static VkObjectType VkObjectType => VkObjectType.DeviceMemory;
         public readonly ulong Handle;
         public VkDeviceMemory(ulong existingHandle) { Handle = existingHandle; }
         public static VkDeviceMemory Null => new VkDeviceMemory(0);
@@ -110,12 +126,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkDeviceMemory h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkDeviceMemory [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkCommandPool : IEquatable<VkCommandPool>
+    public partial struct VkCommandPool : IVulkanHandle, IEquatable<VkCommandPool>
     {
+        public static VkObjectType VkObjectType => VkObjectType.CommandPool;
         public readonly ulong Handle;
         public VkCommandPool(ulong existingHandle) { Handle = existingHandle; }
         public static VkCommandPool Null => new VkCommandPool(0);
@@ -128,12 +147,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkCommandPool h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkCommandPool [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkBuffer : IEquatable<VkBuffer>
+    public partial struct VkBuffer : IVulkanHandle, IEquatable<VkBuffer>
     {
+        public static VkObjectType VkObjectType => VkObjectType.Buffer;
         public readonly ulong Handle;
         public VkBuffer(ulong existingHandle) { Handle = existingHandle; }
         public static VkBuffer Null => new VkBuffer(0);
@@ -146,12 +168,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkBuffer h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkBuffer [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkBufferView : IEquatable<VkBufferView>
+    public partial struct VkBufferView : IVulkanHandle, IEquatable<VkBufferView>
     {
+        public static VkObjectType VkObjectType => VkObjectType.BufferView;
         public readonly ulong Handle;
         public VkBufferView(ulong existingHandle) { Handle = existingHandle; }
         public static VkBufferView Null => new VkBufferView(0);
@@ -164,12 +189,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkBufferView h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkBufferView [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkImage : IEquatable<VkImage>
+    public partial struct VkImage : IVulkanHandle, IEquatable<VkImage>
     {
+        public static VkObjectType VkObjectType => VkObjectType.Image;
         public readonly ulong Handle;
         public VkImage(ulong existingHandle) { Handle = existingHandle; }
         public static VkImage Null => new VkImage(0);
@@ -182,12 +210,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkImage h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkImage [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkImageView : IEquatable<VkImageView>
+    public partial struct VkImageView : IVulkanHandle, IEquatable<VkImageView>
     {
+        public static VkObjectType VkObjectType => VkObjectType.ImageView;
         public readonly ulong Handle;
         public VkImageView(ulong existingHandle) { Handle = existingHandle; }
         public static VkImageView Null => new VkImageView(0);
@@ -200,12 +231,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkImageView h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkImageView [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkShaderModule : IEquatable<VkShaderModule>
+    public partial struct VkShaderModule : IVulkanHandle, IEquatable<VkShaderModule>
     {
+        public static VkObjectType VkObjectType => VkObjectType.ShaderModule;
         public readonly ulong Handle;
         public VkShaderModule(ulong existingHandle) { Handle = existingHandle; }
         public static VkShaderModule Null => new VkShaderModule(0);
@@ -218,12 +252,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkShaderModule h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkShaderModule [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkPipeline : IEquatable<VkPipeline>
+    public partial struct VkPipeline : IVulkanHandle, IEquatable<VkPipeline>
     {
+        public static VkObjectType VkObjectType => VkObjectType.Pipeline;
         public readonly ulong Handle;
         public VkPipeline(ulong existingHandle) { Handle = existingHandle; }
         public static VkPipeline Null => new VkPipeline(0);
@@ -236,12 +273,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkPipeline h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkPipeline [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkPipelineLayout : IEquatable<VkPipelineLayout>
+    public partial struct VkPipelineLayout : IVulkanHandle, IEquatable<VkPipelineLayout>
     {
+        public static VkObjectType VkObjectType => VkObjectType.PipelineLayout;
         public readonly ulong Handle;
         public VkPipelineLayout(ulong existingHandle) { Handle = existingHandle; }
         public static VkPipelineLayout Null => new VkPipelineLayout(0);
@@ -254,12 +294,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkPipelineLayout h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkPipelineLayout [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkSampler : IEquatable<VkSampler>
+    public partial struct VkSampler : IVulkanHandle, IEquatable<VkSampler>
     {
+        public static VkObjectType VkObjectType => VkObjectType.Sampler;
         public readonly ulong Handle;
         public VkSampler(ulong existingHandle) { Handle = existingHandle; }
         public static VkSampler Null => new VkSampler(0);
@@ -272,12 +315,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkSampler h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkSampler [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDescriptorPool.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkDescriptorSet : IEquatable<VkDescriptorSet>
+    public partial struct VkDescriptorSet : IVulkanHandle, IEquatable<VkDescriptorSet>
     {
+        public static VkObjectType VkObjectType => VkObjectType.DescriptorSet;
         public readonly ulong Handle;
         public VkDescriptorSet(ulong existingHandle) { Handle = existingHandle; }
         public static VkDescriptorSet Null => new VkDescriptorSet(0);
@@ -290,12 +336,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkDescriptorSet h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkDescriptorSet [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkDescriptorSetLayout : IEquatable<VkDescriptorSetLayout>
+    public partial struct VkDescriptorSetLayout : IVulkanHandle, IEquatable<VkDescriptorSetLayout>
     {
+        public static VkObjectType VkObjectType => VkObjectType.DescriptorSetLayout;
         public readonly ulong Handle;
         public VkDescriptorSetLayout(ulong existingHandle) { Handle = existingHandle; }
         public static VkDescriptorSetLayout Null => new VkDescriptorSetLayout(0);
@@ -308,12 +357,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkDescriptorSetLayout h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkDescriptorSetLayout [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkDescriptorPool : IEquatable<VkDescriptorPool>
+    public partial struct VkDescriptorPool : IVulkanHandle, IEquatable<VkDescriptorPool>
     {
+        public static VkObjectType VkObjectType => VkObjectType.DescriptorPool;
         public readonly ulong Handle;
         public VkDescriptorPool(ulong existingHandle) { Handle = existingHandle; }
         public static VkDescriptorPool Null => new VkDescriptorPool(0);
@@ -326,12 +378,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkDescriptorPool h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkDescriptorPool [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkFence : IEquatable<VkFence>
+    public partial struct VkFence : IVulkanHandle, IEquatable<VkFence>
     {
+        public static VkObjectType VkObjectType => VkObjectType.Fence;
         public readonly ulong Handle;
         public VkFence(ulong existingHandle) { Handle = existingHandle; }
         public static VkFence Null => new VkFence(0);
@@ -344,12 +399,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkFence h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkFence [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkSemaphore : IEquatable<VkSemaphore>
+    public partial struct VkSemaphore : IVulkanHandle, IEquatable<VkSemaphore>
     {
+        public static VkObjectType VkObjectType => VkObjectType.Semaphore;
         public readonly ulong Handle;
         public VkSemaphore(ulong existingHandle) { Handle = existingHandle; }
         public static VkSemaphore Null => new VkSemaphore(0);
@@ -362,12 +420,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkSemaphore h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkSemaphore [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkEvent : IEquatable<VkEvent>
+    public partial struct VkEvent : IVulkanHandle, IEquatable<VkEvent>
     {
+        public static VkObjectType VkObjectType => VkObjectType.Event;
         public readonly ulong Handle;
         public VkEvent(ulong existingHandle) { Handle = existingHandle; }
         public static VkEvent Null => new VkEvent(0);
@@ -380,12 +441,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkEvent h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkEvent [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkQueryPool : IEquatable<VkQueryPool>
+    public partial struct VkQueryPool : IVulkanHandle, IEquatable<VkQueryPool>
     {
+        public static VkObjectType VkObjectType => VkObjectType.QueryPool;
         public readonly ulong Handle;
         public VkQueryPool(ulong existingHandle) { Handle = existingHandle; }
         public static VkQueryPool Null => new VkQueryPool(0);
@@ -398,12 +462,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkQueryPool h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkQueryPool [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkFramebuffer : IEquatable<VkFramebuffer>
+    public partial struct VkFramebuffer : IVulkanHandle, IEquatable<VkFramebuffer>
     {
+        public static VkObjectType VkObjectType => VkObjectType.Framebuffer;
         public readonly ulong Handle;
         public VkFramebuffer(ulong existingHandle) { Handle = existingHandle; }
         public static VkFramebuffer Null => new VkFramebuffer(0);
@@ -416,12 +483,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkFramebuffer h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkFramebuffer [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkRenderPass : IEquatable<VkRenderPass>
+    public partial struct VkRenderPass : IVulkanHandle, IEquatable<VkRenderPass>
     {
+        public static VkObjectType VkObjectType => VkObjectType.RenderPass;
         public readonly ulong Handle;
         public VkRenderPass(ulong existingHandle) { Handle = existingHandle; }
         public static VkRenderPass Null => new VkRenderPass(0);
@@ -434,12 +504,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkRenderPass h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkRenderPass [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkPipelineCache : IEquatable<VkPipelineCache>
+    public partial struct VkPipelineCache : IVulkanHandle, IEquatable<VkPipelineCache>
     {
+        public static VkObjectType VkObjectType => VkObjectType.PipelineCache;
         public readonly ulong Handle;
         public VkPipelineCache(ulong existingHandle) { Handle = existingHandle; }
         public static VkPipelineCache Null => new VkPipelineCache(0);
@@ -452,12 +525,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkPipelineCache h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkPipelineCache [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkPipelineBinaryKHR : IEquatable<VkPipelineBinaryKHR>
+    public partial struct VkPipelineBinaryKHR : IVulkanHandle, IEquatable<VkPipelineBinaryKHR>
     {
+        public static VkObjectType VkObjectType => VkObjectType.PipelineBinaryKHR;
         public readonly ulong Handle;
         public VkPipelineBinaryKHR(ulong existingHandle) { Handle = existingHandle; }
         public static VkPipelineBinaryKHR Null => new VkPipelineBinaryKHR(0);
@@ -470,12 +546,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkPipelineBinaryKHR h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkPipelineBinaryKHR [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkIndirectCommandsLayoutNV : IEquatable<VkIndirectCommandsLayoutNV>
+    public partial struct VkIndirectCommandsLayoutNV : IVulkanHandle, IEquatable<VkIndirectCommandsLayoutNV>
     {
+        public static VkObjectType VkObjectType => VkObjectType.IndirectCommandsLayoutNV;
         public readonly ulong Handle;
         public VkIndirectCommandsLayoutNV(ulong existingHandle) { Handle = existingHandle; }
         public static VkIndirectCommandsLayoutNV Null => new VkIndirectCommandsLayoutNV(0);
@@ -488,12 +567,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkIndirectCommandsLayoutNV h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkIndirectCommandsLayoutNV [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkIndirectCommandsLayoutEXT : IEquatable<VkIndirectCommandsLayoutEXT>
+    public partial struct VkIndirectCommandsLayoutEXT : IVulkanHandle, IEquatable<VkIndirectCommandsLayoutEXT>
     {
+        public static VkObjectType VkObjectType => VkObjectType.IndirectCommandsLayoutEXT;
         public readonly ulong Handle;
         public VkIndirectCommandsLayoutEXT(ulong existingHandle) { Handle = existingHandle; }
         public static VkIndirectCommandsLayoutEXT Null => new VkIndirectCommandsLayoutEXT(0);
@@ -506,12 +588,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkIndirectCommandsLayoutEXT h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkIndirectCommandsLayoutEXT [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkIndirectExecutionSetEXT : IEquatable<VkIndirectExecutionSetEXT>
+    public partial struct VkIndirectExecutionSetEXT : IVulkanHandle, IEquatable<VkIndirectExecutionSetEXT>
     {
+        public static VkObjectType VkObjectType => VkObjectType.IndirectExecutionSetEXT;
         public readonly ulong Handle;
         public VkIndirectExecutionSetEXT(ulong existingHandle) { Handle = existingHandle; }
         public static VkIndirectExecutionSetEXT Null => new VkIndirectExecutionSetEXT(0);
@@ -524,12 +609,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkIndirectExecutionSetEXT h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkIndirectExecutionSetEXT [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkDescriptorUpdateTemplate : IEquatable<VkDescriptorUpdateTemplate>
+    public partial struct VkDescriptorUpdateTemplate : IVulkanHandle, IEquatable<VkDescriptorUpdateTemplate>
     {
+        public static VkObjectType VkObjectType => VkObjectType.DescriptorUpdateTemplate;
         public readonly ulong Handle;
         public VkDescriptorUpdateTemplate(ulong existingHandle) { Handle = existingHandle; }
         public static VkDescriptorUpdateTemplate Null => new VkDescriptorUpdateTemplate(0);
@@ -542,12 +630,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkDescriptorUpdateTemplate h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkDescriptorUpdateTemplate [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkSamplerYcbcrConversion : IEquatable<VkSamplerYcbcrConversion>
+    public partial struct VkSamplerYcbcrConversion : IVulkanHandle, IEquatable<VkSamplerYcbcrConversion>
     {
+        public static VkObjectType VkObjectType => VkObjectType.SamplerYcbcrConversion;
         public readonly ulong Handle;
         public VkSamplerYcbcrConversion(ulong existingHandle) { Handle = existingHandle; }
         public static VkSamplerYcbcrConversion Null => new VkSamplerYcbcrConversion(0);
@@ -560,12 +651,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkSamplerYcbcrConversion h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkSamplerYcbcrConversion [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkValidationCacheEXT : IEquatable<VkValidationCacheEXT>
+    public partial struct VkValidationCacheEXT : IVulkanHandle, IEquatable<VkValidationCacheEXT>
     {
+        public static VkObjectType VkObjectType => VkObjectType.ValidationCacheEXT;
         public readonly ulong Handle;
         public VkValidationCacheEXT(ulong existingHandle) { Handle = existingHandle; }
         public static VkValidationCacheEXT Null => new VkValidationCacheEXT(0);
@@ -578,12 +672,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkValidationCacheEXT h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkValidationCacheEXT [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkAccelerationStructureKHR : IEquatable<VkAccelerationStructureKHR>
+    public partial struct VkAccelerationStructureKHR : IVulkanHandle, IEquatable<VkAccelerationStructureKHR>
     {
+        public static VkObjectType VkObjectType => VkObjectType.AccelerationStructureKHR;
         public readonly ulong Handle;
         public VkAccelerationStructureKHR(ulong existingHandle) { Handle = existingHandle; }
         public static VkAccelerationStructureKHR Null => new VkAccelerationStructureKHR(0);
@@ -596,12 +693,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkAccelerationStructureKHR h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkAccelerationStructureKHR [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkAccelerationStructureNV : IEquatable<VkAccelerationStructureNV>
+    public partial struct VkAccelerationStructureNV : IVulkanHandle, IEquatable<VkAccelerationStructureNV>
     {
+        public static VkObjectType VkObjectType => VkObjectType.AccelerationStructureNV;
         public readonly ulong Handle;
         public VkAccelerationStructureNV(ulong existingHandle) { Handle = existingHandle; }
         public static VkAccelerationStructureNV Null => new VkAccelerationStructureNV(0);
@@ -614,12 +714,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkAccelerationStructureNV h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkAccelerationStructureNV [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkPerformanceConfigurationINTEL : IEquatable<VkPerformanceConfigurationINTEL>
+    public partial struct VkPerformanceConfigurationINTEL : IVulkanHandle, IEquatable<VkPerformanceConfigurationINTEL>
     {
+        public static VkObjectType VkObjectType => VkObjectType.PerformanceConfigurationIntel;
         public readonly ulong Handle;
         public VkPerformanceConfigurationINTEL(ulong existingHandle) { Handle = existingHandle; }
         public static VkPerformanceConfigurationINTEL Null => new VkPerformanceConfigurationINTEL(0);
@@ -632,12 +735,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkPerformanceConfigurationINTEL h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkPerformanceConfigurationINTEL [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkBufferCollectionFUCHSIA : IEquatable<VkBufferCollectionFUCHSIA>
+    public partial struct VkBufferCollectionFUCHSIA : IVulkanHandle, IEquatable<VkBufferCollectionFUCHSIA>
     {
+        public static VkObjectType VkObjectType => VkObjectType.BufferCollectionFuchsia;
         public readonly ulong Handle;
         public VkBufferCollectionFUCHSIA(ulong existingHandle) { Handle = existingHandle; }
         public static VkBufferCollectionFUCHSIA Null => new VkBufferCollectionFUCHSIA(0);
@@ -650,12 +756,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkBufferCollectionFUCHSIA h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkBufferCollectionFUCHSIA [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkDeferredOperationKHR : IEquatable<VkDeferredOperationKHR>
+    public partial struct VkDeferredOperationKHR : IVulkanHandle, IEquatable<VkDeferredOperationKHR>
     {
+        public static VkObjectType VkObjectType => VkObjectType.DeferredOperationKHR;
         public readonly ulong Handle;
         public VkDeferredOperationKHR(ulong existingHandle) { Handle = existingHandle; }
         public static VkDeferredOperationKHR Null => new VkDeferredOperationKHR(0);
@@ -668,12 +777,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkDeferredOperationKHR h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkDeferredOperationKHR [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkPrivateDataSlot : IEquatable<VkPrivateDataSlot>
+    public partial struct VkPrivateDataSlot : IVulkanHandle, IEquatable<VkPrivateDataSlot>
     {
+        public static VkObjectType VkObjectType => VkObjectType.PrivateDataSlot;
         public readonly ulong Handle;
         public VkPrivateDataSlot(ulong existingHandle) { Handle = existingHandle; }
         public static VkPrivateDataSlot Null => new VkPrivateDataSlot(0);
@@ -686,12 +798,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkPrivateDataSlot h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkPrivateDataSlot [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkCuModuleNVX : IEquatable<VkCuModuleNVX>
+    public partial struct VkCuModuleNVX : IVulkanHandle, IEquatable<VkCuModuleNVX>
     {
+        public static VkObjectType VkObjectType => VkObjectType.CuModuleNVX;
         public readonly ulong Handle;
         public VkCuModuleNVX(ulong existingHandle) { Handle = existingHandle; }
         public static VkCuModuleNVX Null => new VkCuModuleNVX(0);
@@ -704,12 +819,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkCuModuleNVX h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkCuModuleNVX [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkCuFunctionNVX : IEquatable<VkCuFunctionNVX>
+    public partial struct VkCuFunctionNVX : IVulkanHandle, IEquatable<VkCuFunctionNVX>
     {
+        public static VkObjectType VkObjectType => VkObjectType.CuFunctionNVX;
         public readonly ulong Handle;
         public VkCuFunctionNVX(ulong existingHandle) { Handle = existingHandle; }
         public static VkCuFunctionNVX Null => new VkCuFunctionNVX(0);
@@ -722,12 +840,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkCuFunctionNVX h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkCuFunctionNVX [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkOpticalFlowSessionNV : IEquatable<VkOpticalFlowSessionNV>
+    public partial struct VkOpticalFlowSessionNV : IVulkanHandle, IEquatable<VkOpticalFlowSessionNV>
     {
+        public static VkObjectType VkObjectType => VkObjectType.OpticalFlowSessionNV;
         public readonly ulong Handle;
         public VkOpticalFlowSessionNV(ulong existingHandle) { Handle = existingHandle; }
         public static VkOpticalFlowSessionNV Null => new VkOpticalFlowSessionNV(0);
@@ -740,12 +861,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkOpticalFlowSessionNV h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkOpticalFlowSessionNV [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkMicromapEXT : IEquatable<VkMicromapEXT>
+    public partial struct VkMicromapEXT : IVulkanHandle, IEquatable<VkMicromapEXT>
     {
+        public static VkObjectType VkObjectType => VkObjectType.MicromapEXT;
         public readonly ulong Handle;
         public VkMicromapEXT(ulong existingHandle) { Handle = existingHandle; }
         public static VkMicromapEXT Null => new VkMicromapEXT(0);
@@ -758,12 +882,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkMicromapEXT h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkMicromapEXT [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkShaderEXT : IEquatable<VkShaderEXT>
+    public partial struct VkShaderEXT : IVulkanHandle, IEquatable<VkShaderEXT>
     {
+        public static VkObjectType VkObjectType => VkObjectType.ShaderEXT;
         public readonly ulong Handle;
         public VkShaderEXT(ulong existingHandle) { Handle = existingHandle; }
         public static VkShaderEXT Null => new VkShaderEXT(0);
@@ -776,12 +903,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkShaderEXT h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkShaderEXT [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkTensorARM : IEquatable<VkTensorARM>
+    public partial struct VkTensorARM : IVulkanHandle, IEquatable<VkTensorARM>
     {
+        public static VkObjectType VkObjectType => VkObjectType.TensorArm;
         public readonly ulong Handle;
         public VkTensorARM(ulong existingHandle) { Handle = existingHandle; }
         public static VkTensorARM Null => new VkTensorARM(0);
@@ -794,12 +924,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkTensorARM h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkTensorARM [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkTensorViewARM : IEquatable<VkTensorViewARM>
+    public partial struct VkTensorViewARM : IVulkanHandle, IEquatable<VkTensorViewARM>
     {
+        public static VkObjectType VkObjectType => VkObjectType.TensorViewArm;
         public readonly ulong Handle;
         public VkTensorViewARM(ulong existingHandle) { Handle = existingHandle; }
         public static VkTensorViewARM Null => new VkTensorViewARM(0);
@@ -812,12 +945,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkTensorViewARM h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkTensorViewARM [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkDataGraphPipelineSessionARM : IEquatable<VkDataGraphPipelineSessionARM>
+    public partial struct VkDataGraphPipelineSessionARM : IVulkanHandle, IEquatable<VkDataGraphPipelineSessionARM>
     {
+        public static VkObjectType VkObjectType => VkObjectType.DataGraphPipelineSessionArm;
         public readonly ulong Handle;
         public VkDataGraphPipelineSessionARM(ulong existingHandle) { Handle = existingHandle; }
         public static VkDataGraphPipelineSessionARM Null => new VkDataGraphPipelineSessionARM(0);
@@ -830,12 +966,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkDataGraphPipelineSessionARM h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkDataGraphPipelineSessionARM [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkPhysicalDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkDisplayKHR : IEquatable<VkDisplayKHR>
+    public partial struct VkDisplayKHR : IVulkanHandle, IEquatable<VkDisplayKHR>
     {
+        public static VkObjectType VkObjectType => VkObjectType.DisplayKHR;
         public readonly ulong Handle;
         public VkDisplayKHR(ulong existingHandle) { Handle = existingHandle; }
         public static VkDisplayKHR Null => new VkDisplayKHR(0);
@@ -848,12 +987,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkDisplayKHR h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkDisplayKHR [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDisplayKHR.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkDisplayModeKHR : IEquatable<VkDisplayModeKHR>
+    public partial struct VkDisplayModeKHR : IVulkanHandle, IEquatable<VkDisplayModeKHR>
     {
+        public static VkObjectType VkObjectType => VkObjectType.DisplayModeKHR;
         public readonly ulong Handle;
         public VkDisplayModeKHR(ulong existingHandle) { Handle = existingHandle; }
         public static VkDisplayModeKHR Null => new VkDisplayModeKHR(0);
@@ -866,12 +1008,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkDisplayModeKHR h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkDisplayModeKHR [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkInstance.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkSurfaceKHR : IEquatable<VkSurfaceKHR>
+    public partial struct VkSurfaceKHR : IVulkanHandle, IEquatable<VkSurfaceKHR>
     {
+        public static VkObjectType VkObjectType => VkObjectType.SurfaceKHR;
         public readonly ulong Handle;
         public VkSurfaceKHR(ulong existingHandle) { Handle = existingHandle; }
         public static VkSurfaceKHR Null => new VkSurfaceKHR(0);
@@ -884,12 +1029,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkSurfaceKHR h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkSurfaceKHR [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkSwapchainKHR : IEquatable<VkSwapchainKHR>
+    public partial struct VkSwapchainKHR : IVulkanHandle, IEquatable<VkSwapchainKHR>
     {
+        public static VkObjectType VkObjectType => VkObjectType.SwapchainKHR;
         public readonly ulong Handle;
         public VkSwapchainKHR(ulong existingHandle) { Handle = existingHandle; }
         public static VkSwapchainKHR Null => new VkSwapchainKHR(0);
@@ -902,12 +1050,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkSwapchainKHR h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkSwapchainKHR [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkInstance.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkDebugReportCallbackEXT : IEquatable<VkDebugReportCallbackEXT>
+    public partial struct VkDebugReportCallbackEXT : IVulkanHandle, IEquatable<VkDebugReportCallbackEXT>
     {
+        public static VkObjectType VkObjectType => VkObjectType.DebugReportCallbackEXT;
         public readonly ulong Handle;
         public VkDebugReportCallbackEXT(ulong existingHandle) { Handle = existingHandle; }
         public static VkDebugReportCallbackEXT Null => new VkDebugReportCallbackEXT(0);
@@ -920,12 +1071,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkDebugReportCallbackEXT h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkDebugReportCallbackEXT [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkInstance.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkDebugUtilsMessengerEXT : IEquatable<VkDebugUtilsMessengerEXT>
+    public partial struct VkDebugUtilsMessengerEXT : IVulkanHandle, IEquatable<VkDebugUtilsMessengerEXT>
     {
+        public static VkObjectType VkObjectType => VkObjectType.DebugUtilsMessengerEXT;
         public readonly ulong Handle;
         public VkDebugUtilsMessengerEXT(ulong existingHandle) { Handle = existingHandle; }
         public static VkDebugUtilsMessengerEXT Null => new VkDebugUtilsMessengerEXT(0);
@@ -938,12 +1092,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkDebugUtilsMessengerEXT h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkDebugUtilsMessengerEXT [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkVideoSessionKHR : IEquatable<VkVideoSessionKHR>
+    public partial struct VkVideoSessionKHR : IVulkanHandle, IEquatable<VkVideoSessionKHR>
     {
+        public static VkObjectType VkObjectType => VkObjectType.VideoSessionKHR;
         public readonly ulong Handle;
         public VkVideoSessionKHR(ulong existingHandle) { Handle = existingHandle; }
         public static VkVideoSessionKHR Null => new VkVideoSessionKHR(0);
@@ -956,12 +1113,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkVideoSessionKHR h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkVideoSessionKHR [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkVideoSessionKHR.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkVideoSessionParametersKHR : IEquatable<VkVideoSessionParametersKHR>
+    public partial struct VkVideoSessionParametersKHR : IVulkanHandle, IEquatable<VkVideoSessionParametersKHR>
     {
+        public static VkObjectType VkObjectType => VkObjectType.VideoSessionParametersKHR;
         public readonly ulong Handle;
         public VkVideoSessionParametersKHR(ulong existingHandle) { Handle = existingHandle; }
         public static VkVideoSessionParametersKHR Null => new VkVideoSessionParametersKHR(0);
@@ -974,12 +1134,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkVideoSessionParametersKHR h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkVideoSessionParametersKHR [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkSemaphoreSciSyncPoolNV : IEquatable<VkSemaphoreSciSyncPoolNV>
+    public partial struct VkSemaphoreSciSyncPoolNV : IVulkanHandle, IEquatable<VkSemaphoreSciSyncPoolNV>
     {
+        public static VkObjectType VkObjectType => VkObjectType.SemaphoreSciSyncPoolNV;
         public readonly ulong Handle;
         public VkSemaphoreSciSyncPoolNV(ulong existingHandle) { Handle = existingHandle; }
         public static VkSemaphoreSciSyncPoolNV Null => new VkSemaphoreSciSyncPoolNV(0);
@@ -992,12 +1155,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkSemaphoreSciSyncPoolNV h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkSemaphoreSciSyncPoolNV [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkCudaModuleNV : IEquatable<VkCudaModuleNV>
+    public partial struct VkCudaModuleNV : IVulkanHandle, IEquatable<VkCudaModuleNV>
     {
+        public static VkObjectType VkObjectType => VkObjectType.CudaModuleNV;
         public readonly ulong Handle;
         public VkCudaModuleNV(ulong existingHandle) { Handle = existingHandle; }
         public static VkCudaModuleNV Null => new VkCudaModuleNV(0);
@@ -1010,12 +1176,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkCudaModuleNV h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkCudaModuleNV [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A non-dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkCudaFunctionNV : IEquatable<VkCudaFunctionNV>
+    public partial struct VkCudaFunctionNV : IVulkanHandle, IEquatable<VkCudaFunctionNV>
     {
+        public static VkObjectType VkObjectType => VkObjectType.CudaFunctionNV;
         public readonly ulong Handle;
         public VkCudaFunctionNV(ulong existingHandle) { Handle = existingHandle; }
         public static VkCudaFunctionNV Null => new VkCudaFunctionNV(0);
@@ -1028,12 +1197,15 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkCudaFunctionNV h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkCudaFunctionNV [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => Handle;
     }
 
     ///<summary>A dispatchable handle owned by a VkDevice.</summary>
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
-    public partial struct VkExternalComputeQueueNV : IEquatable<VkExternalComputeQueueNV>
+    public partial struct VkExternalComputeQueueNV : IVulkanHandle, IEquatable<VkExternalComputeQueueNV>
     {
+        public static VkObjectType VkObjectType => VkObjectType.ExternalComputeQueueNV;
         public readonly IntPtr Handle;
         public VkExternalComputeQueueNV(IntPtr existingHandle) { Handle = existingHandle; }
         public static VkExternalComputeQueueNV Null => new VkExternalComputeQueueNV(IntPtr.Zero);
@@ -1046,5 +1218,7 @@ namespace Vulkan
         public override bool Equals(object o) => o is VkExternalComputeQueueNV h && Equals(h);
         public override int GetHashCode() => Handle.GetHashCode();
         private string DebuggerDisplay => string.Format("VkExternalComputeQueueNV [0x{0}]", Handle.ToString("X"));
+        VkObjectType IVulkanHandle.GetVkObjectType() => VkObjectType;
+        ulong IVulkanHandle.GetHandle() => (ulong)Handle;
     }
 }
